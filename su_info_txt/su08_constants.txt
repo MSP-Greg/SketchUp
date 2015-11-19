@@ -1,3 +1,11 @@
+## Generated on 2015-11-17 at 05:43:17 PM GMT using Sketchup version 8.0.16846
+## Using FindSUConstants version 1.1, see https://github.com/MSP-Greg/SketchUp
+## Found the following --
+##   176 Constants at object / root
+##    90 Constants defined in Sketchup classes
+##    86 Sketchup  defined classes / modules with no constants
+##
+
 ALT_MODIFIER_KEY                           18                                 Fixnum
 ALT_MODIFIER_MASK                          32                                 Fixnum
 ALeaderModel                               2                                  Fixnum
@@ -113,7 +121,7 @@ GL_TRIANGLE_STRIP                          5                                  Fi
 IDABORT                                    3                                  Fixnum
 
 IDCANCEL                                   2                                  Fixnum
-IDENTITY                                   #<Geom::Transformation:0x48dffc8>  Geom::Transformation
+IDENTITY                                   #<Geom::Transformation:0x49d0040>  Geom::Transformation
 IDIGNORE                                   5                                  Fixnum
 IDNO                                       7                                  Fixnum
 IDOK                                       1                                  Fixnum
@@ -172,7 +180,7 @@ SB_PROMPT                                  0                                  Fi
 SB_VCB_LABEL                               1                                  Fixnum
 SB_VCB_VALUE                               2                                  Fixnum
 
-SKETCHUP_CONSOLE                           #<Sketchup::Console:0x48de970>     Sketchup::Console
+SKETCHUP_CONSOLE                           #<Sketchup::Console:0x49ce9e8>     Sketchup::Console
 SnapTo_Arbitrary                           0                                  Fixnum
 SnapTo_Horizontal                          1                                  Fixnum
 SnapTo_Sloped                              3                                  Fixnum
@@ -210,190 +218,226 @@ Y_AXIS                                     (0.0, 1.0, 0.0)                    Ge
 
 Z_AXIS                                     (0.0, 0.0, 1.0)                    Geom::Vector3d
 
-Sketchup::Face::
+Sketchup::Face::                                                              Module
   PointInside                              1                                  Fixnum
   PointNotOnPlane                          32                                 Fixnum
   PointOnEdge                              4                                  Fixnum
   PointOnFace                              8                                  Fixnum
   PointOnVertex                            2                                  Fixnum
+
   PointOutside                             16                                 Fixnum
   PointUnknown                             0                                  Fixnum
 
-Sketchup::Importer::
+
+Sketchup::Importer::                                                          Module
   ImportCanceled                           2                                  Fixnum
   ImportFail                               1                                  Fixnum
   ImportFileNotFound                       4                                  Fixnum
   ImportSuccess                            0                                  Fixnum
   ImporterNotFound                         3                                  Fixnum
 
-Sketchup::Pages::
+
+Sketchup::Pages::                                                             Module
   ImageEmbedded                            0                                  Fixnum
   ImageEmbeddedAndLinked                   1                                  Fixnum
   ImageLinked                              2                                  Fixnum
   UnitsNormalizedX                         2                                  Fixnum
   UnitsNormalizedY                         1                                  Fixnum
+
   UnitsPixels                              0                                  Fixnum
 
-Sketchup::RenderingOptions::
+
+Sketchup::RenderingOptions::                                                  Module
   ROPAssign                                0                                  Fixnum
   ROPDrawHidden                            26                                 Fixnum
   ROPEditComponent                         27                                 Fixnum
   ROPSetBackgroundColor                    12                                 Fixnum
   ROPSetConstructionColor                  15                                 Fixnum
+
   ROPSetDepthQueEdges                      29                                 Fixnum
   ROPSetDepthQueWidth                      31                                 Fixnum
   ROPSetDisplayColorByLayer                16                                 Fixnum
   ROPSetDisplayDims                        52                                 Fixnum
   ROPSetDisplayFog                         19                                 Fixnum
+
   ROPSetDisplayInstanceAxes                11                                 Fixnum
   ROPSetDisplaySketchAxes                  35                                 Fixnum
   ROPSetDisplayText                        51                                 Fixnum
   ROPSetDrawGround                         48                                 Fixnum
   ROPSetDrawHorizon                        47                                 Fixnum
+
   ROPSetDrawUnderground                    49                                 Fixnum
   ROPSetEdgeColorMode                      5                                  Fixnum
   ROPSetEdgeDisplayMode                    4                                  Fixnum
   ROPSetEdgeType                           37                                 Fixnum
   ROPSetExtendEdges                        7                                  Fixnum
+
   ROPSetExtendLines                        17                                 Fixnum
   ROPSetFaceColor                          36                                 Fixnum
   ROPSetFaceColorMode                      10                                 Fixnum
   ROPSetFogColor                           22                                 Fixnum
   ROPSetFogDist                            23                                 Fixnum
+
   ROPSetFogHint                            24                                 Fixnum
   ROPSetFogUseBkColor                      53                                 Fixnum
   ROPSetForegroundColor                    13                                 Fixnum
   ROPSetGroundColor                        46                                 Fixnum
   ROPSetGroundTransparency                 50                                 Fixnum
+
   ROPSetHideConstructionGeometry           44                                 Fixnum
   ROPSetHighlightColor                     14                                 Fixnum
   ROPSetJitterEdges                        6                                  Fixnum
   ROPSetLineEndEdges                       30                                 Fixnum
   ROPSetLineEndWidth                       32                                 Fixnum
+
   ROPSetLineExtension                      18                                 Fixnum
   ROPSetLockedColor                        34                                 Fixnum
   ROPSetMaterialTransparency               39                                 Fixnum
   ROPSetModelTransparency                  38                                 Fixnum
   ROPSetProfileEdges                       8                                  Fixnum
+
   ROPSetProfileWidth                       9                                  Fixnum
   ROPSetProfilesOnlyEdges                  33                                 Fixnum
   ROPSetRenderMode                         1                                  Fixnum
   ROPSetSectionActiveColor                 40                                 Fixnum
   ROPSetSectionCutWidth                    43                                 Fixnum
+
   ROPSetSectionDefaultCutColor             42                                 Fixnum
   ROPSetSectionDisplayMode                 25                                 Fixnum
   ROPSetSectionInactiveColor               41                                 Fixnum
   ROPSetSkyColor                           45                                 Fixnum
   ROPSetTexture                            3                                  Fixnum
+
   ROPSetTransparencyObsolete               2                                  Fixnum
   ROPTransparencySortMethod                28                                 Fixnum
 
-Length::
+
+Length::                                                                      Module
   Architectural                            1                                  Fixnum
   Centimeter                               3                                  Fixnum
   DIG                                      15                                 Fixnum
   Decimal                                  0                                  Fixnum
   EPSILON                                  2.22044604925031e-016              Float
+
   Engineering                              2                                  Fixnum
   Feet                                     1                                  Fixnum
   Fractional                               3                                  Fixnum
   Inches                                   0                                  Fixnum
   MANT_DIG                                 53                                 Fixnum
+
   MAX                                      1.79769313486232e+308              Float
   MAX_10_EXP                               308                                Fixnum
   MAX_EXP                                  1024                               Fixnum
   MIN                                      2.2250738585072e-308               Float
   MIN_10_EXP                               -307                               Fixnum
+
   MIN_EXP                                  -1021                              Fixnum
   Meter                                    4                                  Fixnum
   Millimeter                               2                                  Fixnum
   RADIX                                    2                                  Fixnum
   ROUNDS                                   1                                  Fixnum
 
-Sketchup                                   no constants
-Sketchup::AppObserver                      no constants
-Sketchup::ArcCurve                         no constants
-Sketchup::AttributeDictionaries            no constants
-Sketchup::AttributeDictionary              no constants
-Sketchup::Behavior                         no constants
-Sketchup::Camera                           no constants
-Sketchup::Color                            no constants
-Sketchup::ComponentDefinition              no constants
-Sketchup::ComponentInstance                no constants
-Sketchup::Console                          no constants
-Sketchup::ConstructionLine                 no constants
-Sketchup::ConstructionPoint                no constants
-Sketchup::Curve                            no constants
-Sketchup::DefinitionList                   no constants
-Sketchup::DefinitionObserver               no constants
-Sketchup::DefinitionsObserver              no constants
-Sketchup::Drawingelement                   no constants
-Sketchup::Edge                             no constants
-Sketchup::EdgeUse                          no constants
-Sketchup::Entities                         no constants
-Sketchup::EntitiesObserver                 no constants
-Sketchup::Entity                           no constants
-Sketchup::EntityObserver                   no constants
-Sketchup::ExtensionsManager                no constants
-Sketchup::Group                            no constants
-Sketchup::HLR                              no constants
-Sketchup::Image                            no constants
-Sketchup::InputPoint                       no constants
-Sketchup::InstanceObserver                 no constants
-Sketchup::Layer                            no constants
-Sketchup::Layers                           no constants
-Sketchup::LayersObserver                   no constants
-Sketchup::Loop                             no constants
-Sketchup::Material                         no constants
-Sketchup::Materials                        no constants
-Sketchup::MaterialsObserver                no constants
-Sketchup::Menu                             no constants
-Sketchup::Model                            no constants
-Sketchup::ModelObserver                    no constants
-Sketchup::OptionsManager                   no constants
-Sketchup::OptionsProvider                  no constants
-Sketchup::OptionsProviderObserver          no constants
-Sketchup::Page                             no constants
-Sketchup::PagesObserver                    no constants
-Sketchup::PickHelper                       no constants
-Sketchup::RenderingOptionsObserver         no constants
-Sketchup::SectionPlane                     no constants
-Sketchup::Selection                        no constants
-Sketchup::SelectionObserver                no constants
-Sketchup::ShadowInfo                       no constants
-Sketchup::ShadowInfoObserver               no constants
-Sketchup::Style                            no constants
-Sketchup::Styles                           no constants
-Sketchup::Text                             no constants
-Sketchup::Texture                          no constants
-Sketchup::TextureWriter                    no constants
-Sketchup::Tools                            no constants
-Sketchup::ToolsObserver                    no constants
-Sketchup::UVHelper                         no constants
-Sketchup::Vertex                           no constants
-Sketchup::View                             no constants
-Sketchup::ViewObserver                     no constants
-Array                                      no constants
-Continuation                               no constants
-FindObjects                                no constants
-Geom                                       no constants
-Geom::BoundingBox                          no constants
-Geom::LatLong                              no constants
-Geom::Point3d                              no constants
-Geom::PolygonMesh                          no constants
-Geom::Transformation                       no constants
-Geom::UTM                                  no constants
-Geom::Vector3d                             no constants
-LanguageHandler                            no constants
-MatchingData                               no constants
-Numeric                                    no constants
-Precision                                  no constants
-SKSocket                                   no constants
-Set                                        no constants
-SketchupExtension                          no constants
-String                                     no constants
-Test                                       no constants
-UI                                         no constants
-UI::Command                                no constants
-UI::Toolbar                                no constants
-UI::WebDialog                              no constants
+
+Sketchup                                   no constants                       Module
+Sketchup::AppObserver                      no constants                       Class
+Sketchup::ArcCurve                         no constants                       Class
+Sketchup::AttributeDictionaries            no constants                       Class
+Sketchup::AttributeDictionary              no constants                       Class
+
+Sketchup::Behavior                         no constants                       Class
+Sketchup::Camera                           no constants                       Class
+Sketchup::Color                            no constants                       Class
+Sketchup::ComponentDefinition              no constants                       Class
+Sketchup::ComponentInstance                no constants                       Class
+
+Sketchup::Console                          no constants                       Class
+Sketchup::ConstructionLine                 no constants                       Class
+Sketchup::ConstructionPoint                no constants                       Class
+Sketchup::Curve                            no constants                       Class
+Sketchup::DefinitionList                   no constants                       Class
+
+Sketchup::DefinitionObserver               no constants                       Class
+Sketchup::DefinitionsObserver              no constants                       Class
+Sketchup::Drawingelement                   no constants                       Class
+Sketchup::Edge                             no constants                       Class
+Sketchup::EdgeUse                          no constants                       Class
+
+Sketchup::Entities                         no constants                       Class
+Sketchup::EntitiesObserver                 no constants                       Class
+Sketchup::Entity                           no constants                       Class
+Sketchup::EntityObserver                   no constants                       Class
+Sketchup::ExtensionsManager                no constants                       Class
+
+Sketchup::Group                            no constants                       Class
+Sketchup::HLR                              no constants                       Class
+Sketchup::Image                            no constants                       Class
+Sketchup::InputPoint                       no constants                       Class
+Sketchup::InstanceObserver                 no constants                       Class
+
+Sketchup::Layer                            no constants                       Class
+Sketchup::Layers                           no constants                       Class
+Sketchup::LayersObserver                   no constants                       Class
+Sketchup::Loop                             no constants                       Class
+Sketchup::Material                         no constants                       Class
+
+Sketchup::Materials                        no constants                       Class
+Sketchup::MaterialsObserver                no constants                       Class
+Sketchup::Menu                             no constants                       Class
+Sketchup::Model                            no constants                       Class
+Sketchup::ModelObserver                    no constants                       Class
+
+Sketchup::OptionsManager                   no constants                       Class
+Sketchup::OptionsProvider                  no constants                       Class
+Sketchup::OptionsProviderObserver          no constants                       Class
+Sketchup::Page                             no constants                       Class
+Sketchup::PagesObserver                    no constants                       Class
+
+Sketchup::PickHelper                       no constants                       Class
+Sketchup::RenderingOptionsObserver         no constants                       Class
+Sketchup::SectionPlane                     no constants                       Class
+Sketchup::Selection                        no constants                       Class
+Sketchup::SelectionObserver                no constants                       Class
+
+Sketchup::ShadowInfo                       no constants                       Class
+Sketchup::ShadowInfoObserver               no constants                       Class
+Sketchup::Style                            no constants                       Class
+Sketchup::Styles                           no constants                       Class
+Sketchup::Text                             no constants                       Class
+
+Sketchup::Texture                          no constants                       Class
+Sketchup::TextureWriter                    no constants                       Class
+Sketchup::Tools                            no constants                       Class
+Sketchup::ToolsObserver                    no constants                       Class
+Sketchup::UVHelper                         no constants                       Class
+
+Sketchup::Vertex                           no constants                       Class
+Sketchup::View                             no constants                       Class
+Sketchup::ViewObserver                     no constants                       Class
+Array                                      no constants                       Class
+Continuation                               no constants                       Class
+
+Geom                                       no constants                       Module
+Geom::BoundingBox                          no constants                       Class
+Geom::LatLong                              no constants                       Class
+Geom::Point3d                              no constants                       Class
+Geom::PolygonMesh                          no constants                       Class
+
+Geom::Transformation                       no constants                       Class
+Geom::UTM                                  no constants                       Class
+Geom::Vector3d                             no constants                       Class
+LanguageHandler                            no constants                       Class
+MatchingData                               no constants                       Class
+
+Numeric                                    no constants                       Class
+Precision                                  no constants                       Module
+SKSocket                                   no constants                       Module
+Set                                        no constants                       Class
+SketchupExtension                          no constants                       Class
+
+String                                     no constants                       Class
+Test                                       no constants                       Module
+UI                                         no constants                       Module
+UI::Command                                no constants                       Class
+UI::Toolbar                                no constants                       Class
+
+UI::WebDialog                              no constants                       Class
