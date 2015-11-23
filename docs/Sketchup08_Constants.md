@@ -27,12 +27,12 @@ The constants are used in a callback method in a [RenderingOptionsObserver][roo]
 instance as a notification of rendering option changes by the user or other code.
 
 The constants provide some information about the change.  Some notes -
-- They do not map one-to-one to the [RenderingOptions][ro] keys.  Some changes
+* They do not map one-to-one to the [RenderingOptions][ro] keys.  Some changes
   will result in two callbacks firing.
-- Some [RenderingOptions][ro] keys will fire a callback, but with no constant
+* Some [RenderingOptions][ro] keys will fire a callback, but with no constant
   assigned to the type value.
-- Some [RenderingOptions][ro] keys will not fire a callback.
-- The constant values vary across SketchUp versions, so always use the constants,
+* Some [RenderingOptions][ro] keys will not fire a callback.
+* The constant values vary across SketchUp versions, so always use the constants,
   as opposed to an integer value.
 
 The following code can either be pasted into the Ruby console or loaded via a file.
