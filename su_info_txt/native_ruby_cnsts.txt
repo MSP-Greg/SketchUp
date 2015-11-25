@@ -10,6 +10,7 @@ Class
 Comparable
 Complex
 ConditionVariable
+Config
 Data
 Dir
 ENV
@@ -19,11 +20,14 @@ EncodingError
 Enumerable
 Enumerator
 Errno
+Etc
 Exception
+Exception2MessageMapper
 FALSE
 FalseClass
 Fiber
 FiberError
+Fiddle
 File
 FileTest
 Fixnum
@@ -34,6 +38,7 @@ Gem
 Hash
 IO
 IOError
+IRB
 IndexError
 Integer
 Interrupt
@@ -75,8 +80,12 @@ Range
 RangeError
 Rational
 RbConfig
+RbReadline
+Readline
 Regexp
 RegexpError
+RubyLex
+RubyToken
 RubyVM
 RuntimeError
 STDERR

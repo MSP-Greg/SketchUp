@@ -1,8 +1,8 @@
-## Generated on 2015-11-17 at 05:43:17 PM GMT using Sketchup version 8.0.16846
-## Using FindSUConstants version 1.1, see https://github.com/MSP-Greg/SketchUp
+## Generated on 2015-11-25 at 07:25:19 PM GMT using Sketchup version 8.0.16846
+## Using FindSUConstants version 1.2, see https://github.com/MSP-Greg/SketchUp
 ## Found the following --
 ##   176 Constants at object / root
-##    90 Constants defined in Sketchup classes
+##    79 Constants defined in Sketchup classes
 ##    86 Sketchup  defined classes / modules with no constants
 ##
 
@@ -121,7 +121,7 @@ GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x49d0040>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x48aff44>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -180,7 +180,7 @@ SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
 
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x49ce9e8>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x48ae8ec>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum
@@ -218,7 +218,7 @@ Y_AXIS	(0.0, 1.0, 0.0)	Geom::Vector3d
 
 Z_AXIS	(0.0, 0.0, 1.0)	Geom::Vector3d
 
-Sketchup::Face::		Module
+Sketchup::Face::		Class
 PointInside	1	Fixnum
 PointNotOnPlane	32	Fixnum
 PointOnEdge	4	Fixnum
@@ -229,7 +229,7 @@ PointOutside	16	Fixnum
 PointUnknown	0	Fixnum
 
 
-Sketchup::Importer::		Module
+Sketchup::Importer::		Class
 ImportCanceled	2	Fixnum
 ImportFail	1	Fixnum
 ImportFileNotFound	4	Fixnum
@@ -237,7 +237,7 @@ ImportSuccess	0	Fixnum
 ImporterNotFound	3	Fixnum
 
 
-Sketchup::Pages::		Module
+Sketchup::Pages::		Class
 ImageEmbedded	0	Fixnum
 ImageEmbeddedAndLinked	1	Fixnum
 ImageLinked	2	Fixnum
@@ -247,7 +247,7 @@ UnitsNormalizedY	1	Fixnum
 UnitsPixels	0	Fixnum
 
 
-Sketchup::RenderingOptions::		Module
+Sketchup::RenderingOptions::		Class
 ROPAssign	0	Fixnum
 ROPDrawHidden	26	Fixnum
 ROPEditComponent	27	Fixnum
@@ -312,30 +312,17 @@ ROPSetTransparencyObsolete	2	Fixnum
 ROPTransparencySortMethod	28	Fixnum
 
 
-Length::		Module
+Length::		Class
 Architectural	1	Fixnum
 Centimeter	3	Fixnum
-DIG	15	Fixnum
 Decimal	0	Fixnum
-EPSILON	2.22044604925031e-016	Float
-
 Engineering	2	Fixnum
 Feet	1	Fixnum
+
 Fractional	3	Fixnum
 Inches	0	Fixnum
-MANT_DIG	53	Fixnum
-
-MAX	1.79769313486232e+308	Float
-MAX_10_EXP	308	Fixnum
-MAX_EXP	1024	Fixnum
-MIN	2.2250738585072e-308	Float
-MIN_10_EXP	-307	Fixnum
-
-MIN_EXP	-1021	Fixnum
 Meter	4	Fixnum
 Millimeter	2	Fixnum
-RADIX	2	Fixnum
-ROUNDS	1	Fixnum
 
 
 Sketchup	no constants	Module
@@ -426,7 +413,7 @@ Geom::Transformation	no constants	Class
 Geom::UTM	no constants	Class
 Geom::Vector3d	no constants	Class
 LanguageHandler	no constants	Class
-MatchingData	no constants	Class
+MatchData	no constants	Class
 
 Numeric	no constants	Class
 Precision	no constants	Module
