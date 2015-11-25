@@ -1,6 +1,7 @@
 *.txt
+*.md
 .yardoc
 
 ## Documentation cache and generated files:
 /.yardoc/
-/doc/
+/docs/
