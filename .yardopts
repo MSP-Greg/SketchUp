@@ -6,7 +6,6 @@
 
 lib/su_info/*.rb
 -
-README.md
 docs/*.md
 lib/su_info/Template_Guide.md
 lib/su_info/Template_List.md
