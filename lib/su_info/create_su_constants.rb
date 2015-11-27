@@ -151,7 +151,10 @@ module CreateSUConstants
     # create file hdr
     sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
     hdr =  "Generated on #{sDateTime} using Sketchup version #{Sketchup.version}#{lend}"
-    hdr << "Using CreateSUConstants version #{@@version}, see https://github.com/MSP-Greg/SketchUp#{lend}"
+    hdr << "Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) "
+    hdr << "version #{@@version}, see "
+    hdr << "[![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)"
+    hdr << "#{lend}"
     hdr << "Found the following:#{lend}"
     hdr <<  "#{list}#{root} Constants defined in Object (global)\n"
     hdr <<    "#{list}#{su} Constants defined in SketchUp objects\n"

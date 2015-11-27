@@ -47,7 +47,7 @@ var ss_last = document.styleSheets.length - 1,
     ss = document.styleSheets[ss_last],
     rules = ss.cssRules,
     rT1 = "#filecontents table.gjl15 ";
-ss.insertRule(rT1 + "{ border:none; border-collapse:collapse;}", rules.length );
+ss.insertRule(rT1 + "{ border:none; border-collapse:collapse; margin-bottom:2em;}", rules.length );
 ss.insertRule(rT1 + "thead { border-bottom:2px solid #aaa; background-color:transparent;}", rules.length );
 ss.insertRule(rT1 + "tbody { vertical-align:top;}", rules.length );
 ss.insertRule(rT1 + "tr { border:none; background-color:transparent;}", rules.length );
@@ -75,7 +75,9 @@ Some of the concepts in this document may be obvious to experienced programmers,
 but many API users are new to Ruby, or new to programming.
 
 Finally, thanks to Jim Foltz and others for their previous work and help.
-***
+
+---
+
 This document divides the SketchUp defined constants into three categories
 
 **1. Namespaced Constants:** These are defined on a class.  They will often be
@@ -115,7 +117,6 @@ There are a few constants that are SketchUp objects.  All are defined in the
 [Geom] module, with the exception of [Sketchup::Console].
 
 ## Namespaced Constants
-
 
 ### Dimension \#arrow_type \#arrow_type=
 
@@ -173,6 +174,7 @@ pt_location = face.classify_point(pt)
 ```ruby
 << code_face_1 >>
 ```
+
 << face_classify_point >>
 
 ### Importer \#load_file
@@ -192,6 +194,34 @@ end
 ```
 
 << importer >>
+
+### Length 'UnitsOptions' OptionsProvider
+
+Defined on [Length].  See [Model#options], [OptionsManager],
+[OptionsManager#&#91;&#93;] and [OptionsProvider].
+
+First, SketchUp.com does not list all of the keys used in [OptionsManager] and
+[OptionsProvider].  The below table shows all of the keys.
+
+<< OptionsManager >>
+
+These constants are used with the 'UnitsOptions' [OptionsProvider].  In the two
+following code lines, units and format have constant equivalents.
+
+```ruby
+am = Sketchup.active_model
+units  = am.options['UnitsOptions']['LengthUnit']
+format = am.options['UnitsOptions']['LengthFormat']
+```
+
+The following code creates two hashes that make use of the Length:: constants,
+queries the two settings, and outputs to the console.
+
+```ruby
+<< code_len_1 >>
+```
+
+<< Length:: >>
 
 ### Model \#save \#save_copy
 
@@ -255,34 +285,6 @@ RenderingOption value.class, RenderingOption key, and Constant name.
 << RenderingOptions >>
 << RenderingOptions_no_fire >>
 << RenderingOptions_no_cb >>
-
-### Length 'UnitsOptions' OptionsProvider
-
-Defined on [Length].  See [Model#options], [OptionsManager],
-[OptionsManager#&#91;&#93;] and [OptionsProvider].
-
-First, SketchUp.com does not list all of the keys used in [OptionsManager] and
-[OptionsProvider].  The below table shows all of the keys.
-
-<< OptionsManager >>
-
-These constants are used with the 'UnitsOptions' [OptionsProvider].  In the two
-following code lines, units and format have constant equivalents.
-
-```ruby
-am = Sketchup.active_model
-units  = am.options['UnitsOptions']['LengthUnit']
-format = am.options['UnitsOptions']['LengthFormat']
-```
-
-The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and outputs to the console.
-
-```ruby
-<< code_len_1 >>
-```
-
-<< Length:: >>
 
 ## Global Object Constants
 
@@ -496,6 +498,7 @@ and an 'Okay' button.
 ```ruby
 status = UI.messagebox(message, type)
 ```
+
 << ui_mb_type >>
 << ui_mb_ret >>
 

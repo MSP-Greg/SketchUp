@@ -76,7 +76,6 @@ module CreateSUConstantsGuide
     # Geom:: constants
     self.find_regex('[^\r\n\f]+?Geom::', 'Geometry')
 
-
     # UI.messagebox type
     self.find_regex('MB_', 'ui_mb_type', '<br/>type parameter')
 
@@ -84,7 +83,7 @@ module CreateSUConstantsGuide
     self.find_regex('ID', 'ui_mb_ret', 'status<br/>return')
 
     # UI.layer.page_behavior
-    self.find_regex('LAYER_', 'page_behavior') { |a,b|
+    self.find_regex('LAYER_', 'layer_page_behavior') { |a,b|
       (a[1].rjust(3, '0') + a[0]) <=> (b[1].rjust(3, '0') + b[0]) }
 
     # Command.set_validation
@@ -506,7 +505,7 @@ module CreateSUConstantsGuide
       }
       table << "</tr>\n"
     }
-    table << "</tbody></table>\n<br/>"
+    table << "</tbody></table>\n"
   end
 
   # creates standard markdown table text from an array

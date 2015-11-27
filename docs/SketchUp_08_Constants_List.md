@@ -19,9 +19,9 @@ ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;
 
 This list is simply that.  No code samples, links, etc.
 
-Generated on 2015-11-27 at 06:16:36 PM GMT using Sketchup version 8.0.16846
+Generated on 2015-11-27 at 08:17:18 PM GMT using Sketchup version 8.0.16846
 
-Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
+Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) version 1.3, see [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
 
 Found the following:
 
@@ -156,7 +156,7 @@ Found the following:
 <tr><td>IDABORT</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x485ffd0></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x47e003c></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>IDOK</td><td>1</td><td>Fixnum</td></tr>
@@ -215,7 +215,7 @@ Found the following:
 <tr><td>SB_VCB_LABEL</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x485e978></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x47de9e4></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Sloped</td><td>3</td><td>Fixnum</td></tr>

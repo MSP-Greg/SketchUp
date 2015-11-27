@@ -19,9 +19,9 @@ ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;
 
 This list is simply that.  No code samples, links, etc.
 
-Generated on 2015-11-27 at 06:17:09 PM GMT using Sketchup version 13.0.4812
+Generated on 2015-11-27 at 08:17:53 PM GMT using Sketchup version 13.0.4812
 
-Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
+Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) version 1.3, see [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
 
 Found the following:
 
@@ -141,7 +141,7 @@ Found the following:
 <tr><td>FILE_WRITE_FAILED_INVALID_TYPE</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>FILE_WRITE_FAILED_UNKNOWN</td><td>2</td><td>Fixnum</td></tr>
 <tr><td>FILE_WRITE_OK</td><td>0</td><td>Fixnum</td></tr>
-<tr><td>GJLExt</td><td>#<SketchupExtension:0x1bb5e94></td><td>SketchupExtension</td></tr>
+<tr><td>GJLExt</td><td>#<SketchupExtension:0x629f10c></td><td>SketchupExtension</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>GL_LINES</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>GL_LINE_LOOP</td><td>2</td><td>Fixnum</td></tr>
@@ -157,7 +157,7 @@ Found the following:
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>IDABORT</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x1bc4ea8></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x62ae120></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
@@ -216,7 +216,7 @@ Found the following:
 <tr><td>SB_VCB_LABEL</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x1bc3850></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x62acac8></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Sloped</td><td>3</td><td>Fixnum</td></tr>

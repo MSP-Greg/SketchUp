@@ -47,7 +47,7 @@ var ss_last = document.styleSheets.length - 1,
     ss = document.styleSheets[ss_last],
     rules = ss.cssRules,
     rT1 = "#filecontents table.gjl15 ";
-ss.insertRule(rT1 + "{ border:none; border-collapse:collapse;}", rules.length );
+ss.insertRule(rT1 + "{ border:none; border-collapse:collapse; margin-bottom:2em;}", rules.length );
 ss.insertRule(rT1 + "thead { border-bottom:2px solid #aaa; background-color:transparent;}", rules.length );
 ss.insertRule(rT1 + "tbody { vertical-align:top;}", rules.length );
 ss.insertRule(rT1 + "tr { border:none; background-color:transparent;}", rules.length );
@@ -75,7 +75,9 @@ Some of the concepts in this document may be obvious to experienced programmers,
 but many API users are new to Ruby, or new to programming.
 
 Finally, thanks to Jim Foltz and others for their previous work and help.
-***
+
+---
+
 This document divides the SketchUp defined constants into three categories
 
 **1. Namespaced Constants:** These are defined on a class.  They will often be
@@ -116,7 +118,6 @@ There are a few constants that are SketchUp objects.  All are defined in the
 
 ## Namespaced Constants
 
-
 ### Dimension \#arrow_type \#arrow_type=
 
 Defined on [Sketchup::Dimension].  See [Dimension#arrow_type]. These constants are
@@ -137,7 +138,7 @@ dim.arrow_type = arrow_type
 <tr><td>ARROW_OPEN</td><td class='c'>4</td></tr>
 <tr><td>ARROW_SLASH</td><td class='c'>1</td></tr>
 </tbody></table>
-<br/>
+
 
 ### DimensionLinear \#aligned_text_position \#aligned_text_position=
 
@@ -155,7 +156,7 @@ dim.aligned_text_position = at_pos
 <tr><td>ALIGNED_TEXT_CENTER</td><td class='c'>1</td></tr>
 <tr><td>ALIGNED_TEXT_OUTSIDE</td><td class='c'>2</td></tr>
 </tbody></table>
-<br/>
+
 
 ### DimensionLinear \#text_position \#text_position=
 
@@ -173,7 +174,7 @@ dim.text_position = text_pos
 <tr><td>TEXT_OUTSIDE_END</td><td class='c'>2</td></tr>
 <tr><td>TEXT_OUTSIDE_START</td><td class='c'>0</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Entities \#add_faces_from_mesh
 
@@ -192,7 +193,7 @@ Defined on [Geom::PolygonMesh].  See [Entities#add_faces_from_mesh].
 <tr><td>SMOOTH_SOFT_EDGES</td><td class='c'>8</td></tr>
 <tr><td>SOFTEN_BASED_ON_INDEX</td><td class='c'>2</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Face \#classify_point
 
@@ -222,6 +223,7 @@ else
 end
 puts t
 ```
+
 <table class='gjl15'><thead>
 <th>pt_location<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
 </thead><tbody>
@@ -233,7 +235,7 @@ puts t
 <tr><td>PointOutside</td><td class='c'>16</td></tr>
 <tr><td>PointUnknown</td><td class='c'>0</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Importer \#load_file
 
@@ -260,7 +262,103 @@ end
 <tr><td>ImportSuccess</td><td class='c'>0</td></tr>
 <tr><td>ImporterNotFound</td><td class='c'>3</td></tr>
 </tbody></table>
-<br/>
+
+
+### Length 'UnitsOptions' OptionsProvider
+
+Defined on [Length].  See [Model#options], [OptionsManager],
+[OptionsManager#&#91;&#93;] and [OptionsProvider].
+
+First, SketchUp.com does not list all of the keys used in [OptionsManager] and
+[OptionsProvider].  The below table shows all of the keys.
+
+<table class='gjl15'><thead>
+<th>OptionsManager<br/>key</th><th>OptionsProvider<br/>key</th><th class='c'>OptionsProvider<br/>value</th><th><br/>class</th>
+</thead><tbody>
+<tr><td>PageOptions</td><td>ShowTransition</td><td class='c'>true</td><td>Boolean</td></tr>
+<tr><td></td><td>TransitionTime</td><td class='c'>2.0</td><td>Float</td></tr>
+<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
+<tr><td>PrintOptions</td><td>ComputeSizeFromScale</td><td class='c'>false</td><td>Boolean</td></tr>
+<tr><td></td><td>FitToPage</td><td class='c'>true</td><td>Boolean</td></tr>
+<tr><td></td><td>LineWeight</td><td class='c'>0.5</td><td>Float</td></tr>
+<tr><td></td><td>ModelExtents</td><td class='c'>true</td><td>Boolean</td></tr>
+<tr><td></td><td>NumberOfPages</td><td class='c'>1</td><td>Fixnum</td></tr>
+<tr><td></td><td>PixelsPerInch</td><td class='c'>150.0</td><td>Float</td></tr>
+<tr><td></td><td>PrintHeight</td><td class='c'>11.0</td><td>Float</td></tr>
+<tr><td></td><td>PrintQuality</td><td class='c'>0</td><td>Fixnum</td></tr>
+<tr><td></td><td>PrintWidth</td><td class='c'>8.5</td><td>Float</td></tr>
+<tr><td></td><td>ScaleAdjustment</td><td class='c'>1.0</td><td>Float</td></tr>
+<tr><td></td><td>SectionSlice</td><td class='c'>false</td><td>Boolean</td></tr>
+<tr><td></td><td>SizeInModel</td><td class='c'>1.0</td><td>Float</td></tr>
+<tr><td></td><td>SizeInPrint</td><td class='c'>1.0</td><td>Float</td></tr>
+<tr><td></td><td>VectorMode</td><td class='c'>false</td><td>Boolean</td></tr>
+<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
+<tr><td>SlideshowOptions</td><td>LoopSlideshow</td><td class='c'>true</td><td>Boolean</td></tr>
+<tr><td></td><td>SlideTime</td><td class='c'>1.0</td><td>Float</td></tr>
+<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
+<tr><td>UnitsOptions</td><td>AnglePrecision</td><td class='c'>1</td><td>Fixnum</td></tr>
+<tr><td></td><td>AngleSnapEnabled</td><td class='c'>true</td><td>Boolean</td></tr>
+<tr><td></td><td>ForceInchDisplay</td><td class='c'>false</td><td>Boolean</td></tr>
+<tr><td></td><td>LengthFormat</td><td class='c'>1</td><td>Fixnum</td></tr>
+<tr><td></td><td>LengthPrecision</td><td class='c'>4</td><td>Fixnum</td></tr>
+<tr><td></td><td>LengthSnapEnabled</td><td class='c'>true</td><td>Boolean</td></tr>
+<tr><td></td><td>LengthSnapLength</td><td class='c'>0.25</td><td>Float</td></tr>
+<tr><td></td><td>LengthUnit</td><td class='c'>0</td><td>Fixnum</td></tr>
+<tr><td></td><td>SnapAngle</td><td class='c'>15.0</td><td>Float</td></tr>
+<tr><td></td><td>SuppressUnitsDisplay</td><td class='c'>false</td><td>Boolean</td></tr>
+</tbody></table>
+
+
+These constants are used with the 'UnitsOptions' [OptionsProvider].  In the two
+following code lines, units and format have constant equivalents.
+
+```ruby
+am = Sketchup.active_model
+units  = am.options['UnitsOptions']['LengthUnit']
+format = am.options['UnitsOptions']['LengthFormat']
+```
+
+The following code creates two hashes that make use of the Length:: constants,
+queries the two settings, and outputs to the console.
+
+```ruby
+cns = Length
+h_units  = Hash.new('Unit Unknown')
+h_format = Hash.new('Format Unknown')
+
+h_units[cns::Centimeter] = 'cm'
+h_units[cns::Feet]       = 'ft'
+h_units[cns::Inches]     = 'in'
+h_units[cns::Meter]      = 'm'
+h_units[cns::Millimeter] = 'mm'
+
+h_format[cns::Architectural] = 'Architectural'
+h_format[cns::Decimal]       = 'Decimal'
+h_format[cns::Engineering]   = 'Engineering'
+h_format[cns::Fractional]    = 'Fractional'
+
+om = Sketchup.active_model.options # OptionManager
+op = om['UnitsOptions']            # OptionsProvider
+units =  h_units[  op['LengthUnit']   ]
+format = h_format[ op['LengthFormat'] ]
+puts "Current model units are #{units}"
+puts "Current model format is #{format}"
+```
+
+<table class='gjl15'><thead>
+<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
+</thead><tbody>
+<tr><td>Architectural</td><td class='c'>1</td></tr>
+<tr><td>Centimeter</td><td class='c'>3</td></tr>
+<tr><td>Decimal</td><td class='c'>0</td></tr>
+<tr><td>Engineering</td><td class='c'>2</td></tr>
+<tr><td>Feet</td><td class='c'>1</td></tr>
+<tr><td>Fractional</td><td class='c'>3</td></tr>
+<tr><td>Inches</td><td class='c'>0</td></tr>
+<tr><td>Meter</td><td class='c'>4</td></tr>
+<tr><td>Millimeter</td><td class='c'>2</td></tr>
+</tbody></table>
+
 
 ### Model \#save \#save_copy
 
@@ -284,7 +382,7 @@ status = model.save_copy(filename, version)
 <tr><td>VERSION_2013</td><td class='c'>9</td></tr>
 <tr><td>VERSION_2014</td><td class='c'>10</td></tr>
 </tbody></table>
-<br/>
+
 
 ### RenderingOptionsObserver
 
@@ -439,7 +537,7 @@ RenderingOption value.class, RenderingOption key, and Constant name.
 <tr><td>SectionInactiveColor</td><td>Sketchup::Color</td><td>ROPSetSectionInactiveColor</td></tr>
 <tr><td>SkyColor</td><td>Sketchup::Color</td><td>ROPSetSkyColor</td></tr>
 </tbody></table>
-<br/>
+
 The following table lists [RenderingOptions] keys that do not fire the [onRenderingOptionsChanged] callback.
 
 <table class='gjl15'><thead>
@@ -449,7 +547,7 @@ The following table lists [RenderingOptions] keys that do not fire the [onRender
 <tr><td>HorizonColor</td><td>Sketchup::Color</td></tr>
 <tr><td>ShowViewName</td><td>Boolean</td></tr>
 </tbody></table>
-<br/>
+
 The following RenderingOptions constants are not fired by any keys in [RenderingOptions].  They may be returned for UI changes that do not have API control.
 
 <table class='gjl15'><thead>
@@ -460,103 +558,7 @@ The following RenderingOptions constants are not fired by any keys in [Rendering
 <tr><td>ROPSetFogHint</td><td class='c'>24</td></tr>
 <tr><td>ROPSetTransparencyObsolete</td><td class='c'>2</td></tr>
 </tbody></table>
-<br/>
 
-### Length 'UnitsOptions' OptionsProvider
-
-Defined on [Length].  See [Model#options], [OptionsManager],
-[OptionsManager#&#91;&#93;] and [OptionsProvider].
-
-First, SketchUp.com does not list all of the keys used in [OptionsManager] and
-[OptionsProvider].  The below table shows all of the keys.
-
-<table class='gjl15'><thead>
-<th>OptionsManager<br/>key</th><th>OptionsProvider<br/>key</th><th class='c'>OptionsProvider<br/>value</th><th><br/>class</th>
-</thead><tbody>
-<tr><td>PageOptions</td><td>ShowTransition</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>TransitionTime</td><td class='c'>2.0</td><td>Float</td></tr>
-<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
-<tr><td>PrintOptions</td><td>ComputeSizeFromScale</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td></td><td>FitToPage</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>LineWeight</td><td class='c'>0.5</td><td>Float</td></tr>
-<tr><td></td><td>ModelExtents</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>NumberOfPages</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td></td><td>PixelsPerInch</td><td class='c'>150.0</td><td>Float</td></tr>
-<tr><td></td><td>PrintHeight</td><td class='c'>11.0</td><td>Float</td></tr>
-<tr><td></td><td>PrintQuality</td><td class='c'>0</td><td>Fixnum</td></tr>
-<tr><td></td><td>PrintWidth</td><td class='c'>8.5</td><td>Float</td></tr>
-<tr><td></td><td>ScaleAdjustment</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td></td><td>SectionSlice</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td></td><td>SizeInModel</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td></td><td>SizeInPrint</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td></td><td>VectorMode</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
-<tr><td>SlideshowOptions</td><td>LoopSlideshow</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>SlideTime</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
-<tr><td>UnitsOptions</td><td>AnglePrecision</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td></td><td>AngleSnapEnabled</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>ForceInchDisplay</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td></td><td>LengthFormat</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td></td><td>LengthPrecision</td><td class='c'>4</td><td>Fixnum</td></tr>
-<tr><td></td><td>LengthSnapEnabled</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>LengthSnapLength</td><td class='c'>0.25</td><td>Float</td></tr>
-<tr><td></td><td>LengthUnit</td><td class='c'>0</td><td>Fixnum</td></tr>
-<tr><td></td><td>SnapAngle</td><td class='c'>15.0</td><td>Float</td></tr>
-<tr><td></td><td>SuppressUnitsDisplay</td><td class='c'>false</td><td>Boolean</td></tr>
-</tbody></table>
-<br/>
-
-These constants are used with the 'UnitsOptions' [OptionsProvider].  In the two
-following code lines, units and format have constant equivalents.
-
-```ruby
-am = Sketchup.active_model
-units  = am.options['UnitsOptions']['LengthUnit']
-format = am.options['UnitsOptions']['LengthFormat']
-```
-
-The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and outputs to the console.
-
-```ruby
-cns = Length
-h_units  = Hash.new('Unit Unknown')
-h_format = Hash.new('Format Unknown')
-
-h_units[cns::Centimeter] = 'cm'
-h_units[cns::Feet]       = 'ft'
-h_units[cns::Inches]     = 'in'
-h_units[cns::Meter]      = 'm'
-h_units[cns::Millimeter] = 'mm'
-
-h_format[cns::Architectural] = 'Architectural'
-h_format[cns::Decimal]       = 'Decimal'
-h_format[cns::Engineering]   = 'Engineering'
-h_format[cns::Fractional]    = 'Fractional'
-
-om = Sketchup.active_model.options # OptionManager
-op = om['UnitsOptions']            # OptionsProvider
-units =  h_units[  op['LengthUnit']   ]
-format = h_format[ op['LengthFormat'] ]
-puts "Current model units are #{units}"
-puts "Current model format is #{format}"
-```
-
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
-<tr><td>Architectural</td><td class='c'>1</td></tr>
-<tr><td>Centimeter</td><td class='c'>3</td></tr>
-<tr><td>Decimal</td><td class='c'>0</td></tr>
-<tr><td>Engineering</td><td class='c'>2</td></tr>
-<tr><td>Feet</td><td class='c'>1</td></tr>
-<tr><td>Fractional</td><td class='c'>3</td></tr>
-<tr><td>Inches</td><td class='c'>0</td></tr>
-<tr><td>Meter</td><td class='c'>4</td></tr>
-<tr><td>Millimeter</td><td class='c'>2</td></tr>
-</tbody></table>
-<br/>
 
 ## Global Object Constants
 
@@ -567,13 +569,13 @@ These constants can be used anywhere their respective classes are used.
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0xab53220></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x9f27210></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Z_AXIS</td><td class='c'>(0.0, 0.0, 1.0)</td><td>Geom::Vector3d</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Other object constants
 
@@ -586,9 +588,9 @@ SKETCHUP_CONSOLE.write("this way also")
 <table class='gjl15'><thead>
 <th>constant<br/>name</th><th class='c'>value<br/>()</th>
 </thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0xab525d8></td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x9f265c8></td></tr>
 </tbody></table>
-<br/>
+
 
 ## Global Numeric Constants
 
@@ -687,7 +689,7 @@ equivalents.  Matches were done via RegEx and several lines of case statement.
 <tr><td>viewZoomExtents:</td><td>CMD_ZOOM_EXTENTS</td><td class='c'>10527</td></tr>
 <tr><td>viewZoomToSelection:</td><td>CMD_SELECTION_ZOOM_EXT</td><td class='c'>21469</td></tr>
 </tbody></table>
-<br/>
+
 
 The following constants do not have string equivalents.
 
@@ -704,7 +706,7 @@ The following constants do not have string equivalents.
 <tr><td>CMD_SKETCHCS</td><td class='c'>21126</td></tr>
 <tr><td>CMD_TRANSPARENT</td><td class='c'>10513</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Sketchup.set_status_text
 
@@ -723,7 +725,7 @@ result = Sketchup.set_status_text(status, position)
 <tr><td>SB_VCB_LABEL</td><td class='c'>1</td></tr>
 <tr><td>SB_VCB_VALUE</td><td class='c'>2</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Command \#set_validation_proc
 
@@ -757,7 +759,7 @@ your_submenu.add_item cmd
 <tr><td>MF_GRAYED</td><td class='c'>1</td></tr>
 <tr><td>MF_UNCHECKED</td><td class='c'>0</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Definition \#behavior \#snapto
 
@@ -777,7 +779,7 @@ behavior.snapto = snap_to
 <tr><td>SnapTo_Sloped</td><td class='c'>3</td></tr>
 <tr><td>SnapTo_Vertical</td><td class='c'>2</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Layer \#page_behavior \#page_behavior=
 
@@ -796,7 +798,16 @@ puts page_behavior[4]   # this new pages visible?
 puts page_behavior[5]   # this new pages hidden?
 ```
 
-<< layer_page_behavior >>
+<table class='gjl15'><thead>
+<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
+</thead><tbody>
+<tr><td>LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES</td><td class='c'>0</td></tr>
+<tr><td>LAYER_VISIBLE_BY_DEFAULT</td><td class='c'>0</td></tr>
+<tr><td>LAYER_HIDDEN_BY_DEFAULT</td><td class='c'>1</td></tr>
+<tr><td>LAYER_IS_VISIBLE_ON_NEW_PAGES</td><td class='c'>16</td></tr>
+<tr><td>LAYER_IS_HIDDEN_ON_NEW_PAGES</td><td class='c'>32</td></tr>
+</tbody></table>
+
 
 ### Page \#update, Pages \#add
 
@@ -821,7 +832,7 @@ Sketchup.active_model.pages['yourPage'].update(flags = nil)
 <tr><td>PAGE_USE_SHADOWINFO</td><td class='c'>4</td></tr>
 <tr><td>PAGE_USE_SKETCHCS</td><td class='c'>8</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Text \#leader_type \#leader_type=
 
@@ -839,7 +850,7 @@ leader = Text.leader_type = leader
 <tr><td>ALeaderNone</td><td class='c'>0</td></tr>
 <tr><td>ALeaderView</td><td class='c'>1</td></tr>
 </tbody></table>
-<br/>
+
 
 ### TextureWriter \#write
 
@@ -857,7 +868,7 @@ status = tw.write(entity, side, filename)
 <tr><td>FILE_WRITE_FAILED_UNKNOWN</td><td class='c'>2</td></tr>
 <tr><td>FILE_WRITE_OK</td><td class='c'>0</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Tool \#onKeyDown, Tool \#onKeyUp
 
@@ -895,7 +906,7 @@ keyUp and KeyDown to keep track of modifier key state.
 <tr><td>VK_SPACE</td><td class='c'>32</td></tr>
 <tr><td>VK_UP</td><td class='c'>38</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Tool \#onMouse
 
@@ -947,7 +958,7 @@ end
 <tr><td>MK_RBUTTON</td><td class='c'>2</td></tr>
 <tr><td>MK_SHIFT</td><td class='c'>4</td></tr>
 </tbody></table>
-<br/>
+
 
 ### Toolbar #get_last_state
 
@@ -964,7 +975,7 @@ state = toolbar.get_last_state
 <tr><td>TB_NEVER_SHOWN</td><td class='c'>-1</td></tr>
 <tr><td>TB_VISIBLE</td><td class='c'>1</td></tr>
 </tbody></table>
-<br/>
+
 
 ### UI.messagebox
 
@@ -974,6 +985,7 @@ and an 'Okay' button.
 ```ruby
 status = UI.messagebox(message, type)
 ```
+
 <table class='gjl15'><thead>
 <th><br/>type parameter</th><th class='c'>value<br/>(Fixnum)</th>
 </thead><tbody>
@@ -985,7 +997,7 @@ status = UI.messagebox(message, type)
 <tr><td>MB_YESNO</td><td class='c'>4</td></tr>
 <tr><td>MB_YESNOCANCEL</td><td class='c'>3</td></tr>
 </tbody></table>
-<br/>
+
 <table class='gjl15'><thead>
 <th>status<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
 </thead><tbody>
@@ -997,7 +1009,7 @@ status = UI.messagebox(message, type)
 <tr><td>IDRETRY</td><td class='c'>4</td></tr>
 <tr><td>IDYES</td><td class='c'>6</td></tr>
 </tbody></table>
-<br/>
+
 
 ### View \#draw
 
@@ -1022,7 +1034,7 @@ view.draw(mode, pts)
 <tr><td>GL_TRIANGLE_FAN</td><td class='c'>6</td></tr>
 <tr><td>GL_TRIANGLE_STRIP</td><td class='c'>5</td></tr>
 </tbody></table>
-<br/>
+
 
 ### View \#draw_text
 
@@ -1036,7 +1048,7 @@ text alignment.
 <tr><td>TextAlignLeft</td><td class='c'>0</td></tr>
 <tr><td>TextAlignRight</td><td class='c'>2</td></tr>
 </tbody></table>
-<br/>
+
 
 ### RUBY_ Constants, SketchUp Platform Constants
 
@@ -1054,7 +1066,7 @@ The following are _RUBY and SketchUp constants which vary from version to versio
 <tr><td>RUBY_REVISION</td><td class='c'>0</td><td>Fixnum</td></tr>
 <tr><td>RUBY_VERSION</td><td class='c'>2.0.0</td><td>String</td></tr>
 </tbody></table>
-<br/>
+
 
 ## Depreciated Constants
 
@@ -1072,7 +1084,7 @@ nothing seemed to work.
 <tr><td>COPY_MODIFIER_KEY</td><td class='c'>17</td></tr>
 <tr><td>COPY_MODIFIER_MASK</td><td class='c'>8</td></tr>
 </tbody></table>
-<br/>
+
 
 The following have been replaced by namespaced constants.
 
@@ -1085,7 +1097,7 @@ The following have been replaced by namespaced constants.
 <tr><td>DimensionArrowOpen</td><td class='c'>4</td></tr>
 <tr><td>DimensionArrowSlash</td><td class='c'>1</td></tr>
 </tbody></table>
-<br/>
+
 
 ## Yet to be added to documentation or unknown
 
@@ -1099,4 +1111,4 @@ The following have been replaced by namespaced constants.
 <tr><td>Sketchup::Pages::UnitsNormalizedY</td><td class='c'>1</td></tr>
 <tr><td>Sketchup::Pages::UnitsPixels</td><td class='c'>0</td></tr>
 </tbody></table>
-<br/>
+

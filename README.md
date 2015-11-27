@@ -1,6 +1,6 @@
 [![Documentation](https://img.shields.io/badge/RubyDoc.info-MSP--Greg%2FSketchUp-blue.svg)](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/index)
 &#160;&#160;&#160;&#160;&#160;&#160;
-[![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
+[![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp/)
 &#160;&#160;&#160;&#160;&#160;&#160;
 [![Download zip](https://img.shields.io/badge/.zip-MSP--Greg%2FSketchUp-orange.svg)](https://github.com/MSP-Greg/SketchUp/archive/master.zip)
 
