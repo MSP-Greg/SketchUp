@@ -2,7 +2,6 @@
 --private
 --markup markdown
 --hide-tag title
---title 'MSP-Greg SketchUp Documentation'
 
 lib/su_info/*.rb
 -
