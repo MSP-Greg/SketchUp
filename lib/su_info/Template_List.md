@@ -39,7 +39,7 @@ This list is simply that.  No code samples, links, etc.
 <table class='gjl15'>
 <colgroup>
 <col style='width:20.0em;' />
-<col style='width:15.5em;' />
+<col style='width:17.5em;' />
 <col style='width: 6.0em;' />
 </colgroup>
 <tbody>
@@ -51,7 +51,7 @@ This list is simply that.  No code samples, links, etc.
 <table class='gjl15'>
 <colgroup>
 <col style='width:20.0em;' />
-<col style='width:15.5em;' />
+<col style='width:17.5em;' />
 <col style='width: 6.0em;' />
 </colgroup>
 <tbody>
