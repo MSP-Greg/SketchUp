@@ -1,0 +1,13 @@
+--protected
+--private
+--markup markdown
+--hide-tag title
+--title 'MSP-Greg SketchUp Documentation'
+
+lib/su_info/*.rb
+-
+README.md
+docs/*.md
+lib/su_info/Template_Guide.md
+lib/su_info/Template_List.md
+ 

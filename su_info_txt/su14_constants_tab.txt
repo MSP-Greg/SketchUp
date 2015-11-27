@@ -1,0 +1,469 @@
+Generated on 2015-11-27 at 05:39:04 PM GMT using Sketchup version 14.1.1282
+Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
+Found the following:
+   177 Constants defined in Object (global)
+   103 Constants defined in SketchUp objects
+    87 SketchUp objects with no defined constants
+
+ALT_MODIFIER_KEY	18	Fixnum
+ALT_MODIFIER_MASK	32	Fixnum
+ALeaderModel	2	Fixnum
+ALeaderNone	0	Fixnum
+ALeaderView	1	Fixnum
+
+CMD_ARC	21065	Fixnum
+CMD_CAMERA_UNDO	10529	Fixnum
+CMD_CIRCLE	21096	Fixnum
+CMD_COPY	57634	Fixnum
+CMD_CUT	57635	Fixnum
+
+CMD_DELETE	21021	Fixnum
+CMD_DIMENSION	21410	Fixnum
+CMD_DISPLAY_FOV	21494	Fixnum
+CMD_DOLLY	10523	Fixnum
+CMD_DRAWCUTS	21348	Fixnum
+
+CMD_DRAWOUTLINES	21347	Fixnum
+CMD_ERASE	21019	Fixnum
+CMD_EXTRUDE	21525	Fixnum
+CMD_FREEHAND	21031	Fixnum
+CMD_HIDDENLINE	10511	Fixnum
+
+CMD_LINE	21020	Fixnum
+CMD_MAKE_COMPONENT	21083	Fixnum
+CMD_MEASURE	21024	Fixnum
+CMD_MOVE	21048	Fixnum
+CMD_NEW	57600	Fixnum
+
+CMD_OFFSET	21100	Fixnum
+CMD_OPEN	57601	Fixnum
+CMD_ORBIT	10508	Fixnum
+CMD_PAGE_DELETE	21078	Fixnum
+CMD_PAGE_NEW	21067	Fixnum
+
+CMD_PAGE_NEXT	10535	Fixnum
+CMD_PAGE_PREVIOUS	10536	Fixnum
+CMD_PAGE_UPDATE	21068	Fixnum
+CMD_PAINT	21074	Fixnum
+CMD_PAN	10525	Fixnum
+
+CMD_PASTE	57637	Fixnum
+CMD_POLYGON	21095	Fixnum
+CMD_POSITION_CAMERA	21169	Fixnum
+CMD_PRINT	57607	Fixnum
+CMD_PROTRACTOR	21057	Fixnum
+
+CMD_PUSHPULL	21041	Fixnum
+CMD_RECTANGLE	21094	Fixnum
+CMD_REDO	57644	Fixnum
+CMD_ROTATE	21129	Fixnum
+CMD_RUBY_CONSOLE	21478	Fixnum
+
+CMD_SAVE	57603	Fixnum
+CMD_SCALE	21236	Fixnum
+CMD_SECTION	21337	Fixnum
+CMD_SELECT	21022	Fixnum
+CMD_SELECTION_ZOOM_EXT	21469	Fixnum
+
+CMD_SHADED	10512	Fixnum
+CMD_SHOWGUIDES	21980	Fixnum
+CMD_SHOWHIDDEN	21154	Fixnum
+CMD_SKETCHAXES	10522	Fixnum
+CMD_SKETCHCS	21126	Fixnum
+
+CMD_TEXT	21405	Fixnum
+CMD_TEXTURED	10539	Fixnum
+CMD_TRANSPARENT	10513	Fixnum
+CMD_UNDO	57643	Fixnum
+CMD_VIEW_BACK	10505	Fixnum
+
+CMD_VIEW_BOTTOM	10506	Fixnum
+CMD_VIEW_FRONT	10502	Fixnum
+CMD_VIEW_ISO	10507	Fixnum
+CMD_VIEW_LEFT	10504	Fixnum
+CMD_VIEW_PERSPECTIVE	10519	Fixnum
+
+CMD_VIEW_RIGHT	10503	Fixnum
+CMD_VIEW_TOP	10501	Fixnum
+CMD_WALK	10520	Fixnum
+CMD_WIREFRAME	10510	Fixnum
+CMD_ZOOM	10509	Fixnum
+
+CMD_ZOOM_EXTENTS	10527	Fixnum
+CMD_ZOOM_WINDOW	10526	Fixnum
+CONSTRAIN_MODIFIER_KEY	16	Fixnum
+CONSTRAIN_MODIFIER_MASK	4	Fixnum
+COPY_MODIFIER_KEY	17	Fixnum
+
+COPY_MODIFIER_MASK	8	Fixnum
+DimensionArrowClosed	3	Fixnum
+DimensionArrowDot	2	Fixnum
+DimensionArrowNone	0	Fixnum
+DimensionArrowOpen	4	Fixnum
+
+DimensionArrowSlash	1	Fixnum
+FILE_WRITE_FAILED_INVALID_TYPE	1	Fixnum
+FILE_WRITE_FAILED_UNKNOWN	2	Fixnum
+FILE_WRITE_OK	0	Fixnum
+GL_LINES	1	Fixnum
+
+GL_LINE_LOOP	2	Fixnum
+GL_LINE_STRIP	3	Fixnum
+GL_POINTS	0	Fixnum
+GL_POLYGON	9	Fixnum
+GL_QUADS	7	Fixnum
+
+GL_QUAD_STRIP	8	Fixnum
+GL_TRIANGLES	4	Fixnum
+GL_TRIANGLE_FAN	6	Fixnum
+GL_TRIANGLE_STRIP	5	Fixnum
+IDABORT	3	Fixnum
+
+IDCANCEL	2	Fixnum
+IDENTITY	#<Geom::Transformation:0xaad7218>	Geom::Transformation
+IDIGNORE	5	Fixnum
+IDNO	7	Fixnum
+IDOK	1	Fixnum
+
+IDRETRY	4	Fixnum
+IDYES	6	Fixnum
+LAYER_HIDDEN_BY_DEFAULT	1	Fixnum
+LAYER_IS_HIDDEN_ON_NEW_PAGES	32	Fixnum
+LAYER_IS_VISIBLE_ON_NEW_PAGES	16	Fixnum
+
+LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES	0	Fixnum
+LAYER_VISIBLE_BY_DEFAULT	0	Fixnum
+MB_ABORTRETRYIGNORE	2	Fixnum
+MB_MULTILINE	16	Fixnum
+MB_OK	0	Fixnum
+
+MB_OKCANCEL	1	Fixnum
+MB_RETRYCANCEL	5	Fixnum
+MB_YESNO	4	Fixnum
+MB_YESNOCANCEL	3	Fixnum
+MF_CHECKED	8	Fixnum
+
+MF_DISABLED	2	Fixnum
+MF_ENABLED	0	Fixnum
+MF_GRAYED	1	Fixnum
+MF_UNCHECKED	0	Fixnum
+MK_ALT	32	Fixnum
+
+MK_COMMAND	0	Fixnum
+MK_CONTROL	8	Fixnum
+MK_LBUTTON	1	Fixnum
+MK_MBUTTON	16	Fixnum
+MK_RBUTTON	2	Fixnum
+
+MK_SHIFT	4	Fixnum
+ORIGIN	(0", 0", 0")	Geom::Point3d
+PAGE_NO_CAMERA	4094	Fixnum
+PAGE_USE_ALL	4095	Fixnum
+PAGE_USE_CAMERA	1	Fixnum
+
+PAGE_USE_HIDDEN	16	Fixnum
+PAGE_USE_LAYER_VISIBILITY	32	Fixnum
+PAGE_USE_RENDERING_OPTIONS	2	Fixnum
+PAGE_USE_SECTION_PLANES	64	Fixnum
+PAGE_USE_SHADOWINFO	4	Fixnum
+
+PAGE_USE_SKETCHCS	8	Fixnum
+RUBY_COPYRIGHT	ruby - Copyright (C) 1993-2013<br/>Yukihiro Matsumoto	String
+RUBY_DESCRIPTION	ruby 2.0.0p247 (2013-06-27)<br/>[i386-mingw32]	String
+RUBY_ENGINE	ruby	String
+RUBY_PATCHLEVEL	247	Fixnum
+
+RUBY_PLATFORM	i386-mingw32	String
+RUBY_RELEASE_DATE	2013-06-27	String
+RUBY_REVISION	0	Fixnum
+RUBY_VERSION	2.0.0	String
+SB_PROMPT	0	Fixnum
+
+SB_VCB_LABEL	1	Fixnum
+SB_VCB_VALUE	2	Fixnum
+SKETCHUP_CONSOLE	#<Sketchup::Console:0xaad65d0>	Sketchup::Console
+SnapTo_Arbitrary	0	Fixnum
+SnapTo_Horizontal	1	Fixnum
+
+SnapTo_Sloped	3	Fixnum
+SnapTo_Vertical	2	Fixnum
+TB_HIDDEN	0	Fixnum
+TB_NEVER_SHOWN	-1	Fixnum
+TB_VISIBLE	1	Fixnum
+
+TextAlignCenter	1	Fixnum
+TextAlignLeft	0	Fixnum
+TextAlignRight	2	Fixnum
+VK_ALT	18	Fixnum
+VK_COMMAND	18	Fixnum
+
+VK_CONTROL	17	Fixnum
+VK_DELETE	46	Fixnum
+VK_DOWN	40	Fixnum
+VK_END	35	Fixnum
+VK_HOME	36	Fixnum
+
+VK_INSERT	45	Fixnum
+VK_LEFT	37	Fixnum
+VK_MENU	18	Fixnum
+VK_NEXT	34	Fixnum
+VK_PRIOR	33	Fixnum
+
+VK_RIGHT	39	Fixnum
+VK_SHIFT	16	Fixnum
+VK_SPACE	32	Fixnum
+VK_UP	38	Fixnum
+X_AXIS	(1.0, 0.0, 0.0)	Geom::Vector3d
+
+Y_AXIS	(0.0, 1.0, 0.0)	Geom::Vector3d
+Z_AXIS	(0.0, 0.0, 1.0)	Geom::Vector3d
+
+Sketchup::Dimension::		Sketchup::Drawingelement
+ARROW_CLOSED	3	Fixnum
+ARROW_DOT	2	Fixnum
+ARROW_NONE	0	Fixnum
+ARROW_OPEN	4	Fixnum
+ARROW_SLASH	1	Fixnum
+
+
+Sketchup::DimensionLinear::		Sketchup::Dimension
+ALIGNED_TEXT_ABOVE	0	Fixnum
+ALIGNED_TEXT_CENTER	1	Fixnum
+ALIGNED_TEXT_OUTSIDE	2	Fixnum
+TEXT_CENTERED	1	Fixnum
+TEXT_OUTSIDE_END	2	Fixnum
+
+TEXT_OUTSIDE_START	0	Fixnum
+
+
+Sketchup::Face::		Sketchup::Drawingelement
+PointInside	1	Fixnum
+PointNotOnPlane	32	Fixnum
+PointOnEdge	4	Fixnum
+PointOnFace	8	Fixnum
+PointOnVertex	2	Fixnum
+
+PointOutside	16	Fixnum
+PointUnknown	0	Fixnum
+
+
+Sketchup::Importer::		Object
+ImportCanceled	2	Fixnum
+ImportFail	1	Fixnum
+ImportFileNotFound	4	Fixnum
+ImportSuccess	0	Fixnum
+ImporterNotFound	3	Fixnum
+
+
+Sketchup::Model::		Object
+VERSION_2013	9	Fixnum
+VERSION_2014	10	Fixnum
+VERSION_3	3	Fixnum
+VERSION_4	4	Fixnum
+VERSION_5	5	Fixnum
+
+VERSION_6	6	Fixnum
+VERSION_7	7	Fixnum
+VERSION_8	8	Fixnum
+
+
+Sketchup::Pages::		Sketchup::Entity
+ImageEmbedded	0	Fixnum
+ImageEmbeddedAndLinked	1	Fixnum
+ImageLinked	2	Fixnum
+UnitsNormalizedX	2	Fixnum
+UnitsNormalizedY	1	Fixnum
+
+UnitsPixels	0	Fixnum
+
+
+Sketchup::RenderingOptions::		Sketchup::Entity
+ROPAssign	0	Fixnum
+ROPDrawHidden	27	Fixnum
+ROPEditComponent	28	Fixnum
+ROPSetBackgroundColor	12	Fixnum
+ROPSetConstructionColor	15	Fixnum
+
+ROPSetDepthQueEdges	30	Fixnum
+ROPSetDepthQueWidth	32	Fixnum
+ROPSetDisplayColorByLayer	16	Fixnum
+ROPSetDisplayDims	53	Fixnum
+ROPSetDisplayFog	19	Fixnum
+
+ROPSetDisplayInstanceAxes	11	Fixnum
+ROPSetDisplaySketchAxes	36	Fixnum
+ROPSetDisplayText	52	Fixnum
+ROPSetDrawGround	49	Fixnum
+ROPSetDrawHorizon	48	Fixnum
+
+ROPSetDrawUnderground	50	Fixnum
+ROPSetEdgeColorMode	5	Fixnum
+ROPSetEdgeDisplayMode	4	Fixnum
+ROPSetEdgeType	38	Fixnum
+ROPSetExtendEdges	7	Fixnum
+
+ROPSetExtendLines	17	Fixnum
+ROPSetFaceColor	37	Fixnum
+ROPSetFaceColorMode	10	Fixnum
+ROPSetFogColor	22	Fixnum
+ROPSetFogDist	23	Fixnum
+
+ROPSetFogHint	24	Fixnum
+ROPSetFogUseBkColor	54	Fixnum
+ROPSetForegroundColor	13	Fixnum
+ROPSetGroundColor	47	Fixnum
+ROPSetGroundTransparency	51	Fixnum
+
+ROPSetHideConstructionGeometry	45	Fixnum
+ROPSetHighlightColor	14	Fixnum
+ROPSetJitterEdges	6	Fixnum
+ROPSetLineEndEdges	31	Fixnum
+ROPSetLineEndWidth	33	Fixnum
+
+ROPSetLineExtension	18	Fixnum
+ROPSetLockedColor	35	Fixnum
+ROPSetMaterialTransparency	40	Fixnum
+ROPSetModelTransparency	39	Fixnum
+ROPSetProfileEdges	8	Fixnum
+
+ROPSetProfileWidth	9	Fixnum
+ROPSetProfilesOnlyEdges	34	Fixnum
+ROPSetRenderMode	1	Fixnum
+ROPSetSectionActiveColor	41	Fixnum
+ROPSetSectionCutWidth	44	Fixnum
+
+ROPSetSectionDefaultCutColor	43	Fixnum
+ROPSetSectionDisplayMode	25	Fixnum
+ROPSetSectionInactiveColor	42	Fixnum
+ROPSetSkyColor	46	Fixnum
+ROPSetTexture	3	Fixnum
+
+ROPSetTransparencyObsolete	2	Fixnum
+ROPTransparencySortMethod	29	Fixnum
+
+
+Geom::PolygonMesh::		Object
+AUTO_SOFTEN	4	Fixnum
+HIDE_BASED_ON_INDEX	1	Fixnum
+NO_SMOOTH_OR_HIDE	0	Fixnum
+SMOOTH_SOFT_EDGES	8	Fixnum
+SOFTEN_BASED_ON_INDEX	2	Fixnum
+
+
+Length::		Float
+Architectural	1	Fixnum
+Centimeter	3	Fixnum
+Decimal	0	Fixnum
+Engineering	2	Fixnum
+Feet	1	Fixnum
+
+Fractional	3	Fixnum
+Inches	0	Fixnum
+Meter	4	Fixnum
+Millimeter	2	Fixnum
+
+
+Sketchup	no constants	not defined	Object
+Sketchup::AppObserver	no constants	Object	Class
+Sketchup::ArcCurve	no constants	Sketchup::Curve	Class
+Sketchup::AttributeDictionaries	no constants	Sketchup::Entity	Class
+Sketchup::AttributeDictionary	no constants	Sketchup::Entity	Class
+
+Sketchup::Behavior	no constants	Sketchup::Entity	Class
+Sketchup::Camera	no constants	Object	Class
+Sketchup::Classifications	no constants	Object	Class
+Sketchup::Color	no constants	Object	Class
+Sketchup::ComponentDefinition	no constants	Sketchup::Drawingelement	Class
+
+Sketchup::ComponentInstance	no constants	Sketchup::Drawingelement	Class
+Sketchup::Console	no constants	Object	Class
+Sketchup::ConstructionLine	no constants	Sketchup::Drawingelement	Class
+Sketchup::ConstructionPoint	no constants	Sketchup::Drawingelement	Class
+Sketchup::Curve	no constants	Sketchup::Entity	Class
+
+Sketchup::DefinitionList	no constants	Sketchup::Entity	Class
+Sketchup::DefinitionObserver	no constants	Sketchup::EntityObserver	Class
+Sketchup::DefinitionsObserver	no constants	Object	Class
+Sketchup::DimensionObserver	no constants	Object	Class
+Sketchup::DimensionRadial	no constants	Sketchup::Dimension	Class
+
+Sketchup::Drawingelement	no constants	Sketchup::Entity	Class
+Sketchup::Edge	no constants	Sketchup::Drawingelement	Class
+Sketchup::EdgeUse	no constants	Sketchup::Entity	Class
+Sketchup::Entities	no constants	Object	Class
+Sketchup::EntitiesObserver	no constants	Object	Class
+
+Sketchup::Entity	no constants	Object	Class
+Sketchup::EntityObserver	no constants	Object	Class
+Sketchup::ExtensionsManager	no constants	Object	Class
+Sketchup::Group	no constants	Sketchup::Drawingelement	Class
+Sketchup::HLR	no constants	Sketchup::Entity	Class
+
+Sketchup::Image	no constants	Sketchup::Drawingelement	Class
+Sketchup::InputPoint	no constants	Object	Class
+Sketchup::InstanceObserver	no constants	Sketchup::EntityObserver	Class
+Sketchup::Layer	no constants	Sketchup::Entity	Class
+Sketchup::Layers	no constants	Sketchup::Entity	Class
+
+Sketchup::LayersObserver	no constants	Object	Class
+Sketchup::Loop	no constants	Sketchup::Entity	Class
+Sketchup::Material	no constants	Sketchup::Entity	Class
+Sketchup::Materials	no constants	Sketchup::Entity	Class
+Sketchup::MaterialsObserver	no constants	Object	Class
+
+Sketchup::Menu	no constants	Object	Class
+Sketchup::ModelObserver	no constants	Object	Class
+Sketchup::OptionsManager	no constants	Object	Class
+Sketchup::OptionsProvider	no constants	Object	Class
+Sketchup::OptionsProviderObserver	no constants	Object	Class
+
+Sketchup::Page	no constants	Sketchup::Entity	Class
+Sketchup::PagesObserver	no constants	Sketchup::EntitiesObserver	Class
+Sketchup::PickHelper	no constants	Object	Class
+Sketchup::RenderingOptionsObserver	no constants	Object	Class
+Sketchup::SandboxTools	no constants	not defined	Object
+
+Sketchup::SectionPlane	no constants	Sketchup::Drawingelement	Class
+Sketchup::Selection	no constants	Object	Class
+Sketchup::SelectionObserver	no constants	Object	Class
+Sketchup::Set	no constants	Object	Class
+Sketchup::ShadowInfo	no constants	Sketchup::Entity	Class
+
+Sketchup::ShadowInfoObserver	no constants	Object	Class
+Sketchup::Style	no constants	Sketchup::Entity	Class
+Sketchup::Styles	no constants	Sketchup::Entity	Class
+Sketchup::Text	no constants	Sketchup::Drawingelement	Class
+Sketchup::Texture	no constants	Sketchup::Entity	Class
+
+Sketchup::TextureWriter	no constants	Object	Class
+Sketchup::Tools	no constants	Object	Class
+Sketchup::ToolsObserver	no constants	Object	Class
+Sketchup::UVHelper	no constants	Object	Class
+Sketchup::Vertex	no constants	Sketchup::Entity	Class
+
+Sketchup::View	no constants	Object	Class
+Sketchup::ViewObserver	no constants	Object	Class
+Sketchup::WebTextures	no constants	not defined	Object
+Array	no constants	Object	Class
+Date	no constants	Object	Class
+
+Geom	no constants	not defined	Object
+Geom::BoundingBox	no constants	Object	Class
+Geom::LatLong	no constants	Object	Class
+Geom::Point3d	no constants	Object	Class
+Geom::Transformation	no constants	Object	Class
+
+Geom::UTM	no constants	Object	Class
+Geom::Vector3d	no constants	Object	Class
+LanguageHandler	no constants	Object	Class
+Numeric	no constants	Object	Class
+SKSocket	no constants	not defined	Object
+
+SketchupExtension	no constants	Object	Class
+String	no constants	Object	Class
+Test	no constants	not defined	Object
+UI	no constants	not defined	Object
+UI::Command	no constants	Object	Class
+
+UI::Toolbar	no constants	Object	Class
+UI::WebDialog	no constants	Object	Class
