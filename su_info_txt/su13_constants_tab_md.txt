@@ -82,7 +82,7 @@ DimensionArrowSlash	1	Fixnum
 FILE_WRITE_FAILED_INVALID_TYPE	1	Fixnum
 FILE_WRITE_FAILED_UNKNOWN	2	Fixnum
 FILE_WRITE_OK	0	Fixnum
-GJLExt	#<SketchupExtension:0xa860da8>	SketchupExtension
+GJLExt	#<SketchupExtension:0x1bb5e94>	SketchupExtension
 GL_LINES	1	Fixnum
 GL_LINE_LOOP	2	Fixnum
 GL_LINE_STRIP	3	Fixnum
@@ -95,7 +95,7 @@ GL_TRIANGLE_FAN	6	Fixnum
 GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0xa86fdbc>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x1bc4ea8>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -144,7 +144,7 @@ RUBY_VERSION	1.8.6	String
 SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0xa86e764>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x1bc3850>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum

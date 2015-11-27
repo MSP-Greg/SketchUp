@@ -19,7 +19,7 @@ ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;
 
 This list is simply that.  No code samples, links, etc.
 
-Generated on 2015-11-27 at 05:39:04 PM GMT using Sketchup version 14.1.1282
+Generated on 2015-11-27 at 06:17:42 PM GMT using Sketchup version 14.1.1282
 
 Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
 
@@ -154,7 +154,7 @@ Found the following:
 <tr><td>IDABORT</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0xaad7218></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0xab53220></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>IDOK</td><td>1</td><td>Fixnum</td></tr>
@@ -215,7 +215,7 @@ Found the following:
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>SB_VCB_LABEL</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0xaad65d0></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0xab525d8></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>

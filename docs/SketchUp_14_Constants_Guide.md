@@ -98,12 +98,13 @@ end
 ```
 
 Two things to remember about namespaced constants:
-* One can define the namespace, but one can also use the class method on an instance
-object.
-* They are inherited.  If they are defined on a class (like 'Dimension'). They are
-also available on its subclasses (like 'DimensionLinear').
 
-<br/>**2. Global Numeric Constants:**
+* One can define the namespace, but one can also use the class method on an instance
+  object.
+* They are inherited.  If they are defined on a class (like 'Dimension'). They are
+  also available on its subclasses (like 'DimensionLinear').
+
+**2. Global Numeric Constants:**
 
 Almost all of these constants are used as parameters or returns in methods.  Most
 are Fixnum.
@@ -296,6 +297,7 @@ The constants are used in a callback method in a [RenderingOptionsObserver]
 instance as a notification of rendering option changes by the user or other code.
 
 The constants provide some information about the change.
+
 * They do not map one-to-one to the [RenderingOptions] keys.  Some changes
   will result in two callbacks firing.
 * Some [RenderingOptions] keys will fire a callback, but with no constant
@@ -565,7 +567,7 @@ These constants can be used anywhere their respective classes are used.
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0xaad7218></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0xab53220></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
@@ -584,7 +586,7 @@ SKETCHUP_CONSOLE.write("this way also")
 <table class='gjl15'><thead>
 <th>constant<br/>name</th><th class='c'>value<br/>()</th>
 </thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0xaad65d0></td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0xab525d8></td></tr>
 </tbody></table>
 <br/>
 
@@ -861,6 +863,7 @@ status = tw.write(entity, side, filename)
 
 See [Tool#onKeyDown].  The constants are the key parameter, VK_PRIOR is 'Page Up',
 VK_NEXT is 'Page Down'.
+
 * A-Z keys return 65-90
 * qwerty number keys are 48-57
 * keypad number keys are 96-105
@@ -898,7 +901,8 @@ keyUp and KeyDown to keep track of modifier key state.
 
 See [Tool #onLButtonDoubleClick].  A total of nine mouse button events exist:
 up, down, and double click, for left, middle, and right buttons.
-Under Windows -
+Under Windows:
+
 * A user can click more than one button at once.
 * The 'flags' bits for which buttons are pressed are **not set** on the 'Up' events.
 * 'Down' and 'Up' events fire first, then the 'DoubleClick' event fires.

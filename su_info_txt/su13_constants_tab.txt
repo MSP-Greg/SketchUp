@@ -1,4 +1,4 @@
-Generated on 2015-11-27 at 05:38:12 PM GMT using Sketchup version 13.0.4812
+Generated on 2015-11-27 at 06:17:09 PM GMT using Sketchup version 13.0.4812
 Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
 Found the following:
    177 Constants defined in Object (global)
@@ -105,7 +105,7 @@ DimensionArrowSlash	1	Fixnum
 FILE_WRITE_FAILED_INVALID_TYPE	1	Fixnum
 FILE_WRITE_FAILED_UNKNOWN	2	Fixnum
 FILE_WRITE_OK	0	Fixnum
-GJLExt	#<SketchupExtension:0xa860da8>	SketchupExtension
+GJLExt	#<SketchupExtension:0x1bb5e94>	SketchupExtension
 
 GL_LINES	1	Fixnum
 GL_LINE_LOOP	2	Fixnum
@@ -121,7 +121,7 @@ GL_TRIANGLE_STRIP	5	Fixnum
 
 IDABORT	3	Fixnum
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0xa86fdbc>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x1bc4ea8>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 
@@ -180,7 +180,7 @@ SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
 
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0xa86e764>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x1bc3850>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum

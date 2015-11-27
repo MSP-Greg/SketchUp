@@ -1,4 +1,4 @@
-Generated on 2015-11-27 at 05:39:04 PM GMT using Sketchup version 14.1.1282
+Generated on 2015-11-27 at 06:17:42 PM GMT using Sketchup version 14.1.1282
 Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
 Found the following:
    177 Constants defined in Object (global)
@@ -120,7 +120,7 @@ GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0xaad7218>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0xab53220>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -181,7 +181,7 @@ SB_PROMPT	0	Fixnum
 
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0xaad65d0>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0xab525d8>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 

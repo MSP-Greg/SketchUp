@@ -55,6 +55,7 @@ All of the .rb files are at least partially documented.
 If one downloads and (unzips) the zip file from GitHub.com, simply load lib/su_info/create_su_constants.rb
 from the console in SketchUp.  It takes some seconds, as it loops thru rendering
 options for some data.  It shows a UI.messagebox when finished.  Two important items:
+
 * All plugins / extensions need to be unloaded before running
 * Have a new model open, as the code changes all RenderingOptions
 

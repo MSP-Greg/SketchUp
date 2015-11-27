@@ -152,7 +152,7 @@ module CreateSUConstants
     sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
     hdr =  "Generated on #{sDateTime} using Sketchup version #{Sketchup.version}#{lend}"
     hdr << "Using CreateSUConstants version #{@@version}, see https://github.com/MSP-Greg/SketchUp#{lend}"
-    hdr << "Found the following:\n"
+    hdr << "Found the following:#{lend}"
     hdr <<  "#{list}#{root} Constants defined in Object (global)\n"
     hdr <<    "#{list}#{su} Constants defined in SketchUp objects\n"
     hdr << "#{list}#{su_no} SketchUp objects with no defined constants\n\n"
