@@ -268,7 +268,7 @@ module CreateSUConstantsGuide
     }
     @@a_ro_table = []
     @@obs_ro = Sketchup::RenderingOptionsObserver.new
-    # @api private
+
     def @@obs_ro.onRenderingOptionsChanged(rendering_options, type)
       # increment counter in @@a_ro, which shows that an observer
       # callback occurs when it is changed

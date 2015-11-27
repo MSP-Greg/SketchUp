@@ -9,6 +9,7 @@
 # The three files list all classes, modules, and constants defined by SketchUp.
 #
 # File layout:
+#
 # * Root (or un-namespaced) constants defined by the SketchUp environment
 # * 'Namespaced' constants defined in SketchUp, starting with SketchUp
 # * List of SketchUp modules / classes that have no constants defined
@@ -21,6 +22,7 @@
 # | native\_ruby_cnsts.txt      | contains 'root' constants native to Ruby |
 #
 # Code Process:
+#
 # 1. Creates array of root constants
 # 2. Loop thru array
 #   1. Removes constants that exist in h_native
