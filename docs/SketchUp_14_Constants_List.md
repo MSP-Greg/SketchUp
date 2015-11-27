@@ -26,12 +26,8 @@ Using CreateSUConstants version 1.3, see https://github.com/MSP-Greg/SketchUp
 Found the following:
 
 * 177 Constants defined in Object (global)
-
 * 103 Constants defined in SketchUp objects
-
 * &nbsp;&nbsp;87 SketchUp objects with no defined constants
-
-
 
 ## Constants defined in Object (global)
 
