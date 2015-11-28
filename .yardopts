@@ -1,7 +1,6 @@
 --protected
 --private
 --markup markdown
---hide-tag title
 
 lib/su_info/*.rb
 -
