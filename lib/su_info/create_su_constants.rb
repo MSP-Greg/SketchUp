@@ -172,12 +172,13 @@ module CreateSUConstants
     constants = []
     objects   = []
     isCls = obj.kind_of?(Class)
-    
+    isMod = false
     # get constants, divide into object & constants
     obj.constants.each { |c|
       next if (isCls && obj.superclass.const_defined?(c) )
       o = obj.const_get(c)
-      if ( o.kind_of?(Module) )
+      # note: assignment
+      if ( isMod = o.kind_of?(Module) )
         objects << o
       else
         constants << c
@@ -186,14 +187,12 @@ module CreateSUConstants
     
     len_c = constants.length
     @@ctr_su += len_c
-    # show as Class, then Module, then class
-    if defined?(obj.superclass)
-      s_class = obj.superclass
-    else
-      s_class = "not defined"
-    end
-    c_m_type = if obj.kind_of?(Class)  ; "Class"
-            elsif obj.kind_of?(Method) ; "Method"
+
+    
+    super_cls = isCls ? obj.superclass : "not defined"
+    # show as Class, then Module, then Object, then ???
+    c_m_type = if isCls                ; "Class"
+            elsif isMod                ; "Module"
             elsif obj.kind_of?(Object) ; "Object"
             else                       ; "???"
             end
@@ -201,15 +200,15 @@ module CreateSUConstants
     obj_str = obj.to_s
     if (len_c != 0)
       # add information about object and constants
-			@@text << "<tr><td><strong>#{obj_str}::</strong></td><td><strong>#{s_class}</strong></td><td><strong>#{c_m_type}</strong></td></tr>\n"
-      @@text_tab << "\n#{obj_str}::\t\t#{s_class}\n"
+			@@text << "<tr><td><strong>#{obj_str}::</strong></td><td><strong>#{super_cls}</strong></td><td><strong>#{c_m_type}</strong></td></tr>\n"
+      @@text_tab << "\n#{obj_str}::\t\t#{super_cls}\n"
       self.write_constants(constants, obj)
       @@text << "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n"
       @@text_tab << "\n"
 		else
       # add information about object to no_constants strings
-      @@no_const     << "<tr><td>#{obj_str}</td><td>#{s_class}</td><td>#{c_m_type}</td></tr>\n"
-      @@no_const_tab << "#{obj_str}\tno constants\t#{s_class}\t#{c_m_type}\n"
+      @@no_const     << "<tr><td>#{obj_str}</td><td>#{super_cls}</td><td>#{c_m_type}</td></tr>\n"
+      @@no_const_tab << "#{obj_str}\tno constants\t#{super_cls}\t#{c_m_type}\n"
       @@ctr_su_no += 1
       if (@@ctr_su_no % 5 == 0)
         @@no_const     << "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n"

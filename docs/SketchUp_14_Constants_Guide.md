@@ -569,7 +569,7 @@ These constants can be used anywhere their respective classes are used.
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x9f27210></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x5a47220></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
@@ -588,7 +588,7 @@ SKETCHUP_CONSOLE.write("this way also")
 <table class='gjl15'><thead>
 <th>constant<br/>name</th><th class='c'>value<br/>()</th>
 </thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x9f265c8></td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x5a465d8></td></tr>
 </tbody></table>
 
 

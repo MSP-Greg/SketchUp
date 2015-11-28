@@ -19,7 +19,7 @@ ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;
 
 This list is simply that.  No code samples, links, etc.
 
-Generated on 2015-11-27 at 08:18:21 PM GMT using Sketchup version 14.1.1282
+Generated on 2015-11-28 at 01:04:19 AM GMT using Sketchup version 14.1.1282
 
 Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) version 1.3, see [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
 
@@ -156,7 +156,7 @@ Found the following:
 <tr><td>IDABORT</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x9f27210></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x5a47220></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>IDOK</td><td>1</td><td>Fixnum</td></tr>
@@ -217,7 +217,7 @@ Found the following:
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>SB_VCB_LABEL</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x9f265c8></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x5a465d8></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
@@ -414,7 +414,7 @@ Found the following:
 </colgroup>
 <tbody>
 <tr><td><strong>SketchUp Object</strong></td><td><strong>superclass</strong></td><td><strong>kind_of?</strong></td></tr>
-<tr><td>Sketchup</td><td>not defined</td><td>Object</td></tr>
+<tr><td>Sketchup</td><td>not defined</td><td>Module</td></tr>
 <tr><td>Sketchup::AppObserver</td><td>Object</td><td>Class</td></tr>
 <tr><td>Sketchup::ArcCurve</td><td>Sketchup::Curve</td><td>Class</td></tr>
 <tr><td>Sketchup::AttributeDictionaries</td><td>Sketchup::Entity</td><td>Class</td></tr>
@@ -498,7 +498,7 @@ Found the following:
 <tr><td>Array</td><td>Object</td><td>Class</td></tr>
 <tr><td>Date</td><td>Object</td><td>Class</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td>Geom</td><td>not defined</td><td>Object</td></tr>
+<tr><td>Geom</td><td>not defined</td><td>Module</td></tr>
 <tr><td>Geom::BoundingBox</td><td>Object</td><td>Class</td></tr>
 <tr><td>Geom::LatLong</td><td>Object</td><td>Class</td></tr>
 <tr><td>Geom::Point3d</td><td>Object</td><td>Class</td></tr>
@@ -513,7 +513,7 @@ Found the following:
 <tr><td>SketchupExtension</td><td>Object</td><td>Class</td></tr>
 <tr><td>String</td><td>Object</td><td>Class</td></tr>
 <tr><td>Test</td><td>not defined</td><td>Object</td></tr>
-<tr><td>UI</td><td>not defined</td><td>Object</td></tr>
+<tr><td>UI</td><td>not defined</td><td>Module</td></tr>
 <tr><td>UI::Command</td><td>Object</td><td>Class</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>UI::Toolbar</td><td>Object</td><td>Class</td></tr>

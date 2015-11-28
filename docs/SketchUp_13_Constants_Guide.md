@@ -524,7 +524,7 @@ These constants can be used anywhere their respective classes are used.
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x62ae120></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x99de1b8></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
@@ -543,7 +543,7 @@ SKETCHUP_CONSOLE.write("this way also")
 <table class='gjl15'><thead>
 <th>constant<br/>name</th><th class='c'>value<br/>()</th>
 </thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x62acac8></td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x99dcb60></td></tr>
 </tbody></table>
 
 
@@ -1058,7 +1058,7 @@ The following have been replaced by namespaced constants.
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>GJLExt</td><td class='c'>#<SketchupExtension:0x629f10c></td><td>SketchupExtension</td></tr>
+<tr><td>GJLExt</td><td class='c'>#<SketchupExtension:0x99cf1a4></td><td>SketchupExtension</td></tr>
 <tr><td>Sketchup::Pages::ImageEmbedded</td><td class='c'>0</td><td>Fixnum</td></tr>
 <tr><td>Sketchup::Pages::ImageEmbeddedAndLinked</td><td class='c'>1</td><td>Fixnum</td></tr>
 <tr><td>Sketchup::Pages::ImageLinked</td><td class='c'>2</td><td>Fixnum</td></tr>
