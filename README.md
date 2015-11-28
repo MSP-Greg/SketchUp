@@ -1,4 +1,4 @@
-[![Documentation](https://img.shields.io/badge/RubyDoc.info-MSP--Greg%2FSketchUp-blue.svg)](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/index)
+[![Documentation](https://img.shields.io/badge/RubyDoc.info-MSP--Greg%2FSketchUp-blue.svg)](http://www.rubydoc.info/github/MSP-Greg/SketchUp/)
 &#160;&#160;&#160;&#160;&#160;&#160;
 [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp/)
 
