@@ -1,3 +1,5 @@
+# ## Purpose:
+#
 # Creates three files (?? is two digit SketchUp version):
 #
 # | Folder / File name                      | Information / Notes                                |
@@ -8,20 +10,24 @@
 #
 # The three files list all classes, modules, and constants defined by SketchUp.
 #
-# File layout:
+# Chains to [create_su_constants_guide.rb](CreateSUConstantsGuide.html), which
+# generates the 'Constants Guide'.
+#
+#
+# ## File layout:
 #
 # * Root (or un-namespaced) constants defined by the SketchUp environment
 # * 'Namespaced' constants defined in SketchUp, starting with SketchUp
 # * List of SketchUp modules / classes that have no constants defined
 #
-# Required files:
+# ## Required files:
 #
 # | File name                   |  Information / Notes                     |
 # |:----------------------------|:-----------------------------------------|
 # | Template\_List.md           | markdown template                        |
 # | native\_ruby_cnsts.txt      | contains 'root' constants native to Ruby |
 #
-# Code Process:
+# ## Code Process:
 #
 # 1. Creates array of root constants
 # 2. Loop thru array
@@ -50,7 +56,9 @@ module CreateSUConstants
   @@text_tab_md  = ''
   
   # text of file section that listed 'no constants' objects, md file
-  @@no_const     = "<tr><td><strong>SketchUp Object</strong></td><td><strong>superclass</strong></td><td><strong>kind_of?</strong></td></tr>\n"
+  @@no_const     = "<tr><td><strong>SketchUp Object</strong></td>" \
+                       "<td><strong>superclass</strong></td>" \
+                       "<td><strong>kind_of?</strong></td></tr>\n"
   # text of file section that listed 'no constants' objects, tab delimited file
   @@no_const_tab = ''
   
@@ -72,9 +80,9 @@ module CreateSUConstants
   end
   
   # Main entry point
-  # @return [Void]
+  # @return [nil]
   def self._run()
-    re_include = /^(Array|Numeric|String|Set|RUBY_)/
+    re_include = /^(Array|Numeric|String|RUBY_)/
     ctr = 0
     h_native = {}
     objects = []
@@ -90,7 +98,6 @@ module CreateSUConstants
       c_to_s = c.to_s
       next if ( /CreateSUConstants/ =~ c_to_s || (h_native.key?(c_to_s) && !(re_include =~ c_to_s)) )
       if ( o.kind_of?(Module) )
-#        objects << c
         objects << o
       else
         constants << c
@@ -135,6 +142,7 @@ module CreateSUConstants
     self.file_write(       "su#{@@su_major}_constants_tab.txt"    , @@text_tab)
     self.file_write(       "su#{@@su_major}_constants_tab_md.txt" , @@text_tab_md)
 #    self.msg_box_done()
+    puts "Done with Constants List and files"
     load "#{@@dir}/create_su_constants_guide.rb"
   end
 
@@ -152,14 +160,14 @@ module CreateSUConstants
     
     # create file hdr
     sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
-    hdr =  "Generated on #{sDateTime} using Sketchup version #{Sketchup.version}#{lend}"
-    hdr << "Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) "
-    hdr << "version #{@@version}, see "
-    hdr << "[![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)"
-    hdr << "#{lend}"
-    hdr << "Found the following:#{lend}"
+    hdr = (md ? "---\n\nGenerated with [CreateSUConstants]" : 
+      "Generated with CreateSUConstants")
+    hdr << " v#{@@version}, on #{sDateTime},"
+    hdr << " using SketchUp v#{Sketchup.version}.\n\n"
+    hdr << (md ? "---\n" : "")
+    hdr << "Found the following:\n"
     hdr <<  "#{list}#{root} Constants defined in Object (global)\n"
-    hdr <<    "#{list}#{su} Constants defined in SketchUp objects\n"
+    hdr <<    "#{list}#{su} Constants defined in SketchUp objects (namespaced)\n"
     hdr << "#{list}#{su_no} SketchUp objects with no defined constants\n\n"
   end
 
@@ -167,7 +175,7 @@ module CreateSUConstants
   # Adds the info to file text strings by calling 
   # [.write_constants](#write_constants-class_method)
   # @param obj [Object]
-  # @return [Void]
+  # @return [nil]
 	def self.find_nested_constants(obj)
     constants = []
     objects   = []
@@ -200,7 +208,9 @@ module CreateSUConstants
     obj_str = obj.to_s
     if (len_c != 0)
       # add information about object and constants
-			@@text << "<tr><td><strong>#{obj_str}::</strong></td><td><strong>#{super_cls}</strong></td><td><strong>#{c_m_type}</strong></td></tr>\n"
+			@@text << "<tr><td><strong>#{obj_str}::</strong></td>" \
+                    "<td><strong>#{super_cls}</strong></td>" \
+                    "<td><strong>#{c_m_type}</strong></td></tr>\n"
       @@text_tab << "\n#{obj_str}::\t\t#{super_cls}\n"
       self.write_constants(constants, obj)
       @@text << "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n"
@@ -253,8 +263,8 @@ module CreateSUConstants
   # @return [String, nil]
   #
   def self.file_get_str(file, path = nil)
-  ret = nil
-  dir = path || @@dir ||ENV['TMP'] || ENV['TEMP']
+    ret = nil
+    dir = path || @@dir ||ENV['TMP'] || ENV['TEMP']
     if File.directory?(dir)
       f_name = "#{dir}#{File::SEPARATOR}#{file}"
       if File.exists?(f_name)
@@ -271,6 +281,7 @@ module CreateSUConstants
   # Writes an array of constants to the three output files
   # @param constants [Array<String>]
   # @param object [Object] namespace/parent of constants array
+  # @return [nil]
   def self.write_constants(constants, object)
     constants.sort!
     ctr = 0
@@ -284,12 +295,15 @@ module CreateSUConstants
       o = object.const_get(c)
       c = c.to_s
       val = o.to_s.dup
+      # Ok, a little OCD, break up long strings...
       if (/(RUBY_COPYRIGHT|RUBY_DESCRIPTION)/ =~ c)
         val.sub!(/ Y/, '<br/>Y')
         val.sub!(/\) \[/, ')<br/>[')
         @@text << "<tr><td>#{c}</td><td colspan='2'>#{val}</td></tr>\n"
       else
-        @@text << "<tr><td>#{c}</td><td>#{val}</td><td>#{o.class}</td></tr>\n"
+        @@text << "<tr><td>#{c}</td>" \
+                      "<td>#{val}</td>" \
+                      "<td>#{o.class}</td></tr>\n"
       end
       @@text_tab << "#{c}\t#{val}\t#{o.class}\n"
       @@text_tab_md << "#{fqn}#{c}\t#{val}\t#{o.class}\n"
@@ -304,6 +318,7 @@ module CreateSUConstants
   # Writes output file
   # @param f_name [String] name of output file with extention
   # @param string [String] file contents
+  # @return [nil]
   def self.file_write(f_name, string)
     dir = "../../su_info_txt" || ENV['TMP'] || ENV['TEMP']
     dir = "../../docs/" if (f_name.slice(-2,2) == 'md')

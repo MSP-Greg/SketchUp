@@ -1,29 +1,39 @@
+# ## Purpose:
+#
 # Creates the 'Guide' md file from the following files --
 #
-# | File name                           |  Information / Notes                                                       |
+# | File name                           | Information / Notes                                                        |
 # |:------------------------------------|:---------------------------------------------------------------------------|
 # | Template\_Guide.md                  | markdown template                                                          |
 # | Template\_Guide\_Code.rb<br/>&#160; | contains long code snippets shown in md file.<br/>Note: special formatting in comments |
 # | su??\_constants\_tab\_md.txt        | contains constant list that is inserted into md file.                      |
 # | send_action.txt<br/>&#160;          | contains list of send_action text paramters<br/>scraped from SketchUp.com. |
 #
-# Code Process Notes:
+# ## Code Process:
 #
-# The first thing the code does is load an array with RenderingOptions keys.
-# It then starts a UI timer and loops thru the keys, changing the respective
-# key's value.  This generates a RenderingOptionsObserver callback.  This allows
-# the code to map RenderingOptions keys to the RenderingOptionsObserver callback
-# 'type' parameter.  This takes a litle while.
+# 1. _run:
+#   1. Loads text data from the files listed above.
+#   2. Loads code samples into md template.  When finished --
+# 2. rendering_options_poke:
+#   1. Load an array with RenderingOptions keys.
+#   2. Starts a UI timer and loops thru the keys, changing the respective
+#     key's value.  This generates a RenderingOptionsObserver callback.
+#     This allows the code to map RenderingOptions keys to the RenderingOptionsObserver
+#     callback 'type' parameter.  This takes a litle while. When finished --
+# 3. rendering_options_done:
+#   1. Processes data and places it in the md template.  When finished --
+# 4. _run2:
+#   1. Mostly pulls data from the constants file, there is some special code for the
+#      send_action section, which has its own method. 
 #
-# Loaded and chained to by CreateSUConstants (file: create_su_constants.rb).
-# All files need to be located in the hiearchy used in at
-# https://github.com/MSP-Greg/SketchUp
+# Loaded and chained to by [create_su_constants.rb](CreateSUConstants.html).
+# All files need to be located in the hiearchy used at https://github.com/MSP-Greg/SketchUp
 #
 module CreateSUConstantsGuide
 
 #{ Class variables
   # version number, listed in file headers
-  @@version = '1.20'
+  @@version = '1.3'
 
   # cur dir
   @@dir = File.dirname(__FILE__)
@@ -49,23 +59,32 @@ module CreateSUConstantsGuide
 #} Class variables
 
   # Main entry point
-  # @return [Void]
+  #
+  # loads files, inserts code samples, starts rendering_options_poke
+  # @return [nil]
   def self._run()
+    # get required files
     return unless (@@text_md   = self.file_get_str('Template_Guide.md'))
     return unless (@@text_code = self.file_get_str('Template_Guide_Code.rb'))
     return unless (@@constants = self.file_get_str("su#{@@su_major}_constants_tab_md.txt", "../../su_info_txt"))
 
+    sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
+    hdr =  "Generated with [CreateSUConstantsGuide] v#{@@version}, on"
+    hdr << " #{sDateTime}, using SketchUp v#{Sketchup.version}.\n\n"
+    @@text_md.sub!(/<< hdr >>/, hdr)
+    
+    
     self.insert_code_sample('face_1')
     self.insert_code_sample('len_1')
     self.insert_code_sample('ro_1')
     self.insert_code_sample('ro_2')
-    self.insert_code_sample('mouse')
-
+    self.insert_code_sample('tool_1')
+    puts "Starting rendering_options loops"
     self.rendering_options_poke()
-#    self._run2()
   end
 
   # runs after rendering_options timer finishes
+  # @return [nil]
   def self._run2()
     #
     self.length_constants()
@@ -96,7 +115,7 @@ module CreateSUConstantsGuide
     self.find_regex('Sketchup::Dimension::ARROW_', 'DimensionArrow', '<br/>arrow_type')
 
     # Dimension #aligned_text_position
-    self.find_regex('Sketchup::DimensionLinear::ALIGNED_', 'Dim_aligned_text', '<br/>')
+    self.find_regex('Sketchup::DimensionLinear::ALIGNED_', 'Dim_aligned_text', '<br/>at_pos')
 
     # Dimension #text_position
     self.find_regex('Sketchup::DimensionLinear::TEXT_', 'Dim_text_pos', '<br/>text_pos')
@@ -164,11 +183,14 @@ module CreateSUConstantsGuide
 
   end
 
-  # called for constants that can be found with a RegEx match
-  # if re_md is nil, array will be returned
+  # Called for constants that can be found with a RegEx match
+  #
+  # If re_md is nil, array will be returned
   # @param re_con    [String] used to create RegEx for constant match
   # @param re_md     [String] used to create RegEx for table insertion in md
   # @param cnst_name [String] optional column name for constant name column
+  # @return [Array<String>, nil]
+  #
   def self.find_regex(re_con, re_md = nil, cnst_name = nil)
     re_full = /^#{re_con}.+?$/
     if (/^[A-Z]/ =~ re_con)
@@ -195,17 +217,29 @@ module CreateSUConstantsGuide
       array
     end
   end
-
+# load 'D:/rb/lib/su_info/create_su_constants_guide.rb'
+  # Loads code snippets from Template_Guide_Code.rb into md string
+  # @param c_name [String] name of section in file, also replacement
+  #   string in template
+  # @return [nil]
+  #
   def self.insert_code_sample(c_name)
-    code = @@text_code.slice!(/^\#\{ #{c_name}[\r\n][\s\S]+\#\} #{c_name}/)
-    code.sub!(/^\#\{[^\r\n\f]+[\r\n]+/, '')     # remove opening comment marker
-    code.sub!(/^def[^\)]+\)[\r\n]+/, '')        # remove def line
-    code.sub!(/^end[\r\n]+\#\} #{c_name}/, '')  # remove end and comment marker
-    code.sub!(/[ \t\r\n\f]+\z/, '')              # extra blank lines at end
-    code.gsub!(/^  /m, '')                      # remove 2 spaces of indent
-    @@text_md.sub!(/<< code_#{c_name} >>/, code)
+    code = @@text_code.slice!(/^  def #{c_name}[\s\S]+?(^  end)/m)
+    if (code)
+      code.sub!(/^  def[^\r\n\f]+[\r\n\f]+/, '') # remove def line
+      code.sub!(/  end\Z/, '')                  # remove end and comment marker
+      code.gsub!(/^  / , '')                     # remove 2 spaces of indent
+      code.gsub!(/^  /m, '')                     # remove 2 spaces of indent
+      code.sub!(/[ \t\r\n\f]+\z/, '')            # extra blank lines at end
+      @@text_md.sub!(/<< code_#{c_name} >>/, code)
+    else
+      puts UI.messagebox("#{c_name} code snippet is missing or incorrectly formatted!")
+    end
   end
 
+  # Creates the table with all of the OptionsManager & OptionsProvider keys
+  # @return [nil]
+  #
   def self.length_constants()
     options_manager = Sketchup.active_model.options
     array = []
@@ -235,11 +269,12 @@ module CreateSUConstantsGuide
     self.find_regex('Length::', 'Length::', cnst_name = nil)
   end
 
-  # This loops thru rendering options, then waits for the obeserver to fire.
+  # This loops thru rendering options, then waits for the observer to fire.
   #
-  # attached a RenderingOptionsObserver, then pokes rendering_options using
-  # a UI timer
-  # loads an array (@@a_ro) from the keys of a rendering_options instance,
+  # Attaches a RenderingOptionsObserver, then pokes rendering_options using
+  # a UI timer, loads an array (@@a_ro) from the keys of a rendering_options
+  # instance.
+  # @return [nil]
   #
   def self.rendering_options_poke()
     @@am = Sketchup.active_model
@@ -274,7 +309,7 @@ module CreateSUConstantsGuide
       # callback occurs when it is changed
       @@a_ro[@@i][2] += 1
       # create the callback name for the md table
-      ro_c_name = @@h_ro_c[type] || "<strong>** Missing, type = #{type}</strong>"
+      ro_c_name = @@h_ro_c[type] || "<strong style='color:blue'>** Missing, type = #{type}</strong>"
       # add a row to the table
       @@a_ro_table << [@@a_ro[@@i][0], @@a_ro[@@i][1], ro_c_name]
     end
@@ -295,7 +330,9 @@ module CreateSUConstantsGuide
     }
   end
 
-  # used to delete RenderingOptions constants in @@constants string
+  # Used to delete RenderingOptions constants in @@constants string
+  # @return [nil]
+  #
   def self.rendering_options_del()
     cns = 'Sketchup::RenderingOptions::'
     @@a_ro_table.each { |row|
@@ -305,8 +342,9 @@ module CreateSUConstantsGuide
     }
   end
 
-  # Writes data to md file after poke is finished
+  # Writes data to md file after poke is finished,
   # when this finishes, it runs _run2
+  # @return [nil]
   def self.rendering_options_done()
     @@am_ro.remove_observer( @@obs_ro )
     # remove found options from @@constants string
@@ -316,6 +354,18 @@ module CreateSUConstantsGuide
       bb = "#{b[1].ljust(25)}#{b[0].ljust(30)}#{b[2].ljust(30)}"
       aa <=> bb
     }
+    # bold duplicates
+    h0 = Hash.new(0)
+    h2 = Hash.new(0)
+    @@a_ro_table.each { |row|
+      h0[row[0]] += 1
+      h2[row[2]] += 1
+    }
+    @@a_ro_table.each { |row|
+      row[0] =  "<strong>#{row[0]}</strong>" if h0[row[0]] > 1
+      row[2] =  "<strong>#{row[2]}</strong>" if h2[row[2]] > 1
+    }
+    
     hdr_row = ['RenderingOptions<br/>key', 'RenderingOptions<br/>value.class', '<br/>Observer constant (type)']
     alignment = ['L', 'L', 'L']
     table = self.create_table(@@a_ro_table, hdr_row, alignment)
@@ -353,17 +403,24 @@ module CreateSUConstantsGuide
     self._run2
   end
 
+  # Code to creates table that link send_action text with constants
+  # @return [nil]
+  #
   def self.send_action()
     return unless (sa_text = self.file_get_str('send_action.txt', "../../su_info_txt"))
+
     # array of text commands
     a_text = sa_text.split(/\n/)
     a_text.sort!
+
     # array for constants / numeric commands
     a_number = []
     re_full = /^CMD_.+?$/
     while (match = @@constants.slice!(re_full)) do
       a_number << match.split(/\t/)
     end
+
+    #create hash from constant 'suffix names'
     h_number = {}
     a_number.each { |row|
       key = row[0].sub(/^CMD_/, '').gsub(/_/, '')
@@ -372,37 +429,26 @@ module CreateSUConstantsGuide
     a_table = []
     a_text.each { |a|
       t = a.sub(/^(edit|render|select)/i, '').sub(/(Tool)?\:$/,'')
-# odd cases  showRubyPanel
-      case t
-      when  'FieldOfView'
-        t = 'DisplayFOV'
-      when  'openDocument'
-        t = 'Open'
-      when  'pageAdd'
-        t = 'PageNew'
-      when  'printDocument'
-        t = 'Print'
-      when  'SectionPlane'
-        t = 'Section'
-      when  'Selection'
-        t = 'Select'
-      when  'showRubyPanel'
-        t = 'RubyConsole'
-      when  'Textures'
-        t = 'Textured'
-      when  'Turn'
-        t = 'Pan'
-      when  'viewShowAxes'
-        t = 'SketchAxes'
-      when  'viewShowGuides'
-        t = 'ShowGuides'
-      when  'viewShowHidden'
-        t = 'ShowHidden'
-      when  'viewZoomExtents'
-        t = 'ZoomExtents'
-      when  'viewZoomToSelection'
-        t = 'SelectionZoomExt'
-      end
+      # do a few matches that RegEx doesn't catch
+      t = case t
+        when  'FieldOfView'         then 'DisplayFOV'
+        when  'openDocument'        then 'Open'
+        when  'pageAdd'             then 'PageNew'
+        when  'printDocument'       then 'Print'
+        when  'SectionPlane'        then 'Section'
+
+        when  'Selection'           then 'Select'
+        when  'showRubyPanel'       then 'RubyConsole'
+        when  'Textures'            then 'Textured'
+        when  'Turn'                then 'Pan'
+        when  'viewShowAxes'        then 'SketchAxes'
+
+        when  'viewShowGuides'      then 'ShowGuides'
+        when  'viewShowHidden'      then 'ShowHidden'
+        when  'viewZoomExtents'     then 'ZoomExtents'
+        when  'viewZoomToSelection' then 'SelectionZoomExt'
+        else t
+        end
       t.upcase!
       if h_number.key?(t)
         a_table << [a, h_number[t][0], h_number[t][1]]
@@ -411,7 +457,9 @@ module CreateSUConstantsGuide
         a_table << [a, '', '']
       end
     }
-    hdr_row = ['action parameter<br/>String', 'action parameter<br/>Constant', 'action<br/>Fixnum']
+    hdr_row = ['action parameter<br/>String',
+               'action parameter<br/>Constant',
+               'action<br/>Fixnum']
     alignment = ['L', 'L', 'C']
     table = self.create_table(a_table, hdr_row, alignment)
     @@text_md.sub!(/<< cmd_alpha >>/, table)
@@ -421,15 +469,18 @@ module CreateSUConstantsGuide
     h_number.each { |k,v| array << v }
     if (array.length > 0)
       array.sort! { |a,b| a[0] <=> b[0] }
-      @@text_md.sub!(/<< cmd_numeric >>/, "The following constants do not have string equivalents.\n\n<< cmd_numeric >>")
+      sub = "The following constants do not have string equivalents.\n\n<< cmd_numeric >>"  
+      @@text_md.sub!(/<< cmd_numeric >>/, sub)
       table = self.standard_table(array, 'cmd_numeric', 'action parameter<br/>Constant')
     end
   end
 
   # creates a table based on constant 3 column array, adds to md
-  # @param array [array<array,String, String, String>>
+  # @param array [array <array <String, String, String> >]
   # @param re_md [String] string to find in md template
   # @param col1  [String] name of column 1 header
+  # @return [nil]
+  #
   def self.standard_table(array, re_md, col1 = nil)
     # if col1 change 1st column heading
     if (col1)
@@ -464,6 +515,9 @@ module CreateSUConstantsGuide
     @@text_md.sub!(re_find_text, table)
   end
 
+  # Adds a tabel to the md file with what's left of the@@constants string.
+  # @return [nil]
+  #
   def self.unclassified_constants()
     a_temp = @@constants.split(/[\r\n\f]+/)
     if (a_temp && a_temp.length > 0)
@@ -481,7 +535,7 @@ module CreateSUConstantsGuide
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
   # @return [string]
-  # &#160;
+  #
   def self.create_table(array, hdr_row, alignment)
     rows = array.length - 1
     columns = hdr_row.length - 1
@@ -509,11 +563,11 @@ module CreateSUConstantsGuide
   end
 
   # creates standard markdown table text from an array
-  # @param array     [Array<String>]
+  # @param array     [Array<String>] array to load into table
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
-  # @return [string]
-  # &#160;
+  # @return [String] the html table
+  #
   def self.create_md_table(array, hdr_row, alignment)
     rows = array.length - 1
     columns = hdr_row.length - 1
@@ -564,6 +618,9 @@ module CreateSUConstantsGuide
   end
 
   # changes a RenderOption
+  # @param i [Integer] loop counter that UI has processed
+  # @return [nil]
+  #
   def self.ro_loop(i)
     ro_str = @@a_ro[i][0]
     case @@a_ro[i][1]
@@ -622,7 +679,7 @@ module CreateSUConstantsGuide
   # Writes output file
   # @param f_name [String] name of output file with extention
   # @param string [String] file contents
-  #
+  # @return [nil]
   def self.file_write(f_name, string, dir_md = nil)
     dir = dir_md || ENV['TMP'] || ENV['TEMP']
     if (File.directory?(dir))
@@ -635,3 +692,4 @@ module CreateSUConstantsGuide
   end
 
 end
+# load 'D:/rb/lib/su_info/create_su_constants_guide.rb'

@@ -1,19 +1,19 @@
 # @title List_Title
-<script>
-var ss_last = document.styleSheets.length - 1,
-    ss = document.styleSheets[ss_last],
-    rules = ss.cssRules,
-    rT1 = '#filecontents table.gjl15 ';
-ss.insertRule(rT1 + '{ border:none; border-collapse:collapse;}', rules.length );
-ss.insertRule(rT1 + 'thead { border-bottom:2px solid #aaa; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'tbody { vertical-align:top;}', rules.length );
-ss.insertRule(rT1 + 'tr { border:none; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'th { border:none; padding: 1px 10px 1px 3px; background-color:transparent; text-align:left;}', rules.length );
-ss.insertRule(rT1 + 'td { border:none; padding: 0px 10px 0px 3px; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'td.c, ' + rT1 + 'th.c { text-align:center;}', rules.length );
-ss.insertRule(rT1 + 'td.r, ' + rT1 + 'th.r { text-align:right;}' , rules.length );
-ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;}' , rules.length );
-</script>
+[CreateSUConstants]:CreateSUConstants.html
+[GHBadge]:https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg
+[gh]:https://github.com/MSP-Greg/SketchUp/
+
+<style scoped>
+#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+</style>
 
 # List_TOC
 

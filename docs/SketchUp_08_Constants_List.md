@@ -1,33 +1,33 @@
 # @title ____8 Constants List
-<script>
-var ss_last = document.styleSheets.length - 1,
-    ss = document.styleSheets[ss_last],
-    rules = ss.cssRules,
-    rT1 = '#filecontents table.gjl15 ';
-ss.insertRule(rT1 + '{ border:none; border-collapse:collapse;}', rules.length );
-ss.insertRule(rT1 + 'thead { border-bottom:2px solid #aaa; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'tbody { vertical-align:top;}', rules.length );
-ss.insertRule(rT1 + 'tr { border:none; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'th { border:none; padding: 1px 10px 1px 3px; background-color:transparent; text-align:left;}', rules.length );
-ss.insertRule(rT1 + 'td { border:none; padding: 0px 10px 0px 3px; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'td.c, ' + rT1 + 'th.c { text-align:center;}', rules.length );
-ss.insertRule(rT1 + 'td.r, ' + rT1 + 'th.r { text-align:right;}' , rules.length );
-ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;}' , rules.length );
-</script>
+[CreateSUConstants]:CreateSUConstants.html
+[GHBadge]:https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg
+[gh]:https://github.com/MSP-Greg/SketchUp/
+
+<style scoped>
+#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+</style>
 
 # SketchUp 8 Constants List
 
 This list is simply that.  No code samples, links, etc.
 
-Generated on 2015-11-28 at 01:03:37 AM GMT using Sketchup version 8.0.16846
+---
 
-Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) version 1.3, see [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
+Generated with [CreateSUConstants] v1.3, on 2015-11-29 at 09:59:42 PM GMT, using SketchUp v8.0.16846.
 
+---
 Found the following:
-
 * 176 Constants defined in Object (global)
-* &nbsp;&nbsp;79 Constants defined in SketchUp objects
-* &nbsp;&nbsp;86 SketchUp objects with no defined constants
+* &nbsp;&nbsp;79 Constants defined in SketchUp objects (namespaced)
+* &nbsp;&nbsp;85 SketchUp objects with no defined constants
 
 
 
@@ -156,7 +156,7 @@ Found the following:
 <tr><td>IDABORT</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x49affd4></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x30bffc4></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>IDOK</td><td>1</td><td>Fixnum</td></tr>
@@ -215,7 +215,7 @@ Found the following:
 <tr><td>SB_VCB_LABEL</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x49ae97c></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x30be96c></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Sloped</td><td>3</td><td>Fixnum</td></tr>
@@ -467,20 +467,19 @@ Found the following:
 <tr><td>Geom::UTM</td><td>Object</td><td>Class</td></tr>
 <tr><td>Geom::Vector3d</td><td>Object</td><td>Class</td></tr>
 <tr><td>LanguageHandler</td><td>Object</td><td>Class</td></tr>
-<tr><td>MatchData</td><td>Object</td><td>Class</td></tr>
-<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>Numeric</td><td>Object</td><td>Class</td></tr>
+<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>Precision</td><td>not defined</td><td>Object</td></tr>
 <tr><td>SKSocket</td><td>not defined</td><td>Object</td></tr>
 <tr><td>Set</td><td>Object</td><td>Class</td></tr>
 <tr><td>SketchupExtension</td><td>Object</td><td>Class</td></tr>
-<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>String</td><td>Object</td><td>Class</td></tr>
+<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>Test</td><td>not defined</td><td>Object</td></tr>
 <tr><td>UI</td><td>not defined</td><td>Module</td></tr>
 <tr><td>UI::Command</td><td>Object</td><td>Class</td></tr>
 <tr><td>UI::Toolbar</td><td>Object</td><td>Class</td></tr>
-<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>UI::WebDialog</td><td>Object</td><td>Class</td></tr>
+<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 
 </tbody></table>

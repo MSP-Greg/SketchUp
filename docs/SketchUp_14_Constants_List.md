@@ -1,32 +1,32 @@
 # @title 2014 Constants List
-<script>
-var ss_last = document.styleSheets.length - 1,
-    ss = document.styleSheets[ss_last],
-    rules = ss.cssRules,
-    rT1 = '#filecontents table.gjl15 ';
-ss.insertRule(rT1 + '{ border:none; border-collapse:collapse;}', rules.length );
-ss.insertRule(rT1 + 'thead { border-bottom:2px solid #aaa; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'tbody { vertical-align:top;}', rules.length );
-ss.insertRule(rT1 + 'tr { border:none; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'th { border:none; padding: 1px 10px 1px 3px; background-color:transparent; text-align:left;}', rules.length );
-ss.insertRule(rT1 + 'td { border:none; padding: 0px 10px 0px 3px; background-color:transparent;}', rules.length );
-ss.insertRule(rT1 + 'td.c, ' + rT1 + 'th.c { text-align:center;}', rules.length );
-ss.insertRule(rT1 + 'td.r, ' + rT1 + 'th.r { text-align:right;}' , rules.length );
-ss.insertRule(rT1 + 'td.clr, ' + rT1 + 'th.clr { border-bottom:none; width:10em;}' , rules.length );
-</script>
+[CreateSUConstants]:CreateSUConstants.html
+[GHBadge]:https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg
+[gh]:https://github.com/MSP-Greg/SketchUp/
+
+<style scoped>
+#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+</style>
 
 # SketchUp 2014 Constants List
 
 This list is simply that.  No code samples, links, etc.
 
-Generated on 2015-11-28 at 01:04:19 AM GMT using Sketchup version 14.1.1282
+---
 
-Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) version 1.3, see [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
+Generated with [CreateSUConstants] v1.3, on 2015-11-29 at 10:02:32 PM GMT, using SketchUp v14.1.1282.
 
+---
 Found the following:
-
 * 177 Constants defined in Object (global)
-* 103 Constants defined in SketchUp objects
+* 103 Constants defined in SketchUp objects (namespaced)
 * &nbsp;&nbsp;87 SketchUp objects with no defined constants
 
 
@@ -156,7 +156,7 @@ Found the following:
 <tr><td>IDABORT</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x5a47220></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x99b7210></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>IDOK</td><td>1</td><td>Fixnum</td></tr>
@@ -217,7 +217,7 @@ Found the following:
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td>SB_VCB_LABEL</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x5a465d8></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x99b65c8></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>

@@ -1,9 +1,10 @@
-# Creates and saves a list of symbols defined by SketchUp.
-# Requires su_info_txt/native_ruby_syms.txt
+# Creates and saves a list of symbols defined by SketchUp.  Requires
+# su_info_txt/native_ruby_syms.txt.
+#
 # Saves to su_info_txt or TEMP || TMP
 #
-# At present, the SketchUp does not define many symbols. I
-# created this code to determine that...
+# At present, SketchUp does not define many symbols. I created this code to
+# determine that...
 #
 module CreateSUSymbols
   # version number, listed in file headers
@@ -20,7 +21,7 @@ module CreateSUSymbols
   @@su_major = Sketchup.version.split('.')[0].rjust(2, '0')
 
   # Main entry point
-  # @return [Void]
+  # @return [nil]
   def self._run()
     h_native = {}
     # get hash from file of native Ruby symbols
@@ -101,5 +102,5 @@ module CreateSUSymbols
 
 end
 #run
-# load 'D:/rb/lib/su_info/find_su_symbols.rb'
-FindSUSymbols._run()
+# load 'D:/rb/lib/su_info/create_su_symbols.rb'
+CreateSUSymbols._run()

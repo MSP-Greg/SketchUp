@@ -1,8 +1,8 @@
-Generated on 2015-11-28 at 01:04:19 AM GMT using Sketchup version 14.1.1282
-Using [CreateSUConstants](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/CreateSUConstants) version 1.3, see [![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp)
+Generated with CreateSUConstants v1.3, on 2015-11-29 at 10:02:32 PM GMT, using SketchUp v14.1.1282.
+
 Found the following:
    177 Constants defined in Object (global)
-   103 Constants defined in SketchUp objects
+   103 Constants defined in SketchUp objects (namespaced)
     87 SketchUp objects with no defined constants
 
 ALT_MODIFIER_KEY	18	Fixnum
@@ -120,7 +120,7 @@ GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x5a47220>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x99b7210>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -181,7 +181,7 @@ SB_PROMPT	0	Fixnum
 
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x5a465d8>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x99b65c8>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 

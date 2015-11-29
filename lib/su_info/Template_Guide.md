@@ -41,23 +41,19 @@
 [UI.messagebox]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/ui#messagebox
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
+[CreateSUConstantsGuide]:CreateSUConstantsGuide.html
 
-<script>
-var ss_last = document.styleSheets.length - 1,
-    ss = document.styleSheets[ss_last],
-    rules = ss.cssRules,
-    rT1 = "#filecontents table.gjl15 ";
-ss.insertRule(rT1 + "{ border:none; border-collapse:collapse; margin-bottom:2em;}", rules.length );
-ss.insertRule(rT1 + "thead { border-bottom:2px solid #aaa; background-color:transparent;}", rules.length );
-ss.insertRule(rT1 + "tbody { vertical-align:top;}", rules.length );
-ss.insertRule(rT1 + "tr { border:none; background-color:transparent;}", rules.length );
-ss.insertRule(rT1 + "tr:nth-child(5n) { border-bottom:1px solid #aaa;}", rules.length );
-ss.insertRule(rT1 + "th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}", rules.length );
-ss.insertRule(rT1 + "td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}", rules.length );
-ss.insertRule(rT1 + "td.c, " + rT1 + "th.c { text-align:center;}", rules.length );
-ss.insertRule(rT1 + "td.r, " + rT1 + "th.r { text-align:right;}" , rules.length );
-ss.insertRule(rT1 + "td.clr, " + rT1 + "th.clr { border-bottom:none; width:10em;}" , rules.length );
-</script>
+<style scoped>
+#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+</style>
 
 # Guide_TOC
 
@@ -76,6 +72,8 @@ but many API users are new to Ruby, or new to programming.
 
 Finally, thanks to Jim Foltz and others for their previous work and help.
 
+---
+<< hdr >>
 ---
 
 This document divides the SketchUp defined constants into three categories
@@ -158,7 +156,8 @@ dim.text_position = text_pos
 Defined on [Geom::PolygonMesh].  See [Entities#add_faces_from_mesh].
 
 ```ruby
- Sketchup.active_model.entities.add_faces_from_mesh(pm, smooth_flags, material)
+ame = Sketchup.active_model.entities
+ame.add_faces_from_mesh(pm, smooth_flags, material)
 ```
 
 << from_mesh >>
@@ -170,6 +169,7 @@ Defined on [Sketchup::Face].  See [Face#classify_point].
 ```ruby
 pt_location = face.classify_point(pt)
 ```
+The below code sample is in the Template_Guide_Code.rb file. Load, then GuideCode.new.face_1.
 
 ```ruby
 << code_face_1 >>
@@ -215,7 +215,8 @@ format = am.options['UnitsOptions']['LengthFormat']
 ```
 
 The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and outputs to the console.
+queries the two settings, and outputs to the console.  It's in the
+Template_Guide_Code.rb file. Load, then GuideCode.new.len_1.
 
 ```ruby
 << code_len_1 >>
@@ -241,8 +242,8 @@ Defined on [Sketchup::RenderingOptions].  These constants are used with a
 [RenderingOptionsObserver] instance (fqn Sketchup::RenderingOptionsObserver).
 
 A [RenderingOptions] instance is essentially a Hash.  Its keys can be
-enumerated, and setting their value will change the rendering options of the model.
-The constants are used in a callback method in a [RenderingOptionsObserver]
+enumerated, and setting their value will change the rendering options of the
+model. The constants are used in a callback method in a [RenderingOptionsObserver]
 instance as a notification of rendering option changes by the user or other code.
 
 The constants provide some information about the change.
@@ -253,15 +254,14 @@ The constants provide some information about the change.
   assigned to the type value.
 * Some [RenderingOptions] keys will not fire a callback.
 
-The following code can either be pasted into the Ruby console or loaded via a file.
-First, it lists all of the [RenderingOptions] constants.
-Secondly, it adds a [RenderingOptionsObserver] to the current model.  The observer
-outputs to the console the [onRenderingOptionsChanged] callback's type
-parameter and the constant associated with it.  It is not code designed for production.
-
-Since all the constants are prefixed by 'ROPSet' or 'ROP', the code adds a few
-spaces after the prefix. To 'remove' the code, just open another model, which
-destroys all references to it.
+The following code lists all of the [RenderingOptions] constants and values, then
+creates a hash from all of the [RenderingOptions] keys.  It then adds a
+[RenderingOptionsObserver] to the current model.  The observer outputs to the
+console the [onRenderingOptionsChanged] callback's type parameter and the constant
+associated with it, along any [RenderingOptions] changes. One can change
+[RenderingOptions] thru the UI and see what's going on, especially if UI operations
+do not have constants or keys. The code sample is in the Template_Guide_Code.rb file.
+Load, then GuideCode.new.ro_1.
 
 ```ruby
 << code_ro_1 >>
@@ -270,6 +270,7 @@ destroys all references to it.
 The above code does not make use of the constants, so the below code shows one
 way of creating an observer.  The callback uses some constants (items in 'view'
 menu and toolbar) in a case statement.  Similar code could be used in a plug-in.
+This code sample is GuideCode.new.ro_2.
 
 ```ruby
 << code_ro_2 >>
@@ -280,7 +281,9 @@ The following table lists [RenderingOptions] keys which fire callbacks in a
 mentioned, some keys generate more than one callback, and, any row with
 '** Missing, type =' in the 'Observer constant (type)' column fired a callback,
 but there isn't a [RenderingOptions] constant with that value.  It is sorted by
-RenderingOption value.class, RenderingOption key, and Constant name.
+RenderingOption value.class, RenderingOption key, and Constant name.  Duplicate
+values are shown bolded.  Note that since these seem to have a many-to-many
+relationship, the testing done may not show all combinations.
 
 << RenderingOptions >>
 << RenderingOptions_no_fire >>
@@ -290,7 +293,7 @@ RenderingOption value.class, RenderingOption key, and Constant name.
 
 ### Geometry Class constants
 
-These constants can be used anywhere their respective classes are used.
+These constants can be used anywhere instances of their respective classes are used.
 
 << Geometry >>
 
@@ -443,7 +446,8 @@ VK_NEXT is 'Page Down'.
 * keypad number keys are 96-105
 
 I could not get any information from the flags parameter. I would suggest using
-keyUp and KeyDown to keep track of modifier key state.
+keyUp and KeyDown to keep track of modifier key state.  The next section has code
+that attaches to mouse and keybaord events.
 
 ```ruby
  def onKeyDown(key, repeat, flags, view)
@@ -458,7 +462,11 @@ up, down, and double click, for left, middle, and right buttons.
 Under Windows:
 
 * A user can click more than one button at once.
-* The 'flags' bits for which buttons are pressed are **not set** on the 'Up' events.
+* The 'flags' bits for which buttons are pressed are **not set** on the 'Up'
+    events for a single button press.
+* On a double button press and release, a single down event will often fire,
+    the the double. On release, first the **wrong button** will fire an 
+    event, the a 'blank' up event.
 * 'Down' and 'Up' events fire first, then the 'DoubleClick' event fires.
 
 All methods have the following for parameters -
@@ -469,13 +477,11 @@ def onLButtonDown(flags, x, y, view)
 end
 ```
 
-Below is code that shows use of the constants, same parameters as the mouse calls,
-with the addition of a 'click type' parameter.
+Below is code that shows use of the constants, also some "does't quite work"
+key code.  Located in the Template_Guide_Code.rb file. Load, then GuideCode.new.tool_1.
 
 ```ruby
-def mouse(flags, x, y, view, up_down_dbl)
-<< code_mouse >>
-end
+<< code_tool_1 >>
 ```
 
 << tool_mse >>

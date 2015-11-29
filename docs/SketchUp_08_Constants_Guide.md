@@ -41,23 +41,19 @@
 [UI.messagebox]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/ui#messagebox
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
+[CreateSUConstantsGuide]:CreateSUConstantsGuide.html
 
-<script>
-var ss_last = document.styleSheets.length - 1,
-    ss = document.styleSheets[ss_last],
-    rules = ss.cssRules,
-    rT1 = "#filecontents table.gjl15 ";
-ss.insertRule(rT1 + "{ border:none; border-collapse:collapse; margin-bottom:2em;}", rules.length );
-ss.insertRule(rT1 + "thead { border-bottom:2px solid #aaa; background-color:transparent;}", rules.length );
-ss.insertRule(rT1 + "tbody { vertical-align:top;}", rules.length );
-ss.insertRule(rT1 + "tr { border:none; background-color:transparent;}", rules.length );
-ss.insertRule(rT1 + "tr:nth-child(5n) { border-bottom:1px solid #aaa;}", rules.length );
-ss.insertRule(rT1 + "th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}", rules.length );
-ss.insertRule(rT1 + "td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}", rules.length );
-ss.insertRule(rT1 + "td.c, " + rT1 + "th.c { text-align:center;}", rules.length );
-ss.insertRule(rT1 + "td.r, " + rT1 + "th.r { text-align:right;}" , rules.length );
-ss.insertRule(rT1 + "td.clr, " + rT1 + "th.clr { border-bottom:none; width:10em;}" , rules.length );
-</script>
+<style scoped>
+#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+</style>
 
 # SketchUp 8 Constants Guide
 
@@ -75,6 +71,10 @@ Some of the concepts in this document may be obvious to experienced programmers,
 but many API users are new to Ruby, or new to programming.
 
 Finally, thanks to Jim Foltz and others for their previous work and help.
+
+---
+Generated with [CreateSUConstantsGuide] v1.3, on 2015-11-29 at 09:59:42 PM GMT, using SketchUp v8.0.16846.
+
 
 ---
 
@@ -158,7 +158,8 @@ dim.text_position = text_pos
 Defined on [Geom::PolygonMesh].  See [Entities#add_faces_from_mesh].
 
 ```ruby
- Sketchup.active_model.entities.add_faces_from_mesh(pm, smooth_flags, material)
+ame = Sketchup.active_model.entities
+ame.add_faces_from_mesh(pm, smooth_flags, material)
 ```
 
 <strong>** Constants not defined in SketchUp 8 **</strong><br/><br/>
@@ -170,20 +171,21 @@ Defined on [Sketchup::Face].  See [Face#classify_point].
 ```ruby
 pt_location = face.classify_point(pt)
 ```
+The below code sample is in the Template_Guide_Code.rb file. Load, then GuideCode.new.face_1.
 
 ```ruby
 # must have a model open with at least one face!
 cns = Sketchup::Face
 face = Sketchup.active_model.entities.grep(cns)[0]
-t = ''
 if (face)
   pt_location = face.classify_point(ORIGIN)
   t = case pt_location
-    when cns::PointInside                     then 'pt is inside'
-    when cns::PointNotOnPlane                 then 'pt not on plane'
-    when cns::PointOnEdge, cns::PointOnVertex then 'pt on perimeter'
-    when cns::PointOutside                    then 'pt is outside'
-    when cns::PointUnknown                    then 'pt error?'
+    when cns::PointInside      then 'pt is inside'
+    when cns::PointNotOnPlane  then 'pt not on plane'
+    when cns::PointOnEdge,
+         cns::PointOnVertex    then 'pt on perimeter'
+    when cns::PointOutside     then 'pt is outside'
+    when cns::PointUnknown     then 'pt error?'
     else 'not trapped by case statement'
   end
 else
@@ -287,7 +289,8 @@ format = am.options['UnitsOptions']['LengthFormat']
 ```
 
 The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and outputs to the console.
+queries the two settings, and outputs to the console.  It's in the
+Template_Guide_Code.rb file. Load, then GuideCode.new.len_1.
 
 ```ruby
 cns = Length
@@ -346,8 +349,8 @@ Defined on [Sketchup::RenderingOptions].  These constants are used with a
 [RenderingOptionsObserver] instance (fqn Sketchup::RenderingOptionsObserver).
 
 A [RenderingOptions] instance is essentially a Hash.  Its keys can be
-enumerated, and setting their value will change the rendering options of the model.
-The constants are used in a callback method in a [RenderingOptionsObserver]
+enumerated, and setting their value will change the rendering options of the
+model. The constants are used in a callback method in a [RenderingOptionsObserver]
 instance as a notification of rendering option changes by the user or other code.
 
 The constants provide some information about the change.
@@ -358,21 +361,29 @@ The constants provide some information about the change.
   assigned to the type value.
 * Some [RenderingOptions] keys will not fire a callback.
 
-The following code can either be pasted into the Ruby console or loaded via a file.
-First, it lists all of the [RenderingOptions] constants.
-Secondly, it adds a [RenderingOptionsObserver] to the current model.  The observer
-outputs to the console the [onRenderingOptionsChanged] callback's type
-parameter and the constant associated with it.  It is not code designed for production.
-
-Since all the constants are prefixed by 'ROPSet' or 'ROP', the code adds a few
-spaces after the prefix. To 'remove' the code, just open another model, which
-destroys all references to it.
+The following code lists all of the [RenderingOptions] constants and values, then
+creates a hash from all of the [RenderingOptions] keys.  It then adds a
+[RenderingOptionsObserver] to the current model.  The observer outputs to the
+console the [onRenderingOptionsChanged] callback's type parameter and the constant
+associated with it, along any [RenderingOptions] changes. One can change
+[RenderingOptions] thru the UI and see what's going on, especially if UI operations
+do not have constants or keys. The code sample is in the Template_Guide_Code.rb file.
+Load, then GuideCode.new.ro_1.
 
 ```ruby
+am = Sketchup.active_model
 cns = Sketchup::RenderingOptions
 
+# create a hash of ro keys
+@@h_ro = {}
+am.rendering_options.each { |k,v|
+  val = v.kind_of?(Sketchup::Color) ? v.to_s.slice(-20,20) : v
+  @@h_ro[k] = val
+}
+
 # hash @@roc = RenderingOptions constants
-#   key is constant value, value is constant name
+#   key   is constant value
+#   value is constant name, with some spacing added by RegEx
 @@roc = Hash.new("** No Constant! **")
 # get all the constants, parse names, add to hash
 cns.constants.each { |c|
@@ -384,46 +395,72 @@ cns.constants.each { |c|
 }
 
 # dump hash to console
-@@roc.sort.each { |r| puts "#{r[0].to_s.rjust(3)}  #{r[1]}" }
+cnsl = '-----------------------------------------'
+puts cnsl + '  ro_1()'
+prev = -1
+@@roc.sort.each { |r|
+  num = r[0].to_s.rjust(3) + ((prev + 1 != r[0]) ? "*" : " ")
+  puts "#{num} #{r[1]}"
+  prev = r[0]
+}
+puts cnsl
 
 # create a RenderingOptionsObserver instance & create callback method
-@@obs_ro = Sketchup::RenderingOptionsObserver.new
+@obs_ro1 = Sketchup::RenderingOptionsObserver.new
+@obs_ro1.instance_eval {
+  @tmr_stopped = true
+  def onRenderingOptionsChanged(ro, type)
+    # timer puts line breaks between ro changes when multiple ocurr
+    if (@tmr_stopped)
+      @tmr_stopped = false
+      UI.start_timer(0.100) { @tmr_stopped = true ; puts }
+    end
 
-def @@obs_ro.onRenderingOptionsChanged(ro, type)
-  puts "#{type.to_s.rjust(3)}  #{@@roc[type]}"
-end
-
+    # Loop thru ro's and find changes, load into s_val
+    s_val = ''
+    ro.each { |k,v|
+      val =  v.kind_of?(Sketchup::Color) ? v.to_s.slice(-20,20) : v
+      if (@@h_ro[k] != val)
+        @@h_ro[k] = val
+        val = "%e" % v if (v.class == Float)
+        s_val << "#{val.to_s.rjust(20)} #{k}"
+      end
+    }
+    # finally put info to console
+    puts "#{type.to_s.rjust(2)} #{@@roc[type].ljust(32)}  #{s_val}"
+  end
+}
 # attach the observer
-Sketchup.active_model.rendering_options.add_observer(@@obs_ro)
+am.rendering_options.add_observer(@obs_ro1)
 ```
 
 The above code does not make use of the constants, so the below code shows one
 way of creating an observer.  The callback uses some constants (items in 'view'
 menu and toolbar) in a case statement.  Similar code could be used in a plug-in.
+This code sample is GuideCode.new.ro_2.
 
 ```ruby
-# create an observer
-obs_ro = Sketchup::RenderingOptionsObserver.new
-# add callback method
-
-def @@obs_ro.onRenderingOptionsChanged(ro, type)
-  cns = ro.class
-  suffix = case type
-    when cns::ROPDrawHidden                  then 'DrawHidden'
-    when cns::ROPSetDisplayColorByLayer      then 'DisplayColorByLayer'
-    when cns::ROPSetDisplaySketchAxes        then 'DisplaySketchAxes'
-    when cns::ROPSetHideConstructionGeometry then 'HideConstructionGeometry'
-    when cns::ROPSetModelTransparency        then 'ModelTransparency'
-    when cns::ROPSetRenderMode               then 'RenderMode'
-    when cns::ROPSetSectionDisplayMode       then 'SectionDisplayMode'
-    when cns::ROPSetTexture                  then 'Texture'
-    else "Not caught by case statement"
-    end
-  puts suffix
-end
-
+# create an observer & add callback method
+@obs_ro2 = Sketchup::RenderingOptionsObserver.new
+@obs_ro2.instance_eval {
+  def onRenderingOptionsChanged(ro, type)
+    cns = ro.class
+    suffix = case type
+      when cns::ROPDrawHidden                  then 'DrawHidden'
+      when cns::ROPSetDisplayColorByLayer      then 'DisplayColorByLayer'
+      when cns::ROPSetDisplaySketchAxes        then 'DisplaySketchAxes'
+      when cns::ROPSetHideConstructionGeometry then 'HideConstructionGeometry'
+      when cns::ROPSetModelTransparency        then 'ModelTransparency'
+      when cns::ROPSetRenderMode               then 'RenderMode'
+      when cns::ROPSetSectionDisplayMode       then 'SectionDisplayMode'
+      when cns::ROPSetTexture                  then 'Texture'
+      else "Not caught by case statement"
+      end
+    puts suffix
+  end
+}
 # attach it to the Rendering_options of the model
-Sketchup.active_model.rendering_options.add_observer(obs_ro)
+Sketchup.active_model.rendering_options.add_observer(@obs_ro2)
 ```
 
 The following table lists [RenderingOptions] keys which fire callbacks in a
@@ -431,7 +468,9 @@ The following table lists [RenderingOptions] keys which fire callbacks in a
 mentioned, some keys generate more than one callback, and, any row with
 '** Missing, type =' in the 'Observer constant (type)' column fired a callback,
 but there isn't a [RenderingOptions] constant with that value.  It is sorted by
-RenderingOption value.class, RenderingOption key, and Constant name.
+RenderingOption value.class, RenderingOption key, and Constant name.  Duplicate
+values are shown bolded.  Note that since these seem to have a many-to-many
+relationship, the testing done may not show all combinations.
 
 <table class='gjl15'><thead>
 <th>RenderingOptions<br/>key</th><th>RenderingOptions<br/>value.class</th><th><br/>Observer constant (type)</th>
@@ -442,7 +481,7 @@ RenderingOption value.class, RenderingOption key, and Constant name.
 <tr><td>DisplayInstanceAxes</td><td>Boolean</td><td>ROPSetDisplayInstanceAxes</td></tr>
 <tr><td>DisplaySketchAxes</td><td>Boolean</td><td>ROPSetDisplaySketchAxes</td></tr>
 <tr><td>DisplayText</td><td>Boolean</td><td>ROPSetDisplayText</td></tr>
-<tr><td>DisplayWatermarks</td><td>Boolean</td><td><strong>** Missing, type = 54</strong></td></tr>
+<tr><td>DisplayWatermarks</td><td>Boolean</td><td><strong style='color:blue'>** Missing, type = 54</strong></td></tr>
 <tr><td>DrawDepthQue</td><td>Boolean</td><td>ROPSetDepthQueEdges</td></tr>
 <tr><td>DrawGround</td><td>Boolean</td><td>ROPSetDrawGround</td></tr>
 <tr><td>DrawHidden</td><td>Boolean</td><td>ROPDrawHidden</td></tr>
@@ -454,33 +493,33 @@ RenderingOption value.class, RenderingOption key, and Constant name.
 <tr><td>ExtendLines</td><td>Boolean</td><td>ROPSetExtendLines</td></tr>
 <tr><td>FogUseBkColor</td><td>Boolean</td><td>ROPSetFogUseBkColor</td></tr>
 <tr><td>HideConstructionGeometry</td><td>Boolean</td><td>ROPSetHideConstructionGeometry</td></tr>
-<tr><td>InactiveHidden</td><td>Boolean</td><td>ROPEditComponent</td></tr>
-<tr><td>InstanceHidden</td><td>Boolean</td><td>ROPEditComponent</td></tr>
+<tr><td>InactiveHidden</td><td>Boolean</td><td><strong>ROPEditComponent</strong></td></tr>
+<tr><td>InstanceHidden</td><td>Boolean</td><td><strong>ROPEditComponent</strong></td></tr>
 <tr><td>JitterEdges</td><td>Boolean</td><td>ROPSetJitterEdges</td></tr>
 <tr><td>MaterialTransparency</td><td>Boolean</td><td>ROPSetMaterialTransparency</td></tr>
 <tr><td>ModelTransparency</td><td>Boolean</td><td>ROPSetModelTransparency</td></tr>
 <tr><td>Texture</td><td>Boolean</td><td>ROPSetTexture</td></tr>
 <tr><td>DepthQueWidth</td><td>Fixnum</td><td>ROPSetDepthQueWidth</td></tr>
 <tr><td>EdgeColorMode</td><td>Fixnum</td><td>ROPSetEdgeColorMode</td></tr>
-<tr><td>EdgeDisplayMode</td><td>Fixnum</td><td>ROPSetEdgeDisplayMode</td></tr>
+<tr><td>EdgeDisplayMode</td><td>Fixnum</td><td><strong>ROPSetEdgeDisplayMode</strong></td></tr>
 <tr><td>EdgeType</td><td>Fixnum</td><td>ROPSetEdgeType</td></tr>
 <tr><td>FaceColorMode</td><td>Fixnum</td><td>ROPSetFaceColorMode</td></tr>
 <tr><td>GroundTransparency</td><td>Fixnum</td><td>ROPSetGroundTransparency</td></tr>
 <tr><td>LineEndWidth</td><td>Fixnum</td><td>ROPSetLineEndWidth</td></tr>
 <tr><td>LineExtension</td><td>Fixnum</td><td>ROPSetLineExtension</td></tr>
-<tr><td>RenderMode</td><td>Fixnum</td><td>ROPSetEdgeDisplayMode</td></tr>
-<tr><td>RenderMode</td><td>Fixnum</td><td>ROPSetRenderMode</td></tr>
+<tr><td><strong>RenderMode</strong></td><td>Fixnum</td><td><strong>ROPSetEdgeDisplayMode</strong></td></tr>
+<tr><td><strong>RenderMode</strong></td><td>Fixnum</td><td>ROPSetRenderMode</td></tr>
 <tr><td>SectionCutWidth</td><td>Fixnum</td><td>ROPSetSectionCutWidth</td></tr>
 <tr><td>SilhouetteWidth</td><td>Fixnum</td><td>ROPSetProfileWidth</td></tr>
 <tr><td>TransparencySort</td><td>Fixnum</td><td>ROPTransparencySortMethod</td></tr>
-<tr><td>FogEndDist</td><td>Float</td><td>ROPSetFogDist</td></tr>
-<tr><td>FogStartDist</td><td>Float</td><td>ROPSetFogDist</td></tr>
-<tr><td>InactiveFade</td><td>Float</td><td>ROPEditComponent</td></tr>
-<tr><td>InstanceFade</td><td>Float</td><td>ROPEditComponent</td></tr>
+<tr><td>FogEndDist</td><td>Float</td><td><strong>ROPSetFogDist</strong></td></tr>
+<tr><td>FogStartDist</td><td>Float</td><td><strong>ROPSetFogDist</strong></td></tr>
+<tr><td>InactiveFade</td><td>Float</td><td><strong>ROPEditComponent</strong></td></tr>
+<tr><td>InstanceFade</td><td>Float</td><td><strong>ROPEditComponent</strong></td></tr>
 <tr><td>BackgroundColor</td><td>Sketchup::Color</td><td>ROPSetBackgroundColor</td></tr>
 <tr><td>ConstructionColor</td><td>Sketchup::Color</td><td>ROPSetConstructionColor</td></tr>
-<tr><td>FaceBackColor</td><td>Sketchup::Color</td><td>ROPSetFaceColor</td></tr>
-<tr><td>FaceFrontColor</td><td>Sketchup::Color</td><td>ROPSetFaceColor</td></tr>
+<tr><td>FaceBackColor</td><td>Sketchup::Color</td><td><strong>ROPSetFaceColor</strong></td></tr>
+<tr><td>FaceFrontColor</td><td>Sketchup::Color</td><td><strong>ROPSetFaceColor</strong></td></tr>
 <tr><td>FogColor</td><td>Sketchup::Color</td><td>ROPSetFogColor</td></tr>
 <tr><td>ForegroundColor</td><td>Sketchup::Color</td><td>ROPSetForegroundColor</td></tr>
 <tr><td>GroundColor</td><td>Sketchup::Color</td><td>ROPSetGroundColor</td></tr>
@@ -519,12 +558,12 @@ The following RenderingOptions constants are not fired by any keys in [Rendering
 
 ### Geometry Class constants
 
-These constants can be used anywhere their respective classes are used.
+These constants can be used anywhere instances of their respective classes are used.
 
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x49affd4></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x30bffc4></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
@@ -543,7 +582,7 @@ SKETCHUP_CONSOLE.write("this way also")
 <table class='gjl15'><thead>
 <th>constant<br/>name</th><th class='c'>value<br/>()</th>
 </thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x49ae97c></td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x30be96c></td></tr>
 </tbody></table>
 
 
@@ -835,7 +874,8 @@ VK_NEXT is 'Page Down'.
 * keypad number keys are 96-105
 
 I could not get any information from the flags parameter. I would suggest using
-keyUp and KeyDown to keep track of modifier key state.
+keyUp and KeyDown to keep track of modifier key state.  The next section has code
+that attaches to mouse and keybaord events.
 
 ```ruby
  def onKeyDown(key, repeat, flags, view)
@@ -870,7 +910,11 @@ up, down, and double click, for left, middle, and right buttons.
 Under Windows:
 
 * A user can click more than one button at once.
-* The 'flags' bits for which buttons are pressed are **not set** on the 'Up' events.
+* The 'flags' bits for which buttons are pressed are **not set** on the 'Up'
+    events for a single button press.
+* On a double button press and release, a single down event will often fire,
+    the the double. On release, first the **wrong button** will fire an 
+    event, the a 'blank' up event.
 * 'Down' and 'Up' events fire first, then the 'DoubleClick' event fires.
 
 All methods have the following for parameters -
@@ -881,25 +925,53 @@ def onLButtonDown(flags, x, y, view)
 end
 ```
 
-Below is code that shows use of the constants, same parameters as the mouse calls,
-with the addition of a 'click type' parameter.
+Below is code that shows use of the constants, also some "does't quite work"
+key code.  Located in the Template_Guide_Code.rb file. Load, then GuideCode.new.tool_1.
 
 ```ruby
-def mouse(flags, x, y, view, up_down_dbl)
-button  = []
-key_mod = []
-if (MK_LBUTTON & flags != 0) then button.push 'Left'   end
-if (MK_MBUTTON & flags != 0) then button.push 'Middle' end
-if (MK_RBUTTON & flags != 0) then button.push 'Right'  end
+@@mouse = Proc.new { |up_down_dbl, flags, x, y, view|
+  button  = []
+  key_mod = []
+  if (MK_LBUTTON & flags != 0) then button.push 'Left'   end
+  if (MK_MBUTTON & flags != 0) then button.push 'Middle' end
+  if (MK_RBUTTON & flags != 0) then button.push 'Right'  end
 
-if (MK_SHIFT   & flags != 0) then key_mod.push 'Shift' end
-if (MK_CONTROL & flags != 0) then key_mod.push 'Ctrl'  end
-if (MK_ALT     & flags != 0) then key_mod.push 'Alt'   end
-s1 = up_down_dbl.ljust(7)
-s2 = button.join(", ").ljust(20)
-s3 = key_mod.join(", ")
-puts "Mouse Button #{s1} button = #{s2} keys = #{s3}"
-end
+  if (MK_SHIFT   & flags != 0) then key_mod.push 'Shift' end
+  if (MK_CONTROL & flags != 0) then key_mod.push 'Ctrl'  end
+  if (MK_ALT     & flags != 0) then key_mod.push 'Alt'   end
+  s1 = up_down_dbl.ljust(7)
+  s2 = button.join(", ").ljust(20)
+  s3 = key_mod.join(", ")
+  puts "Mouse Button #{s1} button = #{s2} keys = #{s3}"
+}
+@tool = Object.new
+@tool.instance_eval {
+  def onLButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
+  def onMButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
+  def onRButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
+
+  def onLButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
+  def onMButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
+  def onRButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
+
+  def onLButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
+  def onMButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
+  def onRButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
+
+  def onKeyDown(key, repeat, flags, view)
+    # Some binary fun for testing
+    #   t = flags.to_s(2).rjust(16)
+    #   tBin = "#{t[-16,4]} #{ t[-12,4]} #{ t[-8,4]} #{t[-4,4]}".rjust(18)
+    #   puts "#{key.to_s.ljust(4)}\t#{flags.to_s.ljust(5)}\t#{tBin}"
+
+    k   = key.to_s.rjust(3)
+    alt =  (ALT_MODIFIER_MASK & key != 0).to_s.ljust(5)
+    cons = (CONSTRAIN_MODIFIER_MASK & key != 0).to_s.ljust(5)
+    copy = (COPY_MODIFIER_MASK & key != 0).to_s.ljust(5)
+    puts "key = #{k}  alt = #{alt}  cons = #{cons}  copy = #{copy}"
+  end
+}
+Sketchup.active_model.select_tool(@tool)
 ```
 
 <table class='gjl15'><thead>

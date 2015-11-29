@@ -1,13 +1,20 @@
-[![Documentation](https://img.shields.io/badge/RubyDoc.info-MSP--Greg%2FSketchUp-blue.svg)](http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/index)
-&#160;&#160;&#160;&#160;&#160;&#160;
-[![GitHub](https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg)](https://github.com/MSP-Greg/SketchUp/)
-
-[![Download zip](https://img.shields.io/badge/.zip-MSP--Greg%2FSketchUp-orange.svg)](https://github.com/MSP-Greg/SketchUp/archive/master.zip)
+<div id="gjl15">
+<style scoped>
+#gjl15 a.hdr { color:white; border-radius:0.30em; font-size:1.2em; width:11em; font-weight:500;
+       display:inline-block; height:1.5em; text-align:center; line-height:1.4em; margin-top:1.0em;}
+#gjl15 a.r { margin-left:1.0em; background-color:#483D8B;}
+</style>
+<div>
+<a class="hdr"   style="background-color:#05a;" href="https://github.com/MSP-Greg/SketchUp">Code & Templates</a>
+<a class="hdr r" href="http://msp-greg.github.io/su_info/index.html">GitHub.io Web</a>
+</div><div>
+<a class="hdr" style="background-color:#05a;" href="https://github.com/MSP-Greg/SketchUp/archive/master.zip">GitHub .zip</a>
+<a class="hdr r" href="https://github.com/MSP-Greg/MSP-Greg.github.io/archive/master.zip">GitHub.io .zip</a>
+</div></div>
 
 ## README - SketchUp
 
-This project contains code, markdown (md) documents, and text files.  The documentation
-is best viewed at RubyDoc.info (linked to above).
+This project contains code, markdown (md) documents, and text files.
 
 ### Project Folders
 
@@ -58,6 +65,13 @@ options for some data.  It shows a UI.messagebox when finished.  Two important i
 
 * All plugins / extensions need to be unloaded before running
 * Have a new model open, as the code changes all RenderingOptions
+
+<br/>
+
+Thanks to Loren Segal and contributors for yard, which generated all the pages
+of this site.
+
+SketchUp is a trademark of Trimble Navigation Limited
 
 <br/>
 

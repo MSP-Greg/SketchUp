@@ -48,6 +48,7 @@ LoadError
 LocalJumpError
 Marshal
 MatchData
+MatchingData
 Math
 Method
 Module
