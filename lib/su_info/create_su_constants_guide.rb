@@ -2,12 +2,12 @@
 #
 # Creates the 'Guide' md file from the following files --
 #
-# | File name                           | Information / Notes                                                        |
-# |:------------------------------------|:---------------------------------------------------------------------------|
-# | Template\_Guide.md                  | markdown template                                                          |
-# | Template\_Guide\_Code.rb<br/>&#160; | contains long code snippets shown in md file.<br/>Note: special formatting in comments |
-# | su??\_constants\_tab\_md.txt        | contains constant list that is inserted into md file.                      |
-# | send_action.txt<br/>&#160;          | contains list of send_action text paramters<br/>scraped from SketchUp.com. |
+# | File name                    | Information / Notes                                                        |
+# |:-----------------------------|:---------------------------------------------------------------------------|
+# | Template\_Guide.md           | markdown template                                                          |
+# | Template\_Guide\_Code.rb     | contains long code snippets shown in md file.                              |
+# | su??\_constants\_tab\_md.txt | contains constant list that is inserted into md file.                      |
+# | send_action.txt<br/>&#160;   | contains list of send_action text parameters<br/>scraped from SketchUp.com. |
 #
 # ## Code Process:
 #

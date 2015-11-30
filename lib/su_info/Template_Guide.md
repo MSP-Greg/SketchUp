@@ -373,10 +373,13 @@ your_submenu.add_item cmd
 
 ### Definition \#behavior \#snapto
 
-See [Behavior#snapto].  To quote SU help, 'The Behavior class is used to control
+See [Behavior#snapto].  To quote SketchUp.com help, 'The Behavior class is used to control
 the "behavior" of components'.
 
 ```ruby
+model = Sketchup.active_model
+definition = model.definitions[0]
+behavior = definition.behavior
 snap_to = behavior.snapto
 behavior.snapto = snap_to
 ```
