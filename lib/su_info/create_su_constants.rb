@@ -165,7 +165,7 @@ module CreateSUConstants
     hdr << " v#{@@version}, on #{sDateTime},"
     hdr << " using SketchUp v#{Sketchup.version}.\n\n"
     hdr << (md ? "---\n" : "")
-    hdr << "Found the following:\n"
+    hdr << "Found the following:#{lend}"
     hdr <<  "#{list}#{root} Constants defined in Object (global)\n"
     hdr <<    "#{list}#{su} Constants defined in SketchUp objects (namespaced)\n"
     hdr << "#{list}#{su_no} SketchUp objects with no defined constants\n\n"

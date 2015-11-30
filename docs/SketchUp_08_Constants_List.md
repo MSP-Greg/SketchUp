@@ -1,5 +1,8 @@
 # @title ____8 Constants List
 [CreateSUConstants]:CreateSUConstants.html
+[GHBadge]:https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg
+[gh]:https://github.com/MSP-Greg/SketchUp/
+
 <style scoped>
 #filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
 #filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
@@ -22,6 +25,7 @@ Generated with [CreateSUConstants] v1.3, on 2015-11-29 at 09:59:42 PM GMT, using
 
 ---
 Found the following:
+
 * 176 Constants defined in Object (global)
 * &nbsp;&nbsp;79 Constants defined in SketchUp objects (namespaced)
 * &nbsp;&nbsp;85 SketchUp objects with no defined constants
