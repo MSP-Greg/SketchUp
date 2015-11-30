@@ -42,7 +42,6 @@
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
 [CreateSUConstantsGuide]:CreateSUConstantsGuide.html
-
 <style scoped>
 #filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
 #filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}

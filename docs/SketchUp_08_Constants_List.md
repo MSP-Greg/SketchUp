@@ -1,8 +1,5 @@
 # @title ____8 Constants List
 [CreateSUConstants]:CreateSUConstants.html
-[GHBadge]:https://img.shields.io/badge/GitHub.com-MSP--Greg%2FSketchUp-blue.svg
-[gh]:https://github.com/MSP-Greg/SketchUp/
-
 <style scoped>
 #filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
 #filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
