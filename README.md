@@ -1,8 +1,8 @@
-<div class="gjl15">
+<div id="gjl15">
 <style scoped>
-div.gjl15 a.hdr { color:white; border-radius:0.30em; font-size:1.2em; width:11em; font-weight:500;
-display:inline-block; height:1.5em; text-align:center; line-height:1.4em; margin-top:1.0em;}
-div.gjl15 a.r { margin-left:1.0em; background-color:#483D8B;}
+#gjl15 a.hdr { color:white; border-radius:0.30em; font-size:1.2em; width:11em; font-weight:500;
+               display:inline-block; height:1.5em; text-align:center; line-height:1.4em; margin-top:1.0em;}
+#gjl15 a.r { margin-left:1.0em; background-color:#483D8B;}
 </style>
 <div>
 <a class="hdr"   style="background-color:#05a;" href="https://github.com/MSP-Greg/SketchUp">Code & Templates</a>
