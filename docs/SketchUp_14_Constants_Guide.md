@@ -42,17 +42,16 @@
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
 [CreateSUConstantsGuide]:CreateSUConstantsGuide.html
-
 <style scoped>
-#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
-#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
-#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
-#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
-#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
-#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
-#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
-#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+\#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+\#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+\#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+\#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+\#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+\#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+\#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+\#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+\#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
 </style>
 
 # SketchUp 2014 Constants Guide
