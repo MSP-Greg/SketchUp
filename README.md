@@ -1,16 +1,37 @@
-<div id="gjl15">
-<style scoped>
-#gjl15 a.hdr { color:white; border-radius:0.30em; font-size:1.2em; width:11em; font-weight:500;
-               display:inline-block; height:1.5em; text-align:center; line-height:1.4em; margin-top:1.0em;}
-#gjl15 a.r { margin-left:1.0em; background-color:#483D8B;}
-</style>
-<div>
-<a class="hdr"   style="background-color:#05a;" href="https://github.com/MSP-Greg/SketchUp">Code & Templates</a>
-<a class="hdr r" href="http://msp-greg.github.io/su_info/index.html">GitHub.io Web</a>
-</div><div>
-<a class="hdr" style="background-color:#05a;" href="https://github.com/MSP-Greg/SketchUp/archive/master.zip">GitHub .zip</a>
-<a class="hdr r" href="https://github.com/MSP-Greg/MSP-Greg.github.io/archive/master.zip">GitHub.io .zip</a>
-</div></div>
+<p>
+<a href="https://github.com/MSP-Greg/SketchUp">
+<svg  width="140" height="28" xmlns="http://www.w3.org/2000/svg" >
+<rect width="140" height="28" fill="#05a"    x="0" y="0" rx="5" ry="5" />
+<g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="20px">
+<text x="70" y="21" fill="#fff" fill-opacity="1.0">GitHub.com</text>
+</g></svg></a>
+<a href="http://msp-greg.github.io/su_info/file.README.html">
+<svg  width="175" height="28" xmlns="http://www.w3.org/2000/svg" style="margin-left:18px;">
+<rect width="175" height="28" fill="#483D8B" x="0" y="0" rx="5" ry="5" />
+<g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="20px">
+<text x="88" y="21" fill="#fff" fill-opacity="1.0">GitHub.io Web</text>
+</g></svg></a>
+<a href="http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/file/README.md">
+<svg  width="150" height="28" xmlns="http://www.w3.org/2000/svg" style="margin-left:18px;">
+<rect width="150" height="28" fill="#707080" x="0" y="0" rx="5" ry="5" />
+<g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="20px">
+<text x="75" y="21" fill="#fff" fill-opacity="1.0">RubyDoc.info</text>
+</g></svg></a>
+</p>
+<p>
+<a href="https://github.com/MSP-Greg/SketchUp/archive/master.zip">
+<svg  width="140" height="28" xmlns="http://www.w3.org/2000/svg">
+<rect width="140" height="28" fill="#05a"    x="0" y="0" rx="5" ry="5" />
+<g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="20px">
+<text x="70" y="21" fill="#fff" fill-opacity="1.0">GitHub .zip</text>
+</g></svg></a>
+<a href="https://github.com/MSP-Greg/MSP-Greg.github.io/archive/master.zip">
+<svg  width="175" height="28" xmlns="http://www.w3.org/2000/svg" style="margin-left:18px;">
+<rect width="175" height="28" fill="#483D8B" x="0" y="0" rx="5" ry="5" />
+<g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="20px">
+<text x="88" y="21" fill="#fff" fill-opacity="1.0">GitHub.io .zip</text>
+</g></svg></a>
+</p>
 
 ## README - SketchUp
 
@@ -59,9 +80,10 @@ All of the .rb files are at least partially documented.
 
 ### Generating Files
 
-If one downloads and (unzips) the zip file from GitHub.com, simply load lib/su_info/create_su_constants.rb
-from the console in SketchUp.  It takes some seconds, as it loops thru rendering
-options for some data.  It shows a UI.messagebox when finished.  Two important items:
+If one downloads and (unzips) the zip file from GitHub.com, simply load
+lib/su_info/create_su_constants.rb from the console in SketchUp.  It takes some
+seconds, as it loops thru rendering options for some data.  It shows a
+UI.messagebox when finished.  Two important items:
 
 * All plugins / extensions need to be unloaded before running
 * Have a new model open, as the code changes all RenderingOptions
