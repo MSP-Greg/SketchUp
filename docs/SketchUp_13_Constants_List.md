@@ -4,7 +4,7 @@
 \#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
 \#filecontents table.gjl15 thead { background-color:transparent; border-bottom:2px solid #aaa; }
 \#filecontents table.gjl15 tr    { background-color:transparent; border:none;}
-\##filecontents table.gjl15 td:empty { border-top:1px solid #bbb; height:0.5em;}
+\#filecontents table.gjl15 td:empty { border-top:1px solid #bbb; height:0.5em;}
 \#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; text-align:left;}
 \#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; }
 \#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
