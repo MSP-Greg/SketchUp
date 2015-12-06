@@ -41,11 +41,14 @@
 #
 module CreateSUConstants
   # version number, listed in file headers
-  @@version = 1.3
+  VERSION = 1.3
 
+  # blank row
+  EMPTY_ROW = "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n<tr><td></td><td></td><td></td></tr>\n"
+  
   # cur dir
   @@dir = File.dirname(__FILE__)
-  Dir.chdir(@@dir)
+#  Dir.chdir(@@dir)
 
   # intermediate text for md file
   @@text         = ''
@@ -162,7 +165,7 @@ module CreateSUConstants
     sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
     hdr = (md ? "---\n\nGenerated with [CreateSUConstants]" : 
       "Generated with CreateSUConstants")
-    hdr << " v#{@@version}, on #{sDateTime},"
+    hdr << " v#{VERSION}, on #{sDateTime},"
     hdr << " using SketchUp v#{Sketchup.version}.\n\n"
     hdr << (md ? "---\n" : "")
     hdr << "Found the following:#{lend}"
@@ -213,7 +216,7 @@ module CreateSUConstants
                     "<td><strong>#{c_m_type}</strong></td></tr>\n"
       @@text_tab << "\n#{obj_str}::\t\t#{super_cls}\n"
       self.write_constants(constants, obj)
-      @@text << "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n"
+      @@text << EMPTY_ROW
       @@text_tab << "\n"
 		else
       # add information about object to no_constants strings
@@ -221,7 +224,7 @@ module CreateSUConstants
       @@no_const_tab << "#{obj_str}\tno constants\t#{super_cls}\t#{c_m_type}\n"
       @@ctr_su_no += 1
       if (@@ctr_su_no % 5 == 0)
-        @@no_const     << "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n"
+        @@no_const     << EMPTY_ROW
         @@no_const_tab << "\n"
       end
     end
@@ -309,7 +312,7 @@ module CreateSUConstants
       @@text_tab_md << "#{fqn}#{c}\t#{val}\t#{o.class}\n"
       ctr += 1
       if (ctr % 5 == 0 && ctr != len_c)
-        @@text << "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n"
+        @@text << EMPTY_ROW
         @@text_tab << "\n"
       end
     }
