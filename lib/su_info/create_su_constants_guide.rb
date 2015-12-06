@@ -70,7 +70,7 @@ module CreateSUConstantsGuide
 
     sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
     hdr =  "Generated with [CreateSUConstantsGuide] v#{@@version}, on"
-    hdr << " #{sDateTime}, using SketchUp v#{Sketchup.version}.\n\n"
+    hdr << " #{sDateTime}, using SketchUp v#{Sketchup.version}.\n"
     @@text_md.sub!(/<< hdr >>/, hdr)
     
     
