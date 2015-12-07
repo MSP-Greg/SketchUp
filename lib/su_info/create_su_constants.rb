@@ -48,7 +48,7 @@ module CreateSUConstants
   
   # cur dir
   @@dir = File.dirname(__FILE__)
-#  Dir.chdir(@@dir)
+  Dir.chdir(@@dir)
 
   # intermediate text for md file
   @@text         = ''
