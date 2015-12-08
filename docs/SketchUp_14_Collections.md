@@ -35,7 +35,6 @@ Generated with NOT_DOC'D YET v1.3, on 2015-12-08 at 09:07:46 PM GMT, using Sketc
 <thead><tr><th>Object</th><th class='c'>Enum</th><th class='c'>#each</th><th class='c'>#[]</th><th class='c'>#each_pair</th><th>Super</th><th>Type</th></tr></thead><tbody>
 <tr><td>Sketchup::AttributeDictionaries</td><td class='c'>Yes</td><td class='c'>*</td><td class='c'>Yes</td><td class='c'> </td><td>Sketchup::Entity</td><td>Class</td></tr>
 <tr><td>Sketchup::AttributeDictionary</td><td class='c'>Yes</td><td class='c'>*</td><td class='c'>Yes</td><td class='c'>Yes</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Color</td><td class='c'> </td><td class='c'> </td><td class='c'> </td><td class='c'> </td><td>Object</td><td>Class</td></tr>
 <tr><td>Sketchup::DefinitionList</td><td class='c'>Yes</td><td class='c'>*</td><td class='c'>Yes</td><td class='c'> </td><td>Sketchup::Entity</td><td>Class</td></tr>
 <tr><td>Sketchup::Entities</td><td class='c'>Yes</td><td class='c'>*</td><td class='c'>Yes</td><td class='c'> </td><td>Object</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
