@@ -1,9 +1,9 @@
-Generated with CreateSUConstants v1.3, on 2015-11-29 at 10:02:32 PM GMT, using SketchUp v14.1.1282.
+Generated with CreateSUConstants v1.4, on 2015-12-10 at 05:48:37 AM GMT, using SketchUp v14.1.1282 & Ruby 2.0.0.
 
 Found the following:
    177 Constants defined in Object (global)
    103 Constants defined in SketchUp objects (namespaced)
-    87 SketchUp objects with no defined constants
+    86 SketchUp objects with no defined constants
 
 ALT_MODIFIER_KEY	18	Fixnum
 ALT_MODIFIER_MASK	32	Fixnum
@@ -120,7 +120,7 @@ GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x99b7210>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x9857220>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -181,7 +181,7 @@ SB_PROMPT	0	Fixnum
 
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x99b65c8>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x98565d8>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 
@@ -363,7 +363,7 @@ Meter	4	Fixnum
 Millimeter	2	Fixnum
 
 
-Sketchup	no constants	not defined	Module
+Sketchup	no constants	na	Module
 Sketchup::AppObserver	no constants	Object	Class
 Sketchup::ArcCurve	no constants	Sketchup::Curve	Class
 Sketchup::AttributeDictionaries	no constants	Sketchup::Entity	Class
@@ -421,7 +421,7 @@ Sketchup::Page	no constants	Sketchup::Entity	Class
 Sketchup::PagesObserver	no constants	Sketchup::EntitiesObserver	Class
 Sketchup::PickHelper	no constants	Object	Class
 Sketchup::RenderingOptionsObserver	no constants	Object	Class
-Sketchup::SandboxTools	no constants	not defined	Object
+Sketchup::SandboxTools	no constants	na	Object
 
 Sketchup::SectionPlane	no constants	Sketchup::Drawingelement	Class
 Sketchup::Selection	no constants	Object	Class
@@ -443,27 +443,26 @@ Sketchup::Vertex	no constants	Sketchup::Entity	Class
 
 Sketchup::View	no constants	Object	Class
 Sketchup::ViewObserver	no constants	Object	Class
-Sketchup::WebTextures	no constants	not defined	Object
+Sketchup::WebTextures	no constants	na	Object
 Array	no constants	Object	Class
-Date	no constants	Object	Class
+Geom	no constants	na	Module
 
-Geom	no constants	not defined	Module
 Geom::BoundingBox	no constants	Object	Class
 Geom::LatLong	no constants	Object	Class
 Geom::Point3d	no constants	Object	Class
 Geom::Transformation	no constants	Object	Class
-
 Geom::UTM	no constants	Object	Class
+
 Geom::Vector3d	no constants	Object	Class
 LanguageHandler	no constants	Object	Class
 Numeric	no constants	Object	Class
-SKSocket	no constants	not defined	Object
-
+SKSocket	no constants	na	Object
 SketchupExtension	no constants	Object	Class
-String	no constants	Object	Class
-Test	no constants	not defined	Object
-UI	no constants	not defined	Module
-UI::Command	no constants	Object	Class
 
+String	no constants	Object	Class
+Test	no constants	na	Object
+UI	no constants	na	Module
+UI::Command	no constants	Object	Class
 UI::Toolbar	no constants	Object	Class
+
 UI::WebDialog	no constants	Object	Class

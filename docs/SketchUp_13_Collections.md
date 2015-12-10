@@ -1,4 +1,4 @@
-# @title ____8 Collections Info
+# @title 2013 Collections Info
 [CreateSUCollections]:CreateSUCollections.html
 [RenderingOptions]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptions
 <style scoped>
@@ -13,13 +13,13 @@
 \#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
 </style>
 
-# SketchUp 8 Collections Info
+# SketchUp 2013 Collections Info
 
 This is a machine generated list of the collection objects defined by SketchUp
 classes.  The links in this document are machine generated, so some may not exist.
 
 ---
-Generated with [CreateSUCollections] v1.4, on 2015-12-10 at 05:47:43 AM GMT, using SketchUp v8.0.16846 & Ruby 1.8.6.
+Generated with [CreateSUCollections] v1.4, on 2015-12-10 at 05:48:19 AM GMT, using SketchUp v13.0.4812 & Ruby 1.8.6.
 
 
 ---

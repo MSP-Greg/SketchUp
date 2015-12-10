@@ -14,18 +14,19 @@
 
 # SketchUp 8 Constants List
 
-This list is simply that.  No code samples, links, etc.
+This list is simply that.  All three lists and the links are machine generated,
+so some of the links may not exist.
 
 ---
 
-Generated with [CreateSUConstants] v1.3, on 2015-11-29 at 09:59:42 PM GMT, using SketchUp v8.0.16846.
+Generated with [CreateSUConstants] v1.4, on 2015-12-10 at 05:47:27 AM GMT, using SketchUp v8.0.16846 & Ruby 1.8.6.
 
 ---
 Found the following:
 
 * 176 Constants defined in Object (global)
 * &nbsp;&nbsp;79 Constants defined in SketchUp objects (namespaced)
-* &nbsp;&nbsp;85 SketchUp objects with no defined constants
+* &nbsp;&nbsp;83 SketchUp objects with no defined constants
 
 
 
@@ -37,8 +38,6 @@ Found the following:
 <col style='width: 8.0em;' />
 <col style='width:12.0em;' />
 </colgroup>
-
-<tbody>
 <tr><td>ALT_MODIFIER_KEY</td><td>18</td><td>Fixnum</td></tr>
 <tr><td>ALT_MODIFIER_MASK</td><td>32</td><td>Fixnum</td></tr>
 <tr><td>ALeaderModel</td><td>2</td><td>Fixnum</td></tr>
@@ -173,7 +172,7 @@ Found the following:
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
 <tr><td>IDCANCEL</td><td>2</td><td>Fixnum</td></tr>
-<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x30bffc4></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td>#<Geom::Transformation:0x494ff44></td><td>Geom::Transformation</td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td>Fixnum</td></tr>
 <tr><td>IDNO</td><td>7</td><td>Fixnum</td></tr>
 <tr><td>IDOK</td><td>1</td><td>Fixnum</td></tr>
@@ -242,7 +241,7 @@ Found the following:
 <tr><td>SB_VCB_VALUE</td><td>2</td><td>Fixnum</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x30be96c></td><td>Sketchup::Console</td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td>#<Sketchup::Console:0x494e8ec></td><td>Sketchup::Console</td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Horizontal</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>SnapTo_Sloped</td><td>3</td><td>Fixnum</td></tr>
@@ -297,7 +296,7 @@ Found the following:
 <col style='width: 6.0em;' />
 </colgroup>
 <tbody>
-<tr><td><strong>Sketchup::Face::</strong></td><td><strong>Sketchup::Drawingelement</strong></td><td><strong>Class</strong></td></tr>
+<tr><td><strong><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/face'>Sketchup::Face::</a></strong></td><td><strong>Sketchup::Drawingelement</strong></td><td><strong>Class</strong></td></tr>
 <tr><td>PointInside</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>PointNotOnPlane</td><td>32</td><td>Fixnum</td></tr>
 <tr><td>PointOnEdge</td><td>4</td><td>Fixnum</td></tr>
@@ -309,7 +308,7 @@ Found the following:
 <tr><td>PointUnknown</td><td>0</td><td>Fixnum</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td><strong>Sketchup::Importer::</strong></td><td><strong>Object</strong></td><td><strong>Class</strong></td></tr>
+<tr><td><strong><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/importer'>Sketchup::Importer::</a></strong></td><td><strong>Object</strong></td><td><strong>Class</strong></td></tr>
 <tr><td>ImportCanceled</td><td>2</td><td>Fixnum</td></tr>
 <tr><td>ImportFail</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>ImportFileNotFound</td><td>4</td><td>Fixnum</td></tr>
@@ -317,7 +316,7 @@ Found the following:
 <tr><td>ImporterNotFound</td><td>3</td><td>Fixnum</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td><strong>Sketchup::Pages::</strong></td><td><strong>Sketchup::Entity</strong></td><td><strong>Class</strong></td></tr>
+<tr><td><strong><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/pages'>Sketchup::Pages::</a></strong></td><td><strong>Sketchup::Entity</strong></td><td><strong>Class</strong></td></tr>
 <tr><td>ImageEmbedded</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>ImageEmbeddedAndLinked</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>ImageLinked</td><td>2</td><td>Fixnum</td></tr>
@@ -328,7 +327,7 @@ Found the following:
 <tr><td>UnitsPixels</td><td>0</td><td>Fixnum</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td><strong>Sketchup::RenderingOptions::</strong></td><td><strong>Sketchup::Entity</strong></td><td><strong>Class</strong></td></tr>
+<tr><td><strong><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptions'>Sketchup::RenderingOptions::</a></strong></td><td><strong>Sketchup::Entity</strong></td><td><strong>Class</strong></td></tr>
 <tr><td>ROPAssign</td><td>0</td><td>Fixnum</td></tr>
 <tr><td>ROPDrawHidden</td><td>26</td><td>Fixnum</td></tr>
 <tr><td>ROPEditComponent</td><td>27</td><td>Fixnum</td></tr>
@@ -403,7 +402,7 @@ Found the following:
 <tr><td>ROPTransparencySortMethod</td><td>28</td><td>Fixnum</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td><strong>Length::</strong></td><td><strong>Float</strong></td><td><strong>Class</strong></td></tr>
+<tr><td><strong><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/length'>Length::</a></strong></td><td><strong>Float</strong></td><td><strong>Class</strong></td></tr>
 <tr><td>Architectural</td><td>1</td><td>Fixnum</td></tr>
 <tr><td>Centimeter</td><td>3</td><td>Fixnum</td></tr>
 <tr><td>Decimal</td><td>0</td><td>Fixnum</td></tr>
@@ -430,124 +429,120 @@ Found the following:
 </colgroup>
 <tbody>
 <tr><td><strong>SketchUp Object</strong></td><td><strong>superclass</strong></td><td><strong>kind_of?</strong></td></tr>
-<tr><td>Sketchup</td><td>not defined</td><td>Module</td></tr>
-<tr><td>Sketchup::AppObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ArcCurve</td><td>Sketchup::Curve</td><td>Class</td></tr>
-<tr><td>Sketchup::AttributeDictionaries</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::AttributeDictionary</td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/sketchup'>Sketchup</a></td><td>na</td><td>Module</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/appobserver'>Sketchup::AppObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/arccurve'>Sketchup::ArcCurve</a></td><td>Sketchup::Curve</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/attributedictionaries'>Sketchup::AttributeDictionaries</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/attributedictionary'>Sketchup::AttributeDictionary</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Behavior</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Camera</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Color</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ComponentDefinition</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::ComponentInstance</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/behavior'>Sketchup::Behavior</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/camera'>Sketchup::Camera</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/color'>Sketchup::Color</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/componentdefinition'>Sketchup::ComponentDefinition</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/componentinstance'>Sketchup::ComponentInstance</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Console</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ConstructionLine</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::ConstructionPoint</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::Curve</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::DefinitionList</td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/console'>Sketchup::Console</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/constructionline'>Sketchup::ConstructionLine</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/constructionpoint'>Sketchup::ConstructionPoint</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/curve'>Sketchup::Curve</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/definitionlist'>Sketchup::DefinitionList</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::DefinitionObserver</td><td>Sketchup::EntityObserver</td><td>Class</td></tr>
-<tr><td>Sketchup::DefinitionsObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Drawingelement</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Edge</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::EdgeUse</td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/definitionobserver'>Sketchup::DefinitionObserver</a></td><td>Sketchup::EntityObserver</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/definitionsobserver'>Sketchup::DefinitionsObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/drawingelement'>Sketchup::Drawingelement</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/edge'>Sketchup::Edge</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/edgeuse'>Sketchup::EdgeUse</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Entities</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::EntitiesObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Entity</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::EntityObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ExtensionsManager</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/entities'>Sketchup::Entities</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/entitiesobserver'>Sketchup::EntitiesObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/entity'>Sketchup::Entity</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/entityobserver'>Sketchup::EntityObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/extensionsmanager'>Sketchup::ExtensionsManager</a></td><td>Object</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Group</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::HLR</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Image</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::InputPoint</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::InstanceObserver</td><td>Sketchup::EntityObserver</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/group'>Sketchup::Group</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/hlr'>Sketchup::HLR</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/image'>Sketchup::Image</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/inputpoint'>Sketchup::InputPoint</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/instanceobserver'>Sketchup::InstanceObserver</a></td><td>Sketchup::EntityObserver</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Layer</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Layers</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::LayersObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Loop</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Material</td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/layer'>Sketchup::Layer</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/layers'>Sketchup::Layers</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/layersobserver'>Sketchup::LayersObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/loop'>Sketchup::Loop</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/material'>Sketchup::Material</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Materials</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::MaterialsObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Menu</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Model</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ModelObserver</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/materials'>Sketchup::Materials</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/materialsobserver'>Sketchup::MaterialsObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/menu'>Sketchup::Menu</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/model'>Sketchup::Model</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/modelobserver'>Sketchup::ModelObserver</a></td><td>Object</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::OptionsManager</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::OptionsProvider</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::OptionsProviderObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Page</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::PagesObserver</td><td>Sketchup::EntitiesObserver</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/optionsmanager'>Sketchup::OptionsManager</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/optionsprovider'>Sketchup::OptionsProvider</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/optionsproviderobserver'>Sketchup::OptionsProviderObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/page'>Sketchup::Page</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/pagesobserver'>Sketchup::PagesObserver</a></td><td>Sketchup::EntitiesObserver</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::PickHelper</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::RenderingOptionsObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::SectionPlane</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
-<tr><td>Sketchup::Selection</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::SelectionObserver</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/pickhelper'>Sketchup::PickHelper</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptionsobserver'>Sketchup::RenderingOptionsObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/sectionplane'>Sketchup::SectionPlane</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/selection'>Sketchup::Selection</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/selectionobserver'>Sketchup::SelectionObserver</a></td><td>Object</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::ShadowInfo</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::ShadowInfoObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Style</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Styles</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::Text</td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/shadowinfo'>Sketchup::ShadowInfo</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/shadowinfoobserver'>Sketchup::ShadowInfoObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/style'>Sketchup::Style</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/styles'>Sketchup::Styles</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/text'>Sketchup::Text</a></td><td>Sketchup::Drawingelement</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Texture</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::TextureWriter</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::Tools</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ToolsObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::UVHelper</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/texture'>Sketchup::Texture</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/texturewriter'>Sketchup::TextureWriter</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/tools'>Sketchup::Tools</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/toolsobserver'>Sketchup::ToolsObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/uvhelper'>Sketchup::UVHelper</a></td><td>Object</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Sketchup::Vertex</td><td>Sketchup::Entity</td><td>Class</td></tr>
-<tr><td>Sketchup::View</td><td>Object</td><td>Class</td></tr>
-<tr><td>Sketchup::ViewObserver</td><td>Object</td><td>Class</td></tr>
-<tr><td>Array</td><td>Object</td><td>Class</td></tr>
-<tr><td>Continuation</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/vertex'>Sketchup::Vertex</a></td><td>Sketchup::Entity</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/view'>Sketchup::View</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/viewobserver'>Sketchup::ViewObserver</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/array'>Array</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/geom'>Geom</a></td><td>na</td><td>Module</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Geom</td><td>not defined</td><td>Module</td></tr>
-<tr><td>Geom::BoundingBox</td><td>Object</td><td>Class</td></tr>
-<tr><td>Geom::LatLong</td><td>Object</td><td>Class</td></tr>
-<tr><td>Geom::Point3d</td><td>Object</td><td>Class</td></tr>
-<tr><td>Geom::PolygonMesh</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/boundingbox'>Geom::BoundingBox</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/latlong'>Geom::LatLong</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/point3d'>Geom::Point3d</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/polygonmesh'>Geom::PolygonMesh</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/transformation'>Geom::Transformation</a></td><td>Object</td><td>Class</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Geom::Transformation</td><td>Object</td><td>Class</td></tr>
-<tr><td>Geom::UTM</td><td>Object</td><td>Class</td></tr>
-<tr><td>Geom::Vector3d</td><td>Object</td><td>Class</td></tr>
-<tr><td>LanguageHandler</td><td>Object</td><td>Class</td></tr>
-<tr><td>Numeric</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/utm'>Geom::UTM</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/vector3d'>Geom::Vector3d</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/languagehandler'>LanguageHandler</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/numeric'>Numeric</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/sksocket'>SKSocket</a></td><td>na</td><td>Object</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Precision</td><td>not defined</td><td>Object</td></tr>
-<tr><td>SKSocket</td><td>not defined</td><td>Object</td></tr>
-<tr><td>Set</td><td>Object</td><td>Class</td></tr>
-<tr><td>SketchupExtension</td><td>Object</td><td>Class</td></tr>
-<tr><td>String</td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/set'>Set</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/sketchupextension'>SketchupExtension</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/string'>String</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/test'>Test</a></td><td>na</td><td>Object</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/ui'>UI</a></td><td>na</td><td>Module</td></tr>
 <tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
 <tr><td></td><td></td><td></td></tr>
-<tr><td>Test</td><td>not defined</td><td>Object</td></tr>
-<tr><td>UI</td><td>not defined</td><td>Module</td></tr>
-<tr><td>UI::Command</td><td>Object</td><td>Class</td></tr>
-<tr><td>UI::Toolbar</td><td>Object</td><td>Class</td></tr>
-<tr><td>UI::WebDialog</td><td>Object</td><td>Class</td></tr>
-<tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/command'>UI::Command</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/toolbar'>UI::Toolbar</a></td><td>Object</td><td>Class</td></tr>
+<tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/webdialog'>UI::WebDialog</a></td><td>Object</td><td>Class</td></tr>
 
 </tbody></table>

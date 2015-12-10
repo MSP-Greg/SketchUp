@@ -32,18 +32,23 @@
 </g></svg></a>
 </p>
 
-# README - SketchUp Constants
+# README<br/><br/>SketchUp Miscellaneous Documentation
 
 ## Summary
 
 This  project contains code, markdown (md) documents, and text files.
 
 If you're viewing this at GitHub.com and you'd like to view the files as html,
-please go to 'GitHub.io Web' or 'RubyDoc.info', as linked to above.  A 'local copy'
-of the docs can be created from the zip at the 'GitHub.io .zip' link.  If you'd
-like the .txt files, they're in the zip from the 'GitHub .zip' link.
+please go to 'GitHub.io Web' or 'RubyDoc.info', as linked to above.  At present,
+the GitHub.io site sorts the file listings, so it's a little better reference.
+A 'local copy' of the docs can be created from the zip at the 'GitHub.io .zip'
+link.  If you'd like the .txt files, they're in the zip from the 'GitHub .zip'
+link.
 
 ## Project Folders
+
+At present, all the code and docs are for documenting the constants defined in
+the SketchUp Ruby API.
 
 | Folder       | Contents                                                       |
 |:-------------|:---------------------------------------------------------------|
@@ -59,10 +64,8 @@ v8 is 08, v2014 is 14). The two md files are in docs, the two txt files are in
 su_info_txt.
 
 All md and txt files are machine generated except the send_action.txt file, which
-I scraped from SketchUp.com.
-
-The md files are converted to html at RubyDoc.info, or one can use yard to do so.
-The text files can be used for code generation or loaded in Excel, etc.
+I scraped from SketchUp.com.  The text files can be used for code generation or
+loaded in Excel, etc.
 
 | File                                       | Desciption                                                                                |
 |:-------------------------------------------|:------------------------------------------------------------------------------------------|
@@ -73,11 +76,11 @@ The text files can be used for code generation or loaded in Excel, etc.
 
 ## Notes
 
-Both the 'Constants Guide' and the 'Constants List' are generated from templates.
-Code adds all of the constant tables and some of the code snippets.  Hence, if two
-versions of SketchUp have the same defined constants, there will be no difference
-in the docs.  The templates appear in the RubyDoc file list as 'Guide_Title' and
-'List_Title'.
+The 'Constants Guide', the 'Constants List'and the 'Collection Info' are generated
+from templates.  Code adds all of the information as tables and some of the code
+snippets.  Hence, if two versions of SketchUp have the same defined constants or
+collections, there will be no difference in the docs.  The templates appear in
+the file list as 'Template_Guide', 'Template_List' and 'Template_Collections'.
 
 All of the .rb files are at least partially documented.
 

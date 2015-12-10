@@ -31,7 +31,7 @@
 #
 # 1. Creates array of root constants
 # 2. Loop thru array
-#   1. Removes constants that exist in h_native
+#   1. Removes constants that exist in native Ruby (h_native)
 #   2. Splits constants into constants and objects
 # 3. Adds constants to file text
 # 4. Calls [.find_nested_constants](#find_nested_constants-class_method) and
@@ -40,22 +40,24 @@
 # **Lastly, remember to unload all of your extensions / plug-ins before runnning this.**
 #
 module CreateSUConstants
-  # version number, listed in file headers
-  VERSION = 1.3
+  VERSION = 1.4
 
-  # blank row
-  EMPTY_ROW = "<tr><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>\n<tr><td></td><td></td><td></td></tr>\n"
+  EMPTY_ROW = "<tr class='clr'>#{'<td>&#160;</td>' * 3}</tr>\n" \
+              "<tr>#{'<td></td>' * 3}</tr>\n"
+
+  SU_DOCS = "http://www.sketchup.com/intl/en/developer/docs/ourdoc/"
   
-  # cur dir
-  @@dir = File.dirname(__FILE__)
-  Dir.chdir(@@dir)
+  RB_DIR = File.dirname(__FILE__)
 
-  # intermediate text for md file
+  # table text for md file
   @@text         = ''
-  
+  # text from Template_list.md file
+  @@text_md      = ''
+
   # text of tab delimited file
   @@text_tab     = ''
-  # text of tab delimited file used for creating the SketchUp_??_Constants_List.md file
+  # text of tab delimited file used for creating the
+  # SketchUp_??_Constants_Guide.md file
   @@text_tab_md  = ''
   
   # text of file section that listed 'no constants' objects, md file
@@ -99,7 +101,7 @@ module CreateSUConstants
     Object.constants.sort.each { |c|
       o = Object.const_get(c)
       c_to_s = c.to_s
-      next if ( /CreateSUConstants/ =~ c_to_s || (h_native.key?(c_to_s) && !(re_include =~ c_to_s)) )
+      next if ( /^CreateSU/ =~ c_to_s || (h_native.key?(c_to_s) && !(re_include =~ c_to_s)) )
       if ( o.kind_of?(Module) )
         objects << o
       else
@@ -137,7 +139,7 @@ module CreateSUConstants
     @@text_md.sub!( /<< hdr >>/, self.create_header_txt(true) )
 
     # md file title
-    @@text_md.gsub!( /List_Title/, "#{@@title_su} Constants List" )
+    @@text_md.gsub!( /Template_List/, "#{@@title_su} Constants List" )
     @@text_md.gsub!( /List_TOC/, "SketchUp #{@@toc_su} Constants List" )
     
     # write files, show done message box
@@ -146,7 +148,7 @@ module CreateSUConstants
     self.file_write(       "su#{@@su_major}_constants_tab_md.txt" , @@text_tab_md)
 #    self.msg_box_done()
     puts "Done with Constants List and files"
-    load "#{@@dir}/create_su_constants_guide.rb"
+    load "#{RB_DIR}/create_su_constants_guide.rb"
   end
 
   # Returns the file header
@@ -166,7 +168,7 @@ module CreateSUConstants
     hdr = (md ? "---\n\nGenerated with [CreateSUConstants]" : 
       "Generated with CreateSUConstants")
     hdr << " v#{VERSION}, on #{sDateTime},"
-    hdr << " using SketchUp v#{Sketchup.version}.\n\n"
+    hdr << " using SketchUp v#{Sketchup.version} & Ruby #{RUBY_VERSION}.\n\n"
     hdr << (md ? "---\n" : "")
     hdr << "Found the following:#{lend}"
     hdr <<  "#{list}#{root} Constants defined in Object (global)\n"
@@ -186,7 +188,7 @@ module CreateSUConstants
     isMod = false
     # get constants, divide into object & constants
     obj.constants.each { |c|
-      next if (isCls && obj.superclass.const_defined?(c) )
+      next if (obj.respond_to?(:superclass) && obj.superclass.const_defined?(c) )
       o = obj.const_get(c)
       # note: assignment
       if ( isMod = o.kind_of?(Module) )
@@ -199,8 +201,8 @@ module CreateSUConstants
     len_c = constants.length
     @@ctr_su += len_c
 
-    
-    super_cls = isCls ? obj.superclass : "not defined"
+    super_cls = obj.respond_to?(:superclass) ? obj.superclass : "na"
+
     # show as Class, then Module, then Object, then ???
     c_m_type = if isCls                ; "Class"
             elsif isMod                ; "Module"
@@ -208,10 +210,18 @@ module CreateSUConstants
             else                       ; "???"
             end
    
-    obj_str = obj.to_s
+    obj_str  = obj.to_s
+    
+    if (/(::)*([^:]+)$/ === obj_str)
+      if $2
+        obj_link    = "<a href='#{SU_DOCS}#{$2.downcase}'>#{obj_str}::</a>"
+        obj_link_nc = "<a href='#{SU_DOCS}#{$2.downcase}'>#{obj_str}</a>"
+      end
+    end
+    
     if (len_c != 0)
       # add information about object and constants
-			@@text << "<tr><td><strong>#{obj_str}::</strong></td>" \
+			@@text << "<tr><td><strong>#{obj_link}</strong></td>" \
                     "<td><strong>#{super_cls}</strong></td>" \
                     "<td><strong>#{c_m_type}</strong></td></tr>\n"
       @@text_tab << "\n#{obj_str}::\t\t#{super_cls}\n"
@@ -220,7 +230,7 @@ module CreateSUConstants
       @@text_tab << "\n"
 		else
       # add information about object to no_constants strings
-      @@no_const     << "<tr><td>#{obj_str}</td><td>#{super_cls}</td><td>#{c_m_type}</td></tr>\n"
+      @@no_const     << "<tr><td>#{obj_link_nc}</td><td>#{super_cls}</td><td>#{c_m_type}</td></tr>\n"
       @@no_const_tab << "#{obj_str}\tno constants\t#{super_cls}\t#{c_m_type}\n"
       @@ctr_su_no += 1
       if (@@ctr_su_no % 5 == 0)
@@ -243,7 +253,7 @@ module CreateSUConstants
   def self.get_ruby_hash(hash)
     ok = false
     ruby_info = nil
-    dir = "../../su_info_txt" || ENV['TMP'] || ENV['TEMP']
+    dir = File.expand_path('../../su_info_txt', RB_DIR) || ENV['TMP'] || ENV['TEMP']
     if File.directory?(dir)
       f_name = "#{dir}#{File::SEPARATOR}native_ruby_cnsts.txt"
       if File.exists?(f_name)
@@ -267,7 +277,7 @@ module CreateSUConstants
   #
   def self.file_get_str(file, path = nil)
     ret = nil
-    dir = path || @@dir ||ENV['TMP'] || ENV['TEMP']
+    dir = ( path ? File.expand_path(path, RB_DIR) : RB_DIR ) ||ENV['TMP'] || ENV['TEMP']
     if File.directory?(dir)
       f_name = "#{dir}#{File::SEPARATOR}#{file}"
       if File.exists?(f_name)
@@ -323,9 +333,11 @@ module CreateSUConstants
   # @param string [String] file contents
   # @return [nil]
   def self.file_write(f_name, string)
-    dir = "../../su_info_txt" || ENV['TMP'] || ENV['TEMP']
-    dir = "../../docs/" if (f_name.slice(-2,2) == 'md')
-    
+    if (f_name.slice(-2,2) == 'md')
+      dir = File.expand_path('../../docs/', RB_DIR) || ENV['TMP'] || ENV['TEMP']
+    else
+      dir = File.expand_path('../../su_info_txt', RB_DIR) || ENV['TMP'] || ENV['TEMP']
+    end
     if (File.directory?(dir))
       file = File.open("#{dir}#{File::SEPARATOR}#{f_name}", "w")
       if (file)
@@ -337,6 +349,5 @@ module CreateSUConstants
 
 end
 
-# load 'D:/rb/lib/su_info/create_su_constants.rb'
 CreateSUConstants._run()
 CreateSUConstantsGuide._run()

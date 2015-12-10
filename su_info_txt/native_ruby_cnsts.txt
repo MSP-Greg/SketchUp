@@ -11,7 +11,9 @@ Comparable
 Complex
 ConditionVariable
 Config
+Continuation
 Data
+Date
 Dir
 ENV
 EOFError
@@ -64,6 +66,7 @@ NotImplementedError
 Numeric
 Object
 ObjectSpace
+Precision
 Proc
 Process
 Queue

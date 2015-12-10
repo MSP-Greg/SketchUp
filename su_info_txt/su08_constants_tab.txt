@@ -1,9 +1,9 @@
-Generated with CreateSUConstants v1.3, on 2015-11-29 at 09:59:42 PM GMT, using SketchUp v8.0.16846.
+Generated with CreateSUConstants v1.4, on 2015-12-10 at 05:47:27 AM GMT, using SketchUp v8.0.16846 & Ruby 1.8.6.
 
 Found the following:
    176 Constants defined in Object (global)
     79 Constants defined in SketchUp objects (namespaced)
-    85 SketchUp objects with no defined constants
+    83 SketchUp objects with no defined constants
 
 ALT_MODIFIER_KEY	18	Fixnum
 ALT_MODIFIER_MASK	32	Fixnum
@@ -120,7 +120,7 @@ GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x30bffc4>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x494ff44>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -179,7 +179,7 @@ SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
 
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x30be96c>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x494e8ec>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum
@@ -324,7 +324,7 @@ Meter	4	Fixnum
 Millimeter	2	Fixnum
 
 
-Sketchup	no constants	not defined	Module
+Sketchup	no constants	na	Module
 Sketchup::AppObserver	no constants	Object	Class
 Sketchup::ArcCurve	no constants	Sketchup::Curve	Class
 Sketchup::AttributeDictionaries	no constants	Sketchup::Entity	Class
@@ -400,29 +400,26 @@ Sketchup::Vertex	no constants	Sketchup::Entity	Class
 Sketchup::View	no constants	Object	Class
 Sketchup::ViewObserver	no constants	Object	Class
 Array	no constants	Object	Class
-Continuation	no constants	Object	Class
+Geom	no constants	na	Module
 
-Geom	no constants	not defined	Module
 Geom::BoundingBox	no constants	Object	Class
 Geom::LatLong	no constants	Object	Class
 Geom::Point3d	no constants	Object	Class
 Geom::PolygonMesh	no constants	Object	Class
-
 Geom::Transformation	no constants	Object	Class
+
 Geom::UTM	no constants	Object	Class
 Geom::Vector3d	no constants	Object	Class
 LanguageHandler	no constants	Object	Class
 Numeric	no constants	Object	Class
+SKSocket	no constants	na	Object
 
-Precision	no constants	not defined	Object
-SKSocket	no constants	not defined	Object
 Set	no constants	Object	Class
 SketchupExtension	no constants	Object	Class
 String	no constants	Object	Class
+Test	no constants	na	Object
+UI	no constants	na	Module
 
-Test	no constants	not defined	Object
-UI	no constants	not defined	Module
 UI::Command	no constants	Object	Class
 UI::Toolbar	no constants	Object	Class
 UI::WebDialog	no constants	Object	Class
-

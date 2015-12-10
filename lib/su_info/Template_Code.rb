@@ -6,10 +6,6 @@
 #
 class GuideCode
 
-  # @return [this]
-  def initialize()
-  end
-
   # An example showing use of the Face constants
   # @return [nil]
   def face_1
@@ -199,6 +195,19 @@ class GuideCode
       end
     }
     Sketchup.active_model.select_tool(@tool)
+  end
+
+  # Code used in Template_Collections
+  def coll_1
+    am_ents = Sketchup.active_model.entities
+    face1 = [   0,   0,   0 ],[   0, 300,   0 ],[ 300, 300,   0 ],[ 300,   0,   0 ]
+    face2 = [   0,   0, 300 ],[   0, 300, 300 ],[ 300, 300, 300 ],[ 300,   0, 300 ]
+
+    puts "am_ents.length = #{am_ents.length}"
+    am_ents.add_face( face1 )
+    puts "am_ents.length = #{am_ents.length}"
+    am_ents.add_face( face2 )
+    puts "am_ents.length = #{am_ents.length}"
   end
 
 end

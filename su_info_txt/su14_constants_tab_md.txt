@@ -94,7 +94,7 @@ GL_TRIANGLE_FAN	6	Fixnum
 GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x99b7210>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0x9857220>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -145,7 +145,7 @@ RUBY_VERSION	2.0.0	String
 SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x99b65c8>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0x98565d8>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum

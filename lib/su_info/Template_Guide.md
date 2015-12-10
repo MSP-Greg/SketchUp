@@ -1,4 +1,4 @@
-# @title Guide_Title
+# @title Template_Guide
 [Sketchup::Console]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/console
 [Sketchup::Dimension]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/dimension
 [Sketchup::DimensionLinear]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/dimensionlinear
@@ -43,15 +43,15 @@
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
 [CreateSUConstantsGuide]:CreateSUConstantsGuide.html
 <style scoped>
-#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
-#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
-#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
-#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
-#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
-#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
-#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
-#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+\#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
+\#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+\#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
+\#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+\#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+\#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
+\#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
+\#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+\#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
 </style>
 
 # Guide_TOC
@@ -169,7 +169,7 @@ Defined on [Sketchup::Face].  See [Face#classify_point].
 ```ruby
 pt_location = face.classify_point(pt)
 ```
-The below code sample is in the Template_Guide_Code.rb file. Load, then
+The below code sample is in the Template_Code.rb file. Load, then
 GuideCode.new.face_1.
 
 ```ruby
@@ -217,7 +217,7 @@ format = am.options['UnitsOptions']['LengthFormat']
 
 The following code creates two hashes that make use of the Length:: constants,
 queries the two settings, and outputs to the console.  It's in the
-Template_Guide_Code.rb file. Load, then GuideCode.new.len_1.
+Template_Code.rb file. Load, then GuideCode.new.len_1.
 
 ```ruby
 << code_len_1 >>
@@ -262,7 +262,7 @@ console the [onRenderingOptionsChanged] callback's type parameter and the
 constant associated with it, along any [RenderingOptions] changes. One can
 change [RenderingOptions] thru the UI and see what's going on, especially if UI
 operations do not have constants or keys. The code sample is in the
-Template_Guide_Code.rb file.  Load, then GuideCode.new.ro_1.
+Template_Code.rb file.  Load, then GuideCode.new.ro_1.
 
 ```ruby
 << code_ro_1 >>
@@ -482,7 +482,7 @@ end
 ```
 
 Below is code that shows use of the constants, also some "does't quite work"
-key code.  Located in the Template_Guide_Code.rb file. Load, then GuideCode.new.tool_1.
+key code.  Located in the Template_Code.rb file. Load, then GuideCode.new.tool_1.
 
 ```ruby
 << code_tool_1 >>

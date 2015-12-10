@@ -1,10 +1,13 @@
 --protected
 --private
 --markup markdown
+--markup-provider redcarpet
+--title "SMIP - SketchUp Miscellaneous Info Project"
 
 lib/su_info/*.rb
 -
 docs/*.md
+lib/su_info/Template_Collections.md
 lib/su_info/Template_Guide.md
 lib/su_info/Template_List.md
  

@@ -32,12 +32,9 @@
 module CreateSUConstantsGuide
 
 #{ Class variables
-  # version number, listed in file headers
-  @@version = '1.3'
+  VERSION = '1.3'
 
-  # cur dir
-  @@dir = File.dirname(__FILE__)
-  Dir.chdir(@@dir)
+  RB_DIR = File.dirname(__FILE__)
 
   # text of template file
   @@text_md   = Object.new
@@ -65,14 +62,14 @@ module CreateSUConstantsGuide
   def self._run()
     # get required files
     return unless (@@text_md   = self.file_get_str('Template_Guide.md'))
-    return unless (@@text_code = self.file_get_str('Template_Guide_Code.rb'))
-    return unless (@@constants = self.file_get_str("su#{@@su_major}_constants_tab_md.txt", "../../su_info_txt"))
+    return unless (@@text_code = self.file_get_str('Template_Code.rb'))
+    return unless (@@constants = self.file_get_str(
+      "su#{@@su_major}_constants_tab_md.txt", "../../su_info_txt"))
 
     sDateTime =  Time.now.gmtime.strftime("%Y-%m-%d at %I:%M:%S %p") + " GMT"
-    hdr =  "Generated with [CreateSUConstantsGuide] v#{@@version}, on"
-    hdr << " #{sDateTime}, using SketchUp v#{Sketchup.version}.\n"
+    hdr =  "Generated with [CreateSUConstantsGuide] v#{VERSION}, on"
+    hdr << " #{sDateTime}, using SketchUp v#{Sketchup.version} & Ruby #{RUBY_VERSION}.\n"
     @@text_md.sub!(/<< hdr >>/, hdr)
-    
     
     self.insert_code_sample('face_1')
     self.insert_code_sample('len_1')
@@ -175,9 +172,9 @@ module CreateSUConstantsGuide
     self.unclassified_constants()
 
     @@text_md.gsub!(/Guide_TOC/, "SketchUp #{@@toc_su} Constants Guide")
-    @@text_md.gsub!(/Guide_Title/, "#{@@title_su} Constants Guide")
+    @@text_md.gsub!(/Template_Guide/, "#{@@title_su} Constants Guide")
 
-    self.file_write("SketchUp_#{@@su_major}_Constants_Guide.md", @@text_md, "../../docs/")
+    self.file_write("SketchUp_#{@@su_major}_Constants_Guide.md", @@text_md)
 
     UI.messagebox('Finished!')
 
@@ -628,30 +625,23 @@ module CreateSUConstantsGuide
       @@am_ro[ro_str] = !@@am_ro[@@a_ro[i][0]]
     when 'Sketchup::Color'
       color = @@am_ro[ro_str].to_a
-      if (color[2] == 255)
-        color[2] = 128
-      elsif (color[2] == 128)
-        color[2] = 192
-      else
-        color[2] = 255
-      end
+      color[2] = case color[2]
+                 when 255 then 128
+                 when 128 then 192
+                 else          255
+                 end
       @@am_ro[ro_str] = Sketchup::Color.new(color)
     when 'Fixnum'
-      case @@am_ro[ro_str]
-      when 1
-        @@am_ro[ro_str] = 2
-      when 2
-        @@am_ro[ro_str] = 1
-      else
-        @@am_ro[ro_str] = 1
-      end
+      @@am_ro[ro_str] = case @@am_ro[ro_str]
+                        when 1 then 2
+                        when 2 then 1
+                        else        1
+                        end
     when 'Float'
-      case @@am_ro[ro_str]
-      when 0.5
-        @@am_ro[ro_str] = 0.6
-      else
-        @@am_ro[ro_str] = 0.5
-      end
+      @@am_ro[ro_str] = case @@am_ro[ro_str]
+                        when 0.5 then 0.6
+                        else          0.5
+                        end
     end
   end
 
@@ -662,7 +652,8 @@ module CreateSUConstantsGuide
   #
   def self.file_get_str(file, path = nil )
   ret = nil
-  dir = path || @@dir ||ENV['TMP'] || ENV['TEMP']
+  dir = ( path ? File.expand_path(path, RB_DIR) : RB_DIR) ||
+      ENV['TMP'] || ENV['TEMP']
     if File.directory?(dir)
       f_name = "#{dir}#{File::SEPARATOR}#{file}"
       if File.exists?(f_name)
@@ -680,8 +671,9 @@ module CreateSUConstantsGuide
   # @param f_name [String] name of output file with extention
   # @param string [String] file contents
   # @return [nil]
-  def self.file_write(f_name, string, dir_md = nil)
-    dir = dir_md || ENV['TMP'] || ENV['TEMP']
+  def self.file_write(f_name, string)
+    dir = File.expand_path('../../docs/', RB_DIR) ||
+        ENV['TMP'] || ENV['TEMP']
     if (File.directory?(dir))
       file = File.open("#{dir}#{File::SEPARATOR}#{f_name}", "w")
       if (file)

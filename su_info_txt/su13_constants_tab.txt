@@ -1,9 +1,9 @@
-Generated with CreateSUConstants v1.3, on 2015-11-29 at 10:01:51 PM GMT, using SketchUp v13.0.4812.
+Generated with CreateSUConstants v1.4, on 2015-12-10 at 05:48:02 AM GMT, using SketchUp v13.0.4812 & Ruby 1.8.6.
 
 Found the following:
-   177 Constants defined in Object (global)
+   176 Constants defined in Object (global)
     79 Constants defined in SketchUp objects (namespaced)
-    86 SketchUp objects with no defined constants
+    84 SketchUp objects with no defined constants
 
 ALT_MODIFIER_KEY	18	Fixnum
 ALT_MODIFIER_MASK	32	Fixnum
@@ -105,117 +105,116 @@ DimensionArrowSlash	1	Fixnum
 FILE_WRITE_FAILED_INVALID_TYPE	1	Fixnum
 FILE_WRITE_FAILED_UNKNOWN	2	Fixnum
 FILE_WRITE_OK	0	Fixnum
-GJLExt	#<SketchupExtension:0x5bbf1ac>	SketchupExtension
-
 GL_LINES	1	Fixnum
+
 GL_LINE_LOOP	2	Fixnum
 GL_LINE_STRIP	3	Fixnum
 GL_POINTS	0	Fixnum
 GL_POLYGON	9	Fixnum
-
 GL_QUADS	7	Fixnum
+
 GL_QUAD_STRIP	8	Fixnum
 GL_TRIANGLES	4	Fixnum
 GL_TRIANGLE_FAN	6	Fixnum
 GL_TRIANGLE_STRIP	5	Fixnum
-
 IDABORT	3	Fixnum
+
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x5bce1c0>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0xea6e88>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
-
 IDOK	1	Fixnum
+
 IDRETRY	4	Fixnum
 IDYES	6	Fixnum
 LAYER_HIDDEN_BY_DEFAULT	1	Fixnum
 LAYER_IS_HIDDEN_ON_NEW_PAGES	32	Fixnum
-
 LAYER_IS_VISIBLE_ON_NEW_PAGES	16	Fixnum
+
 LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES	0	Fixnum
 LAYER_VISIBLE_BY_DEFAULT	0	Fixnum
 MB_ABORTRETRYIGNORE	2	Fixnum
 MB_MULTILINE	16	Fixnum
-
 MB_OK	0	Fixnum
+
 MB_OKCANCEL	1	Fixnum
 MB_RETRYCANCEL	5	Fixnum
 MB_YESNO	4	Fixnum
 MB_YESNOCANCEL	3	Fixnum
-
 MF_CHECKED	8	Fixnum
+
 MF_DISABLED	2	Fixnum
 MF_ENABLED	0	Fixnum
 MF_GRAYED	1	Fixnum
 MF_UNCHECKED	0	Fixnum
-
 MK_ALT	32	Fixnum
+
 MK_COMMAND	0	Fixnum
 MK_CONTROL	8	Fixnum
 MK_LBUTTON	1	Fixnum
 MK_MBUTTON	16	Fixnum
-
 MK_RBUTTON	2	Fixnum
+
 MK_SHIFT	4	Fixnum
 ORIGIN	(0", 0", 0")	Geom::Point3d
 PAGE_NO_CAMERA	4094	Fixnum
 PAGE_USE_ALL	4095	Fixnum
-
 PAGE_USE_CAMERA	1	Fixnum
+
 PAGE_USE_HIDDEN	16	Fixnum
 PAGE_USE_LAYER_VISIBILITY	32	Fixnum
 PAGE_USE_RENDERING_OPTIONS	2	Fixnum
 PAGE_USE_SECTION_PLANES	64	Fixnum
-
 PAGE_USE_SHADOWINFO	4	Fixnum
+
 PAGE_USE_SKETCHCS	8	Fixnum
 PLATFORM	i386-mswin32	String
 RELEASE_DATE	2008-08-11	String
 RUBY_PATCHLEVEL	287	Fixnum
-
 RUBY_PLATFORM	i386-mswin32	String
+
 RUBY_RELEASE_DATE	2008-08-11	String
 RUBY_VERSION	1.8.6	String
 SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
-
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x5bccb68>	Sketchup::Console
+
+SKETCHUP_CONSOLE	#<Sketchup::Console:0xea5830>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum
-
 SnapTo_Vertical	2	Fixnum
+
 TB_HIDDEN	0	Fixnum
 TB_NEVER_SHOWN	-1	Fixnum
 TB_VISIBLE	1	Fixnum
 TextAlignCenter	1	Fixnum
-
 TextAlignLeft	0	Fixnum
+
 TextAlignRight	2	Fixnum
 VERSION	1.8.6	String
 VK_ALT	18	Fixnum
 VK_COMMAND	18	Fixnum
-
 VK_CONTROL	17	Fixnum
+
 VK_DELETE	46	Fixnum
 VK_DOWN	40	Fixnum
 VK_END	35	Fixnum
 VK_HOME	36	Fixnum
-
 VK_INSERT	45	Fixnum
+
 VK_LEFT	37	Fixnum
 VK_MENU	18	Fixnum
 VK_NEXT	34	Fixnum
 VK_PRIOR	33	Fixnum
-
 VK_RIGHT	39	Fixnum
+
 VK_SHIFT	16	Fixnum
 VK_SPACE	32	Fixnum
 VK_UP	38	Fixnum
 X_AXIS	(1.0, 0.0, 0.0)	Geom::Vector3d
-
 Y_AXIS	(0.0, 1.0, 0.0)	Geom::Vector3d
+
 Z_AXIS	(0.0, 0.0, 1.0)	Geom::Vector3d
 
 Sketchup::Face::		Sketchup::Drawingelement
@@ -325,7 +324,7 @@ Meter	4	Fixnum
 Millimeter	2	Fixnum
 
 
-Sketchup	no constants	not defined	Module
+Sketchup	no constants	na	Module
 Sketchup::AppObserver	no constants	Object	Class
 Sketchup::ArcCurve	no constants	Sketchup::Curve	Class
 Sketchup::AttributeDictionaries	no constants	Sketchup::Entity	Class
@@ -400,31 +399,28 @@ Sketchup::UVHelper	no constants	Object	Class
 Sketchup::Vertex	no constants	Sketchup::Entity	Class
 Sketchup::View	no constants	Object	Class
 Sketchup::ViewObserver	no constants	Object	Class
-Sketchup::WebTextures	no constants	not defined	Object
+Sketchup::WebTextures	no constants	na	Object
 Array	no constants	Object	Class
 
-Continuation	no constants	Object	Class
-Geom	no constants	not defined	Module
+Geom	no constants	na	Module
 Geom::BoundingBox	no constants	Object	Class
 Geom::LatLong	no constants	Object	Class
 Geom::Point3d	no constants	Object	Class
-
 Geom::PolygonMesh	no constants	Object	Class
+
 Geom::Transformation	no constants	Object	Class
 Geom::UTM	no constants	Object	Class
 Geom::Vector3d	no constants	Object	Class
 LanguageHandler	no constants	Object	Class
-
 Numeric	no constants	Object	Class
-Precision	no constants	not defined	Object
-SKSocket	no constants	not defined	Object
+
+SKSocket	no constants	na	Object
 Set	no constants	Object	Class
 SketchupExtension	no constants	Object	Class
-
 String	no constants	Object	Class
-Test	no constants	not defined	Object
-UI	no constants	not defined	Module
+Test	no constants	na	Object
+
+UI	no constants	na	Module
 UI::Command	no constants	Object	Class
 UI::Toolbar	no constants	Object	Class
-
 UI::WebDialog	no constants	Object	Class

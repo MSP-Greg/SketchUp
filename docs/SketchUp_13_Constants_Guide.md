@@ -44,11 +44,11 @@
 [CreateSUConstantsGuide]:CreateSUConstantsGuide.html
 <style scoped>
 \#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
-\#filecontents table.gjl15 thead { background-color:transparent; border-bottom:2px solid #aaa; }
-\#filecontents table.gjl15 tr    { background-color:transparent; border:none;}
+\#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
+\#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
 \#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-\#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; text-align:left;}
-\#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; }
+\#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
+\#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
 \#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
 \#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
 \#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
@@ -72,7 +72,7 @@ but many API users are new to Ruby, or new to programming.
 Finally, thanks to Jim Foltz and others for their previous work and help.
 
 ---
-Generated with [CreateSUConstantsGuide] v1.3, on 2015-11-29 at 10:01:51 PM GMT, using SketchUp v13.0.4812.
+Generated with [CreateSUConstantsGuide] v1.3, on 2015-12-10 at 05:48:02 AM GMT, using SketchUp v13.0.4812 & Ruby 1.8.6.
 
 
 ---
@@ -170,7 +170,8 @@ Defined on [Sketchup::Face].  See [Face#classify_point].
 ```ruby
 pt_location = face.classify_point(pt)
 ```
-The below code sample is in the Template_Guide_Code.rb file. Load, then GuideCode.new.face_1.
+The below code sample is in the Template_Code.rb file. Load, then
+GuideCode.new.face_1.
 
 ```ruby
 # must have a model open with at least one face!
@@ -208,9 +209,9 @@ puts t
 
 ### Importer \#load_file
 
-Defined on [Sketchup::Importer].  See [Importer#load_file].  These are returned to
-SketchUp when your importer is finished with processing.  Note the following is not
-included --
+Defined on [Sketchup::Importer].  See [Importer#load_file].  These are returned
+to SketchUp when your importer is finished with processing.  Note the following
+is not included --
 
 5 = SketchUp version not supported (no additional dialog shown)
 
@@ -289,7 +290,7 @@ format = am.options['UnitsOptions']['LengthFormat']
 
 The following code creates two hashes that make use of the Length:: constants,
 queries the two settings, and outputs to the console.  It's in the
-Template_Guide_Code.rb file. Load, then GuideCode.new.len_1.
+Template_Code.rb file. Load, then GuideCode.new.len_1.
 
 ```ruby
 cns = Length
@@ -360,14 +361,14 @@ The constants provide some information about the change.
   assigned to the type value.
 * Some [RenderingOptions] keys will not fire a callback.
 
-The following code lists all of the [RenderingOptions] constants and values, then
-creates a hash from all of the [RenderingOptions] keys.  It then adds a
+The following code lists all of the [RenderingOptions] constants and values,
+then creates a hash from all of the [RenderingOptions] keys.  It then adds a
 [RenderingOptionsObserver] to the current model.  The observer outputs to the
-console the [onRenderingOptionsChanged] callback's type parameter and the constant
-associated with it, along any [RenderingOptions] changes. One can change
-[RenderingOptions] thru the UI and see what's going on, especially if UI operations
-do not have constants or keys. The code sample is in the Template_Guide_Code.rb file.
-Load, then GuideCode.new.ro_1.
+console the [onRenderingOptionsChanged] callback's type parameter and the
+constant associated with it, along any [RenderingOptions] changes. One can
+change [RenderingOptions] thru the UI and see what's going on, especially if UI
+operations do not have constants or keys. The code sample is in the
+Template_Code.rb file.  Load, then GuideCode.new.ro_1.
 
 ```ruby
 am = Sketchup.active_model
@@ -562,7 +563,7 @@ These constants can be used anywhere instances of their respective classes are u
 <table class='gjl15'><thead>
 <th>constant name</th><th class='c'>value</th><th>class</th>
 </thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x5bce1c0></td><td>Geom::Transformation</td></tr>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0xea6e88></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
@@ -581,7 +582,7 @@ SKETCHUP_CONSOLE.write("this way also")
 <table class='gjl15'><thead>
 <th>constant<br/>name</th><th class='c'>value<br/>()</th>
 </thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x5bccb68></td></tr>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0xea5830></td></tr>
 </tbody></table>
 
 
@@ -756,10 +757,13 @@ your_submenu.add_item cmd
 
 ### Definition \#behavior \#snapto
 
-See [Behavior#snapto].  To quote SU help, 'The Behavior class is used to control
-the "behavior" of components'.
+See [Behavior#snapto].  To quote SketchUp.com help, 'The Behavior class is used
+to control the "behavior" of components'.
 
 ```ruby
+model = Sketchup.active_model
+definition = model.definitions[0]
+behavior = definition.behavior
 snap_to = behavior.snapto
 behavior.snapto = snap_to
 ```
@@ -778,9 +782,9 @@ behavior.snapto = snap_to
 
 See [Layer#page_behavior].  This attribute is a numeric, with somewhat confusing
 documentation.  From the docs, 'The behaviour is composed of a combination of
-these flags'.  So default visiblity is bit 0 ('HIDDEN' is set), why does 'NEW_PAGES'
-have 'VISIBLE' setting bit 4 and 'HIDDEN' setting bit 5?  Seems that they should
-be mutually exclusive.
+these flags'.  So default visiblity is bit 0 ('HIDDEN' is set), why does
+'NEW_PAGES' have 'VISIBLE' setting bit 4 and 'HIDDEN' setting bit 5?  Seems that
+they should be mutually exclusive.
 
 ```ruby
 layers = Sketchup.active_model.layers
@@ -873,8 +877,8 @@ VK_NEXT is 'Page Down'.
 * keypad number keys are 96-105
 
 I could not get any information from the flags parameter. I would suggest using
-keyUp and KeyDown to keep track of modifier key state.  The next section has code
-that attaches to mouse and keybaord events.
+keyUp and KeyDown to keep track of modifier key state.  The next section has
+code that attaches to mouse and keybaord events.
 
 ```ruby
  def onKeyDown(key, repeat, flags, view)
@@ -925,7 +929,7 @@ end
 ```
 
 Below is code that shows use of the constants, also some "does't quite work"
-key code.  Located in the Template_Guide_Code.rb file. Load, then GuideCode.new.tool_1.
+key code.  Located in the Template_Code.rb file. Load, then GuideCode.new.tool_1.
 
 ```ruby
 @@mouse = Proc.new { |up_down_dbl, flags, x, y, view|
@@ -1064,8 +1068,8 @@ view.draw(mode, pts)
 
 ### View \#draw_text
 
-See [View#draw_text].  These constants are used in SketchUp 2016+ and control the
-text alignment.
+See [View#draw_text].  These constants are used in SketchUp 2016+ and control
+the text alignment.
 
 <table class='gjl15'><thead>
 <th>:align<br/>hash value</th><th class='c'>value<br/>(Fixnum)</th>
@@ -1127,14 +1131,13 @@ The following have been replaced by namespaced constants.
 ## Yet to be added to documentation or unknown
 
 <table class='gjl15'><thead>
-<th>constant name</th><th class='c'>value</th><th>class</th>
+<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
 </thead><tbody>
-<tr><td>GJLExt</td><td class='c'>#<SketchupExtension:0x5bbf1ac></td><td>SketchupExtension</td></tr>
-<tr><td>Sketchup::Pages::ImageEmbedded</td><td class='c'>0</td><td>Fixnum</td></tr>
-<tr><td>Sketchup::Pages::ImageEmbeddedAndLinked</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td>Sketchup::Pages::ImageLinked</td><td class='c'>2</td><td>Fixnum</td></tr>
-<tr><td>Sketchup::Pages::UnitsNormalizedX</td><td class='c'>2</td><td>Fixnum</td></tr>
-<tr><td>Sketchup::Pages::UnitsNormalizedY</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td>Sketchup::Pages::UnitsPixels</td><td class='c'>0</td><td>Fixnum</td></tr>
+<tr><td>Sketchup::Pages::ImageEmbedded</td><td class='c'>0</td></tr>
+<tr><td>Sketchup::Pages::ImageEmbeddedAndLinked</td><td class='c'>1</td></tr>
+<tr><td>Sketchup::Pages::ImageLinked</td><td class='c'>2</td></tr>
+<tr><td>Sketchup::Pages::UnitsNormalizedX</td><td class='c'>2</td></tr>
+<tr><td>Sketchup::Pages::UnitsNormalizedY</td><td class='c'>1</td></tr>
+<tr><td>Sketchup::Pages::UnitsPixels</td><td class='c'>0</td></tr>
 </tbody></table>
 
