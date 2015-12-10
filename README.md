@@ -5,14 +5,14 @@
 <g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="18px">
 <text x="62" y="21" fill="#fff" fill-opacity="1.0">GitHub.com</text>
 </g></svg></a>
-<a href="http://msp-greg.github.io/su_info/file.README.html">
-<svg  width="150" height="28" xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;">
+<a href="http://msp-greg.github.io/su_info/file.README.html" style="margin-left:16px;">
+<svg  width="150" height="28" xmlns="http://www.w3.org/2000/svg">
 <rect width="150" height="28" fill="#483D8B" x="0" y="0" rx="5" ry="5" />
 <g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="18px">
 <text x="75" y="21" fill="#fff" fill-opacity="1.0">GitHub.io Web</text>
 </g></svg></a>
-<a href="http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/file/README.md">
-<svg  width="140" height="28" xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;">
+<a href="http://www.rubydoc.info/github/MSP-Greg/SketchUp/master/file/README.md" style="margin-left:16px;">
+<svg  width="140" height="28" xmlns="http://www.w3.org/2000/svg">
 <rect width="140" height="28" fill="#483D8B" x="0" y="0" rx="5" ry="5" />
 <g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="18px">
 <text x="70" y="21" fill="#fff" fill-opacity="1.0">RubyDoc.info</text>
@@ -24,8 +24,8 @@
 <g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="18px">
 <text x="62" y="21" fill="#fff" fill-opacity="1.0">GitHub .zip</text>
 </g></svg></a>
-<a href="https://github.com/MSP-Greg/MSP-Greg.github.io/archive/master.zip">
-<svg  width="150" height="28" xmlns="http://www.w3.org/2000/svg" style="margin-left:16px;">
+<a href="https://github.com/MSP-Greg/MSP-Greg.github.io/archive/master.zip" style="margin-left:16px;">
+<svg  width="150" height="28" xmlns="http://www.w3.org/2000/svg">
 <rect width="150" height="28" fill="#707080" x="0" y="0" rx="5" ry="5" />
 <g text-anchor="middle" font-family="Lucida Sans,Lucida Grande,Verdana,Arial,sans-serif" font-size="18px">
 <text x="75" y="21" fill="#fff" fill-opacity="1.0">GitHub.io .zip</text>
