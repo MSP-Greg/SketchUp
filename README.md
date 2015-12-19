@@ -48,8 +48,6 @@ little better reference.  A 'local copy' of the docs can be created from the zip
 at the 'GitHub.io .zip' link.  If you'd like the .txt files, they're in the zip
 from the 'GitHub .zip' link.
 
-**NOTE - NEEDS REVISION FOR SYMBOLS, COLLECTIONS, ETC**
-
 ## Project Folders
 
 | Folder        | Contents                                                           |
