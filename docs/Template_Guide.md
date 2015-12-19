@@ -1,4 +1,6 @@
-# @title Template_Guide
+# @title Template&nbsp;Constants&nbsp;Guide
+[SUMD_Guide]:../../SUMD_Guide
+[template_code.rb]:../../SUMD_TC
 [Sketchup::Console]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/console
 [Sketchup::Dimension]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/dimension
 [Sketchup::DimensionLinear]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/dimensionlinear
@@ -41,20 +43,20 @@
 [UI.messagebox]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/ui#messagebox
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
-[CreateSUConstantsGuide]:CreateSUConstantsGuide.html
 <style scoped>
-\#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
-\#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
-\#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
-\#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-\#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
-\#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
-\#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
-\#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
-\#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+#filecontents p code { font-size:16px; }
+\#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
+\#filecontents table.sumd thead { border-bottom:2px solid #aaa; background-color:transparent;}
+\#filecontents table.sumd tr    { border:none; background-color:transparent;}
+\#filecontents table.sumd tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+\#filecontents table.sumd th { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent; text-align:left;}
+\#filecontents table.sumd td { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent;}
+\#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
+\#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
+\#filecontents table.sumd td.clr, #filecontents table.sumd th.clr { border-bottom:none; width:10em;}
 </style>
 
-# Guide_TOC
+# TOC Constants Guide
 
 SketchUp defines constants, some are global, others are defined in classes or
 'namespaced'.  Many of them are not listed in the SketchUp.com help documentation.
@@ -72,7 +74,7 @@ but many API users are new to Ruby, or new to programming.
 Finally, thanks to Jim Foltz and others for their previous work and help.
 
 ---
-<< hdr >>
+<%= hdr %>
 
 ---
 
@@ -127,7 +129,7 @@ arrow_type = dim.arrow_type
 dim.arrow_type = arrow_type
 ```
 
-<< DimensionArrow >>
+<%= dim_arrow %>
 
 ### DimensionLinear \#aligned_text_position \#aligned_text_position=
 
@@ -138,7 +140,7 @@ at_pos = dim.aligned_text_position
 dim.aligned_text_position = at_pos
 ```
 
-<< Dim_aligned_text >>
+<%= dim_aligned_text %>
 
 ### DimensionLinear \#text_position \#text_position=
 
@@ -149,7 +151,7 @@ text_pos = dim.text_position
 dim.text_position = text_pos
 ```
 
-<< Dim_text_pos >>
+<%= dim_text_pos %>
 
 ### Entities \#add_faces_from_mesh
 
@@ -160,7 +162,7 @@ ame = Sketchup.active_model.entities
 ame.add_faces_from_mesh(pm, smooth_flags, material)
 ```
 
-<< from_mesh >>
+<%= from_mesh %>
 
 ### Face \#classify_point
 
@@ -169,14 +171,14 @@ Defined on [Sketchup::Face].  See [Face#classify_point].
 ```ruby
 pt_location = face.classify_point(pt)
 ```
-The below code sample is in the Template_Code.rb file. Load, then
-GuideCode.new.face_1.
+The below code sample is in the [template_code.rb] file. Load, then
+SUMD_TC.new.face_1.
 
 ```ruby
-<< code_face_1 >>
+<%= code_face_1 %>
 ```
 
-<< face_classify_point >>
+<%= face_classify_point %>
 
 ### Importer \#load_file
 
@@ -194,7 +196,7 @@ class YourImporter < Sketchup::Importer
 end
 ```
 
-<< importer >>
+<%= importer %>
 
 ### Length 'UnitsOptions' OptionsProvider
 
@@ -204,7 +206,7 @@ Defined on [Length].  See [Model#options], [OptionsManager],
 First, SketchUp.com does not list all of the keys used in [OptionsManager] and
 [OptionsProvider].  The below table shows all of the keys.
 
-<< OptionsManager >>
+<%= opts_mgr %>
 
 These constants are used with the 'UnitsOptions' [OptionsProvider].  In the two
 following code lines, units and format have constant equivalents.
@@ -216,14 +218,14 @@ format = am.options['UnitsOptions']['LengthFormat']
 ```
 
 The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and outputs to the console.  It's in the
-Template_Code.rb file. Load, then GuideCode.new.len_1.
+queries the two settings, and out@version = 2.0F to the console.  It's in the
+[template_code.rb] file. Load, then SUMD_TC.new.len_1.
 
 ```ruby
-<< code_len_1 >>
+<%= code_len_1 %>
 ```
 
-<< Length:: >>
+<%= _length %>
 
 ### Model \#save \#save_copy
 
@@ -235,7 +237,7 @@ status = model.save(filename, version)
 status = model.save_copy(filename, version)
 ```
 
-<< model_save >>
+<%= model_save %>
 
 ### RenderingOptionsObserver
 
@@ -262,19 +264,19 @@ console the [onRenderingOptionsChanged] callback's type parameter and the
 constant associated with it, along any [RenderingOptions] changes. One can
 change [RenderingOptions] thru the UI and see what's going on, especially if UI
 operations do not have constants or keys. The code sample is in the
-Template_Code.rb file.  Load, then GuideCode.new.ro_1.
+[template_code.rb] file.  Load, then SUMD_TC.new.ro_1.
 
 ```ruby
-<< code_ro_1 >>
+<%= code_ro_1 %>
 ```
 
 The above code does not make use of the constants, so the below code shows one
 way of creating an observer.  The callback uses some constants (items in 'view'
 menu and toolbar) in a case statement.  Similar code could be used in a plug-in.
-This code sample is GuideCode.new.ro_2.
+This code sample is SUMD_TC.new.ro_2.
 
 ```ruby
-<< code_ro_2 >>
+<%= code_ro_2 %>
 ```
 
 The following table lists [RenderingOptions] keys which fire callbacks in a
@@ -286,17 +288,18 @@ RenderingOption value.class, RenderingOption key, and Constant name.  Duplicate
 values are shown bolded.  Note that since these seem to have a many-to-many
 relationship, the testing done may not show all combinations.
 
-<< RenderingOptions >>
-<< RenderingOptions_no_fire >>
-<< RenderingOptions_no_cb >>
+<%= rendering_opts %>
+<%= rendering_opts_no_fire %>
+<%= rendering_opts_no_cb %>
 
 ## Global Object Constants
 
 ### Geometry Class constants
 
-These constants can be used anywhere instances of their respective classes are used.
+These constants can be used anywhere instances of their respective classes are
+used.
 
-<< Geometry >>
+<%= geometry %>
 
 ### Other object constants
 
@@ -306,7 +309,7 @@ The only other object constant defined is [Sketchup::Console].
 SKETCHUP_CONSOLE.write("this way also")
 ```
 
-<< other_object >>
+<%= other_object %>
 
 ## Global Numeric Constants
 
@@ -322,18 +325,18 @@ its parameter.  Numbers are officially 'unsupported', and only available under W
 The following code produces the same result.
 
 ```ruby
-result = Sketchup.send_action("selectArcTool:")  # use a String
-result = Sketchup.send_action(CMD_ARC)           # use a Fixnum constant
-
-result = Sketchup.send_action(action)            # action can be either
+bln = Sketchup.send_action("selectArcTool:") # use a String
+bln = Sketchup.send_action(CMD_ARC)          # use a Constant
+bln = Sketchup.send_action(21065)            # use a Fixnum
+bln = Sketchup.send_action(action)     # action can be either
 ```
 
 The following table shows strings (taken from SketchUp.com Nov-15), and their constant
 equivalents.  Matches were done via RegEx and several lines of case statement.
 
-<< cmd_alpha >>
+<%= cmd_alpha %>
 
-<< cmd_numeric >>
+<%= cmd_numeric %>
 
 ### Sketchup.set_status_text
 
@@ -345,7 +348,7 @@ result = Sketchup.set_status_text("This is a Test", SB_VCB_VALUE)
 result = Sketchup.set_status_text(status, position)
 ```
 
-<< SB_ >>
+<%= status_text %>
 
 ### Command \#set_validation_proc
 
@@ -370,7 +373,7 @@ your_toolbar.add_item cmd
 your_submenu.add_item cmd
 ```
 
-<< command_set_validation_proc >>
+<%= command_set_validation_proc %>
 
 ### Definition \#behavior \#snapto
 
@@ -385,7 +388,7 @@ snap_to = behavior.snapto
 behavior.snapto = snap_to
 ```
 
-<< SnapTo_ >>
+<%= snap_to %>
 
 ### Layer \#page_behavior \#page_behavior=
 
@@ -404,7 +407,7 @@ puts page_behavior[4]   # this new pages visible?
 puts page_behavior[5]   # this new pages hidden?
 ```
 
-<< layer_page_behavior >>
+<%= layer_page_behavior %>
 
 ### Page \#update, Pages \#add
 
@@ -412,11 +415,12 @@ See [Page#update] and [Pages#add].  These bit constants are used for the flag
 parameter.
 
 ```ruby
-status = Sketchup.active_model.pages.add(name, flags = nil, index = nil)
-Sketchup.active_model.pages['yourPage'].update(flags = nil)
+am = Sketchup.active_model
+status = am.pages.add(name, flags = nil, index = nil)
+am.pages['yourPage'].update(flags = nil)
 ```
 
-<< page_use >>
+<%= page_use %>
 
 ### Text \#leader_type \#leader_type=
 
@@ -427,7 +431,7 @@ leader = text.leader_type
 leader = Text.leader_type = leader
 ```
 
-<< ALeader >>
+<%= leader_type %>
 
 ### TextureWriter \#write
 
@@ -438,7 +442,7 @@ tw = Sketchup.create_texture_writer
 status = tw.write(entity, side, filename)
 ```
 
-<< texture_writer_write >>
+<%= texture_writer_write %>
 
 ### Tool \#onKeyDown, Tool \#onKeyUp
 
@@ -457,7 +461,7 @@ code that attaches to mouse and keybaord events.
  def onKeyDown(key, repeat, flags, view)
 ```
 
-<< tool_key >>
+<%= tool_key %>
 
 ### Tool \#onMouse
 
@@ -469,7 +473,7 @@ Under Windows:
 * The 'flags' bits for which buttons are pressed are **not set** on the 'Up'
     events for a single button press.
 * On a double button press and release, a single down event will often fire,
-    the the double. On release, first the **wrong button** will fire an 
+    the the double. On release, first the **wrong button** will fire an
     event, the a 'blank' up event.
 * 'Down' and 'Up' events fire first, then the 'DoubleClick' event fires.
 
@@ -482,13 +486,13 @@ end
 ```
 
 Below is code that shows use of the constants, also some "does't quite work"
-key code.  Located in the Template_Code.rb file. Load, then GuideCode.new.tool_1.
+key code.  Located in the [template_code.rb] file. Load, then SUMD_TC.new.tool_1.
 
 ```ruby
-<< code_tool_1 >>
+<%= code_tool_1 %>
 ```
 
-<< tool_mse >>
+<%= tool_mse %>
 
 ### Toolbar #get_last_state
 
@@ -498,7 +502,7 @@ See [Toolbar#get_last_state].
 state = toolbar.get_last_state
 ```
 
-<< TB_ >>
+<%= toolbar %>
 
 ### UI.messagebox
 
@@ -509,8 +513,8 @@ and an 'Okay' button.
 status = UI.messagebox(message, type)
 ```
 
-<< ui_mb_type >>
-<< ui_mb_ret >>
+<%= ui_mb_type %>
+<%= ui_mb_ret %>
 
 ### View \#draw
 
@@ -521,20 +525,20 @@ view = Sketchup.active_model.active_view
 view.draw(mode, pts)
 ```
 
-<< view_draw >>
+<%= view_draw %>
 
 ### View \#draw_text
 
 See [View#draw_text].  These constants are used in SketchUp 2016+ and control
 the text alignment.
 
-<< view_draw_text >>
+<%= view_draw_text %>
 
 ### RUBY_ Constants, SketchUp Platform Constants
 
-The following are _RUBY and SketchUp constants which vary from version to version.
+The following are RUBY_ and SketchUp constants which vary from version to version.
 
-<< RUBY_ >>
+<%= RUBY_ %>
 
 ## Depreciated Constants
 
@@ -542,12 +546,12 @@ I beleieve the following are depreciated. VK_ constants should be used in their
 place.  I tried the mask constants on both the key and flags parameters, and
 nothing seemed to work.
 
-<< depreciated_constants_1 >>
+<%= depreciated_constants_1 %>
 
 The following have been replaced by namespaced constants.
 
-<< depreciated_constants_2 >>
+<%= depreciated_constants_2 %>
 
 ## Yet to be added to documentation or unknown
 
-<< yet_to_be_added >>
+<%= yet_to_be_added %>

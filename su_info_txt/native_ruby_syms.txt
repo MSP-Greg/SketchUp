@@ -1,4 +1,4 @@
-
+## generated with Ruby 2.2.3
 !
 !=
 !~
@@ -3074,7 +3074,7 @@ locked?
 log
 log10
 log2
-loop
+#loop
 low
 lp
 lpos
@@ -3386,7 +3386,7 @@ pos
 pos1
 pos2
 pos=
-position
+#position
 post_build
 post_build_hooks
 post_install
@@ -3640,7 +3640,7 @@ respond_to_missing?
 rest
 restore
 result
-resume
+#resume
 ret
 retry_if_interrupted
 return_format
@@ -4372,7 +4372,7 @@ utime=
 v
 val
 valid
-valid?
+#valid?
 valid_encoding?
 validate
 validate_dependencies
@@ -4380,7 +4380,7 @@ validate_permissions
 vals
 value
 value?
-values
+#values
 values_at
 var
 vendor_dir
@@ -4388,8 +4388,8 @@ verbose
 verbose=
 verbose?
 verify_internal_consistency
-version
-version=
+#version
+#version=
 version_reqs_param
 version_requirements
 vi_editing_mode
@@ -4430,7 +4430,7 @@ where
 where_history
 which
 whitespace
-width
+#width
 willneed
 win32_last_error
 win32_last_error=
@@ -4452,16 +4452,16 @@ world_writable?
 wr
 writable?
 writable_real?
-write
+#write
 write_nonblock
 written
 wsatend
 wstart
-x
+#x
 xkeymap
 xml
 xpoint
-y
+#y
 yaml
 yaml_initialize
 yamler
@@ -4470,7 +4470,7 @@ yday
 year
 yes
 yield
-z
+#z
 zero?
 zip
 zone

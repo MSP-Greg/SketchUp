@@ -1,26 +1,27 @@
-# @title 2013 Collections Info
-[CreateSUCollections]:CreateSUCollections.html
+# @title 2013&nbsp;Collections
+[SUMD_Collections]:../../SUMD_Collections
 [RenderingOptions]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptions
 <style scoped>
-\#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
-\#filecontents table.gjl15 thead  { border-bottom:2px solid #aaa; background-color:transparent;}
-\#filecontents table.gjl15 tr     { border:none; background-color:transparent;}
-\#filecontents table.gjl15 tr.clr { border-bottom:none; line-height:0.2em;}
-\#filecontents table.gjl15 td:empty { border-top:1px solid #bbb; height:0.2em;}
-\#filecontents table.gjl15 th { border:none; padding:0.2em 0.3em 0.2em 0.3em; background-color:transparent; text-align:left;}
-\#filecontents table.gjl15 td { border:none; padding:0.2em 0.3em 0.2em 0.3em; background-color:transparent;}
-\#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
-\#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
+#filecontents p code { font-size:16px; }
+\#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em; }
+\#filecontents table.sumd thead  { border-bottom:2px solid #aaa; background-color:transparent;}
+\#filecontents table.sumd tr     { border:none; background-color:transparent;}
+\#filecontents table.sumd tr.clr { border-bottom:none; line-height:0.2em;}
+\#filecontents table.sumd th { border:none; padding:0px; background-color:transparent; text-align:left;}
+\#filecontents table.sumd td { border:none; padding:0px; background-color:transparent;}
+\#filecontents table.sumd td:empty { border-top:1px solid #bbb; height:0.2em;}
+\#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
+\#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
 </style>
 
-# SketchUp 2013 Collections Info
+# SketchUp 2013 Collections
 
 This is a machine generated list of the collection objects defined by SketchUp
 classes.  The links in this document are machine generated, so some may not exist.
 
 ---
-Generated with [CreateSUCollections] v1.4, on 2015-12-10 at 05:48:19 AM GMT, using SketchUp v13.0.4812 & Ruby 1.8.6.
-
+Generated with [SUMD_Collections] v2.0, on 2015-12-19 at 01:09:16 AM GMT,
+using SketchUp v13.0.4812 & Ruby v1.8.6.
 
 ---
 
@@ -42,13 +43,14 @@ in the length of entities as the two faces are added.
 
 ```ruby
 am_ents = Sketchup.active_model.entities
-face1 = [   0,   0,   0 ],[   0, 300,   0 ],[ 300, 300,   0 ],[ 300,   0,   0 ]
-face2 = [   0,   0, 300 ],[   0, 300, 300 ],[ 300, 300, 300 ],[ 300,   0, 300 ]
+s = 300
+f1 = [ 0, 0, 0 ] , [ 0, s, 0 ] , [ s, s, 0 ] , [ s, 0, 0 ]
+f2 = [ 0, 0, s ] , [ 0, s, s ] , [ s, s, s ] , [ s, 0, s ]
 
 puts "am_ents.length = #{am_ents.length}"
-am_ents.add_face( face1 )
+am_ents.add_face( f1 )
 puts "am_ents.length = #{am_ents.length}"
-am_ents.add_face( face2 )
+am_ents.add_face( f2 )
 puts "am_ents.length = #{am_ents.length}"
 ```
 
@@ -56,7 +58,7 @@ What this means is that it will often be faster to make a copy of the collection
 using `.to_a` if you are looping thru the whole collection.  `.grep()` will do the
 same thing if you only need a subset.  You may find `.to_a.grep()` to be faster.
 
-<table class='gjl15'>
+<table class='sumd'>
 <colgroup>
 <col style='width:16.0em;' />
 <col style='width: 4.0em;' />

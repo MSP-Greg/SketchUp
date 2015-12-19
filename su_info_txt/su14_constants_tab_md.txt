@@ -94,7 +94,7 @@ GL_TRIANGLE_FAN	6	Fixnum
 GL_TRIANGLE_STRIP	5	Fixnum
 IDABORT	3	Fixnum
 IDCANCEL	2	Fixnum
-IDENTITY	#<Geom::Transformation:0x9857220>	Geom::Transformation
+IDENTITY	#<Geom::Transformation:0xa62f210>	Geom::Transformation
 IDIGNORE	5	Fixnum
 IDNO	7	Fixnum
 IDOK	1	Fixnum
@@ -134,8 +134,8 @@ PAGE_USE_RENDERING_OPTIONS	2	Fixnum
 PAGE_USE_SECTION_PLANES	64	Fixnum
 PAGE_USE_SHADOWINFO	4	Fixnum
 PAGE_USE_SKETCHCS	8	Fixnum
-RUBY_COPYRIGHT	ruby - Copyright (C) 1993-2013<br/>Yukihiro Matsumoto	String
-RUBY_DESCRIPTION	ruby 2.0.0p247 (2013-06-27)<br/>[i386-mingw32]	String
+RUBY_COPYRIGHT	ruby - Copyright (C) 1993-2013 Yukihiro Matsumoto	String
+RUBY_DESCRIPTION	ruby 2.0.0p247 (2013-06-27) [i386-mingw32]	String
 RUBY_ENGINE	ruby	String
 RUBY_PATCHLEVEL	247	Fixnum
 RUBY_PLATFORM	i386-mingw32	String
@@ -145,7 +145,7 @@ RUBY_VERSION	2.0.0	String
 SB_PROMPT	0	Fixnum
 SB_VCB_LABEL	1	Fixnum
 SB_VCB_VALUE	2	Fixnum
-SKETCHUP_CONSOLE	#<Sketchup::Console:0x98565d8>	Sketchup::Console
+SKETCHUP_CONSOLE	#<Sketchup::Console:0xa62e5c8>	Sketchup::Console
 SnapTo_Arbitrary	0	Fixnum
 SnapTo_Horizontal	1	Fixnum
 SnapTo_Sloped	3	Fixnum
@@ -198,14 +198,14 @@ Sketchup::Importer::ImportFail	1	Fixnum
 Sketchup::Importer::ImportFileNotFound	4	Fixnum
 Sketchup::Importer::ImportSuccess	0	Fixnum
 Sketchup::Importer::ImporterNotFound	3	Fixnum
-Sketchup::Model::VERSION_2013	9	Fixnum
-Sketchup::Model::VERSION_2014	10	Fixnum
 Sketchup::Model::VERSION_3	3	Fixnum
 Sketchup::Model::VERSION_4	4	Fixnum
 Sketchup::Model::VERSION_5	5	Fixnum
 Sketchup::Model::VERSION_6	6	Fixnum
 Sketchup::Model::VERSION_7	7	Fixnum
 Sketchup::Model::VERSION_8	8	Fixnum
+Sketchup::Model::VERSION_2013	9	Fixnum
+Sketchup::Model::VERSION_2014	10	Fixnum
 Sketchup::Pages::ImageEmbedded	0	Fixnum
 Sketchup::Pages::ImageEmbeddedAndLinked	1	Fixnum
 Sketchup::Pages::ImageLinked	2	Fixnum
@@ -278,3 +278,89 @@ Length::Fractional	3	Fixnum
 Length::Inches	0	Fixnum
 Length::Meter	4	Fixnum
 Length::Millimeter	2	Fixnum
+Sketchup	no constants	na	Module
+Sketchup::AppObserver	no constants	Object	Class
+Sketchup::ArcCurve	no constants	Sketchup::Curve	Class
+Sketchup::AttributeDictionaries	no constants	Sketchup::Entity	Class
+Sketchup::AttributeDictionary	no constants	Sketchup::Entity	Class
+Sketchup::Behavior	no constants	Sketchup::Entity	Class
+Sketchup::Camera	no constants	Object	Class
+Sketchup::Classifications	no constants	Object	Class
+Sketchup::Color	no constants	Object	Class
+Sketchup::ComponentDefinition	no constants	Sketchup::Drawingelement	Class
+Sketchup::ComponentInstance	no constants	Sketchup::Drawingelement	Class
+Sketchup::Console	no constants	Object	Class
+Sketchup::ConstructionLine	no constants	Sketchup::Drawingelement	Class
+Sketchup::ConstructionPoint	no constants	Sketchup::Drawingelement	Class
+Sketchup::Curve	no constants	Sketchup::Entity	Class
+Sketchup::DefinitionList	no constants	Sketchup::Entity	Class
+Sketchup::DefinitionObserver	no constants	Sketchup::EntityObserver	Class
+Sketchup::DefinitionsObserver	no constants	Object	Class
+Sketchup::DimensionObserver	no constants	Object	Class
+Sketchup::DimensionRadial	no constants	Sketchup::Dimension	Class
+Sketchup::Drawingelement	no constants	Sketchup::Entity	Class
+Sketchup::Edge	no constants	Sketchup::Drawingelement	Class
+Sketchup::EdgeUse	no constants	Sketchup::Entity	Class
+Sketchup::Entities	no constants	Object	Class
+Sketchup::EntitiesObserver	no constants	Object	Class
+Sketchup::Entity	no constants	Object	Class
+Sketchup::EntityObserver	no constants	Object	Class
+Sketchup::ExtensionsManager	no constants	Object	Class
+Sketchup::Group	no constants	Sketchup::Drawingelement	Class
+Sketchup::HLR	no constants	Sketchup::Entity	Class
+Sketchup::Image	no constants	Sketchup::Drawingelement	Class
+Sketchup::InputPoint	no constants	Object	Class
+Sketchup::InstanceObserver	no constants	Sketchup::EntityObserver	Class
+Sketchup::Layer	no constants	Sketchup::Entity	Class
+Sketchup::Layers	no constants	Sketchup::Entity	Class
+Sketchup::LayersObserver	no constants	Object	Class
+Sketchup::Loop	no constants	Sketchup::Entity	Class
+Sketchup::Material	no constants	Sketchup::Entity	Class
+Sketchup::Materials	no constants	Sketchup::Entity	Class
+Sketchup::MaterialsObserver	no constants	Object	Class
+Sketchup::Menu	no constants	Object	Class
+Sketchup::ModelObserver	no constants	Object	Class
+Sketchup::OptionsManager	no constants	Object	Class
+Sketchup::OptionsProvider	no constants	Object	Class
+Sketchup::OptionsProviderObserver	no constants	Object	Class
+Sketchup::Page	no constants	Sketchup::Entity	Class
+Sketchup::PagesObserver	no constants	Sketchup::EntitiesObserver	Class
+Sketchup::PickHelper	no constants	Object	Class
+Sketchup::RenderingOptionsObserver	no constants	Object	Class
+Sketchup::SandboxTools	no constants	na	Module
+Sketchup::SectionPlane	no constants	Sketchup::Drawingelement	Class
+Sketchup::Selection	no constants	Object	Class
+Sketchup::SelectionObserver	no constants	Object	Class
+Sketchup::Set	no constants	Object	Class
+Sketchup::ShadowInfo	no constants	Sketchup::Entity	Class
+Sketchup::ShadowInfoObserver	no constants	Object	Class
+Sketchup::Style	no constants	Sketchup::Entity	Class
+Sketchup::Styles	no constants	Sketchup::Entity	Class
+Sketchup::Text	no constants	Sketchup::Drawingelement	Class
+Sketchup::Texture	no constants	Sketchup::Entity	Class
+Sketchup::TextureWriter	no constants	Object	Class
+Sketchup::Tools	no constants	Object	Class
+Sketchup::ToolsObserver	no constants	Object	Class
+Sketchup::UVHelper	no constants	Object	Class
+Sketchup::Vertex	no constants	Sketchup::Entity	Class
+Sketchup::View	no constants	Object	Class
+Sketchup::ViewObserver	no constants	Object	Class
+Sketchup::WebTextures	no constants	na	Module
+Array	no constants	Object	Class
+Geom	no constants	na	Module
+Geom::BoundingBox	no constants	Object	Class
+Geom::LatLong	no constants	Object	Class
+Geom::Point3d	no constants	Object	Class
+Geom::Transformation	no constants	Object	Class
+Geom::UTM	no constants	Object	Class
+Geom::Vector3d	no constants	Object	Class
+LanguageHandler	no constants	Object	Class
+Numeric	no constants	Object	Class
+SKSocket	no constants	na	Module
+SketchupExtension	no constants	Object	Class
+String	no constants	Object	Class
+Test	no constants	na	Module
+UI	no constants	na	Module
+UI::Command	no constants	Object	Class
+UI::Toolbar	no constants	Object	Class
+UI::WebDialog	no constants	Object	Class

@@ -2,12 +2,12 @@
 # methods.  The snippets **must be indented 2 spaces**, otherwise the code will
 # not parse them.
 #
-# Methods can be run from the console, eg GuideCode.new.ro_1.
+# Methods can be run from the console, eg SUMD_TC.new.ro_1.
 #
-class GuideCode
+class SUMD_TC
 
   # An example showing use of the Face constants
-  # @return [nil]
+  #
   def face_1
     # must have a model open with at least one face!
     cns = Sketchup::Face
@@ -30,7 +30,7 @@ class GuideCode
   end
 
   # An example showing use of the Length constants
-  # @return [nil]
+  #
   def len_1
     cns = Length
     h_units  = Hash.new('Unit Unknown')
@@ -58,7 +58,7 @@ class GuideCode
   # Loads RenderingOptions constants, dumps value and name to the console,
   # then hooks up an observer and outputs info about the callback and what
   # ro's have changes
-  # @return [nil]
+  #
   def ro_1
     am = Sketchup.active_model
     cns = Sketchup::RenderingOptions
@@ -77,8 +77,8 @@ class GuideCode
     # get all the constants, parse names, add to hash
     cns.constants.each { |c|
       text = c.to_s.dup
-      if    ( text.match(/^ROPSet/) ) ; text.sub!(/^ROPSet/, 'ROPSet  ')
-      elsif ( text.match(/^ROP/) )    ; text.sub!(/^ROP/   , 'ROP     ')
+      if    ( text =~ /^ROPSet/ ) ; text.sub!(/^ROPSet/, 'ROPSet  ')
+      elsif ( text =~ /^ROP/    ) ; text.sub!(/^ROP/   , 'ROP     ')
       end
       @@roc[cns.const_get(c)] = text
     }
@@ -94,7 +94,7 @@ class GuideCode
     }
     puts cnsl
 
-    # create a RenderingOptionsObserver instance & create callback method
+    # create a RenderingOptionsObserver instance & add callback method
     @obs_ro1 = Sketchup::RenderingOptionsObserver.new
     @obs_ro1.instance_eval {
       @tmr_stopped = true
@@ -124,7 +124,7 @@ class GuideCode
   end
 
   # An example using the ROP constants
-  # @return [nil]
+  #
   def ro_2
     # create an observer & add callback method
     @obs_ro2 = Sketchup::RenderingOptionsObserver.new
@@ -132,14 +132,22 @@ class GuideCode
       def onRenderingOptionsChanged(ro, type)
         cns = ro.class
         suffix = case type
-          when cns::ROPDrawHidden                  then 'DrawHidden'
-          when cns::ROPSetDisplayColorByLayer      then 'DisplayColorByLayer'
-          when cns::ROPSetDisplaySketchAxes        then 'DisplaySketchAxes'
-          when cns::ROPSetHideConstructionGeometry then 'HideConstructionGeometry'
-          when cns::ROPSetModelTransparency        then 'ModelTransparency'
-          when cns::ROPSetRenderMode               then 'RenderMode'
-          when cns::ROPSetSectionDisplayMode       then 'SectionDisplayMode'
-          when cns::ROPSetTexture                  then 'Texture'
+          when cns::ROPDrawHidden
+                      'DrawHidden'
+          when cns::ROPSetDisplayColorByLayer
+                         'DisplayColorByLayer'
+          when cns::ROPSetDisplaySketchAxes
+                         'DisplaySketchAxes'
+          when cns::ROPSetHideConstructionGeometry
+                         'HideConstructionGeometry'
+          when cns::ROPSetModelTransparency
+                         'ModelTransparency'
+          when cns::ROPSetRenderMode
+                         'RenderMode'
+          when cns::ROPSetSectionDisplayMode
+                         'SectionDisplayMode'
+          when cns::ROPSetTexture
+                         'Texture'
           else "Not caught by case statement"
           end
         puts suffix
@@ -150,47 +158,48 @@ class GuideCode
   end
 
   # Creates a tool and and callbacks for mouse and KeyDown events
-  # @return [nil]
+  #
   def tool_1
-    @@mouse = Proc.new { |up_down_dbl, flags, x, y, view|
-      button  = []
-      key_mod = []
-      if (MK_LBUTTON & flags != 0) then button.push 'Left'   end
-      if (MK_MBUTTON & flags != 0) then button.push 'Middle' end
-      if (MK_RBUTTON & flags != 0) then button.push 'Right'  end
+    @@mse = Proc.new { |up_down_dbl, flags, x, y, view|
+      button  = ''
+      key_mod = ''
+      if (MK_LBUTTON & flags != 0) then button << ', Left'   end
+      if (MK_MBUTTON & flags != 0) then button << ', Middle' end
+      if (MK_RBUTTON & flags != 0) then button << ', Right'  end
 
-      if (MK_SHIFT   & flags != 0) then key_mod.push 'Shift' end
-      if (MK_CONTROL & flags != 0) then key_mod.push 'Ctrl'  end
-      if (MK_ALT     & flags != 0) then key_mod.push 'Alt'   end
+      if (MK_SHIFT   & flags != 0) then key_mod << ', Shift' end
+      if (MK_CONTROL & flags != 0) then key_mod << ', Ctrl'  end
+      if (MK_ALT     & flags != 0) then key_mod << ', Alt'   end
       s1 = up_down_dbl.ljust(7)
-      s2 = button.join(", ").ljust(20)
-      s3 = key_mod.join(", ")
+      s2 =  button.sub(/^, /, '').ljust(20)
+      s3 = key_mod.sub(/^, /, '')
       puts "Mouse Button #{s1} button = #{s2} keys = #{s3}"
     }
     @tool = Object.new
     @tool.instance_eval {
-      def onLButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
-      def onMButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
-      def onRButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
+      def onLButtonDown(*a)        ; @@mse.call('Down'  , *a) ; end
+      def onMButtonDown(*a)        ; @@mse.call('Down'  , *a) ; end
+      def onRButtonDown(*a)        ; @@mse.call('Down'  , *a) ; end
 
-      def onLButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
-      def onMButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
-      def onRButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
+      def onLButtonUp(*a)          ; @@mse.call('Up'    , *a) ; end
+      def onMButtonUp(*a)          ; @@mse.call('Up'    , *a) ; end
+      def onRButtonUp(*a)          ; @@mse.call('Up'    , *a) ; end
 
-      def onLButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
-      def onMButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
-      def onRButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
+      def onLButtonDoubleClick(*a) ; @@mse.call('DblClk', *a) ; end
+      def onMButtonDoubleClick(*a) ; @@mse.call('DblClk', *a) ; end
+      def onRButtonDoubleClick(*a) ; @@mse.call('DblClk', *a) ; end
 
       def onKeyDown(key, repeat, flags, view)
         # Some binary fun for testing
-        #   t = flags.to_s(2).rjust(16)
-        #   tBin = "#{t[-16,4]} #{ t[-12,4]} #{ t[-8,4]} #{t[-4,4]}".rjust(18)
-        #   puts "#{key.to_s.ljust(4)}\t#{flags.to_s.ljust(5)}\t#{tBin}"
+        t = flags.to_s(2).rjust(16)
+        bin = "#{ t[-16,4]} #{ t[-12,4]} " \
+              "#{ t[ -8,4]} #{ t[ -4,4]}".rjust(19)
+        puts "#{key.to_s.ljust(4)}\t#{flags.to_s.ljust(5)}\t#{bin}"
 
-        k   = key.to_s.rjust(3)
-        alt =  (ALT_MODIFIER_MASK & key != 0).to_s.ljust(5)
+        k    = key.to_s.rjust(3)
+        alt  = (ALT_MODIFIER_MASK       & key != 0).to_s.ljust(5)
         cons = (CONSTRAIN_MODIFIER_MASK & key != 0).to_s.ljust(5)
-        copy = (COPY_MODIFIER_MASK & key != 0).to_s.ljust(5)
+        copy = (COPY_MODIFIER_MASK      & key != 0).to_s.ljust(5)
         puts "key = #{k}  alt = #{alt}  cons = #{cons}  copy = #{copy}"
       end
     }
@@ -200,13 +209,13 @@ class GuideCode
   # Code used in Template_Collections
   def coll_1
     am_ents = Sketchup.active_model.entities
-    face1 = [   0,   0,   0 ],[   0, 300,   0 ],[ 300, 300,   0 ],[ 300,   0,   0 ]
-    face2 = [   0,   0, 300 ],[   0, 300, 300 ],[ 300, 300, 300 ],[ 300,   0, 300 ]
-
+    s = 300
+    f1 = [ 0, 0, 0 ] , [ 0, s, 0 ] , [ s, s, 0 ] , [ s, 0, 0 ]
+    f2 = [ 0, 0, s ] , [ 0, s, s ] , [ s, s, s ] , [ s, 0, s ]
     puts "am_ents.length = #{am_ents.length}"
-    am_ents.add_face( face1 )
+    am_ents.add_face( f1 )
     puts "am_ents.length = #{am_ents.length}"
-    am_ents.add_face( face2 )
+    am_ents.add_face( f2 )
     puts "am_ents.length = #{am_ents.length}"
   end
 

@@ -1,4 +1,6 @@
-# @title 2014 Constants Guide
+# @title 2014&nbsp;Constants&nbsp;Guide
+[SUMD_Guide]:../../SUMD_Guide
+[template_code.rb]:../../SUMD_TC
 [Sketchup::Console]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/console
 [Sketchup::Dimension]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/dimension
 [Sketchup::DimensionLinear]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/dimensionlinear
@@ -41,17 +43,17 @@
 [UI.messagebox]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/ui#messagebox
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
-[CreateSUConstantsGuide]:CreateSUConstantsGuide.html
 <style scoped>
-\#filecontents table.gjl15 { border:none; border-collapse:collapse; margin-bottom:2em;}
-\#filecontents table.gjl15 thead { border-bottom:2px solid #aaa; background-color:transparent;}
-\#filecontents table.gjl15 tr    { border:none; background-color:transparent;}
-\#filecontents table.gjl15 tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-\#filecontents table.gjl15 th { border:none; padding: 2px 10px 2px 3px; background-color:transparent; text-align:left;}
-\#filecontents table.gjl15 td { border:none; padding: 2px 10px 2px 3px; background-color:transparent;}
-\#filecontents table.gjl15 td.c, #filecontents table.gjl15 th.c { text-align:center;}
-\#filecontents table.gjl15 td.r, #filecontents table.gjl15 th.r { text-align:right;}
-\#filecontents table.gjl15 td.clr, #filecontents table.gjl15 th.clr { border-bottom:none; width:10em;}
+#filecontents p code { font-size:16px; }
+\#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
+\#filecontents table.sumd thead { border-bottom:2px solid #aaa; background-color:transparent;}
+\#filecontents table.sumd tr    { border:none; background-color:transparent;}
+\#filecontents table.sumd tr:nth-child(5n) { border-bottom:1px solid #bbb;}
+\#filecontents table.sumd th { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent; text-align:left;}
+\#filecontents table.sumd td { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent;}
+\#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
+\#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
+\#filecontents table.sumd td.clr, #filecontents table.sumd th.clr { border-bottom:none; width:10em;}
 </style>
 
 # SketchUp 2014 Constants Guide
@@ -72,8 +74,8 @@ but many API users are new to Ruby, or new to programming.
 Finally, thanks to Jim Foltz and others for their previous work and help.
 
 ---
-Generated with [CreateSUConstantsGuide] v1.3, on 2015-12-10 at 05:48:37 AM GMT, using SketchUp v14.1.1282 & Ruby 2.0.0.
-
+Generated with [SUMD_Guide] v2.0, on 2015-12-19 at 01:10:06 AM GMT,
+using SketchUp v14.1.1282 & Ruby v2.0.0.
 
 ---
 
@@ -128,9 +130,9 @@ arrow_type = dim.arrow_type
 dim.arrow_type = arrow_type
 ```
 
-<table class='gjl15'><thead>
-<th><br/>arrow_type</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>arrow_type</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>ARROW_CLOSED</td><td class='c'>3</td></tr>
 <tr><td>ARROW_DOT</td><td class='c'>2</td></tr>
 <tr><td>ARROW_NONE</td><td class='c'>0</td></tr>
@@ -148,9 +150,9 @@ at_pos = dim.aligned_text_position
 dim.aligned_text_position = at_pos
 ```
 
-<table class='gjl15'><thead>
-<th><br/>at_pos</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>at_pos</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>ALIGNED_TEXT_ABOVE</td><td class='c'>0</td></tr>
 <tr><td>ALIGNED_TEXT_CENTER</td><td class='c'>1</td></tr>
 <tr><td>ALIGNED_TEXT_OUTSIDE</td><td class='c'>2</td></tr>
@@ -166,9 +168,9 @@ text_pos = dim.text_position
 dim.text_position = text_pos
 ```
 
-<table class='gjl15'><thead>
-<th><br/>text_pos</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>text_pos</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>TEXT_CENTERED</td><td class='c'>1</td></tr>
 <tr><td>TEXT_OUTSIDE_END</td><td class='c'>2</td></tr>
 <tr><td>TEXT_OUTSIDE_START</td><td class='c'>0</td></tr>
@@ -184,9 +186,9 @@ ame = Sketchup.active_model.entities
 ame.add_faces_from_mesh(pm, smooth_flags, material)
 ```
 
-<table class='gjl15'><thead>
-<th><br/>smooth_flags</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>smooth_flags</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>AUTO_SOFTEN</td><td class='c'>4</td></tr>
 <tr><td>HIDE_BASED_ON_INDEX</td><td class='c'>1</td></tr>
 <tr><td>NO_SMOOTH_OR_HIDE</td><td class='c'>0</td></tr>
@@ -202,8 +204,8 @@ Defined on [Sketchup::Face].  See [Face#classify_point].
 ```ruby
 pt_location = face.classify_point(pt)
 ```
-The below code sample is in the Template_Code.rb file. Load, then
-GuideCode.new.face_1.
+The below code sample is in the [template_code.rb] file. Load, then
+SUMD_TC.new.face_1.
 
 ```ruby
 # must have a model open with at least one face!
@@ -226,9 +228,9 @@ end
 puts t
 ```
 
-<table class='gjl15'><thead>
-<th>pt_location<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>pt_location<br/>return</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>PointInside</td><td class='c'>1</td></tr>
 <tr><td>PointNotOnPlane</td><td class='c'>32</td></tr>
 <tr><td>PointOnEdge</td><td class='c'>4</td></tr>
@@ -255,9 +257,9 @@ class YourImporter < Sketchup::Importer
 end
 ```
 
-<table class='gjl15'><thead>
-<th>status_code<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>status_code<br/>return</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>ImportCanceled</td><td class='c'>2</td></tr>
 <tr><td>ImportFail</td><td class='c'>1</td></tr>
 <tr><td>ImportFileNotFound</td><td class='c'>4</td></tr>
@@ -274,9 +276,9 @@ Defined on [Length].  See [Model#options], [OptionsManager],
 First, SketchUp.com does not list all of the keys used in [OptionsManager] and
 [OptionsProvider].  The below table shows all of the keys.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>OptionsManager<br/>key</th><th>OptionsProvider<br/>key</th><th class='c'>OptionsProvider<br/>value</th><th><br/>class</th>
-</thead><tbody>
+</tr></thead><tbody>
 <tr><td>PageOptions</td><td>ShowTransition</td><td class='c'>true</td><td>Boolean</td></tr>
 <tr><td></td><td>TransitionTime</td><td class='c'>2.0</td><td>Float</td></tr>
 <tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
@@ -321,8 +323,8 @@ format = am.options['UnitsOptions']['LengthFormat']
 ```
 
 The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and outputs to the console.  It's in the
-Template_Code.rb file. Load, then GuideCode.new.len_1.
+queries the two settings, and out@version = 2.0F to the console.  It's in the
+[template_code.rb] file. Load, then SUMD_TC.new.len_1.
 
 ```ruby
 cns = Length
@@ -348,9 +350,9 @@ puts "Current model units are #{units}"
 puts "Current model format is #{format}"
 ```
 
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>Architectural</td><td class='c'>1</td></tr>
 <tr><td>Centimeter</td><td class='c'>3</td></tr>
 <tr><td>Decimal</td><td class='c'>0</td></tr>
@@ -373,9 +375,9 @@ status = model.save(filename, version)
 status = model.save_copy(filename, version)
 ```
 
-<table class='gjl15'><thead>
-<th>version<br/>parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>@version<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>VERSION_3</td><td class='c'>3</td></tr>
 <tr><td>VERSION_4</td><td class='c'>4</td></tr>
 <tr><td>VERSION_5</td><td class='c'>5</td></tr>
@@ -412,7 +414,7 @@ console the [onRenderingOptionsChanged] callback's type parameter and the
 constant associated with it, along any [RenderingOptions] changes. One can
 change [RenderingOptions] thru the UI and see what's going on, especially if UI
 operations do not have constants or keys. The code sample is in the
-Template_Code.rb file.  Load, then GuideCode.new.ro_1.
+[template_code.rb] file.  Load, then SUMD_TC.new.ro_1.
 
 ```ruby
 am = Sketchup.active_model
@@ -432,8 +434,8 @@ am.rendering_options.each { |k,v|
 # get all the constants, parse names, add to hash
 cns.constants.each { |c|
   text = c.to_s.dup
-  if    ( text.match(/^ROPSet/) ) ; text.sub!(/^ROPSet/, 'ROPSet  ')
-  elsif ( text.match(/^ROP/) )    ; text.sub!(/^ROP/   , 'ROP     ')
+  if    ( text =~ /^ROPSet/ ) ; text.sub!(/^ROPSet/, 'ROPSet  ')
+  elsif ( text =~ /^ROP/    ) ; text.sub!(/^ROP/   , 'ROP     ')
   end
   @@roc[cns.const_get(c)] = text
 }
@@ -449,7 +451,7 @@ prev = -1
 }
 puts cnsl
 
-# create a RenderingOptionsObserver instance & create callback method
+# create a RenderingOptionsObserver instance & add callback method
 @obs_ro1 = Sketchup::RenderingOptionsObserver.new
 @obs_ro1.instance_eval {
   @tmr_stopped = true
@@ -481,7 +483,7 @@ am.rendering_options.add_observer(@obs_ro1)
 The above code does not make use of the constants, so the below code shows one
 way of creating an observer.  The callback uses some constants (items in 'view'
 menu and toolbar) in a case statement.  Similar code could be used in a plug-in.
-This code sample is GuideCode.new.ro_2.
+This code sample is SUMD_TC.new.ro_2.
 
 ```ruby
 # create an observer & add callback method
@@ -490,14 +492,22 @@ This code sample is GuideCode.new.ro_2.
   def onRenderingOptionsChanged(ro, type)
     cns = ro.class
     suffix = case type
-      when cns::ROPDrawHidden                  then 'DrawHidden'
-      when cns::ROPSetDisplayColorByLayer      then 'DisplayColorByLayer'
-      when cns::ROPSetDisplaySketchAxes        then 'DisplaySketchAxes'
-      when cns::ROPSetHideConstructionGeometry then 'HideConstructionGeometry'
-      when cns::ROPSetModelTransparency        then 'ModelTransparency'
-      when cns::ROPSetRenderMode               then 'RenderMode'
-      when cns::ROPSetSectionDisplayMode       then 'SectionDisplayMode'
-      when cns::ROPSetTexture                  then 'Texture'
+      when cns::ROPDrawHidden
+                  'DrawHidden'
+      when cns::ROPSetDisplayColorByLayer
+                     'DisplayColorByLayer'
+      when cns::ROPSetDisplaySketchAxes
+                     'DisplaySketchAxes'
+      when cns::ROPSetHideConstructionGeometry
+                     'HideConstructionGeometry'
+      when cns::ROPSetModelTransparency
+                     'ModelTransparency'
+      when cns::ROPSetRenderMode
+                     'RenderMode'
+      when cns::ROPSetSectionDisplayMode
+                     'SectionDisplayMode'
+      when cns::ROPSetTexture
+                     'Texture'
       else "Not caught by case statement"
       end
     puts suffix
@@ -516,9 +526,9 @@ RenderingOption value.class, RenderingOption key, and Constant name.  Duplicate
 values are shown bolded.  Note that since these seem to have a many-to-many
 relationship, the testing done may not show all combinations.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>RenderingOptions<br/>key</th><th>RenderingOptions<br/>value.class</th><th><br/>Observer constant (type)</th>
-</thead><tbody>
+</tr></thead><tbody>
 <tr><td>DisplayColorByLayer</td><td>Boolean</td><td>ROPSetDisplayColorByLayer</td></tr>
 <tr><td>DisplayDims</td><td>Boolean</td><td>ROPSetDisplayDims</td></tr>
 <tr><td>DisplayFog</td><td>Boolean</td><td>ROPSetDisplayFog</td></tr>
@@ -579,9 +589,9 @@ relationship, the testing done may not show all combinations.
 
 The following table lists [RenderingOptions] keys that do not fire the [onRenderingOptionsChanged] callback.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>RenderingOptions<br/>key</th><th>RenderingOptions<br/>value.class</th>
-</thead><tbody>
+</tr></thead><tbody>
 <tr><td>BandColor</td><td>Sketchup::Color</td></tr>
 <tr><td>HorizonColor</td><td>Sketchup::Color</td></tr>
 <tr><td>ShowViewName</td><td>Boolean</td></tr>
@@ -589,9 +599,9 @@ The following table lists [RenderingOptions] keys that do not fire the [onRender
 
 The following RenderingOptions constants are not fired by any keys in [RenderingOptions].  They may be returned for UI changes that do not have API control.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>Observer<br/>constant (type)</th><th class='c'>value</th>
-</thead><tbody>
+</tr></thead><tbody>
 <tr><td>ROPAssign</td><td class='c'>0</td></tr>
 <tr><td>ROPSetExtendEdges</td><td class='c'>7</td></tr>
 <tr><td>ROPSetFogHint</td><td class='c'>24</td></tr>
@@ -603,12 +613,13 @@ The following RenderingOptions constants are not fired by any keys in [Rendering
 
 ### Geometry Class constants
 
-These constants can be used anywhere instances of their respective classes are used.
+These constants can be used anywhere instances of their respective classes are
+used.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>constant name</th><th class='c'>value</th><th>class</th>
-</thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x9857220></td><td>Geom::Transformation</td></tr>
+</tr></thead><tbody>
+<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0xa62f210></td><td>Geom::Transformation</td></tr>
 <tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
 <tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
 <tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
@@ -624,10 +635,10 @@ The only other object constant defined is [Sketchup::Console].
 SKETCHUP_CONSOLE.write("this way also")
 ```
 
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>()</th>
-</thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x98565d8></td></tr>
+<table class='sumd'><thead><tr>
+<th>constant<br/>name</th><th class='c'>value<br/></th>
+</tr></thead><tbody>
+<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0xa62e5c8></td></tr>
 </tbody></table>
 
 
@@ -645,18 +656,18 @@ its parameter.  Numbers are officially 'unsupported', and only available under W
 The following code produces the same result.
 
 ```ruby
-result = Sketchup.send_action("selectArcTool:")  # use a String
-result = Sketchup.send_action(CMD_ARC)           # use a Fixnum constant
-
-result = Sketchup.send_action(action)            # action can be either
+bln = Sketchup.send_action("selectArcTool:") # use a String
+bln = Sketchup.send_action(CMD_ARC)          # use a Constant
+bln = Sketchup.send_action(21065)            # use a Fixnum
+bln = Sketchup.send_action(action)     # action can be either
 ```
 
 The following table shows strings (taken from SketchUp.com Nov-15), and their constant
 equivalents.  Matches were done via RegEx and several lines of case statement.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>action parameter<br/>String</th><th>action parameter<br/>Constant</th><th class='c'>action<br/>Fixnum</th>
-</thead><tbody>
+</tr></thead><tbody>
 <tr><td>copy:</td><td>CMD_COPY</td><td class='c'>57634</td></tr>
 <tr><td>cut:</td><td>CMD_CUT</td><td class='c'>57635</td></tr>
 <tr><td>editHide:</td><td></td><td class='c'></td></tr>
@@ -732,9 +743,9 @@ equivalents.  Matches were done via RegEx and several lines of case statement.
 
 The following constants do not have string equivalents.
 
-<table class='gjl15'><thead>
-<th>action parameter<br/>Constant</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>action parameter<br/>Constant</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>CMD_CAMERA_UNDO</td><td class='c'>10529</td></tr>
 <tr><td>CMD_DELETE</td><td class='c'>21021</td></tr>
 <tr><td>CMD_DRAWCUTS</td><td class='c'>21348</td></tr>
@@ -757,9 +768,9 @@ result = Sketchup.set_status_text("This is a Test", SB_VCB_VALUE)
 result = Sketchup.set_status_text(status, position)
 ```
 
-<table class='gjl15'><thead>
-<th>position<br/>parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>position<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>SB_PROMPT</td><td class='c'>0</td></tr>
 <tr><td>SB_VCB_LABEL</td><td class='c'>1</td></tr>
 <tr><td>SB_VCB_VALUE</td><td class='c'>2</td></tr>
@@ -789,9 +800,9 @@ your_toolbar.add_item cmd
 your_submenu.add_item cmd
 ```
 
-<table class='gjl15'><thead>
-<th>cmd_status<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>cmd_status<br/>return</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>MF_CHECKED</td><td class='c'>8</td></tr>
 <tr><td>MF_DISABLED</td><td class='c'>2</td></tr>
 <tr><td>MF_ENABLED</td><td class='c'>0</td></tr>
@@ -813,9 +824,9 @@ snap_to = behavior.snapto
 behavior.snapto = snap_to
 ```
 
-<table class='gjl15'><thead>
-<th><br/>snap_to</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>snap_to</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>SnapTo_Arbitrary</td><td class='c'>0</td></tr>
 <tr><td>SnapTo_Horizontal</td><td class='c'>1</td></tr>
 <tr><td>SnapTo_Sloped</td><td class='c'>3</td></tr>
@@ -840,9 +851,9 @@ puts page_behavior[4]   # this new pages visible?
 puts page_behavior[5]   # this new pages hidden?
 ```
 
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES</td><td class='c'>0</td></tr>
 <tr><td>LAYER_VISIBLE_BY_DEFAULT</td><td class='c'>0</td></tr>
 <tr><td>LAYER_HIDDEN_BY_DEFAULT</td><td class='c'>1</td></tr>
@@ -857,13 +868,14 @@ See [Page#update] and [Pages#add].  These bit constants are used for the flag
 parameter.
 
 ```ruby
-status = Sketchup.active_model.pages.add(name, flags = nil, index = nil)
-Sketchup.active_model.pages['yourPage'].update(flags = nil)
+am = Sketchup.active_model
+status = am.pages.add(name, flags = nil, index = nil)
+am.pages['yourPage'].update(flags = nil)
 ```
 
-<table class='gjl15'><thead>
-<th><br/>flag parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>flag parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>PAGE_NO_CAMERA</td><td class='c'>4094</td></tr>
 <tr><td>PAGE_USE_ALL</td><td class='c'>4095</td></tr>
 <tr><td>PAGE_USE_CAMERA</td><td class='c'>1</td></tr>
@@ -885,9 +897,9 @@ leader = text.leader_type
 leader = Text.leader_type = leader
 ```
 
-<table class='gjl15'><thead>
-<th><br/>leader</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>leader</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>ALeaderModel</td><td class='c'>2</td></tr>
 <tr><td>ALeaderNone</td><td class='c'>0</td></tr>
 <tr><td>ALeaderView</td><td class='c'>1</td></tr>
@@ -903,9 +915,9 @@ tw = Sketchup.create_texture_writer
 status = tw.write(entity, side, filename)
 ```
 
-<table class='gjl15'><thead>
-<th><br/>status return</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>status return</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>FILE_WRITE_FAILED_INVALID_TYPE</td><td class='c'>1</td></tr>
 <tr><td>FILE_WRITE_FAILED_UNKNOWN</td><td class='c'>2</td></tr>
 <tr><td>FILE_WRITE_OK</td><td class='c'>0</td></tr>
@@ -929,9 +941,9 @@ code that attaches to mouse and keybaord events.
  def onKeyDown(key, repeat, flags, view)
 ```
 
-<table class='gjl15'><thead>
-<th>key<br/>parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>key<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>VK_ALT</td><td class='c'>18</td></tr>
 <tr><td>VK_COMMAND</td><td class='c'>18</td></tr>
 <tr><td>VK_CONTROL</td><td class='c'>17</td></tr>
@@ -961,7 +973,7 @@ Under Windows:
 * The 'flags' bits for which buttons are pressed are **not set** on the 'Up'
     events for a single button press.
 * On a double button press and release, a single down event will often fire,
-    the the double. On release, first the **wrong button** will fire an 
+    the the double. On release, first the **wrong button** will fire an
     event, the a 'blank' up event.
 * 'Down' and 'Up' events fire first, then the 'DoubleClick' event fires.
 
@@ -974,57 +986,58 @@ end
 ```
 
 Below is code that shows use of the constants, also some "does't quite work"
-key code.  Located in the Template_Code.rb file. Load, then GuideCode.new.tool_1.
+key code.  Located in the [template_code.rb] file. Load, then SUMD_TC.new.tool_1.
 
 ```ruby
-@@mouse = Proc.new { |up_down_dbl, flags, x, y, view|
-  button  = []
-  key_mod = []
-  if (MK_LBUTTON & flags != 0) then button.push 'Left'   end
-  if (MK_MBUTTON & flags != 0) then button.push 'Middle' end
-  if (MK_RBUTTON & flags != 0) then button.push 'Right'  end
+@@mse = Proc.new { |up_down_dbl, flags, x, y, view|
+  button  = ''
+  key_mod = ''
+  if (MK_LBUTTON & flags != 0) then button << ', Left'   end
+  if (MK_MBUTTON & flags != 0) then button << ', Middle' end
+  if (MK_RBUTTON & flags != 0) then button << ', Right'  end
 
-  if (MK_SHIFT   & flags != 0) then key_mod.push 'Shift' end
-  if (MK_CONTROL & flags != 0) then key_mod.push 'Ctrl'  end
-  if (MK_ALT     & flags != 0) then key_mod.push 'Alt'   end
+  if (MK_SHIFT   & flags != 0) then key_mod << ', Shift' end
+  if (MK_CONTROL & flags != 0) then key_mod << ', Ctrl'  end
+  if (MK_ALT     & flags != 0) then key_mod << ', Alt'   end
   s1 = up_down_dbl.ljust(7)
-  s2 = button.join(", ").ljust(20)
-  s3 = key_mod.join(", ")
+  s2 =  button.sub(/^, /, '').ljust(20)
+  s3 = key_mod.sub(/^, /, '')
   puts "Mouse Button #{s1} button = #{s2} keys = #{s3}"
 }
 @tool = Object.new
 @tool.instance_eval {
-  def onLButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
-  def onMButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
-  def onRButtonDown(*args)        ; @@mouse.call('Down', *args) ; end
+  def onLButtonDown(*a)        ; @@mse.call('Down'  , *a) ; end
+  def onMButtonDown(*a)        ; @@mse.call('Down'  , *a) ; end
+  def onRButtonDown(*a)        ; @@mse.call('Down'  , *a) ; end
 
-  def onLButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
-  def onMButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
-  def onRButtonUp(*args)          ; @@mouse.call('Up', *args) ; end
+  def onLButtonUp(*a)          ; @@mse.call('Up'    , *a) ; end
+  def onMButtonUp(*a)          ; @@mse.call('Up'    , *a) ; end
+  def onRButtonUp(*a)          ; @@mse.call('Up'    , *a) ; end
 
-  def onLButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
-  def onMButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
-  def onRButtonDoubleClick(*args) ; @@mouse.call('DblClk', *args) ; end
+  def onLButtonDoubleClick(*a) ; @@mse.call('DblClk', *a) ; end
+  def onMButtonDoubleClick(*a) ; @@mse.call('DblClk', *a) ; end
+  def onRButtonDoubleClick(*a) ; @@mse.call('DblClk', *a) ; end
 
   def onKeyDown(key, repeat, flags, view)
     # Some binary fun for testing
-    #   t = flags.to_s(2).rjust(16)
-    #   tBin = "#{t[-16,4]} #{ t[-12,4]} #{ t[-8,4]} #{t[-4,4]}".rjust(18)
-    #   puts "#{key.to_s.ljust(4)}\t#{flags.to_s.ljust(5)}\t#{tBin}"
+    t = flags.to_s(2).rjust(16)
+    bin = "#{ t[-16,4]} #{ t[-12,4]} " \
+          "#{ t[ -8,4]} #{ t[ -4,4]}".rjust(19)
+    puts "#{key.to_s.ljust(4)}\t#{flags.to_s.ljust(5)}\t#{bin}"
 
-    k   = key.to_s.rjust(3)
-    alt =  (ALT_MODIFIER_MASK & key != 0).to_s.ljust(5)
+    k    = key.to_s.rjust(3)
+    alt  = (ALT_MODIFIER_MASK       & key != 0).to_s.ljust(5)
     cons = (CONSTRAIN_MODIFIER_MASK & key != 0).to_s.ljust(5)
-    copy = (COPY_MODIFIER_MASK & key != 0).to_s.ljust(5)
+    copy = (COPY_MODIFIER_MASK      & key != 0).to_s.ljust(5)
     puts "key = #{k}  alt = #{alt}  cons = #{cons}  copy = #{copy}"
   end
 }
 Sketchup.active_model.select_tool(@tool)
 ```
 
-<table class='gjl15'><thead>
-<th>flags<br/>parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>flags<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>MK_ALT</td><td class='c'>32</td></tr>
 <tr><td>MK_COMMAND</td><td class='c'>0</td></tr>
 <tr><td>MK_CONTROL</td><td class='c'>8</td></tr>
@@ -1043,9 +1056,9 @@ See [Toolbar#get_last_state].
 state = toolbar.get_last_state
 ```
 
-<table class='gjl15'><thead>
-<th>state<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>state<br/>return</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>TB_HIDDEN</td><td class='c'>0</td></tr>
 <tr><td>TB_NEVER_SHOWN</td><td class='c'>-1</td></tr>
 <tr><td>TB_VISIBLE</td><td class='c'>1</td></tr>
@@ -1061,9 +1074,9 @@ and an 'Okay' button.
 status = UI.messagebox(message, type)
 ```
 
-<table class='gjl15'><thead>
-<th><br/>type parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>type parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>MB_ABORTRETRYIGNORE</td><td class='c'>2</td></tr>
 <tr><td>MB_MULTILINE</td><td class='c'>16</td></tr>
 <tr><td>MB_OK</td><td class='c'>0</td></tr>
@@ -1073,9 +1086,9 @@ status = UI.messagebox(message, type)
 <tr><td>MB_YESNOCANCEL</td><td class='c'>3</td></tr>
 </tbody></table>
 
-<table class='gjl15'><thead>
-<th>status<br/>return</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>status<br/>return</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>IDABORT</td><td class='c'>3</td></tr>
 <tr><td>IDCANCEL</td><td class='c'>2</td></tr>
 <tr><td>IDIGNORE</td><td class='c'>5</td></tr>
@@ -1095,9 +1108,9 @@ view = Sketchup.active_model.active_view
 view.draw(mode, pts)
 ```
 
-<table class='gjl15'><thead>
-<th><br/>mode parameter</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th><br/>mode parameter</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>GL_LINES</td><td class='c'>1</td></tr>
 <tr><td>GL_LINE_LOOP</td><td class='c'>2</td></tr>
 <tr><td>GL_LINE_STRIP</td><td class='c'>3</td></tr>
@@ -1116,9 +1129,9 @@ view.draw(mode, pts)
 See [View#draw_text].  These constants are used in SketchUp 2016+ and control
 the text alignment.
 
-<table class='gjl15'><thead>
-<th>:align<br/>hash value</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>:align<br/>hash value</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>TextAlignCenter</td><td class='c'>1</td></tr>
 <tr><td>TextAlignLeft</td><td class='c'>0</td></tr>
 <tr><td>TextAlignRight</td><td class='c'>2</td></tr>
@@ -1127,13 +1140,13 @@ the text alignment.
 
 ### RUBY_ Constants, SketchUp Platform Constants
 
-The following are _RUBY and SketchUp constants which vary from version to version.
+The following are RUBY_ and SketchUp constants which vary from version to version.
 
-<table class='gjl15'><thead>
+<table class='sumd'><thead><tr>
 <th>constant name</th><th class='c'>value</th><th>class</th>
-</thead><tbody>
-<tr><td>RUBY_COPYRIGHT</td><td class='c'>ruby - Copyright (C) 1993-2013<br/>Yukihiro Matsumoto</td><td>String</td></tr>
-<tr><td>RUBY_DESCRIPTION</td><td class='c'>ruby 2.0.0p247 (2013-06-27)<br/>[i386-mingw32]</td><td>String</td></tr>
+</tr></thead><tbody>
+<tr><td>RUBY_COPYRIGHT</td><td class='c'>ruby - Copyright (C) 1993-2013 Yukihiro Matsumoto</td><td>String</td></tr>
+<tr><td>RUBY_DESCRIPTION</td><td class='c'>ruby 2.0.0p247 (2013-06-27) [i386-mingw32]</td><td>String</td></tr>
 <tr><td>RUBY_ENGINE</td><td class='c'>ruby</td><td>String</td></tr>
 <tr><td>RUBY_PATCHLEVEL</td><td class='c'>247</td><td>Fixnum</td></tr>
 <tr><td>RUBY_PLATFORM</td><td class='c'>i386-mingw32</td><td>String</td></tr>
@@ -1149,9 +1162,9 @@ I beleieve the following are depreciated. VK_ constants should be used in their
 place.  I tried the mask constants on both the key and flags parameters, and
 nothing seemed to work.
 
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>ALT_MODIFIER_KEY</td><td class='c'>18</td></tr>
 <tr><td>ALT_MODIFIER_MASK</td><td class='c'>32</td></tr>
 <tr><td>CONSTRAIN_MODIFIER_KEY</td><td class='c'>16</td></tr>
@@ -1163,9 +1176,9 @@ nothing seemed to work.
 
 The following have been replaced by namespaced constants.
 
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>DimensionArrowClosed</td><td class='c'>3</td></tr>
 <tr><td>DimensionArrowDot</td><td class='c'>2</td></tr>
 <tr><td>DimensionArrowNone</td><td class='c'>0</td></tr>
@@ -1176,9 +1189,9 @@ The following have been replaced by namespaced constants.
 
 ## Yet to be added to documentation or unknown
 
-<table class='gjl15'><thead>
-<th>constant<br/>name</th><th class='c'>value<br/>(Fixnum)</th>
-</thead><tbody>
+<table class='sumd'><thead><tr>
+<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+</tr></thead><tbody>
 <tr><td>Sketchup::Pages::ImageEmbedded</td><td class='c'>0</td></tr>
 <tr><td>Sketchup::Pages::ImageEmbeddedAndLinked</td><td class='c'>1</td></tr>
 <tr><td>Sketchup::Pages::ImageLinked</td><td class='c'>2</td></tr>
