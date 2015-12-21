@@ -1,11 +1,11 @@
 [docs]:https://github.com/MSP-Greg/SketchUp/tree/master/docs
 [su_info_txt]:https://github.com/MSP-Greg/SketchUp/tree/master/su_info_txt
 [lib/su_info]:https://github.com/MSP-Greg/SketchUp/tree/master/lib/su_info
-[SUMD_All]:SUMD_All
-[SUMD_Collections]:SUMD_Collections
-[SUMD_Guide]:SUMD_Guide
-[SUMD_List]:SUMD_List
-[SUMD_Symbols]:SUMD_Symbols
+[SUMD_All]:http://www.rubydoc.info/github/MSP-Greg/SketchUp/SUMD_All
+[SUMD_Collections]:http://www.rubydoc.info/github/MSP-Greg/SketchUp/SUMD_Collections
+[SUMD_Guide]:http://www.rubydoc.info/github/MSP-Greg/SketchUp/SUMD_Guide
+[SUMD_List]:http://www.rubydoc.info/github/MSP-Greg/SketchUp/SUMD_List
+[SUMD_Symbols]:http://www.rubydoc.info/github/MSP-Greg/SketchUp/SUMD_Symbols
 <p>
 <a href="https://github.com/MSP-Greg/SketchUp">
 <svg  width="120" height="28" xmlns="http://www.w3.org/2000/svg" >
