@@ -43,7 +43,7 @@ module SUMD_Guide
   @rb_dir = File.dirname(__FILE__)
 
   unless ( defined?(SUMD) && SUMD.respond_to?(:sumd_file_write) )
-    load "#{@rb_dir}#{File::SEPARATOR}common.rb"
+    load "#{@rb_dir}#{File::SEPARATOR}sumd_common.rb"
   end
 
   # text of template file
@@ -54,9 +54,10 @@ module SUMD_Guide
   @text_code = Object.new
 
   @@i = -1
-  
+
   # used to retrieve su#{@su_major}_constants_tab_md.txt
   @su_major = Sketchup.version.split('.')[0].rjust(2, '0')
+  @toc_su = ( @su_major.to_i >= 10 ? "20#{@su_major}" : @su_major.to_i.to_s )
 
 #} Class variables
 
@@ -94,69 +95,73 @@ module SUMD_Guide
     find_regex('[^\r\n\f]+?Geom::', 'geometry')
 
     # UI.messagebox type
-    find_regex('MB_', 'ui_mb_type', '<br/>type parameter')
+    a2 = find_regex('MB_')
 
     # UI.messagebox return
-    find_regex('ID', 'ui_mb_ret', 'status<br/>return')
+    a1 = find_regex('ID')
+
+    hdr_row = ['status return', 'value', '', 'type parameter', 'value']
+    table = create_table2(a1, hdr_row, %w[L C L L C], a2)
+    @text_md.sub!(/<%= ui_mb %>/, table)
 
     # UI.layer.page_behavior
     find_regex('LAYER_', 'layer_page_behavior') { |a,b|
       (a[1].rjust(3, '0') + a[0]) <=> (b[1].rjust(3, '0') + b[0]) }
 
     # Command.set_validation
-    find_regex('MF_', 'command_set_validation_proc', 'cmd_status<br/>return')
+    find_regex('MF_', 'command_set_validation_proc', 'cmd_status')
 
     # Behavior # snap_to
-    find_regex('SnapTo_', 'snap_to', '<br/>snap_to')
+    find_regex('SnapTo_', 'snap_to', 'snap_to')
 
     # Dimension #arrow_type #arrow_type=
-    find_regex('Sketchup::Dimension::ARROW_', 'dim_arrow', '<br/>arrow_type')
+    find_regex('Sketchup::Dimension::ARROW_', 'dim_arrow', 'arrow_type')
 
     # Dimension #aligned_text_position
-    find_regex('Sketchup::DimensionLinear::ALIGNED_', 'dim_aligned_text', '<br/>at_pos')
+    find_regex('Sketchup::DimensionLinear::ALIGNED_', 'dim_aligned_text', 'at_pos')
 
     # Dimension #text_position
-    find_regex('Sketchup::DimensionLinear::TEXT_', 'dim_text_pos', '<br/>text_pos')
+    find_regex('Sketchup::DimensionLinear::TEXT_', 'dim_text_pos', 'text_pos')
 
     # Entities add_faces_from_mesh
-    find_regex('Geom::PolygonMesh::', 'from_mesh', '<br/>smooth_flags')
+    find_regex('Geom::PolygonMesh::', 'from_mesh', 'smooth_flags')
 
     # Page#update Pages#add
-    find_regex('(PAGE_USE_|PAGE_NO_)', 'page_use', '<br/>flag parameter')
+    find_regex('(PAGE_USE_|PAGE_NO_)', 'page_use', 'flag parameter')
 
     # Sketchup::Face::
-    find_regex('Sketchup::Face::', 'face_classify_point', 'pt_location<br/>return')
+    find_regex('Sketchup::Face::', 'face_classify_point', 'pt_location')
 
     # Sketchup::Importer::
-    find_regex('Sketchup::Importer::', 'importer', 'status_code<br/>return')
+    find_regex('Sketchup::Importer::', 'importer', 'status_code return')
 
     # Sketchup::Model::
-    find_regex('Sketchup::Model::', 'model_save', '@version<br/>parameter') { |a, b|
+    find_regex('Sketchup::Model::', 'model_save', 'version') { |a, b|
       a[1].to_i <=> b[1].to_i }
 
     # .set_status_text
-    find_regex('SB_', 'status_text', 'position<br/>parameter')
+    find_regex('SB_', 'status_text', 'position')
 
     # Text #leader_type
-    find_regex('ALeader', 'leader_type', '<br/>leader')
+    find_regex('ALeader', 'leader_type', 'leader')
 
     # Texturewriter.write
-    find_regex('FILE_WRITE_', 'texture_writer_write', '<br/>status return')
+    find_regex('FILE_WRITE_', 'texture_writer_write', 'status return')
 
     # Tool Keyboard
-    find_regex('VK_', 'tool_key', 'key<br/>parameter')
+    find_regex('VK_', 'tool_key', 'key cb<br/>parameter')
 
     # Tool Mouse
-    find_regex('MK_', 'tool_mse', 'flags<br/>parameter')
+    find_regex('MK_', 'tool_mse', 'flags cb<br/>parameter')
 
     # Toolbar
-    find_regex('TB_', 'toolbar', 'state<br/>return')
+    find_regex('TB_', 'toolbar', 'state return')
 
     # View.draw(mode, pts)
-    find_regex('GL_', 'view_draw', "<br/>mode parameter")
+    find_regex('GL_', 'view_draw', "mode parameter")
 
     # Vew.draw_text
-    find_regex('TextAlign', 'view_draw_text', ":align<br/>hash value")
+    find_regex('TextAlign', 'view_draw_text', ":align value")
 
     # RUBY_
     find_regex('(RUBY_|PLATFORM|RELEASE_DATE|VERSION)', 'RUBY_')
@@ -178,7 +183,7 @@ module SUMD_Guide
     files << SUMD.sumd_file_write('Constants Guide.md', @text_md)
     puts "-------------------------------------------------\n" \
          "#{name} wrote the following files:\n#{files.join(10.chr)}\n"
-    
+
     UI.messagebox('Finished!')
   end
 
@@ -211,6 +216,7 @@ module SUMD_Guide
         array
       end
     else
+      # nothing found, insert text as such
       re_find_text = /<%= #{re_md} %>/
       @text_md.sub!(re_find_text, "<strong>** Constants not defined in SketchUp #{@toc_su} **</strong><br/><br/>") if re_md
       array
@@ -372,7 +378,7 @@ module SUMD_Guide
       end
     }
     if (@a_no_fire.length > 0)
-      hdr_row = ['RenderingOptions<br/>key', 'RenderingOptions<br/>value.class']
+      hdr_row = ['R Opts key', 'R Opts value.class']
       alignment = %w[L L]
       table = create_table(@a_no_fire, hdr_row, alignment)
       t =  "The following table lists [RenderingOptions] keys that do not" \
@@ -383,7 +389,7 @@ module SUMD_Guide
     end
     array = find_regex('Sketchup::RenderingOptions::', nil)
     if (array.length > 0)
-      hdr_row = ['Observer<br/>constant (type)', 'value']
+      hdr_row = ['Observer constant (type)', 'value']
       alignment = %w[L C]
       table = create_table(array, hdr_row, alignment)
       t = "The following RenderingOptions constants are not fired by any keys" \
@@ -450,9 +456,9 @@ module SUMD_Guide
         a_table << [a, '', '']
       end
     }
-    hdr_row = ['action parameter<br/>String',
-               'action parameter<br/>Constant',
-               'action<br/>Fixnum']
+    hdr_row = ['action String',
+               'action Constant',
+               'Fixnum']
     alignment = %w[L L C]
     table = create_table(a_table, hdr_row, alignment)
     @text_md.sub!(/<%= cmd_alpha %>/, table)
@@ -464,7 +470,7 @@ module SUMD_Guide
       array.sort! { |a,b| a[0] <=> b[0] }
       sub = "The following constants do not have string equivalents.\n\n<%= cmd_numeric %>"
       @text_md.sub!(/<%= cmd_numeric %>/, sub)
-      table = standard_table(array, 'cmd_numeric', 'action parameter<br/>Constant')
+      table = standard_table(array, 'cmd_numeric', 'action constant')
     end
   end
 
@@ -475,14 +481,8 @@ module SUMD_Guide
   #
   def self.standard_table(array, re_md, col1 = nil)
     re_find_text = /<%= #{re_md} %>/
+    table = nil
     if array.length > 0
-      # if col1 change 1st column heading
-      if (col1)
-        hdr_row =  ["#{col1}", 'value', 'class']
-      else
-        hdr_row =  ['constant name', 'value', 'class']
-      end
-
       # check to see if all constants are of the same class, if so,
       # change 2nd column heading, remove 3rd column
       len = array.length - 1
@@ -496,13 +496,34 @@ module SUMD_Guide
           end
         }
       end
+      hdr_row = []
+
+      hdr_row[0] = col1 || 'constant'
+      hdr_row[1] =  ( hdr_row[0] =~ /<br\/>/ ?
+                      "<br/>value" : "value" )
       if (col3_remove)
-        hdr_row[0] = "constant<br/>name" unless col1
-        hdr_row[1] = "value<br/>#{cls}"
-        hdr_row.pop()
+        if array.length > 6
+          wid = SUMD.sumd_str_to_em(array)
+          if wid < 18
+            hdr_row[2] = ''
+            hdr_row[3] = hdr_row[0]
+            hdr_row[4] = hdr_row[1]
+            alignment = %w[L C L L C]
+            split = ( 0.5 * (len + 2) ).floor
+            t = len - split + 1
+            a2 = array.slice!(-t, t)
+            table = create_table2(array, hdr_row, alignment, a2, wid)
+          end
+        end
+        # two column single table
+        alignment = %w[L C]
+        table ||= create_table(array, hdr_row, alignment)
+      else
+        # three column single table
+        hdr_row[2] = 'class'
+        alignment = %w[L C L]
+        table = create_table(array, hdr_row, alignment)
       end
-      alignment = %w[L C L]
-      table = create_table(array, hdr_row, alignment)
     else
       table = "No matching constants!"
     end
@@ -527,7 +548,7 @@ module SUMD_Guide
   # @param array     [Array<String>]
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
-  # @return [string]
+  # @return [string] table element html string
   #
   def self.create_table(array, hdr_row, alignment)
     rows = array.length - 1
@@ -535,22 +556,103 @@ module SUMD_Guide
     al = []
     0.upto(columns) { |j|
       case alignment[j]
-      when "L" then al[j] = ">"
-      when "C" then al[j] = " class='c'>"
-      when "R" then al[j] = " class='r'>"
+      when "L" then al[j] = ( j != columns ? " class='l1'" : "" )
+      when "C" then al[j] = ( j != columns ? " class='c1'" : " class='c'" )
+      when "R" then al[j] = " class='r1'"
       end
     }
     # create md header row
     table = "<table class='sumd'><thead><tr>\n"
-    0.upto(columns) { |j| table << "<th#{al[j]}#{hdr_row[j]}</th>" }
+    0.upto(columns) { |j| table << "<th#{al[j]}>#{hdr_row[j]}</th>" }
     table << "\n</tr></thead><tbody>\n"
     # create table
     0.upto(rows) { |i|
       table << "<tr>"
       0.upto(columns) { |j|
-        table << "<td#{al[j]}#{array[i][j]}</td>"
+        table << "<td#{al[j]}>#{array[i][j]}</td>"
       }
       table << "</tr>\n"
+      if (i+1) % 5 == 0 && i != rows
+        table << "<tr class='t' ><td colspan='#{columns + 1}'></td></tr>\n" \
+                 "<tr class='b1'><td colspan='#{columns + 1}'></td></tr>\n"
+      end
+    }
+    table << "</tbody></table>\n"
+  end
+
+  # Creates a 'two up' html table from an array
+  # @param a1        [Array<String>]
+  # @param hdr_row   [Array<String>] table row 1
+  # @param alignment [Array<String>]
+  # @param a2        [Array<String>] 2nd col array
+  # @param wid       [Float]         '1st' col em width
+  # @return [string] table element html string
+  #
+  def self.create_table2(a1, hdr_row, alignment, a2, wid = nil)
+    if wid
+      wid1 = wid ; wid2 = wid
+    else
+      # header titles should be one row (no <br/>)
+      puts hdr_row[0]
+      puts hdr_row[3]
+      wid1 = [SUMD.sumd_str_to_em(a1),
+              1 + SUMD.sumd_str_to_em( [ hdr_row[0], '' ] ) ].max
+      wid2 = [SUMD.sumd_str_to_em(a2),
+              1 + SUMD.sumd_str_to_em( [ hdr_row[3], '' ] ) ].max
+    end
+
+    rows = [a1.length - 1, a2.length - 1].max
+    columns = hdr_row.length - 1
+    al = []
+
+    0.upto(columns) { |j|
+      case alignment[j]
+      when "L" then al[j] = ">"
+      when "C" then al[j] = " class='c'>"
+      when "R" then al[j] = " class='r'>"
+      end
+    }
+    split = ( [wid1, wid2].max > 15 ? '1.5em' : '3em' )
+      2
+    # create md header row
+    table = "<table class='sumd'>" \
+            "<colgroup>" \
+            "<col style='width:#{wid1+1}em;' />" \
+            "<col />" \
+            "<col style='width:#{split};'/>" \
+            "<col style='width:#{wid2+1}em;' />" \
+            "<col />" \
+            "</colgroup>" \
+            "<thead><tr>\n"
+
+    0.upto(columns) { |j|
+      table <<  ( j != 2 ? "<th#{al[j]}#{hdr_row[j]}</th>" :
+                "<th class='b'></th>" )
+    }
+    table << "\n</tr></thead><tbody>\n"
+    # create table
+    len1 = a1.length
+    len2 = a2.length
+    0.upto(rows) { |i|
+      table << "<tr>"
+      if i < len1
+        table << "<td#{al[0]}#{a1[i][0]}</td><td#{al[1]}#{a1[i][1]}</td>"
+      else
+        table << "<td#{al[0]}</td><td#{al[1]}</td>"
+      end
+      table << "<td class='b'></td>"
+      if i < len2
+        table << "<td#{al[3]}#{a2[i][0]}</td><td#{al[4]}#{a2[i][1]}</td>"
+      else
+        table << "<td#{al[3]}</td><td#{al[4]}</td>"
+      end
+      table << "</tr>\n"
+      if (i+1) % 5 == 0 && i != rows
+        table << "<tr class='t' ><td></td><td></td><td></td>" \
+                                "<td></td><td></td></tr>\n" \
+                 "<tr class='b1'><td></td><td></td><td class='b'></td>" \
+                                "<td></td><td></td></tr>\n"
+      end
     }
     table << "</tbody></table>\n"
   end
@@ -559,9 +661,11 @@ module SUMD_Guide
   # @param array     [Array<String>] array to load into table
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
-  # @return [String] the html table
+  # @return [String] md tabel string
   #
-  def self.create_md_table(array, hdr_row, alignment)
+  # Not used since all tables are html
+  #
+  def self.create_table_md(array, hdr_row, alignment)
     rows = array.length - 1
     columns = hdr_row.length - 1
     # column widths of header row

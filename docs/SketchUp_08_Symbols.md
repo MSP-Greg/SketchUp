@@ -1,14 +1,14 @@
-# @title ___8&nbsp;Symbols
+# @title ___8 Symbols
 [SUMD_Symbols]:../../SUMD_Symbols
 <style scoped>
 #filecontents p code { font-size:16px; }
 \#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; background-color:transparent; line-height:1.5em; }
 \#filecontents table.sumd tr     { border:none; background-color:transparent;}
 \#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
-\#filecontents table.sumd tr.t  td   { padding-top:3px; }
-\#filecontents table.sumd tr.b2 td   { padding-top:3px; border-top: 2px solid #bbb; }
-\#filecontents table.sumd tr.b1 td   { padding-top:3px; border-top: 1px solid #bbb; }
-\#filecontents table.sumd tr.b1 td.b { padding-top:3px; border-top: 1px solid transparent; }
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: 1px solid transparent; }
 \#filecontents table.sumd tr.clr { border-bottom:none; line-height:0.2em;}
 \#filecontents table.sumd th { border:none; padding: 0px; background-color:transparent; border-bottom:2px solid #aaa; ; text-align:left;}
 \#filecontents table.sumd td { border:none; padding: 0px; background-color:transparent;}
@@ -23,7 +23,7 @@ Symbols are used by Ruby for many purposes.  The names of all classes, methods,
 attributes, constants and variables are all placed in Ruby's symbol table.
 
 ---
-Generated with [SUMD_Symbols] v2.0, on 2015-12-19 at 01:08:26 AM GMT,
+Generated with [SUMD_Symbols] v2.0, on 2015-12-21 at 04:27:22 PM GMT,
 using SketchUp v8.0.16846 & Ruby v1.8.6.
 
 ---
@@ -32,10 +32,10 @@ using SketchUp v8.0.16846 & Ruby v1.8.6.
 
 * **Global constants have also been omitted, please see the Constants List.**
 
-Found 895 symbols, listed as follows:
+Found 896 symbols, listed as follows:
 
 * 249 as attribute names
-* 477 with lower case 1st letter
+* 478 with lower case 1st letter
 * 167 with upper case 1st letter
 * &#8196;&#8197;&#8196;&#8197;2 with all upper case lettering
 
@@ -44,6 +44,9 @@ Found 895 symbols, listed as follows:
 These are assumed to be attributes, due to there being sets of them (plain, ending
 in '?', ending in '=').  Columns show whether one exists with '?' or '='.  If only
 the '?' version exists, it is placed in the main column.
+
+If an attribute has a symbol for both plain and a ? suffix, very often the plain
+symbol 'method' **is not defined and will not work.**
 
 <table class='sumd'>
 <colgroup>
@@ -388,46 +391,49 @@ These symbols are either method names or variables.
 <tr class='t' ><td colspan='3'></td></tr>
 <tr class='b2'><td colspan='3'></td></tr>
 <tr class='e'><td colspan='3'></td></tr>
-<tr><td>:pages</td><td>&#160;</td><td>:post_url</td></tr>
-<tr><td>:parent</td><td>&#160;</td><td>:prec</td></tr>
-<tr><td>:parse_length</td><td>&#160;</td><td>:prec_f</td></tr>
-<tr><td>:partners</td><td>&#160;</td><td>:prec_i</td></tr>
-<tr><td>:path_at</td><td>&#160;</td><td>:preferences_pages</td></tr>
+<tr><td>:pages</td><td>&#160;</td><td>:prec</td></tr>
+<tr><td>:parent</td><td>&#160;</td><td>:prec_f</td></tr>
+<tr><td>:parse_length</td><td>&#160;</td><td>:prec_i</td></tr>
+<tr><td>:partners</td><td>&#160;</td><td>:preferences_pages</td></tr>
+<tr><td>:path_at</td><td>&#160;</td><td>:previous</td></tr>
 <tr class='t'><td></td><td></td><td></td></tr>
 <tr class='b1'><td></td><td class='b'></td><td></td></tr>
-<tr><td>:pick</td><td>&#160;</td><td>:previous</td></tr>
-<tr><td>:pick_helper</td><td>&#160;</td><td>:project_textures_from_photo</td></tr>
-<tr><td>:pick_segment</td><td>&#160;</td><td>:project_to_line</td></tr>
-<tr><td>:picked_edge</td><td>&#160;</td><td>:project_to_plane</td></tr>
-<tr><td>:picked_element</td><td>&#160;</td><td>:purge_unused</td></tr>
+<tr><td>:pick</td><td>&#160;</td><td>:project_textures_from_photo</td></tr>
+<tr><td>:pick_helper</td><td>&#160;</td><td>:project_to_line</td></tr>
+<tr><td>:pick_segment</td><td>&#160;</td><td>:project_to_plane</td></tr>
+<tr><td>:picked_edge</td><td>&#160;</td><td>:purge_unused</td></tr>
+<tr><td>:picked_element</td><td>&#160;</td><td>:push_tool</td></tr>
 <tr class='t'><td></td><td></td><td></td></tr>
 <tr class='b1'><td></td><td class='b'></td><td></td></tr>
-<tr><td>:picked_face</td><td>&#160;</td><td>:push_tool</td></tr>
-<tr><td>:pickray</td><td>&#160;</td><td>:pushpull</td></tr>
-<tr><td>:pixelheight</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td>:pixels_to_model</td><td>&#160;</td><td>:radians</td></tr>
-<tr><td>:pixelwidth</td><td>&#160;</td><td>:radius</td></tr>
+<tr><td>:picked_face</td><td>&#160;</td><td>:pushpull</td></tr>
+<tr><td>:pickray</td><td>&#160;</td><td>&#160;</td></tr>
+<tr><td>:pixelheight</td><td>&#160;</td><td>:radians</td></tr>
+<tr><td>:pixels_to_model</td><td>&#160;</td><td>:radius</td></tr>
+<tr><td>:pixelwidth</td><td>&#160;</td><td>:raytest</td></tr>
 <tr class='t'><td></td><td></td><td></td></tr>
 <tr class='b1'><td></td><td class='b'></td><td></td></tr>
-<tr><td>:place_component</td><td>&#160;</td><td>:raytest</td></tr>
-<tr><td>:plane</td><td>&#160;</td><td>:rbfiles</td></tr>
-<tr><td>:play_sound</td><td>&#160;</td><td>:read_default</td></tr>
-<tr><td>:point=</td><td>&#160;</td><td>:refresh_inspectors</td></tr>
-<tr><td>:point_at</td><td>&#160;</td><td>:refresh_thumbnail</td></tr>
+<tr><td>:place_component</td><td>&#160;</td><td>:rbfiles</td></tr>
+<tr><td>:plane</td><td>&#160;</td><td>:read_default</td></tr>
+<tr><td>:play_sound</td><td>&#160;</td><td>:refresh_inspectors</td></tr>
+<tr><td>:point=</td><td>&#160;</td><td>:refresh_thumbnail</td></tr>
+<tr><td>:point_at</td><td>&#160;</td><td>:register_extension</td></tr>
 <tr class='t'><td></td><td></td><td></td></tr>
 <tr class='b1'><td></td><td class='b'></td><td></td></tr>
-<tr><td>:point_in_polygon_2D</td><td>&#160;</td><td>:register_extension</td></tr>
-<tr><td>:point_index</td><td>&#160;</td><td>:register_from_sketchup</td></tr>
-<tr><td>:point_to_latlong</td><td>&#160;</td><td>:register_importer</td></tr>
-<tr><td>:point_to_utm</td><td>&#160;</td><td>:remove_finalizer</td></tr>
-<tr><td>:points</td><td>&#160;</td><td>:remove_frame_change_observer</td></tr>
+<tr><td>:point_in_polygon_2D</td><td>&#160;</td><td>:register_from_sketchup</td></tr>
+<tr><td>:point_index</td><td>&#160;</td><td>:register_importer</td></tr>
+<tr><td>:point_to_latlong</td><td>&#160;</td><td>:remove_finalizer</td></tr>
+<tr><td>:point_to_utm</td><td>&#160;</td><td>:remove_frame_change_observer</td></tr>
+<tr><td>:points</td><td>&#160;</td><td>:remove_observer</td></tr>
 <tr class='t'><td></td><td></td><td></td></tr>
 <tr class='b1'><td></td><td class='b'></td><td></td></tr>
-<tr><td>:polygon_at</td><td>&#160;</td><td>:remove_observer</td></tr>
-<tr><td>:polygon_points_at</td><td>&#160;</td><td>:rendering_options</td></tr>
-<tr><td>:polygons</td><td>&#160;</td><td>:require_all</td></tr>
-<tr><td>:pop_tool</td><td>&#160;</td><td>:results</td></tr>
-<tr><td>:position_material</td><td>&#160;</td><td>:rotation</td></tr>
+<tr><td>:polygon_at</td><td>&#160;</td><td>:rendering_options</td></tr>
+<tr><td>:polygon_points_at</td><td>&#160;</td><td>:require_all</td></tr>
+<tr><td>:polygons</td><td>&#160;</td><td>:results</td></tr>
+<tr><td>:pop_tool</td><td>&#160;</td><td>:rotation</td></tr>
+<tr><td>:position_material</td><td>&#160;</td><td>:row</td></tr>
+<tr class='t'><td></td><td></td><td></td></tr>
+<tr class='b1'><td></td><td class='b'></td><td></td></tr>
+<tr><td>:post_url</td><td>&#160;</td><td>&#160;</td></tr>
 <tr class='e'><td colspan='3'></td></tr>
 <tr class='e'><td colspan='3'></td></tr>
 <tr class='t' ><td colspan='3'></td></tr>
@@ -540,7 +546,7 @@ These symbols are either method names or variables.
 
 ## Symbols - Upper Case 1st letter
 
-These symbols are mixed case, but all have a first capital letter.  They are 
+These symbols are mixed case, but all have a first capital letter.  They are
 constants, and may be class or module names.
 
 <table class='sumd'>

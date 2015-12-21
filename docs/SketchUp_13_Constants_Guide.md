@@ -1,4 +1,4 @@
-# @title 2013&nbsp;Constants&nbsp;Guide
+# @title 2013 Constants Guide
 [SUMD_Guide]:../../SUMD_Guide
 [template_code.rb]:../../SUMD_TC
 [Sketchup::Console]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/console
@@ -46,14 +46,21 @@
 <style scoped>
 #filecontents p code { font-size:16px; }
 \#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
-\#filecontents table.sumd thead { border-bottom:2px solid #aaa; background-color:transparent;}
-\#filecontents table.sumd tr    { border:none; background-color:transparent;}
-\#filecontents table.sumd tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-\#filecontents table.sumd th { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent; text-align:left;}
-\#filecontents table.sumd td { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent;}
+\#filecontents table.sumd thead { background-color:transparent;}
+\#filecontents table.sumd tr    { background-color:transparent; border:none; }
+\#filecontents table.sumd th   { border:none; border-bottom:2px solid #aaa; padding: 0em; background-color:transparent; text-align:left;}
+\#filecontents table.sumd th.b { border:none; padding: 0em; background-color:transparent; }
+\#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: none; }
+\#filecontents table.sumd td { border:none; padding: 0em; background-color:transparent;}
 \#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
 \#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
-\#filecontents table.sumd td.clr, #filecontents table.sumd th.clr { border-bottom:none; width:10em;}
+\#filecontents table.sumd td.l1, #filecontents table.sumd th.l1 { padding-right:1em; }
+\#filecontents table.sumd td.c1, #filecontents table.sumd th.c1 { padding-right:1em; text-align:center; }
+\#filecontents table.sumd td.r1, #filecontents table.sumd th.r1 { padding-right:1em; text-align:right; }
 </style>
 
 # SketchUp 2013 Constants Guide
@@ -74,10 +81,12 @@ but many API users are new to Ruby, or new to programming.
 Finally, thanks to Jim Foltz and others for their previous work and help.
 
 ---
-Generated with [SUMD_Guide] v2.0, on 2015-12-19 at 01:09:27 AM GMT,
+Generated with [SUMD_Guide] v2.0, on 2015-12-21 at 04:27:52 PM GMT,
 using SketchUp v13.0.4812 & Ruby v1.8.6.
 
 ---
+
+Unless otherwise noted, constants are of class Fixnum.
 
 This document divides the SketchUp defined constants into three categories
 
@@ -130,7 +139,7 @@ arrow_type = dim.arrow_type
 dim.arrow_type = arrow_type
 ```
 
-<strong>** Constants not defined in SketchUp  **</strong><br/><br/>
+<strong>** Constants not defined in SketchUp 2013 **</strong><br/><br/>
 
 ### DimensionLinear \#aligned_text_position \#aligned_text_position=
 
@@ -141,7 +150,7 @@ at_pos = dim.aligned_text_position
 dim.aligned_text_position = at_pos
 ```
 
-<strong>** Constants not defined in SketchUp  **</strong><br/><br/>
+<strong>** Constants not defined in SketchUp 2013 **</strong><br/><br/>
 
 ### DimensionLinear \#text_position \#text_position=
 
@@ -152,7 +161,7 @@ text_pos = dim.text_position
 dim.text_position = text_pos
 ```
 
-<strong>** Constants not defined in SketchUp  **</strong><br/><br/>
+<strong>** Constants not defined in SketchUp 2013 **</strong><br/><br/>
 
 ### Entities \#add_faces_from_mesh
 
@@ -163,7 +172,7 @@ ame = Sketchup.active_model.entities
 ame.add_faces_from_mesh(pm, smooth_flags, material)
 ```
 
-<strong>** Constants not defined in SketchUp  **</strong><br/><br/>
+<strong>** Constants not defined in SketchUp 2013 **</strong><br/><br/>
 
 ### Face \#classify_point
 
@@ -196,16 +205,13 @@ end
 puts t
 ```
 
-<table class='sumd'><thead><tr>
-<th>pt_location<br/>return</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:9.6em;' /><col /><col style='width:3em;'/><col style='width:9.6em;' /><col /></colgroup><thead><tr>
+<th>pt_location</th><th class='c'>value</th><th class='b'></th><th>pt_location</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>PointInside</td><td class='c'>1</td></tr>
-<tr><td>PointNotOnPlane</td><td class='c'>32</td></tr>
-<tr><td>PointOnEdge</td><td class='c'>4</td></tr>
-<tr><td>PointOnFace</td><td class='c'>8</td></tr>
-<tr><td>PointOnVertex</td><td class='c'>2</td></tr>
-<tr><td>PointOutside</td><td class='c'>16</td></tr>
-<tr><td>PointUnknown</td><td class='c'>0</td></tr>
+<tr><td>PointInside</td><td class='c'>1</td><td class='b'></td><td>PointOnVertex</td><td class='c'>2</td></tr>
+<tr><td>PointNotOnPlane</td><td class='c'>32</td><td class='b'></td><td>PointOutside</td><td class='c'>16</td></tr>
+<tr><td>PointOnEdge</td><td class='c'>4</td><td class='b'></td><td>PointUnknown</td><td class='c'>0</td></tr>
+<tr><td>PointOnFace</td><td class='c'>8</td><td class='b'></td><td></td><td class='c'></td></tr>
 </tbody></table>
 
 
@@ -226,13 +232,13 @@ end
 ```
 
 <table class='sumd'><thead><tr>
-<th>status_code<br/>return</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>status_code return</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>ImportCanceled</td><td class='c'>2</td></tr>
-<tr><td>ImportFail</td><td class='c'>1</td></tr>
-<tr><td>ImportFileNotFound</td><td class='c'>4</td></tr>
-<tr><td>ImportSuccess</td><td class='c'>0</td></tr>
-<tr><td>ImporterNotFound</td><td class='c'>3</td></tr>
+<tr><td class='l1'>ImportCanceled</td><td class='c'>2</td></tr>
+<tr><td class='l1'>ImportFail</td><td class='c'>1</td></tr>
+<tr><td class='l1'>ImportFileNotFound</td><td class='c'>4</td></tr>
+<tr><td class='l1'>ImportSuccess</td><td class='c'>0</td></tr>
+<tr><td class='l1'>ImporterNotFound</td><td class='c'>3</td></tr>
 </tbody></table>
 
 
@@ -245,39 +251,51 @@ First, SketchUp.com does not list all of the keys used in [OptionsManager] and
 [OptionsProvider].  The below table shows all of the keys.
 
 <table class='sumd'><thead><tr>
-<th>OptionsManager<br/>key</th><th>OptionsProvider<br/>key</th><th class='c'>OptionsProvider<br/>value</th><th><br/>class</th>
+<th class='l1'>OptionsManager<br/>key</th><th class='l1'>OptionsProvider<br/>key</th><th class='c1'>OptionsProvider<br/>value</th><th><br/>class</th>
 </tr></thead><tbody>
-<tr><td>PageOptions</td><td>ShowTransition</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>TransitionTime</td><td class='c'>2.0</td><td>Float</td></tr>
-<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
-<tr><td>PrintOptions</td><td>ComputeSizeFromScale</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td></td><td>FitToPage</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>LineWeight</td><td class='c'>0.5</td><td>Float</td></tr>
-<tr><td></td><td>ModelExtents</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>NumberOfPages</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td></td><td>PixelsPerInch</td><td class='c'>150.0</td><td>Float</td></tr>
-<tr><td></td><td>PrintHeight</td><td class='c'>11.0</td><td>Float</td></tr>
-<tr><td></td><td>PrintQuality</td><td class='c'>0</td><td>Fixnum</td></tr>
-<tr><td></td><td>PrintWidth</td><td class='c'>8.5</td><td>Float</td></tr>
-<tr><td></td><td>ScaleAdjustment</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td></td><td>SectionSlice</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td></td><td>SizeInModel</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td></td><td>SizeInPrint</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td></td><td>VectorMode</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
-<tr><td>SlideshowOptions</td><td>LoopSlideshow</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>SlideTime</td><td class='c'>1.0</td><td>Float</td></tr>
-<tr><td>&#160;</td><td></td><td class='c'></td><td></td></tr>
-<tr><td>UnitsOptions</td><td>AnglePrecision</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td></td><td>AngleSnapEnabled</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>ForceInchDisplay</td><td class='c'>false</td><td>Boolean</td></tr>
-<tr><td></td><td>LengthFormat</td><td class='c'>1</td><td>Fixnum</td></tr>
-<tr><td></td><td>LengthPrecision</td><td class='c'>4</td><td>Fixnum</td></tr>
-<tr><td></td><td>LengthSnapEnabled</td><td class='c'>true</td><td>Boolean</td></tr>
-<tr><td></td><td>LengthSnapLength</td><td class='c'>0.25</td><td>Float</td></tr>
-<tr><td></td><td>LengthUnit</td><td class='c'>0</td><td>Fixnum</td></tr>
-<tr><td></td><td>SnapAngle</td><td class='c'>15.0</td><td>Float</td></tr>
-<tr><td></td><td>SuppressUnitsDisplay</td><td class='c'>false</td><td>Boolean</td></tr>
+<tr><td class='l1'>PageOptions</td><td class='l1'>ShowTransition</td><td class='c1'>true</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>TransitionTime</td><td class='c1'>2.0</td><td>Float</td></tr>
+<tr><td class='l1'>&#160;</td><td class='l1'></td><td class='c1'></td><td></td></tr>
+<tr><td class='l1'>PrintOptions</td><td class='l1'>ComputeSizeFromScale</td><td class='c1'>false</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>FitToPage</td><td class='c1'>true</td><td>Boolean</td></tr>
+<tr class='t' ><td colspan='4'></td></tr>
+<tr class='b1'><td colspan='4'></td></tr>
+<tr><td class='l1'></td><td class='l1'>LineWeight</td><td class='c1'>0.5</td><td>Float</td></tr>
+<tr><td class='l1'></td><td class='l1'>ModelExtents</td><td class='c1'>true</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>NumberOfPages</td><td class='c1'>1</td><td>Fixnum</td></tr>
+<tr><td class='l1'></td><td class='l1'>PixelsPerInch</td><td class='c1'>150.0</td><td>Float</td></tr>
+<tr><td class='l1'></td><td class='l1'>PrintHeight</td><td class='c1'>11.0</td><td>Float</td></tr>
+<tr class='t' ><td colspan='4'></td></tr>
+<tr class='b1'><td colspan='4'></td></tr>
+<tr><td class='l1'></td><td class='l1'>PrintQuality</td><td class='c1'>0</td><td>Fixnum</td></tr>
+<tr><td class='l1'></td><td class='l1'>PrintWidth</td><td class='c1'>8.5</td><td>Float</td></tr>
+<tr><td class='l1'></td><td class='l1'>ScaleAdjustment</td><td class='c1'>1.0</td><td>Float</td></tr>
+<tr><td class='l1'></td><td class='l1'>SectionSlice</td><td class='c1'>false</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>SizeInModel</td><td class='c1'>1.0</td><td>Float</td></tr>
+<tr class='t' ><td colspan='4'></td></tr>
+<tr class='b1'><td colspan='4'></td></tr>
+<tr><td class='l1'></td><td class='l1'>SizeInPrint</td><td class='c1'>1.0</td><td>Float</td></tr>
+<tr><td class='l1'></td><td class='l1'>VectorMode</td><td class='c1'>false</td><td>Boolean</td></tr>
+<tr><td class='l1'>&#160;</td><td class='l1'></td><td class='c1'></td><td></td></tr>
+<tr><td class='l1'>SlideshowOptions</td><td class='l1'>LoopSlideshow</td><td class='c1'>true</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>SlideTime</td><td class='c1'>1.0</td><td>Float</td></tr>
+<tr class='t' ><td colspan='4'></td></tr>
+<tr class='b1'><td colspan='4'></td></tr>
+<tr><td class='l1'>&#160;</td><td class='l1'></td><td class='c1'></td><td></td></tr>
+<tr><td class='l1'>UnitsOptions</td><td class='l1'>AnglePrecision</td><td class='c1'>1</td><td>Fixnum</td></tr>
+<tr><td class='l1'></td><td class='l1'>AngleSnapEnabled</td><td class='c1'>true</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>ForceInchDisplay</td><td class='c1'>false</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>LengthFormat</td><td class='c1'>1</td><td>Fixnum</td></tr>
+<tr class='t' ><td colspan='4'></td></tr>
+<tr class='b1'><td colspan='4'></td></tr>
+<tr><td class='l1'></td><td class='l1'>LengthPrecision</td><td class='c1'>4</td><td>Fixnum</td></tr>
+<tr><td class='l1'></td><td class='l1'>LengthSnapEnabled</td><td class='c1'>true</td><td>Boolean</td></tr>
+<tr><td class='l1'></td><td class='l1'>LengthSnapLength</td><td class='c1'>0.25</td><td>Float</td></tr>
+<tr><td class='l1'></td><td class='l1'>LengthUnit</td><td class='c1'>0</td><td>Fixnum</td></tr>
+<tr><td class='l1'></td><td class='l1'>SnapAngle</td><td class='c1'>15.0</td><td>Float</td></tr>
+<tr class='t' ><td colspan='4'></td></tr>
+<tr class='b1'><td colspan='4'></td></tr>
+<tr><td class='l1'></td><td class='l1'>SuppressUnitsDisplay</td><td class='c1'>false</td><td>Boolean</td></tr>
 </tbody></table>
 
 
@@ -291,7 +309,7 @@ format = am.options['UnitsOptions']['LengthFormat']
 ```
 
 The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and out@version = 2.0F to the console.  It's in the
+queries the two settings, and outputs to the console.  It's in the
 [template_code.rb] file. Load, then SUMD_TC.new.len_1.
 
 ```ruby
@@ -318,18 +336,14 @@ puts "Current model units are #{units}"
 puts "Current model format is #{format}"
 ```
 
-<table class='sumd'><thead><tr>
-<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:7.3em;' /><col /><col style='width:3em;'/><col style='width:7.3em;' /><col /></colgroup><thead><tr>
+<th>constant</th><th class='c'>value</th><th class='b'></th><th>constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>Architectural</td><td class='c'>1</td></tr>
-<tr><td>Centimeter</td><td class='c'>3</td></tr>
-<tr><td>Decimal</td><td class='c'>0</td></tr>
-<tr><td>Engineering</td><td class='c'>2</td></tr>
-<tr><td>Feet</td><td class='c'>1</td></tr>
-<tr><td>Fractional</td><td class='c'>3</td></tr>
-<tr><td>Inches</td><td class='c'>0</td></tr>
-<tr><td>Meter</td><td class='c'>4</td></tr>
-<tr><td>Millimeter</td><td class='c'>2</td></tr>
+<tr><td>Architectural</td><td class='c'>1</td><td class='b'></td><td>Fractional</td><td class='c'>3</td></tr>
+<tr><td>Centimeter</td><td class='c'>3</td><td class='b'></td><td>Inches</td><td class='c'>0</td></tr>
+<tr><td>Decimal</td><td class='c'>0</td><td class='b'></td><td>Meter</td><td class='c'>4</td></tr>
+<tr><td>Engineering</td><td class='c'>2</td><td class='b'></td><td>Millimeter</td><td class='c'>2</td></tr>
+<tr><td>Feet</td><td class='c'>1</td><td class='b'></td><td></td><td class='c'></td></tr>
 </tbody></table>
 
 
@@ -343,7 +357,7 @@ status = model.save(filename, version)
 status = model.save_copy(filename, version)
 ```
 
-<strong>** Constants not defined in SketchUp  **</strong><br/><br/>
+<strong>** Constants not defined in SketchUp 2013 **</strong><br/><br/>
 
 ### RenderingOptionsObserver
 
@@ -483,84 +497,104 @@ values are shown bolded.  Note that since these seem to have a many-to-many
 relationship, the testing done may not show all combinations.
 
 <table class='sumd'><thead><tr>
-<th>RenderingOptions<br/>key</th><th>RenderingOptions<br/>value.class</th><th><br/>Observer constant (type)</th>
+<th class='l1'>RenderingOptions<br/>key</th><th class='l1'>RenderingOptions<br/>value.class</th><th><br/>Observer constant (type)</th>
 </tr></thead><tbody>
-<tr><td>DisplayColorByLayer</td><td>Boolean</td><td>ROPSetDisplayColorByLayer</td></tr>
-<tr><td>DisplayDims</td><td>Boolean</td><td>ROPSetDisplayDims</td></tr>
-<tr><td>DisplayFog</td><td>Boolean</td><td>ROPSetDisplayFog</td></tr>
-<tr><td>DisplayInstanceAxes</td><td>Boolean</td><td>ROPSetDisplayInstanceAxes</td></tr>
-<tr><td>DisplaySketchAxes</td><td>Boolean</td><td>ROPSetDisplaySketchAxes</td></tr>
-<tr><td>DisplayText</td><td>Boolean</td><td>ROPSetDisplayText</td></tr>
-<tr><td>DisplayWatermarks</td><td>Boolean</td><td><strong style='color:blue'>** Missing, type = 54</strong></td></tr>
-<tr><td>DrawDepthQue</td><td>Boolean</td><td>ROPSetDepthQueEdges</td></tr>
-<tr><td>DrawGround</td><td>Boolean</td><td>ROPSetDrawGround</td></tr>
-<tr><td>DrawHidden</td><td>Boolean</td><td>ROPDrawHidden</td></tr>
-<tr><td>DrawHorizon</td><td>Boolean</td><td>ROPSetDrawHorizon</td></tr>
-<tr><td>DrawLineEnds</td><td>Boolean</td><td>ROPSetLineEndEdges</td></tr>
-<tr><td>DrawProfilesOnly</td><td>Boolean</td><td>ROPSetProfilesOnlyEdges</td></tr>
-<tr><td>DrawSilhouettes</td><td>Boolean</td><td>ROPSetProfileEdges</td></tr>
-<tr><td>DrawUnderground</td><td>Boolean</td><td>ROPSetDrawUnderground</td></tr>
-<tr><td>ExtendLines</td><td>Boolean</td><td>ROPSetExtendLines</td></tr>
-<tr><td>FogUseBkColor</td><td>Boolean</td><td>ROPSetFogUseBkColor</td></tr>
-<tr><td>HideConstructionGeometry</td><td>Boolean</td><td>ROPSetHideConstructionGeometry</td></tr>
-<tr><td>InactiveHidden</td><td>Boolean</td><td><strong>ROPEditComponent</strong></td></tr>
-<tr><td>InstanceHidden</td><td>Boolean</td><td><strong>ROPEditComponent</strong></td></tr>
-<tr><td>JitterEdges</td><td>Boolean</td><td>ROPSetJitterEdges</td></tr>
-<tr><td>MaterialTransparency</td><td>Boolean</td><td>ROPSetMaterialTransparency</td></tr>
-<tr><td>ModelTransparency</td><td>Boolean</td><td>ROPSetModelTransparency</td></tr>
-<tr><td>Texture</td><td>Boolean</td><td>ROPSetTexture</td></tr>
-<tr><td>DepthQueWidth</td><td>Fixnum</td><td>ROPSetDepthQueWidth</td></tr>
-<tr><td>EdgeColorMode</td><td>Fixnum</td><td>ROPSetEdgeColorMode</td></tr>
-<tr><td>EdgeDisplayMode</td><td>Fixnum</td><td><strong>ROPSetEdgeDisplayMode</strong></td></tr>
-<tr><td>EdgeType</td><td>Fixnum</td><td>ROPSetEdgeType</td></tr>
-<tr><td>FaceColorMode</td><td>Fixnum</td><td>ROPSetFaceColorMode</td></tr>
-<tr><td>GroundTransparency</td><td>Fixnum</td><td>ROPSetGroundTransparency</td></tr>
-<tr><td>LineEndWidth</td><td>Fixnum</td><td>ROPSetLineEndWidth</td></tr>
-<tr><td>LineExtension</td><td>Fixnum</td><td>ROPSetLineExtension</td></tr>
-<tr><td><strong>RenderMode</strong></td><td>Fixnum</td><td><strong>ROPSetEdgeDisplayMode</strong></td></tr>
-<tr><td><strong>RenderMode</strong></td><td>Fixnum</td><td>ROPSetRenderMode</td></tr>
-<tr><td>SectionCutWidth</td><td>Fixnum</td><td>ROPSetSectionCutWidth</td></tr>
-<tr><td>SilhouetteWidth</td><td>Fixnum</td><td>ROPSetProfileWidth</td></tr>
-<tr><td>TransparencySort</td><td>Fixnum</td><td>ROPTransparencySortMethod</td></tr>
-<tr><td>FogEndDist</td><td>Float</td><td><strong>ROPSetFogDist</strong></td></tr>
-<tr><td>FogStartDist</td><td>Float</td><td><strong>ROPSetFogDist</strong></td></tr>
-<tr><td>InactiveFade</td><td>Float</td><td><strong>ROPEditComponent</strong></td></tr>
-<tr><td>InstanceFade</td><td>Float</td><td><strong>ROPEditComponent</strong></td></tr>
-<tr><td>BackgroundColor</td><td>Sketchup::Color</td><td>ROPSetBackgroundColor</td></tr>
-<tr><td>ConstructionColor</td><td>Sketchup::Color</td><td>ROPSetConstructionColor</td></tr>
-<tr><td>FaceBackColor</td><td>Sketchup::Color</td><td><strong>ROPSetFaceColor</strong></td></tr>
-<tr><td>FaceFrontColor</td><td>Sketchup::Color</td><td><strong>ROPSetFaceColor</strong></td></tr>
-<tr><td>FogColor</td><td>Sketchup::Color</td><td>ROPSetFogColor</td></tr>
-<tr><td>ForegroundColor</td><td>Sketchup::Color</td><td>ROPSetForegroundColor</td></tr>
-<tr><td>GroundColor</td><td>Sketchup::Color</td><td>ROPSetGroundColor</td></tr>
-<tr><td>HighlightColor</td><td>Sketchup::Color</td><td>ROPSetHighlightColor</td></tr>
-<tr><td>LockedColor</td><td>Sketchup::Color</td><td>ROPSetLockedColor</td></tr>
-<tr><td>SectionActiveColor</td><td>Sketchup::Color</td><td>ROPSetSectionActiveColor</td></tr>
-<tr><td>SectionDefaultCutColor</td><td>Sketchup::Color</td><td>ROPSetSectionDefaultCutColor</td></tr>
-<tr><td>SectionInactiveColor</td><td>Sketchup::Color</td><td>ROPSetSectionInactiveColor</td></tr>
-<tr><td>SkyColor</td><td>Sketchup::Color</td><td>ROPSetSkyColor</td></tr>
+<tr><td class='l1'>DisplayColorByLayer</td><td class='l1'>Boolean</td><td>ROPSetDisplayColorByLayer</td></tr>
+<tr><td class='l1'>DisplayDims</td><td class='l1'>Boolean</td><td>ROPSetDisplayDims</td></tr>
+<tr><td class='l1'>DisplayFog</td><td class='l1'>Boolean</td><td>ROPSetDisplayFog</td></tr>
+<tr><td class='l1'>DisplayInstanceAxes</td><td class='l1'>Boolean</td><td>ROPSetDisplayInstanceAxes</td></tr>
+<tr><td class='l1'>DisplaySketchAxes</td><td class='l1'>Boolean</td><td>ROPSetDisplaySketchAxes</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>DisplayText</td><td class='l1'>Boolean</td><td>ROPSetDisplayText</td></tr>
+<tr><td class='l1'>DisplayWatermarks</td><td class='l1'>Boolean</td><td><strong style='color:blue'>** Missing, type = 54</strong></td></tr>
+<tr><td class='l1'>DrawDepthQue</td><td class='l1'>Boolean</td><td>ROPSetDepthQueEdges</td></tr>
+<tr><td class='l1'>DrawGround</td><td class='l1'>Boolean</td><td>ROPSetDrawGround</td></tr>
+<tr><td class='l1'>DrawHidden</td><td class='l1'>Boolean</td><td>ROPDrawHidden</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>DrawHorizon</td><td class='l1'>Boolean</td><td>ROPSetDrawHorizon</td></tr>
+<tr><td class='l1'>DrawLineEnds</td><td class='l1'>Boolean</td><td>ROPSetLineEndEdges</td></tr>
+<tr><td class='l1'>DrawProfilesOnly</td><td class='l1'>Boolean</td><td>ROPSetProfilesOnlyEdges</td></tr>
+<tr><td class='l1'>DrawSilhouettes</td><td class='l1'>Boolean</td><td>ROPSetProfileEdges</td></tr>
+<tr><td class='l1'>DrawUnderground</td><td class='l1'>Boolean</td><td>ROPSetDrawUnderground</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>ExtendLines</td><td class='l1'>Boolean</td><td>ROPSetExtendLines</td></tr>
+<tr><td class='l1'>FogUseBkColor</td><td class='l1'>Boolean</td><td>ROPSetFogUseBkColor</td></tr>
+<tr><td class='l1'>HideConstructionGeometry</td><td class='l1'>Boolean</td><td>ROPSetHideConstructionGeometry</td></tr>
+<tr><td class='l1'>InactiveHidden</td><td class='l1'>Boolean</td><td><strong>ROPEditComponent</strong></td></tr>
+<tr><td class='l1'>InstanceHidden</td><td class='l1'>Boolean</td><td><strong>ROPEditComponent</strong></td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>JitterEdges</td><td class='l1'>Boolean</td><td>ROPSetJitterEdges</td></tr>
+<tr><td class='l1'>MaterialTransparency</td><td class='l1'>Boolean</td><td>ROPSetMaterialTransparency</td></tr>
+<tr><td class='l1'>ModelTransparency</td><td class='l1'>Boolean</td><td>ROPSetModelTransparency</td></tr>
+<tr><td class='l1'>Texture</td><td class='l1'>Boolean</td><td>ROPSetTexture</td></tr>
+<tr><td class='l1'>DepthQueWidth</td><td class='l1'>Fixnum</td><td>ROPSetDepthQueWidth</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>EdgeColorMode</td><td class='l1'>Fixnum</td><td>ROPSetEdgeColorMode</td></tr>
+<tr><td class='l1'>EdgeDisplayMode</td><td class='l1'>Fixnum</td><td><strong>ROPSetEdgeDisplayMode</strong></td></tr>
+<tr><td class='l1'>EdgeType</td><td class='l1'>Fixnum</td><td>ROPSetEdgeType</td></tr>
+<tr><td class='l1'>FaceColorMode</td><td class='l1'>Fixnum</td><td>ROPSetFaceColorMode</td></tr>
+<tr><td class='l1'>GroundTransparency</td><td class='l1'>Fixnum</td><td>ROPSetGroundTransparency</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>LineEndWidth</td><td class='l1'>Fixnum</td><td>ROPSetLineEndWidth</td></tr>
+<tr><td class='l1'>LineExtension</td><td class='l1'>Fixnum</td><td>ROPSetLineExtension</td></tr>
+<tr><td class='l1'><strong>RenderMode</strong></td><td class='l1'>Fixnum</td><td><strong>ROPSetEdgeDisplayMode</strong></td></tr>
+<tr><td class='l1'><strong>RenderMode</strong></td><td class='l1'>Fixnum</td><td>ROPSetRenderMode</td></tr>
+<tr><td class='l1'>SectionCutWidth</td><td class='l1'>Fixnum</td><td>ROPSetSectionCutWidth</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>SilhouetteWidth</td><td class='l1'>Fixnum</td><td>ROPSetProfileWidth</td></tr>
+<tr><td class='l1'>TransparencySort</td><td class='l1'>Fixnum</td><td>ROPTransparencySortMethod</td></tr>
+<tr><td class='l1'>FogEndDist</td><td class='l1'>Float</td><td><strong>ROPSetFogDist</strong></td></tr>
+<tr><td class='l1'>FogStartDist</td><td class='l1'>Float</td><td><strong>ROPSetFogDist</strong></td></tr>
+<tr><td class='l1'>InactiveFade</td><td class='l1'>Float</td><td><strong>ROPEditComponent</strong></td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>InstanceFade</td><td class='l1'>Float</td><td><strong>ROPEditComponent</strong></td></tr>
+<tr><td class='l1'>BackgroundColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetBackgroundColor</td></tr>
+<tr><td class='l1'>ConstructionColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetConstructionColor</td></tr>
+<tr><td class='l1'>FaceBackColor</td><td class='l1'>Sketchup::Color</td><td><strong>ROPSetFaceColor</strong></td></tr>
+<tr><td class='l1'>FaceFrontColor</td><td class='l1'>Sketchup::Color</td><td><strong>ROPSetFaceColor</strong></td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>FogColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetFogColor</td></tr>
+<tr><td class='l1'>ForegroundColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetForegroundColor</td></tr>
+<tr><td class='l1'>GroundColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetGroundColor</td></tr>
+<tr><td class='l1'>HighlightColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetHighlightColor</td></tr>
+<tr><td class='l1'>LockedColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetLockedColor</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>SectionActiveColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetSectionActiveColor</td></tr>
+<tr><td class='l1'>SectionDefaultCutColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetSectionDefaultCutColor</td></tr>
+<tr><td class='l1'>SectionInactiveColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetSectionInactiveColor</td></tr>
+<tr><td class='l1'>SkyColor</td><td class='l1'>Sketchup::Color</td><td>ROPSetSkyColor</td></tr>
 </tbody></table>
 
 The following table lists [RenderingOptions] keys that do not fire the [onRenderingOptionsChanged] callback.
 
 <table class='sumd'><thead><tr>
-<th>RenderingOptions<br/>key</th><th>RenderingOptions<br/>value.class</th>
+<th class='l1'>R Opts key</th><th>R Opts value.class</th>
 </tr></thead><tbody>
-<tr><td>BandColor</td><td>Sketchup::Color</td></tr>
-<tr><td>HorizonColor</td><td>Sketchup::Color</td></tr>
-<tr><td>ShowViewName</td><td>Boolean</td></tr>
+<tr><td class='l1'>BandColor</td><td>Sketchup::Color</td></tr>
+<tr><td class='l1'>HorizonColor</td><td>Sketchup::Color</td></tr>
+<tr><td class='l1'>ShowViewName</td><td>Boolean</td></tr>
 </tbody></table>
 
 The following RenderingOptions constants are not fired by any keys in [RenderingOptions].  They may be returned for UI changes that do not have API control.
 
 <table class='sumd'><thead><tr>
-<th>Observer<br/>constant (type)</th><th class='c'>value</th>
+<th class='l1'>Observer constant (type)</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>ROPAssign</td><td class='c'>0</td></tr>
-<tr><td>ROPSetExtendEdges</td><td class='c'>7</td></tr>
-<tr><td>ROPSetFogHint</td><td class='c'>24</td></tr>
-<tr><td>ROPSetSectionDisplayMode</td><td class='c'>25</td></tr>
-<tr><td>ROPSetTransparencyObsolete</td><td class='c'>2</td></tr>
+<tr><td class='l1'>ROPAssign</td><td class='c'>0</td></tr>
+<tr><td class='l1'>ROPSetExtendEdges</td><td class='c'>7</td></tr>
+<tr><td class='l1'>ROPSetFogHint</td><td class='c'>24</td></tr>
+<tr><td class='l1'>ROPSetSectionDisplayMode</td><td class='c'>25</td></tr>
+<tr><td class='l1'>ROPSetTransparencyObsolete</td><td class='c'>2</td></tr>
 </tbody></table>
 
 
@@ -572,13 +606,13 @@ These constants can be used anywhere instances of their respective classes are
 used.
 
 <table class='sumd'><thead><tr>
-<th>constant name</th><th class='c'>value</th><th>class</th>
+<th class='l1'>constant</th><th class='c1'>value</th><th>class</th>
 </tr></thead><tbody>
-<tr><td>IDENTITY</td><td class='c'>#<Geom::Transformation:0x9a12cc4></td><td>Geom::Transformation</td></tr>
-<tr><td>ORIGIN</td><td class='c'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
-<tr><td>X_AXIS</td><td class='c'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
-<tr><td>Y_AXIS</td><td class='c'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
-<tr><td>Z_AXIS</td><td class='c'>(0.0, 0.0, 1.0)</td><td>Geom::Vector3d</td></tr>
+<tr><td class='l1'>IDENTITY</td><td class='c1'>#<Geom::Transformation:0x7036f2c></td><td>Geom::Transformation</td></tr>
+<tr><td class='l1'>ORIGIN</td><td class='c1'>(0", 0", 0")</td><td>Geom::Point3d</td></tr>
+<tr><td class='l1'>X_AXIS</td><td class='c1'>(1.0, 0.0, 0.0)</td><td>Geom::Vector3d</td></tr>
+<tr><td class='l1'>Y_AXIS</td><td class='c1'>(0.0, 1.0, 0.0)</td><td>Geom::Vector3d</td></tr>
+<tr><td class='l1'>Z_AXIS</td><td class='c1'>(0.0, 0.0, 1.0)</td><td>Geom::Vector3d</td></tr>
 </tbody></table>
 
 
@@ -591,9 +625,9 @@ SKETCHUP_CONSOLE.write("this way also")
 ```
 
 <table class='sumd'><thead><tr>
-<th>constant<br/>name</th><th class='c'>value<br/></th>
+<th class='l1'>constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x9a1166c></td></tr>
+<tr><td class='l1'>SKETCHUP_CONSOLE</td><td class='c'>#<Sketchup::Console:0x70358d4></td></tr>
 </tbody></table>
 
 
@@ -605,8 +639,9 @@ SKETCHUP_CONSOLE.write("this way also")
 Sketchup.send_action(action)
 ```
 
-See [Sketchup.send_action].  This method allows for either a string or a number for
-its parameter.  Numbers are officially 'unsupported', and only available under Windows.
+See [Sketchup.send_action].  This method allows for either a string or a number
+for its parameter.  Numbers are officially 'unsupported', and only available
+under Windows.
 
 The following code produces the same result.
 
@@ -617,106 +652,134 @@ bln = Sketchup.send_action(21065)            # use a Fixnum
 bln = Sketchup.send_action(action)     # action can be either
 ```
 
+Some strings are not listed on SketchUp.com.  If one needs an unlisted menu item
+string, one can assign a keyboard shortcut, then either view them with
+`Sketchup.get_shortcuts.sort.join("\n")` or by exporting the 'Preferences' from
+the UI and viewing the .dat file in a text editor.  If a string ending in ':' is
+shown...
+
 The following table shows strings (taken from SketchUp.com Nov-15), and their constant
 equivalents.  Matches were done via RegEx and several lines of case statement.
 
 <table class='sumd'><thead><tr>
-<th>action parameter<br/>String</th><th>action parameter<br/>Constant</th><th class='c'>action<br/>Fixnum</th>
+<th class='l1'>action String</th><th class='l1'>action Constant</th><th class='c'>Fixnum</th>
 </tr></thead><tbody>
-<tr><td>copy:</td><td>CMD_COPY</td><td class='c'>57634</td></tr>
-<tr><td>cut:</td><td>CMD_CUT</td><td class='c'>57635</td></tr>
-<tr><td>editHide:</td><td></td><td class='c'></td></tr>
-<tr><td>editRedo:</td><td>CMD_REDO</td><td class='c'>57644</td></tr>
-<tr><td>editUndo:</td><td>CMD_UNDO</td><td class='c'>57643</td></tr>
-<tr><td>editUnhide:</td><td></td><td class='c'></td></tr>
-<tr><td>fixNonPlanarFaces:</td><td></td><td class='c'></td></tr>
-<tr><td>getPhotoTexture:</td><td></td><td class='c'></td></tr>
-<tr><td>openDocument:</td><td>CMD_OPEN</td><td class='c'>57601</td></tr>
-<tr><td>pageAdd:</td><td>CMD_PAGE_NEW</td><td class='c'>21067</td></tr>
-<tr><td>pageDelete:</td><td>CMD_PAGE_DELETE</td><td class='c'>21078</td></tr>
-<tr><td>pageNext:</td><td>CMD_PAGE_NEXT</td><td class='c'>10535</td></tr>
-<tr><td>pagePrevious:</td><td>CMD_PAGE_PREVIOUS</td><td class='c'>10536</td></tr>
-<tr><td>pageUpdate:</td><td>CMD_PAGE_UPDATE</td><td class='c'>21068</td></tr>
-<tr><td>paste:</td><td>CMD_PASTE</td><td class='c'>57637</td></tr>
-<tr><td>printDocument:</td><td>CMD_PRINT</td><td class='c'>57607</td></tr>
-<tr><td>renderHiddenLine:</td><td>CMD_HIDDENLINE</td><td class='c'>10511</td></tr>
-<tr><td>renderMonochrome:</td><td></td><td class='c'></td></tr>
-<tr><td>renderShaded:</td><td>CMD_SHADED</td><td class='c'>10512</td></tr>
-<tr><td>renderTextures:</td><td>CMD_TEXTURED</td><td class='c'>10539</td></tr>
-<tr><td>renderWireframe:</td><td>CMD_WIREFRAME</td><td class='c'>10510</td></tr>
-<tr><td>selectArc3PointPieTool:</td><td></td><td class='c'></td></tr>
-<tr><td>selectArc3PointTool:</td><td></td><td class='c'></td></tr>
-<tr><td>selectArcTool:</td><td>CMD_ARC</td><td class='c'>21065</td></tr>
-<tr><td>selectAxisTool:</td><td></td><td class='c'></td></tr>
-<tr><td>selectCircleTool:</td><td>CMD_CIRCLE</td><td class='c'>21096</td></tr>
-<tr><td>selectDimensionTool:</td><td>CMD_DIMENSION</td><td class='c'>21410</td></tr>
-<tr><td>selectDollyTool:</td><td>CMD_DOLLY</td><td class='c'>10523</td></tr>
-<tr><td>selectEraseTool:</td><td>CMD_ERASE</td><td class='c'>21019</td></tr>
-<tr><td>selectExtrudeTool:</td><td>CMD_EXTRUDE</td><td class='c'>21525</td></tr>
-<tr><td>selectFieldOfViewTool:</td><td>CMD_DISPLAY_FOV</td><td class='c'>21494</td></tr>
-<tr><td>selectFreehandTool:</td><td>CMD_FREEHAND</td><td class='c'>21031</td></tr>
-<tr><td>selectImageIglooTool:</td><td></td><td class='c'></td></tr>
-<tr><td>selectLineTool:</td><td>CMD_LINE</td><td class='c'>21020</td></tr>
-<tr><td>selectMeasureTool:</td><td>CMD_MEASURE</td><td class='c'>21024</td></tr>
-<tr><td>selectMoveTool:</td><td>CMD_MOVE</td><td class='c'>21048</td></tr>
-<tr><td>selectNorthTool:</td><td></td><td class='c'></td></tr>
-<tr><td>selectOffsetTool:</td><td>CMD_OFFSET</td><td class='c'>21100</td></tr>
-<tr><td>selectOrbitTool:</td><td>CMD_ORBIT</td><td class='c'>10508</td></tr>
-<tr><td>selectPaintTool:</td><td>CMD_PAINT</td><td class='c'>21074</td></tr>
-<tr><td>selectPolygonTool:</td><td>CMD_POLYGON</td><td class='c'>21095</td></tr>
-<tr><td>selectPositionCameraTool:</td><td>CMD_POSITION_CAMERA</td><td class='c'>21169</td></tr>
-<tr><td>selectProtractorTool:</td><td>CMD_PROTRACTOR</td><td class='c'>21057</td></tr>
-<tr><td>selectPushPullTool:</td><td>CMD_PUSHPULL</td><td class='c'>21041</td></tr>
-<tr><td>selectRectangle3PointTool:</td><td></td><td class='c'></td></tr>
-<tr><td>selectRectangleTool:</td><td>CMD_RECTANGLE</td><td class='c'>21094</td></tr>
-<tr><td>selectRotateTool:</td><td>CMD_ROTATE</td><td class='c'>21129</td></tr>
-<tr><td>selectScaleTool:</td><td>CMD_SCALE</td><td class='c'>21236</td></tr>
-<tr><td>selectSectionPlaneTool:</td><td>CMD_SECTION</td><td class='c'>21337</td></tr>
-<tr><td>selectSelectionTool:</td><td>CMD_SELECT</td><td class='c'>21022</td></tr>
-<tr><td>selectTextTool:</td><td>CMD_TEXT</td><td class='c'>21405</td></tr>
-<tr><td>selectTurnTool:</td><td>CMD_PAN</td><td class='c'>10525</td></tr>
-<tr><td>selectWalkTool:</td><td>CMD_WALK</td><td class='c'>10520</td></tr>
-<tr><td>selectZoomTool:</td><td>CMD_ZOOM</td><td class='c'>10509</td></tr>
-<tr><td>selectZoomWindowTool:</td><td>CMD_ZOOM_WINDOW</td><td class='c'>10526</td></tr>
-<tr><td>showRubyPanel:</td><td>CMD_RUBY_CONSOLE</td><td class='c'>21478</td></tr>
-<tr><td>viewBack:</td><td>CMD_VIEW_BACK</td><td class='c'>10505</td></tr>
-<tr><td>viewBottom:</td><td>CMD_VIEW_BOTTOM</td><td class='c'>10506</td></tr>
-<tr><td>viewFront:</td><td>CMD_VIEW_FRONT</td><td class='c'>10502</td></tr>
-<tr><td>viewIso:</td><td>CMD_VIEW_ISO</td><td class='c'>10507</td></tr>
-<tr><td>viewLeft:</td><td>CMD_VIEW_LEFT</td><td class='c'>10504</td></tr>
-<tr><td>viewPerspective:</td><td>CMD_VIEW_PERSPECTIVE</td><td class='c'>10519</td></tr>
-<tr><td>viewRight:</td><td>CMD_VIEW_RIGHT</td><td class='c'>10503</td></tr>
-<tr><td>viewShowAxes:</td><td>CMD_SKETCHAXES</td><td class='c'>10522</td></tr>
-<tr><td>viewShowGuides:</td><td>CMD_SHOWGUIDES</td><td class='c'>21980</td></tr>
-<tr><td>viewShowHidden:</td><td>CMD_SHOWHIDDEN</td><td class='c'>21154</td></tr>
-<tr><td>viewTop:</td><td>CMD_VIEW_TOP</td><td class='c'>10501</td></tr>
-<tr><td>viewUndo:</td><td></td><td class='c'></td></tr>
-<tr><td>viewZoomExtents:</td><td>CMD_ZOOM_EXTENTS</td><td class='c'>10527</td></tr>
-<tr><td>viewZoomToSelection:</td><td>CMD_SELECTION_ZOOM_EXT</td><td class='c'>21469</td></tr>
+<tr><td class='l1'>copy:</td><td class='l1'>CMD_COPY</td><td class='c'>57634</td></tr>
+<tr><td class='l1'>cut:</td><td class='l1'>CMD_CUT</td><td class='c'>57635</td></tr>
+<tr><td class='l1'>editHide:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>editRedo:</td><td class='l1'>CMD_REDO</td><td class='c'>57644</td></tr>
+<tr><td class='l1'>editUndo:</td><td class='l1'>CMD_UNDO</td><td class='c'>57643</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>editUnhide:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>fixNonPlanarFaces:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>getPhotoTexture:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>openDocument:</td><td class='l1'>CMD_OPEN</td><td class='c'>57601</td></tr>
+<tr><td class='l1'>pageAdd:</td><td class='l1'>CMD_PAGE_NEW</td><td class='c'>21067</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>pageDelete:</td><td class='l1'>CMD_PAGE_DELETE</td><td class='c'>21078</td></tr>
+<tr><td class='l1'>pageNext:</td><td class='l1'>CMD_PAGE_NEXT</td><td class='c'>10535</td></tr>
+<tr><td class='l1'>pagePrevious:</td><td class='l1'>CMD_PAGE_PREVIOUS</td><td class='c'>10536</td></tr>
+<tr><td class='l1'>pageUpdate:</td><td class='l1'>CMD_PAGE_UPDATE</td><td class='c'>21068</td></tr>
+<tr><td class='l1'>paste:</td><td class='l1'>CMD_PASTE</td><td class='c'>57637</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>printDocument:</td><td class='l1'>CMD_PRINT</td><td class='c'>57607</td></tr>
+<tr><td class='l1'>renderHiddenLine:</td><td class='l1'>CMD_HIDDENLINE</td><td class='c'>10511</td></tr>
+<tr><td class='l1'>renderMonochrome:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>renderShaded:</td><td class='l1'>CMD_SHADED</td><td class='c'>10512</td></tr>
+<tr><td class='l1'>renderTextures:</td><td class='l1'>CMD_TEXTURED</td><td class='c'>10539</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>renderWireframe:</td><td class='l1'>CMD_WIREFRAME</td><td class='c'>10510</td></tr>
+<tr><td class='l1'>selectArc3PointPieTool:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>selectArc3PointTool:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>selectArcTool:</td><td class='l1'>CMD_ARC</td><td class='c'>21065</td></tr>
+<tr><td class='l1'>selectAxisTool:</td><td class='l1'></td><td class='c'></td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>selectCircleTool:</td><td class='l1'>CMD_CIRCLE</td><td class='c'>21096</td></tr>
+<tr><td class='l1'>selectDimensionTool:</td><td class='l1'>CMD_DIMENSION</td><td class='c'>21410</td></tr>
+<tr><td class='l1'>selectDollyTool:</td><td class='l1'>CMD_DOLLY</td><td class='c'>10523</td></tr>
+<tr><td class='l1'>selectEraseTool:</td><td class='l1'>CMD_ERASE</td><td class='c'>21019</td></tr>
+<tr><td class='l1'>selectExtrudeTool:</td><td class='l1'>CMD_EXTRUDE</td><td class='c'>21525</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>selectFieldOfViewTool:</td><td class='l1'>CMD_DISPLAY_FOV</td><td class='c'>21494</td></tr>
+<tr><td class='l1'>selectFreehandTool:</td><td class='l1'>CMD_FREEHAND</td><td class='c'>21031</td></tr>
+<tr><td class='l1'>selectImageIglooTool:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>selectLineTool:</td><td class='l1'>CMD_LINE</td><td class='c'>21020</td></tr>
+<tr><td class='l1'>selectMeasureTool:</td><td class='l1'>CMD_MEASURE</td><td class='c'>21024</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>selectMoveTool:</td><td class='l1'>CMD_MOVE</td><td class='c'>21048</td></tr>
+<tr><td class='l1'>selectNorthTool:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>selectOffsetTool:</td><td class='l1'>CMD_OFFSET</td><td class='c'>21100</td></tr>
+<tr><td class='l1'>selectOrbitTool:</td><td class='l1'>CMD_ORBIT</td><td class='c'>10508</td></tr>
+<tr><td class='l1'>selectPaintTool:</td><td class='l1'>CMD_PAINT</td><td class='c'>21074</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>selectPolygonTool:</td><td class='l1'>CMD_POLYGON</td><td class='c'>21095</td></tr>
+<tr><td class='l1'>selectPositionCameraTool:</td><td class='l1'>CMD_POSITION_CAMERA</td><td class='c'>21169</td></tr>
+<tr><td class='l1'>selectProtractorTool:</td><td class='l1'>CMD_PROTRACTOR</td><td class='c'>21057</td></tr>
+<tr><td class='l1'>selectPushPullTool:</td><td class='l1'>CMD_PUSHPULL</td><td class='c'>21041</td></tr>
+<tr><td class='l1'>selectRectangle3PointTool:</td><td class='l1'></td><td class='c'></td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>selectRectangleTool:</td><td class='l1'>CMD_RECTANGLE</td><td class='c'>21094</td></tr>
+<tr><td class='l1'>selectRotateTool:</td><td class='l1'>CMD_ROTATE</td><td class='c'>21129</td></tr>
+<tr><td class='l1'>selectScaleTool:</td><td class='l1'>CMD_SCALE</td><td class='c'>21236</td></tr>
+<tr><td class='l1'>selectSectionPlaneTool:</td><td class='l1'>CMD_SECTION</td><td class='c'>21337</td></tr>
+<tr><td class='l1'>selectSelectionTool:</td><td class='l1'>CMD_SELECT</td><td class='c'>21022</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>selectTextTool:</td><td class='l1'>CMD_TEXT</td><td class='c'>21405</td></tr>
+<tr><td class='l1'>selectTurnTool:</td><td class='l1'>CMD_PAN</td><td class='c'>10525</td></tr>
+<tr><td class='l1'>selectWalkTool:</td><td class='l1'>CMD_WALK</td><td class='c'>10520</td></tr>
+<tr><td class='l1'>selectZoomTool:</td><td class='l1'>CMD_ZOOM</td><td class='c'>10509</td></tr>
+<tr><td class='l1'>selectZoomWindowTool:</td><td class='l1'>CMD_ZOOM_WINDOW</td><td class='c'>10526</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>showRubyPanel:</td><td class='l1'>CMD_RUBY_CONSOLE</td><td class='c'>21478</td></tr>
+<tr><td class='l1'>viewBack:</td><td class='l1'>CMD_VIEW_BACK</td><td class='c'>10505</td></tr>
+<tr><td class='l1'>viewBottom:</td><td class='l1'>CMD_VIEW_BOTTOM</td><td class='c'>10506</td></tr>
+<tr><td class='l1'>viewFront:</td><td class='l1'>CMD_VIEW_FRONT</td><td class='c'>10502</td></tr>
+<tr><td class='l1'>viewIso:</td><td class='l1'>CMD_VIEW_ISO</td><td class='c'>10507</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>viewLeft:</td><td class='l1'>CMD_VIEW_LEFT</td><td class='c'>10504</td></tr>
+<tr><td class='l1'>viewPerspective:</td><td class='l1'>CMD_VIEW_PERSPECTIVE</td><td class='c'>10519</td></tr>
+<tr><td class='l1'>viewRight:</td><td class='l1'>CMD_VIEW_RIGHT</td><td class='c'>10503</td></tr>
+<tr><td class='l1'>viewShowAxes:</td><td class='l1'>CMD_SKETCHAXES</td><td class='c'>10522</td></tr>
+<tr><td class='l1'>viewShowGuides:</td><td class='l1'>CMD_SHOWGUIDES</td><td class='c'>21980</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>viewShowHidden:</td><td class='l1'>CMD_SHOWHIDDEN</td><td class='c'>21154</td></tr>
+<tr><td class='l1'>viewTop:</td><td class='l1'>CMD_VIEW_TOP</td><td class='c'>10501</td></tr>
+<tr><td class='l1'>viewUndo:</td><td class='l1'></td><td class='c'></td></tr>
+<tr><td class='l1'>viewZoomExtents:</td><td class='l1'>CMD_ZOOM_EXTENTS</td><td class='c'>10527</td></tr>
+<tr><td class='l1'>viewZoomToSelection:</td><td class='l1'>CMD_SELECTION_ZOOM_EXT</td><td class='c'>21469</td></tr>
 </tbody></table>
 
 
 The following constants do not have string equivalents.
 
-<table class='sumd'><thead><tr>
-<th>action parameter<br/>Constant</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:14.0em;' /><col /><col style='width:3em;'/><col style='width:14.0em;' /><col /></colgroup><thead><tr>
+<th>action constant</th><th class='c'>value</th><th class='b'></th><th>action constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>CMD_CAMERA_UNDO</td><td class='c'>10529</td></tr>
-<tr><td>CMD_DELETE</td><td class='c'>21021</td></tr>
-<tr><td>CMD_DRAWCUTS</td><td class='c'>21348</td></tr>
-<tr><td>CMD_DRAWOUTLINES</td><td class='c'>21347</td></tr>
-<tr><td>CMD_MAKE_COMPONENT</td><td class='c'>21083</td></tr>
-<tr><td>CMD_NEW</td><td class='c'>57600</td></tr>
-<tr><td>CMD_SAVE</td><td class='c'>57603</td></tr>
-<tr><td>CMD_SKETCHCS</td><td class='c'>21126</td></tr>
-<tr><td>CMD_TRANSPARENT</td><td class='c'>10513</td></tr>
+<tr><td>CMD_CAMERA_UNDO</td><td class='c'>10529</td><td class='b'></td><td>CMD_NEW</td><td class='c'>57600</td></tr>
+<tr><td>CMD_DELETE</td><td class='c'>21021</td><td class='b'></td><td>CMD_SAVE</td><td class='c'>57603</td></tr>
+<tr><td>CMD_DRAWCUTS</td><td class='c'>21348</td><td class='b'></td><td>CMD_SKETCHCS</td><td class='c'>21126</td></tr>
+<tr><td>CMD_DRAWOUTLINES</td><td class='c'>21347</td><td class='b'></td><td>CMD_TRANSPARENT</td><td class='c'>10513</td></tr>
+<tr><td>CMD_MAKE_COMPONENT</td><td class='c'>21083</td><td class='b'></td><td></td><td class='c'></td></tr>
 </tbody></table>
 
 
 ### Sketchup.set_status_text
 
 See [Sketchup.set_status_text].  Text can be placed in three different locations.
-The constants define the location.
+The constants are used as the position parameter and define the location.
 
 ```ruby
 result = Sketchup.set_status_text("This is a Test", SB_VCB_VALUE)
@@ -724,11 +787,11 @@ result = Sketchup.set_status_text(status, position)
 ```
 
 <table class='sumd'><thead><tr>
-<th>position<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>position</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>SB_PROMPT</td><td class='c'>0</td></tr>
-<tr><td>SB_VCB_LABEL</td><td class='c'>1</td></tr>
-<tr><td>SB_VCB_VALUE</td><td class='c'>2</td></tr>
+<tr><td class='l1'>SB_PROMPT</td><td class='c'>0</td></tr>
+<tr><td class='l1'>SB_VCB_LABEL</td><td class='c'>1</td></tr>
+<tr><td class='l1'>SB_VCB_VALUE</td><td class='c'>2</td></tr>
 </tbody></table>
 
 
@@ -756,13 +819,13 @@ your_submenu.add_item cmd
 ```
 
 <table class='sumd'><thead><tr>
-<th>cmd_status<br/>return</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>cmd_status</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>MF_CHECKED</td><td class='c'>8</td></tr>
-<tr><td>MF_DISABLED</td><td class='c'>2</td></tr>
-<tr><td>MF_ENABLED</td><td class='c'>0</td></tr>
-<tr><td>MF_GRAYED</td><td class='c'>1</td></tr>
-<tr><td>MF_UNCHECKED</td><td class='c'>0</td></tr>
+<tr><td class='l1'>MF_CHECKED</td><td class='c'>8</td></tr>
+<tr><td class='l1'>MF_DISABLED</td><td class='c'>2</td></tr>
+<tr><td class='l1'>MF_ENABLED</td><td class='c'>0</td></tr>
+<tr><td class='l1'>MF_GRAYED</td><td class='c'>1</td></tr>
+<tr><td class='l1'>MF_UNCHECKED</td><td class='c'>0</td></tr>
 </tbody></table>
 
 
@@ -780,19 +843,19 @@ behavior.snapto = snap_to
 ```
 
 <table class='sumd'><thead><tr>
-<th><br/>snap_to</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>snap_to</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>SnapTo_Arbitrary</td><td class='c'>0</td></tr>
-<tr><td>SnapTo_Horizontal</td><td class='c'>1</td></tr>
-<tr><td>SnapTo_Sloped</td><td class='c'>3</td></tr>
-<tr><td>SnapTo_Vertical</td><td class='c'>2</td></tr>
+<tr><td class='l1'>SnapTo_Arbitrary</td><td class='c'>0</td></tr>
+<tr><td class='l1'>SnapTo_Horizontal</td><td class='c'>1</td></tr>
+<tr><td class='l1'>SnapTo_Sloped</td><td class='c'>3</td></tr>
+<tr><td class='l1'>SnapTo_Vertical</td><td class='c'>2</td></tr>
 </tbody></table>
 
 
 ### Layer \#page_behavior \#page_behavior=
 
 See [Layer#page_behavior].  This attribute is a numeric, with somewhat confusing
-documentation.  From the docs, 'The behaviour is composed of a combination of
+documentation.  From the docs, 'The behavior is composed of a combination of
 these flags'.  So default visiblity is bit 0 ('HIDDEN' is set), why does
 'NEW_PAGES' have 'VISIBLE' setting bit 4 and 'HIDDEN' setting bit 5?  Seems that
 they should be mutually exclusive.
@@ -807,13 +870,13 @@ puts page_behavior[5]   # this new pages hidden?
 ```
 
 <table class='sumd'><thead><tr>
-<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES</td><td class='c'>0</td></tr>
-<tr><td>LAYER_VISIBLE_BY_DEFAULT</td><td class='c'>0</td></tr>
-<tr><td>LAYER_HIDDEN_BY_DEFAULT</td><td class='c'>1</td></tr>
-<tr><td>LAYER_IS_VISIBLE_ON_NEW_PAGES</td><td class='c'>16</td></tr>
-<tr><td>LAYER_IS_HIDDEN_ON_NEW_PAGES</td><td class='c'>32</td></tr>
+<tr><td class='l1'>LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES</td><td class='c'>0</td></tr>
+<tr><td class='l1'>LAYER_VISIBLE_BY_DEFAULT</td><td class='c'>0</td></tr>
+<tr><td class='l1'>LAYER_HIDDEN_BY_DEFAULT</td><td class='c'>1</td></tr>
+<tr><td class='l1'>LAYER_IS_VISIBLE_ON_NEW_PAGES</td><td class='c'>16</td></tr>
+<tr><td class='l1'>LAYER_IS_HIDDEN_ON_NEW_PAGES</td><td class='c'>32</td></tr>
 </tbody></table>
 
 
@@ -828,18 +891,14 @@ status = am.pages.add(name, flags = nil, index = nil)
 am.pages['yourPage'].update(flags = nil)
 ```
 
-<table class='sumd'><thead><tr>
-<th><br/>flag parameter</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:18.2em;' /><col /><col style='width:1.5em;'/><col style='width:18.2em;' /><col /></colgroup><thead><tr>
+<th>flag parameter</th><th class='c'>value</th><th class='b'></th><th>flag parameter</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>PAGE_NO_CAMERA</td><td class='c'>4094</td></tr>
-<tr><td>PAGE_USE_ALL</td><td class='c'>4095</td></tr>
-<tr><td>PAGE_USE_CAMERA</td><td class='c'>1</td></tr>
-<tr><td>PAGE_USE_HIDDEN</td><td class='c'>16</td></tr>
-<tr><td>PAGE_USE_LAYER_VISIBILITY</td><td class='c'>32</td></tr>
-<tr><td>PAGE_USE_RENDERING_OPTIONS</td><td class='c'>2</td></tr>
-<tr><td>PAGE_USE_SECTION_PLANES</td><td class='c'>64</td></tr>
-<tr><td>PAGE_USE_SHADOWINFO</td><td class='c'>4</td></tr>
-<tr><td>PAGE_USE_SKETCHCS</td><td class='c'>8</td></tr>
+<tr><td>PAGE_NO_CAMERA</td><td class='c'>4094</td><td class='b'></td><td>PAGE_USE_RENDERING_OPTIONS</td><td class='c'>2</td></tr>
+<tr><td>PAGE_USE_ALL</td><td class='c'>4095</td><td class='b'></td><td>PAGE_USE_SECTION_PLANES</td><td class='c'>64</td></tr>
+<tr><td>PAGE_USE_CAMERA</td><td class='c'>1</td><td class='b'></td><td>PAGE_USE_SHADOWINFO</td><td class='c'>4</td></tr>
+<tr><td>PAGE_USE_HIDDEN</td><td class='c'>16</td><td class='b'></td><td>PAGE_USE_SKETCHCS</td><td class='c'>8</td></tr>
+<tr><td>PAGE_USE_LAYER_VISIBILITY</td><td class='c'>32</td><td class='b'></td><td></td><td class='c'></td></tr>
 </tbody></table>
 
 
@@ -849,15 +908,15 @@ See [Text#leader_type]
 
 ```ruby
 leader = text.leader_type
-leader = Text.leader_type = leader
+text.leader_type = leader
 ```
 
 <table class='sumd'><thead><tr>
-<th><br/>leader</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>leader</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>ALeaderModel</td><td class='c'>2</td></tr>
-<tr><td>ALeaderNone</td><td class='c'>0</td></tr>
-<tr><td>ALeaderView</td><td class='c'>1</td></tr>
+<tr><td class='l1'>ALeaderModel</td><td class='c'>2</td></tr>
+<tr><td class='l1'>ALeaderNone</td><td class='c'>0</td></tr>
+<tr><td class='l1'>ALeaderView</td><td class='c'>1</td></tr>
 </tbody></table>
 
 
@@ -871,11 +930,11 @@ status = tw.write(entity, side, filename)
 ```
 
 <table class='sumd'><thead><tr>
-<th><br/>status return</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>status return</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>FILE_WRITE_FAILED_INVALID_TYPE</td><td class='c'>1</td></tr>
-<tr><td>FILE_WRITE_FAILED_UNKNOWN</td><td class='c'>2</td></tr>
-<tr><td>FILE_WRITE_OK</td><td class='c'>0</td></tr>
+<tr><td class='l1'>FILE_WRITE_FAILED_INVALID_TYPE</td><td class='c'>1</td></tr>
+<tr><td class='l1'>FILE_WRITE_FAILED_UNKNOWN</td><td class='c'>2</td></tr>
+<tr><td class='l1'>FILE_WRITE_OK</td><td class='c'>0</td></tr>
 </tbody></table>
 
 
@@ -890,31 +949,25 @@ VK_NEXT is 'Page Down'.
 
 I could not get any information from the flags parameter. I would suggest using
 keyUp and KeyDown to keep track of modifier key state.  The next section has
-code that attaches to mouse and keybaord events.
+code that attaches to mouse and keyboard events.
 
 ```ruby
  def onKeyDown(key, repeat, flags, view)
 ```
 
-<table class='sumd'><thead><tr>
-<th>key<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:8.6em;' /><col /><col style='width:3em;'/><col style='width:8.6em;' /><col /></colgroup><thead><tr>
+<th>key cb<br/>parameter</th><th class='c'><br/>value</th><th class='b'></th><th>key cb<br/>parameter</th><th class='c'><br/>value</th>
 </tr></thead><tbody>
-<tr><td>VK_ALT</td><td class='c'>18</td></tr>
-<tr><td>VK_COMMAND</td><td class='c'>18</td></tr>
-<tr><td>VK_CONTROL</td><td class='c'>17</td></tr>
-<tr><td>VK_DELETE</td><td class='c'>46</td></tr>
-<tr><td>VK_DOWN</td><td class='c'>40</td></tr>
-<tr><td>VK_END</td><td class='c'>35</td></tr>
-<tr><td>VK_HOME</td><td class='c'>36</td></tr>
-<tr><td>VK_INSERT</td><td class='c'>45</td></tr>
-<tr><td>VK_LEFT</td><td class='c'>37</td></tr>
-<tr><td>VK_MENU</td><td class='c'>18</td></tr>
-<tr><td>VK_NEXT</td><td class='c'>34</td></tr>
-<tr><td>VK_PRIOR</td><td class='c'>33</td></tr>
-<tr><td>VK_RIGHT</td><td class='c'>39</td></tr>
-<tr><td>VK_SHIFT</td><td class='c'>16</td></tr>
-<tr><td>VK_SPACE</td><td class='c'>32</td></tr>
-<tr><td>VK_UP</td><td class='c'>38</td></tr>
+<tr><td>VK_ALT</td><td class='c'>18</td><td class='b'></td><td>VK_LEFT</td><td class='c'>37</td></tr>
+<tr><td>VK_COMMAND</td><td class='c'>18</td><td class='b'></td><td>VK_MENU</td><td class='c'>18</td></tr>
+<tr><td>VK_CONTROL</td><td class='c'>17</td><td class='b'></td><td>VK_NEXT</td><td class='c'>34</td></tr>
+<tr><td>VK_DELETE</td><td class='c'>46</td><td class='b'></td><td>VK_PRIOR</td><td class='c'>33</td></tr>
+<tr><td>VK_DOWN</td><td class='c'>40</td><td class='b'></td><td>VK_RIGHT</td><td class='c'>39</td></tr>
+<tr class='t' ><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class='b1'><td></td><td></td><td class='b'></td><td></td><td></td></tr>
+<tr><td>VK_END</td><td class='c'>35</td><td class='b'></td><td>VK_SHIFT</td><td class='c'>16</td></tr>
+<tr><td>VK_HOME</td><td class='c'>36</td><td class='b'></td><td>VK_SPACE</td><td class='c'>32</td></tr>
+<tr><td>VK_INSERT</td><td class='c'>45</td><td class='b'></td><td>VK_UP</td><td class='c'>38</td></tr>
 </tbody></table>
 
 
@@ -940,7 +993,7 @@ def onLButtonDown(flags, x, y, view)
 end
 ```
 
-Below is code that shows use of the constants, also some "does't quite work"
+Below is code that shows use of the constants, also some "doesn't quite work"
 key code.  Located in the [template_code.rb] file. Load, then SUMD_TC.new.tool_1.
 
 ```ruby
@@ -990,16 +1043,13 @@ key code.  Located in the [template_code.rb] file. Load, then SUMD_TC.new.tool_1
 Sketchup.active_model.select_tool(@tool)
 ```
 
-<table class='sumd'><thead><tr>
-<th>flags<br/>parameter</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:8.7em;' /><col /><col style='width:3em;'/><col style='width:8.7em;' /><col /></colgroup><thead><tr>
+<th>flags cb<br/>parameter</th><th class='c'><br/>value</th><th class='b'></th><th>flags cb<br/>parameter</th><th class='c'><br/>value</th>
 </tr></thead><tbody>
-<tr><td>MK_ALT</td><td class='c'>32</td></tr>
-<tr><td>MK_COMMAND</td><td class='c'>0</td></tr>
-<tr><td>MK_CONTROL</td><td class='c'>8</td></tr>
-<tr><td>MK_LBUTTON</td><td class='c'>1</td></tr>
-<tr><td>MK_MBUTTON</td><td class='c'>16</td></tr>
-<tr><td>MK_RBUTTON</td><td class='c'>2</td></tr>
-<tr><td>MK_SHIFT</td><td class='c'>4</td></tr>
+<tr><td>MK_ALT</td><td class='c'>32</td><td class='b'></td><td>MK_MBUTTON</td><td class='c'>16</td></tr>
+<tr><td>MK_COMMAND</td><td class='c'>0</td><td class='b'></td><td>MK_RBUTTON</td><td class='c'>2</td></tr>
+<tr><td>MK_CONTROL</td><td class='c'>8</td><td class='b'></td><td>MK_SHIFT</td><td class='c'>4</td></tr>
+<tr><td>MK_LBUTTON</td><td class='c'>1</td><td class='b'></td><td></td><td class='c'></td></tr>
 </tbody></table>
 
 
@@ -1012,11 +1062,11 @@ state = toolbar.get_last_state
 ```
 
 <table class='sumd'><thead><tr>
-<th>state<br/>return</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>state return</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>TB_HIDDEN</td><td class='c'>0</td></tr>
-<tr><td>TB_NEVER_SHOWN</td><td class='c'>-1</td></tr>
-<tr><td>TB_VISIBLE</td><td class='c'>1</td></tr>
+<tr><td class='l1'>TB_HIDDEN</td><td class='c'>0</td></tr>
+<tr><td class='l1'>TB_NEVER_SHOWN</td><td class='c'>-1</td></tr>
+<tr><td class='l1'>TB_VISIBLE</td><td class='c'>1</td></tr>
 </tbody></table>
 
 
@@ -1029,28 +1079,18 @@ and an 'Okay' button.
 status = UI.messagebox(message, type)
 ```
 
-<table class='sumd'><thead><tr>
-<th><br/>type parameter</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:8.3em;' /><col /><col style='width:3em;'/><col style='width:14.1em;' /><col /></colgroup><thead><tr>
+<th>status return</th><th class='c'>value</th><th class='b'></th><th>type parameter</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>MB_ABORTRETRYIGNORE</td><td class='c'>2</td></tr>
-<tr><td>MB_MULTILINE</td><td class='c'>16</td></tr>
-<tr><td>MB_OK</td><td class='c'>0</td></tr>
-<tr><td>MB_OKCANCEL</td><td class='c'>1</td></tr>
-<tr><td>MB_RETRYCANCEL</td><td class='c'>5</td></tr>
-<tr><td>MB_YESNO</td><td class='c'>4</td></tr>
-<tr><td>MB_YESNOCANCEL</td><td class='c'>3</td></tr>
-</tbody></table>
-
-<table class='sumd'><thead><tr>
-<th>status<br/>return</th><th class='c'>value<br/>Fixnum</th>
-</tr></thead><tbody>
-<tr><td>IDABORT</td><td class='c'>3</td></tr>
-<tr><td>IDCANCEL</td><td class='c'>2</td></tr>
-<tr><td>IDIGNORE</td><td class='c'>5</td></tr>
-<tr><td>IDNO</td><td class='c'>7</td></tr>
-<tr><td>IDOK</td><td class='c'>1</td></tr>
-<tr><td>IDRETRY</td><td class='c'>4</td></tr>
-<tr><td>IDYES</td><td class='c'>6</td></tr>
+<tr><td>IDABORT</td><td class='c'>3</td><td class='b'></td><td>MB_ABORTRETRYIGNORE</td><td class='c'>2</td></tr>
+<tr><td>IDCANCEL</td><td class='c'>2</td><td class='b'></td><td>MB_MULTILINE</td><td class='c'>16</td></tr>
+<tr><td>IDIGNORE</td><td class='c'>5</td><td class='b'></td><td>MB_OK</td><td class='c'>0</td></tr>
+<tr><td>IDNO</td><td class='c'>7</td><td class='b'></td><td>MB_OKCANCEL</td><td class='c'>1</td></tr>
+<tr><td>IDOK</td><td class='c'>1</td><td class='b'></td><td>MB_RETRYCANCEL</td><td class='c'>5</td></tr>
+<tr class='t' ><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class='b1'><td></td><td></td><td class='b'></td><td></td><td></td></tr>
+<tr><td>IDRETRY</td><td class='c'>4</td><td class='b'></td><td>MB_YESNO</td><td class='c'>4</td></tr>
+<tr><td>IDYES</td><td class='c'>6</td><td class='b'></td><td>MB_YESNOCANCEL</td><td class='c'>3</td></tr>
 </tbody></table>
 
 
@@ -1063,19 +1103,14 @@ view = Sketchup.active_model.active_view
 view.draw(mode, pts)
 ```
 
-<table class='sumd'><thead><tr>
-<th><br/>mode parameter</th><th class='c'>value<br/>Fixnum</th>
+<table class='sumd'><colgroup><col style='width:11.7em;' /><col /><col style='width:3em;'/><col style='width:11.7em;' /><col /></colgroup><thead><tr>
+<th>mode parameter</th><th class='c'>value</th><th class='b'></th><th>mode parameter</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>GL_LINES</td><td class='c'>1</td></tr>
-<tr><td>GL_LINE_LOOP</td><td class='c'>2</td></tr>
-<tr><td>GL_LINE_STRIP</td><td class='c'>3</td></tr>
-<tr><td>GL_POINTS</td><td class='c'>0</td></tr>
-<tr><td>GL_POLYGON</td><td class='c'>9</td></tr>
-<tr><td>GL_QUADS</td><td class='c'>7</td></tr>
-<tr><td>GL_QUAD_STRIP</td><td class='c'>8</td></tr>
-<tr><td>GL_TRIANGLES</td><td class='c'>4</td></tr>
-<tr><td>GL_TRIANGLE_FAN</td><td class='c'>6</td></tr>
-<tr><td>GL_TRIANGLE_STRIP</td><td class='c'>5</td></tr>
+<tr><td>GL_LINES</td><td class='c'>1</td><td class='b'></td><td>GL_QUADS</td><td class='c'>7</td></tr>
+<tr><td>GL_LINE_LOOP</td><td class='c'>2</td><td class='b'></td><td>GL_QUAD_STRIP</td><td class='c'>8</td></tr>
+<tr><td>GL_LINE_STRIP</td><td class='c'>3</td><td class='b'></td><td>GL_TRIANGLES</td><td class='c'>4</td></tr>
+<tr><td>GL_POINTS</td><td class='c'>0</td><td class='b'></td><td>GL_TRIANGLE_FAN</td><td class='c'>6</td></tr>
+<tr><td>GL_POLYGON</td><td class='c'>9</td><td class='b'></td><td>GL_TRIANGLE_STRIP</td><td class='c'>5</td></tr>
 </tbody></table>
 
 
@@ -1085,11 +1120,11 @@ See [View#draw_text].  These constants are used in SketchUp 2016+ and control
 the text alignment.
 
 <table class='sumd'><thead><tr>
-<th>:align<br/>hash value</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>:align value</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>TextAlignCenter</td><td class='c'>1</td></tr>
-<tr><td>TextAlignLeft</td><td class='c'>0</td></tr>
-<tr><td>TextAlignRight</td><td class='c'>2</td></tr>
+<tr><td class='l1'>TextAlignCenter</td><td class='c'>1</td></tr>
+<tr><td class='l1'>TextAlignLeft</td><td class='c'>0</td></tr>
+<tr><td class='l1'>TextAlignRight</td><td class='c'>2</td></tr>
 </tbody></table>
 
 
@@ -1098,59 +1133,65 @@ the text alignment.
 The following are RUBY_ and SketchUp constants which vary from version to version.
 
 <table class='sumd'><thead><tr>
-<th>constant name</th><th class='c'>value</th><th>class</th>
+<th class='l1'>constant</th><th class='c1'>value</th><th>class</th>
 </tr></thead><tbody>
-<tr><td>PLATFORM</td><td class='c'>i386-mswin32</td><td>String</td></tr>
-<tr><td>RELEASE_DATE</td><td class='c'>2008-08-11</td><td>String</td></tr>
-<tr><td>RUBY_PATCHLEVEL</td><td class='c'>287</td><td>Fixnum</td></tr>
-<tr><td>RUBY_PLATFORM</td><td class='c'>i386-mswin32</td><td>String</td></tr>
-<tr><td>RUBY_RELEASE_DATE</td><td class='c'>2008-08-11</td><td>String</td></tr>
-<tr><td>RUBY_VERSION</td><td class='c'>1.8.6</td><td>String</td></tr>
-<tr><td>VERSION</td><td class='c'>1.8.6</td><td>String</td></tr>
+<tr><td class='l1'>PLATFORM</td><td class='c1'>i386-mswin32</td><td>String</td></tr>
+<tr><td class='l1'>RELEASE_DATE</td><td class='c1'>2008-08-11</td><td>String</td></tr>
+<tr><td class='l1'>RUBY_PATCHLEVEL</td><td class='c1'>287</td><td>Fixnum</td></tr>
+<tr><td class='l1'>RUBY_PLATFORM</td><td class='c1'>i386-mswin32</td><td>String</td></tr>
+<tr><td class='l1'>RUBY_RELEASE_DATE</td><td class='c1'>2008-08-11</td><td>String</td></tr>
+<tr class='t' ><td colspan='3'></td></tr>
+<tr class='b1'><td colspan='3'></td></tr>
+<tr><td class='l1'>RUBY_VERSION</td><td class='c1'>1.8.6</td><td>String</td></tr>
+<tr><td class='l1'>VERSION</td><td class='c1'>1.8.6</td><td>String</td></tr>
 </tbody></table>
 
 
 ## Depreciated Constants
 
-I beleieve the following are depreciated. VK_ constants should be used in their
+I believe the following are depreciated. VK_ constants should be used in their
 place.  I tried the mask constants on both the key and flags parameters, and
 nothing seemed to work.
 
 <table class='sumd'><thead><tr>
-<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>ALT_MODIFIER_KEY</td><td class='c'>18</td></tr>
-<tr><td>ALT_MODIFIER_MASK</td><td class='c'>32</td></tr>
-<tr><td>CONSTRAIN_MODIFIER_KEY</td><td class='c'>16</td></tr>
-<tr><td>CONSTRAIN_MODIFIER_MASK</td><td class='c'>4</td></tr>
-<tr><td>COPY_MODIFIER_KEY</td><td class='c'>17</td></tr>
-<tr><td>COPY_MODIFIER_MASK</td><td class='c'>8</td></tr>
+<tr><td class='l1'>ALT_MODIFIER_KEY</td><td class='c'>18</td></tr>
+<tr><td class='l1'>ALT_MODIFIER_MASK</td><td class='c'>32</td></tr>
+<tr><td class='l1'>CONSTRAIN_MODIFIER_KEY</td><td class='c'>16</td></tr>
+<tr><td class='l1'>CONSTRAIN_MODIFIER_MASK</td><td class='c'>4</td></tr>
+<tr><td class='l1'>COPY_MODIFIER_KEY</td><td class='c'>17</td></tr>
+<tr class='t' ><td colspan='2'></td></tr>
+<tr class='b1'><td colspan='2'></td></tr>
+<tr><td class='l1'>COPY_MODIFIER_MASK</td><td class='c'>8</td></tr>
 </tbody></table>
 
 
 The following have been replaced by namespaced constants.
 
 <table class='sumd'><thead><tr>
-<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>DimensionArrowClosed</td><td class='c'>3</td></tr>
-<tr><td>DimensionArrowDot</td><td class='c'>2</td></tr>
-<tr><td>DimensionArrowNone</td><td class='c'>0</td></tr>
-<tr><td>DimensionArrowOpen</td><td class='c'>4</td></tr>
-<tr><td>DimensionArrowSlash</td><td class='c'>1</td></tr>
+<tr><td class='l1'>DimensionArrowClosed</td><td class='c'>3</td></tr>
+<tr><td class='l1'>DimensionArrowDot</td><td class='c'>2</td></tr>
+<tr><td class='l1'>DimensionArrowNone</td><td class='c'>0</td></tr>
+<tr><td class='l1'>DimensionArrowOpen</td><td class='c'>4</td></tr>
+<tr><td class='l1'>DimensionArrowSlash</td><td class='c'>1</td></tr>
 </tbody></table>
 
 
 ## Yet to be added to documentation or unknown
 
 <table class='sumd'><thead><tr>
-<th>constant<br/>name</th><th class='c'>value<br/>Fixnum</th>
+<th class='l1'>constant</th><th class='c'>value</th>
 </tr></thead><tbody>
-<tr><td>Sketchup::Pages::ImageEmbedded</td><td class='c'>0</td></tr>
-<tr><td>Sketchup::Pages::ImageEmbeddedAndLinked</td><td class='c'>1</td></tr>
-<tr><td>Sketchup::Pages::ImageLinked</td><td class='c'>2</td></tr>
-<tr><td>Sketchup::Pages::UnitsNormalizedX</td><td class='c'>2</td></tr>
-<tr><td>Sketchup::Pages::UnitsNormalizedY</td><td class='c'>1</td></tr>
-<tr><td>Sketchup::Pages::UnitsPixels</td><td class='c'>0</td></tr>
+<tr><td class='l1'>Sketchup::Pages::ImageEmbedded</td><td class='c'>0</td></tr>
+<tr><td class='l1'>Sketchup::Pages::ImageEmbeddedAndLinked</td><td class='c'>1</td></tr>
+<tr><td class='l1'>Sketchup::Pages::ImageLinked</td><td class='c'>2</td></tr>
+<tr><td class='l1'>Sketchup::Pages::UnitsNormalizedX</td><td class='c'>2</td></tr>
+<tr><td class='l1'>Sketchup::Pages::UnitsNormalizedY</td><td class='c'>1</td></tr>
+<tr class='t' ><td colspan='2'></td></tr>
+<tr class='b1'><td colspan='2'></td></tr>
+<tr><td class='l1'>Sketchup::Pages::UnitsPixels</td><td class='c'>0</td></tr>
 </tbody></table>
 

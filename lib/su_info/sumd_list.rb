@@ -60,7 +60,7 @@ module SUMD_List
 
   @b_h_3 = "<tr class='t' ><td colspan='3'></td></tr>\n" \
            "<tr class='b2'><td colspan='3'></td></tr>\n"
-           
+
   @b_l_5 = "<tr class='t' ><td colspan='5'></td></tr>\n" \
            "<tr class='b1'><td colspan='5'></td></tr>\n"
 
@@ -87,7 +87,7 @@ module SUMD_List
   # text of file section that listed 'no constants' objects, md file
   @no_const     = "<tbody><tr><td><strong>SketchUp Object</strong></td>" \
                        "<td><strong>superclass</strong></td>" \
-                       "<td><strong>kind_of?</strong></td></tr>\n#{@b_h_3}"
+                       "<td><strong>is_a?</strong></td></tr>\n#{@b_h_3}"
 
   # text of file section that listed 'no constants' objects, tab delimited file
   @no_const_tab = ''
@@ -121,7 +121,7 @@ module SUMD_List
       str = c.to_s
       next if ( str =~ /^SUMD/ || (sumd_ruby_c_hash.key?(str) && !(str =~ sumd_re_incld)) )
       o = Object.const_get(c)
-      if ( o.kind_of?(Module) )
+      if ( o.is_a?(Module) )
         next if (o.name =~ /^(Continuation|MatchData|Precision)/)
         objs << o
       else
@@ -129,7 +129,7 @@ module SUMD_List
       end
     }
     @ctr_root = constants.length
-    
+
     # process root constants
     sumd_root(constants, /^CMD_/)      if ( constants.length > 0)
     sumd_root(constants, /^GL_/)       if ( constants.length > 0)
@@ -213,7 +213,7 @@ module SUMD_List
             sumd_write_2(s, Object)
             @text << @empty + @b_h_5
           end
-            
+
         else
           1.upto(len) { |i|
             if sub[i][2] == Fixnum
@@ -242,7 +242,7 @@ module SUMD_List
           sub = []
         end
       end
-        
+
       # find last index that matches
       found = false
       idx = 0
@@ -280,20 +280,20 @@ module SUMD_List
     sumd_sc  = sumd_bsc ? obj.superclass : "na"
 
     # show as Class, then Module, then Object, then ???
-    sumd_type = if obj.kind_of?(Class)  ; "Class"
-             elsif obj.kind_of?(Module) ; "Module"
-             elsif obj.kind_of?(Object) ; "Object"
+    sumd_type = if obj.is_a?(Class)  ; "Class"
+             elsif obj.is_a?(Module) ; "Module"
+             elsif obj.is_a?(Object) ; "Object"
              else                       ; "???"
              end
 
     sumd_obj_str  = obj.to_s
-  
+
     # get constants, divide into object & constants
     obj.constants.sort.each { |c|
       next if (sumd_bsc && obj.superclass.const_defined?(c) )
       o = obj.const_get(c)
       # note: assignment
-      if o.kind_of?(Module)
+      if o.is_a?(Module)
         objs << o
       else
         constants << [c.to_s, o, o.class]
@@ -309,7 +309,7 @@ module SUMD_List
 
     if (len != 0)
       constants.sort! { |a,b| a[1] <=> b[1] } if obj == Sketchup::Model
-      
+
       if @ctr_su_cls > 0
         @text << @empty
         @text << @b_h_5

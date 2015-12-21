@@ -35,8 +35,8 @@ module SUMD_Collections
     load "#{@rb_dir}#{File::SEPARATOR}sumd_common.rb"
   end
 
-  @empty_row = "<tr class='clr'>#{'<td>&#160;</td>' * 7}</tr>\n" \
-              "<tr>#{'<td></td>' * 7}</tr>\n"
+  @empty_row = "<tr class='t' ><td colspan='7'></td></tr>\n" \
+               "<tr class='b1'><td colspan='7'></tr>\n"
 
   @su_docs = "http://www.sketchup.com/intl/en/developer/docs/ourdoc/"
 
@@ -71,7 +71,7 @@ module SUMD_Collections
       o = Object.const_get(c)
       c_to_s = c.to_s
       next if ( /^SUMD/ =~ c_to_s || h_native.key?(c_to_s) )
-      objects << o if ( o.kind_of?(Module) )
+      objects << o if ( o.is_a?(Module) )
     }
 
     # process root modules / classes
@@ -93,16 +93,15 @@ module SUMD_Collections
   #
 	def self.find_nested(obj)
     objects   = []
-    isCls = obj.kind_of?(Class)
-    isMod = obj.kind_of?(Module)
+    isCls = obj.is_a?(Class)
     # get constants, divide into object & constants
     obj.constants.each { |c|
       next if (isCls && obj.superclass.const_defined?(c) )
       o = obj.const_get(c)
-      objects << o if o.kind_of?(Module)
+      objects << o if o.is_a?(Module)
     }
 
-    add_row(obj, isCls, isMod) if obj.public_method_defined?(:each)
+    add_row(obj, isCls) if obj.public_method_defined?(:each)
 
     # run child object constants of obj thru this
     if (objects.length > 0)
@@ -113,8 +112,9 @@ module SUMD_Collections
 
   # Adds a row to the table / list
   # @param obj [Object]
+  # @param isCls [Boolean] true if object is_a Class
   #
-  def self.add_row(obj, isCls, isMod)
+  def self.add_row(obj, isCls)
     super_cls = isCls ? obj.superclass : "not defined"
 
     obj_str = obj.to_s

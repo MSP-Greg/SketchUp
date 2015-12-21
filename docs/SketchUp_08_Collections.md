@@ -1,4 +1,4 @@
-# @title ___8&nbsp;Collections
+# @title ___8 Collections
 [SUMD_Collections]:../../SUMD_Collections
 [RenderingOptions]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptions
 <style scoped>
@@ -6,10 +6,12 @@
 \#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em; }
 \#filecontents table.sumd thead  { border-bottom:2px solid #aaa; background-color:transparent;}
 \#filecontents table.sumd tr     { border:none; background-color:transparent;}
-\#filecontents table.sumd tr.clr { border-bottom:none; line-height:0.2em;}
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: 1px solid transparent; }
 \#filecontents table.sumd th { border:none; padding:0px; background-color:transparent; text-align:left;}
 \#filecontents table.sumd td { border:none; padding:0px; background-color:transparent;}
-\#filecontents table.sumd td:empty { border-top:1px solid #bbb; height:0.2em;}
 \#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
 \#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
 </style>
@@ -20,7 +22,7 @@ This is a machine generated list of the collection objects defined by SketchUp
 classes.  The links in this document are machine generated, so some may not exist.
 
 ---
-Generated with [SUMD_Collections] v2.0, on 2015-12-19 at 01:08:26 AM GMT,
+Generated with [SUMD_Collections] v2.0, on 2015-12-21 at 04:27:22 PM GMT,
 using SketchUp v8.0.16846 & Ruby v1.8.6.
 
 ---
@@ -74,22 +76,22 @@ same thing if you only need a subset.  You may find `.to_a.grep()` to be faster.
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/definitionlist'>Sketchup::DefinitionList</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Sketchup::Entity</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/entities'>Sketchup::Entities</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Object</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/extensionsmanager'>Sketchup::ExtensionsManager</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Object</td></tr>
-<tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class='t' ><td colspan='7'></td></tr>
+<tr class='b1'><td colspan='7'></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/layers'>Sketchup::Layers</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Sketchup::Entity</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/materials'>Sketchup::Materials</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Sketchup::Entity</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/optionsmanager'>Sketchup::OptionsManager</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Object</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/optionsprovider'>Sketchup::OptionsProvider</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'>Y</td><td>Object</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/pages'>Sketchup::Pages</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Sketchup::Entity</td></tr>
-<tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class='t' ><td colspan='7'></td></tr>
+<tr class='b1'><td colspan='7'></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptions'>Sketchup::RenderingOptions</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'>Y</td><td>Sketchup::Entity</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/selection'>Sketchup::Selection</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Object</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/shadowinfo'>Sketchup::ShadowInfo</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'>Y</td><td>Sketchup::Entity</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/styles'>Sketchup::Styles</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td>Sketchup::Entity</td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/set'>Set</a></td><td class='c'> </td><td class='c'>Yes</td><td class='c'> </td><td class='c'> </td><td class='c'> </td><td>Object</td></tr>
-<tr class='clr'><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class='t' ><td colspan='7'></td></tr>
+<tr class='b1'><td colspan='7'></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/toolbar'>UI::Toolbar</a></td><td class='c'>Yes</td><td class='c'>Y</td><td class='c'> </td><td class='c'> </td><td class='c'> </td><td>Object</td></tr>
 </tbody>
 </table>

@@ -1,4 +1,4 @@
-# @title ___8&nbsp;Constants&nbsp;List
+# @title ___8 Constants List
 [SUMD_List]:../../SUMD_List
 <style scoped>
 #filecontents p code { font-size:16px; }
@@ -6,10 +6,10 @@
 \#filecontents table.sumd thead { border-bottom:2px solid #aaa; background-color:transparent; }
 \#filecontents table.sumd tr    { border:none; background-color:transparent; }
 \#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
-\#filecontents table.sumd tr.t  td   { padding-top:3px; }
-\#filecontents table.sumd tr.b2 td   { padding-top:3px; border-top: 2px solid #bbb; }
-\#filecontents table.sumd tr.b1 td   { padding-top:3px; border-top: 1px solid #bbb; }
-\#filecontents table.sumd tr.b1 td.b { padding-top:3px; border-top: 1px solid transparent; }
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: 1px solid transparent; }
 \#filecontents table.sumd th { border:none; padding: 0px; background-color:transparent; text-align:left; }
 \#filecontents table.sumd td { border:none; padding: 0px; background-color:transparent; }
 \#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center; }
@@ -29,7 +29,7 @@ class of the constants, they are Fixnum (Integer).
 
 
 ---
-Generated with [SUMD_List] v2.0, on 2015-12-19 at 01:08:26 AM GMT,
+Generated with [SUMD_List] v2.0, on 2015-12-21 at 04:27:22 PM GMT,
 using SketchUp v8.0.16846 & Ruby v1.8.6.
 
 ---
@@ -83,7 +83,7 @@ with particularly long names) are shown full width.
 <tr class='b2'><td colspan='5'></td></tr>
 <tr><td>IDABORT</td><td>3</td><td></td><td>IDCANCEL</td><td>2</td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
 <tr class='b2'><td colspan='5'></td></tr>
-<tr><td colspan='5'><span class='n'>IDENTITY<br/></span><span class='v'>#<Geom::Transformation:0x48cffc4><br/></span><span class='c'>Geom::Transformation<br/></span></td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
+<tr><td colspan='5'><span class='n'>IDENTITY<br/></span><span class='v'>#<Geom::Transformation:0x492003c><br/></span><span class='c'>Geom::Transformation<br/></span></td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
 <tr class='b2'><td colspan='5'></td></tr>
 <tr><td>IDIGNORE</td><td>5</td><td></td><td>IDRETRY</td><td>4</td></tr><tr><td>IDNO</td><td>7</td><td></td><td>IDYES</td><td>6</td></tr><tr><td>IDOK</td><td>1</td><td></td><td>&#160;</td><td>&#160;</td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
 <tr class='b2'><td colspan='5'></td></tr>
@@ -103,7 +103,7 @@ with particularly long names) are shown full width.
 <tr class='b2'><td colspan='5'></td></tr>
 <tr><td>SB_PROMPT</td><td>0</td><td></td><td>SB_VCB_VALUE</td><td>2</td></tr><tr><td>SB_VCB_LABEL</td><td>1</td><td></td><td>&#160;</td><td>&#160;</td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
 <tr class='b2'><td colspan='5'></td></tr>
-<tr><td colspan='5'><span class='n'>SKETCHUP_CONSOLE<br/></span><span class='v'>#<Sketchup::Console:0x48ce96c><br/></span><span class='c'>Sketchup::Console<br/></span></td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
+<tr><td colspan='5'><span class='n'>SKETCHUP_CONSOLE<br/></span><span class='v'>#<Sketchup::Console:0x491e9e4><br/></span><span class='c'>Sketchup::Console<br/></span></td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
 <tr class='b2'><td colspan='5'></td></tr>
 <tr><td>SnapTo_Arbitrary</td><td>0</td><td></td><td>TB_NEVER_SHOWN</td><td>-1</td></tr><tr><td>SnapTo_Horizontal</td><td>1</td><td></td><td>TB_VISIBLE</td><td>1</td></tr><tr><td>SnapTo_Sloped</td><td>3</td><td></td><td>TextAlignCenter</td><td>1</td></tr><tr><td>SnapTo_Vertical</td><td>2</td><td></td><td>TextAlignLeft</td><td>0</td></tr><tr><td>TB_HIDDEN</td><td>0</td><td></td><td>TextAlignRight</td><td>2</td></tr><tr class='e'><td></td></tr><tr class='t' ><td colspan='5'></td></tr>
 <tr class='b2'><td colspan='5'></td></tr>
@@ -175,7 +175,7 @@ with particularly long names) are shown full width.
 <col style='width:15.0em;' />
 <col style='width: 6.0em;' />
 </colgroup>
-<tbody><tr><td><strong>SketchUp Object</strong></td><td><strong>superclass</strong></td><td><strong>kind_of?</strong></td></tr>
+<tbody><tr><td><strong>SketchUp Object</strong></td><td><strong>superclass</strong></td><td><strong>is_a?</strong></td></tr>
 <tr class='t' ><td colspan='3'></td></tr>
 <tr class='b2'><td colspan='3'></td></tr>
 <tr><td><a href='http://www.sketchup.com/intl/en/developer/docs/ourdoc/sketchup'>Sketchup</a></td><td>na</td><td>Module</td></tr>

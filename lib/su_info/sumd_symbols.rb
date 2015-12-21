@@ -1,6 +1,6 @@
 # [native_ruby_syms.txt]:https://github.com/MSP-Greg/SketchUp/blob/master/su_info_txt/native_ruby_syms.txt
 # [Template_Symbols.md]:file/docs/Template_Symbols.md
-# [su00_constants_tab_md.txt]:https://github.com/MSP-Greg/SketchUp/tree/master/su_info_txt
+# [su??\_constants_tab_md.txt]:https://github.com/MSP-Greg/SketchUp/tree/master/su_info_txt
 # ## Purpose:
 #
 # Creates an md file of most of the symbols defined in SketchUp.  Root constants
@@ -8,11 +8,11 @@
 #
 # ## Required files:
 #
-# | File name                                |  Information / Notes                     |
-# |:-----------------------------------------|:-----------------------------------------|
-# | [Template_Symbols.md]                    | markdown template                        |
-# | [native_ruby_syms.txt]                   | contains symbols native to Ruby          |
-# | [su00_constants_tab_md.txt]<br/>&#160; | used to remove some constants<br/>from the symbols list. |
+# | File name                               |  Information / Notes                     |
+# |:----------------------------------------|:-----------------------------------------|
+# | [Template_Symbols.md]                   | markdown template                        |
+# | [native_ruby_syms.txt]                  | contains symbols native to Ruby          |
+# | [su??\_constants_tab_md.txt]<br/>&#160; | used to remove some constants<br/>from the symbols list. |
 #
 #
 module SUMD_Symbols
@@ -30,10 +30,10 @@ module SUMD_Symbols
 
   @b_l_3 = "<tr class='t'><td></td><td></td><td></td></tr>\n" \
            "<tr class='b1'><td></td><td class='b'></td><td></td></tr>\n"
-  
+
   @b_h_3 = "<tr class='t' ><td colspan='3'></td></tr>\n" \
            "<tr class='b2'><td colspan='3'></td></tr>\n"
-  
+
   # txt file text
   @text   = ''
 
@@ -54,7 +54,7 @@ module SUMD_Symbols
     return unless SUMD::sumd_get_ruby_hash(@h_native, true)
 
     @constants.gsub!(/[\s]{2,}/, "\n")
-    
+
     # load @rt_cnsts hash with root constant names
     @rt_cnsts = {}
     while (sumd_match = @constants.slice!(/^[^\t]+/) ) do
@@ -67,7 +67,7 @@ module SUMD_Symbols
     @sym_f_up  = []
     @sym_f_lwr = []
     @sym_glbl  = []
-    
+
     Symbol.all_symbols.each { |x|
       s = x.to_s
       next if @h_native.key?(s) || @rt_cnsts.key?(s) || (/^sumd/i === s)
@@ -82,18 +82,18 @@ module SUMD_Symbols
     @sym_f_up.sort!
     @sym_up.sort!
     @sym_glbl.sort!
-    
+
 #    puts @sym_glbl.join("\n")
 #    puts "@sym_up.join"
 #    puts @sym_up.join("\n")
-    
+
     @ctr_attr = 0
 
     sumd_lwr_attr()
     sumd_md__attr() if @attrs.length > 0
 
     @text_md.sub!(/<%= found %>/, sumd_found_txt() )
-    
+
     sumd_txt_list(@sym_f_lwr)
     sumd_md__list(@sym_f_lwr , '_method'  )
 
@@ -112,7 +112,7 @@ module SUMD_Symbols
 
     puts "-------------------------------------------------\n" \
          "#{name} wrote the following files:\n#{files.join(10.chr)}\n"
-    
+
   end
 
   # Loads @attrs, removes items from @sym_f_lwr
@@ -308,15 +308,15 @@ module SUMD_Symbols
       tt << @empty + @empty + @b_h_3 + @empty
     end
     tt << "</tbody>\n"
-    @text_md.sub!(/<%= #{sumd_name} %>/, tt)    
+    @text_md.sub!(/<%= #{sumd_name} %>/, tt)
   end
-  
+
   # Returns a string with the quantities of constant types found.
   # @return [String]
   #
   def self.sumd_found_txt()
     n = '&#8196;&#8197;'
-    
+
          a = @ctr_attr
        low = @sym_f_lwr.length
         up = @sym_f_up.length
@@ -328,7 +328,7 @@ module SUMD_Symbols
        low =    low.to_s.rjust(3).gsub(/ /, n)
         up =     up.to_s.rjust(3).gsub(/ /, n)
     upcase = upcase.to_s.rjust(3).gsub(/ /, n)
-    
+
     "Found #{t} symbols, listed as follows:\n\n" \
     "* #{a      } as attribute names\n" \
     "* #{low    } with lower case 1st letter\n" \

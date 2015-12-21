@@ -1,4 +1,4 @@
-# @title Template&nbsp;Collections
+# @title Template Collections
 [SUMD_Collections]:../../SUMD_Collections
 [RenderingOptions]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/renderingoptions
 <style scoped>
@@ -6,10 +6,12 @@
 \#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em; }
 \#filecontents table.sumd thead  { border-bottom:2px solid #aaa; background-color:transparent;}
 \#filecontents table.sumd tr     { border:none; background-color:transparent;}
-\#filecontents table.sumd tr.clr { border-bottom:none; line-height:0.2em;}
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: 1px solid transparent; }
 \#filecontents table.sumd th { border:none; padding:0px; background-color:transparent; text-align:left;}
 \#filecontents table.sumd td { border:none; padding:0px; background-color:transparent;}
-\#filecontents table.sumd td:empty { border-top:1px solid #bbb; height:0.2em;}
 \#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
 \#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
 </style>

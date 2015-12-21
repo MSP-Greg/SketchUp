@@ -1,4 +1,4 @@
-# @title Template&nbsp;Constants&nbsp;List
+# @title Template Constants List
 [SUMD_List]:../../SUMD_List
 <style scoped>
 #filecontents p code { font-size:16px; }
@@ -6,10 +6,10 @@
 \#filecontents table.sumd thead { border-bottom:2px solid #aaa; background-color:transparent; }
 \#filecontents table.sumd tr    { border:none; background-color:transparent; }
 \#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
-\#filecontents table.sumd tr.t  td   { padding-top:3px; }
-\#filecontents table.sumd tr.b2 td   { padding-top:3px; border-top: 2px solid #bbb; }
-\#filecontents table.sumd tr.b1 td   { padding-top:3px; border-top: 1px solid #bbb; }
-\#filecontents table.sumd tr.b1 td.b { padding-top:3px; border-top: 1px solid transparent; }
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: 1px solid transparent; }
 \#filecontents table.sumd th { border:none; padding: 0px; background-color:transparent; text-align:left; }
 \#filecontents table.sumd td { border:none; padding: 0px; background-color:transparent; }
 \#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center; }

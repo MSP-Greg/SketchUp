@@ -1,4 +1,4 @@
-# @title Template&nbsp;Constants&nbsp;Guide
+# @title Template Constants Guide
 [SUMD_Guide]:../../SUMD_Guide
 [template_code.rb]:../../SUMD_TC
 [Sketchup::Console]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/console
@@ -46,14 +46,21 @@
 <style scoped>
 #filecontents p code { font-size:16px; }
 \#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
-\#filecontents table.sumd thead { border-bottom:2px solid #aaa; background-color:transparent;}
-\#filecontents table.sumd tr    { border:none; background-color:transparent;}
-\#filecontents table.sumd tr:nth-child(5n) { border-bottom:1px solid #bbb;}
-\#filecontents table.sumd th { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent; text-align:left;}
-\#filecontents table.sumd td { border:none; padding: 0em 1.2em 0px 0em; background-color:transparent;}
+\#filecontents table.sumd thead { background-color:transparent;}
+\#filecontents table.sumd tr    { background-color:transparent; border:none; }
+\#filecontents table.sumd th   { border:none; border-bottom:2px solid #aaa; padding: 0em; background-color:transparent; text-align:left;}
+\#filecontents table.sumd th.b { border:none; padding: 0em; background-color:transparent; }
+\#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: none; }
+\#filecontents table.sumd td { border:none; padding: 0em; background-color:transparent;}
 \#filecontents table.sumd td.c, #filecontents table.sumd th.c { text-align:center;}
 \#filecontents table.sumd td.r, #filecontents table.sumd th.r { text-align:right;}
-\#filecontents table.sumd td.clr, #filecontents table.sumd th.clr { border-bottom:none; width:10em;}
+\#filecontents table.sumd td.l1, #filecontents table.sumd th.l1 { padding-right:1em; }
+\#filecontents table.sumd td.c1, #filecontents table.sumd th.c1 { padding-right:1em; text-align:center; }
+\#filecontents table.sumd td.r1, #filecontents table.sumd th.r1 { padding-right:1em; text-align:right; }
 </style>
 
 # TOC Constants Guide
@@ -77,6 +84,8 @@ Finally, thanks to Jim Foltz and others for their previous work and help.
 <%= hdr %>
 
 ---
+
+Unless otherwise noted, constants are of class Fixnum.
 
 This document divides the SketchUp defined constants into three categories
 
@@ -218,7 +227,7 @@ format = am.options['UnitsOptions']['LengthFormat']
 ```
 
 The following code creates two hashes that make use of the Length:: constants,
-queries the two settings, and out@version = 2.0F to the console.  It's in the
+queries the two settings, and outputs to the console.  It's in the
 [template_code.rb] file. Load, then SUMD_TC.new.len_1.
 
 ```ruby
@@ -319,8 +328,9 @@ SKETCHUP_CONSOLE.write("this way also")
 Sketchup.send_action(action)
 ```
 
-See [Sketchup.send_action].  This method allows for either a string or a number for
-its parameter.  Numbers are officially 'unsupported', and only available under Windows.
+See [Sketchup.send_action].  This method allows for either a string or a number
+for its parameter.  Numbers are officially 'unsupported', and only available
+under Windows.
 
 The following code produces the same result.
 
@@ -330,6 +340,12 @@ bln = Sketchup.send_action(CMD_ARC)          # use a Constant
 bln = Sketchup.send_action(21065)            # use a Fixnum
 bln = Sketchup.send_action(action)     # action can be either
 ```
+
+Some strings are not listed on SketchUp.com.  If one needs an unlisted menu item
+string, one can assign a keyboard shortcut, then either view them with
+`Sketchup.get_shortcuts.sort.join("\n")` or by exporting the 'Preferences' from
+the UI and viewing the .dat file in a text editor.  If a string ending in ':' is
+shown...
 
 The following table shows strings (taken from SketchUp.com Nov-15), and their constant
 equivalents.  Matches were done via RegEx and several lines of case statement.
@@ -341,7 +357,7 @@ equivalents.  Matches were done via RegEx and several lines of case statement.
 ### Sketchup.set_status_text
 
 See [Sketchup.set_status_text].  Text can be placed in three different locations.
-The constants define the location.
+The constants are used as the position parameter and define the location.
 
 ```ruby
 result = Sketchup.set_status_text("This is a Test", SB_VCB_VALUE)
@@ -393,7 +409,7 @@ behavior.snapto = snap_to
 ### Layer \#page_behavior \#page_behavior=
 
 See [Layer#page_behavior].  This attribute is a numeric, with somewhat confusing
-documentation.  From the docs, 'The behaviour is composed of a combination of
+documentation.  From the docs, 'The behavior is composed of a combination of
 these flags'.  So default visiblity is bit 0 ('HIDDEN' is set), why does
 'NEW_PAGES' have 'VISIBLE' setting bit 4 and 'HIDDEN' setting bit 5?  Seems that
 they should be mutually exclusive.
@@ -428,7 +444,7 @@ See [Text#leader_type]
 
 ```ruby
 leader = text.leader_type
-leader = Text.leader_type = leader
+text.leader_type = leader
 ```
 
 <%= leader_type %>
@@ -455,7 +471,7 @@ VK_NEXT is 'Page Down'.
 
 I could not get any information from the flags parameter. I would suggest using
 keyUp and KeyDown to keep track of modifier key state.  The next section has
-code that attaches to mouse and keybaord events.
+code that attaches to mouse and keyboard events.
 
 ```ruby
  def onKeyDown(key, repeat, flags, view)
@@ -485,7 +501,7 @@ def onLButtonDown(flags, x, y, view)
 end
 ```
 
-Below is code that shows use of the constants, also some "does't quite work"
+Below is code that shows use of the constants, also some "doesn't quite work"
 key code.  Located in the [template_code.rb] file. Load, then SUMD_TC.new.tool_1.
 
 ```ruby
@@ -513,8 +529,7 @@ and an 'Okay' button.
 status = UI.messagebox(message, type)
 ```
 
-<%= ui_mb_type %>
-<%= ui_mb_ret %>
+<%= ui_mb %>
 
 ### View \#draw
 
@@ -542,7 +557,7 @@ The following are RUBY_ and SketchUp constants which vary from version to versio
 
 ## Depreciated Constants
 
-I beleieve the following are depreciated. VK_ constants should be used in their
+I believe the following are depreciated. VK_ constants should be used in their
 place.  I tried the mask constants on both the key and flags parameters, and
 nothing seemed to work.
 

@@ -1,14 +1,14 @@
-# @title 2013&nbsp;Symbols
+# @title 2013 Symbols
 [SUMD_Symbols]:../../SUMD_Symbols
 <style scoped>
 #filecontents p code { font-size:16px; }
 \#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; background-color:transparent; line-height:1.5em; }
 \#filecontents table.sumd tr     { border:none; background-color:transparent;}
 \#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
-\#filecontents table.sumd tr.t  td   { padding-top:3px; }
-\#filecontents table.sumd tr.b2 td   { padding-top:3px; border-top: 2px solid #bbb; }
-\#filecontents table.sumd tr.b1 td   { padding-top:3px; border-top: 1px solid #bbb; }
-\#filecontents table.sumd tr.b1 td.b { padding-top:3px; border-top: 1px solid transparent; }
+\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: 1px solid transparent; }
 \#filecontents table.sumd tr.clr { border-bottom:none; line-height:0.2em;}
 \#filecontents table.sumd th { border:none; padding: 0px; background-color:transparent; border-bottom:2px solid #aaa; ; text-align:left;}
 \#filecontents table.sumd td { border:none; padding: 0px; background-color:transparent;}
@@ -23,7 +23,7 @@ Symbols are used by Ruby for many purposes.  The names of all classes, methods,
 attributes, constants and variables are all placed in Ruby's symbol table.
 
 ---
-Generated with [SUMD_Symbols] v2.0, on 2015-12-19 at 01:09:16 AM GMT,
+Generated with [SUMD_Symbols] v2.0, on 2015-12-21 at 04:27:40 PM GMT,
 using SketchUp v13.0.4812 & Ruby v1.8.6.
 
 ---
@@ -32,10 +32,10 @@ using SketchUp v13.0.4812 & Ruby v1.8.6.
 
 * **Global constants have also been omitted, please see the Constants List.**
 
-Found 909 symbols, listed as follows:
+Found 910 symbols, listed as follows:
 
 * 250 as attribute names
-* 488 with lower case 1st letter
+* 489 with lower case 1st letter
 * 169 with upper case 1st letter
 * &#8196;&#8197;&#8196;&#8197;2 with all upper case lettering
 
@@ -44,6 +44,9 @@ Found 909 symbols, listed as follows:
 These are assumed to be attributes, due to there being sets of them (plain, ending
 in '?', ending in '=').  Columns show whether one exists with '?' or '='.  If only
 the '?' version exists, it is placed in the main column.
+
+If an attribute has a symbol for both plain and a ? suffix, very often the plain
+symbol 'method' **is not defined and will not work.**
 
 <table class='sumd'>
 <colgroup>
@@ -435,7 +438,7 @@ These symbols are either method names or variables.
 <tr><td>:position_material</td><td>&#160;</td><td>:rotation</td></tr>
 <tr class='t'><td></td><td></td><td></td></tr>
 <tr class='b1'><td></td><td class='b'></td><td></td></tr>
-<tr><td>:post_url</td><td>&#160;</td><td>&#160;</td></tr>
+<tr><td>:post_url</td><td>&#160;</td><td>:row</td></tr>
 <tr class='e'><td colspan='3'></td></tr>
 <tr class='e'><td colspan='3'></td></tr>
 <tr class='t' ><td colspan='3'></td></tr>
@@ -549,7 +552,7 @@ These symbols are either method names or variables.
 
 ## Symbols - Upper Case 1st letter
 
-These symbols are mixed case, but all have a first capital letter.  They are 
+These symbols are mixed case, but all have a first capital letter.  They are
 constants, and may be class or module names.
 
 <table class='sumd'>

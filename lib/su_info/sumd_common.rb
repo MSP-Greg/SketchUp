@@ -63,10 +63,10 @@ module SUMD
       n = "SketchUp_#{@su_major}_#{sumd_name.gsub(/ /,'_')}"
       str = sumd_name.sub(/\.md/, '')
 #     tt = "#{@title_su} #{str}".gsub(/_/, '&#8196;&#8197;' )
-      tt = "#{@title_su} #{str}".gsub(/ /, "&nbsp;" )
+      tt = "#{@title_su} #{str}"
       s.sub!( /^# @title Template.*/, "# @title #{tt}" )
       s.sub!( /TOC #{str}/, "SketchUp #{@toc_su} #{str}" )
-      
+
     else
       UI.messagebox('Unknown extension!')
       return nil
@@ -95,7 +95,7 @@ module SUMD
     "Generated with [#{n}] v#{v.to_s}, on #{date},\n" \
     "using SketchUp v#{Sketchup.version} & Ruby v#{RUBY_VERSION}."
   end
-  
+
   # Loads a hash with either native Ruby constants or symbols
   # @param hash [Hash] loaded with file contents
   # @param sym  [Boolean, nil] true if symbols, nil for constants
@@ -123,4 +123,31 @@ module SUMD
     @ret
   end
 
+  # Returns approx em width
+  # @param a [Array<String>, String] array/string to check
+  # @return  [Float] max em for array column 0
+  def SUMD.sumd_str_to_em(a)
+    max = 0.0
+#    puts "#{a.class}  #{a[0]}"
+    a.each { |row|
+      s = ( (String === row) ? row : row[0] )
+      len = s.length - 1
+      n = 0.0
+      0.upto(len) { |i|
+        n += case s[i,1]
+        when /[mW]/        then 0.98
+        when /[M]/         then 0.87
+        when /[fIijlrt]/   then 0.35
+        when /[HNOQU]/     then 0.80
+        when /[ADGRVw]/    then 0.75
+        when /[_BCKoX]/    then 0.67
+        when /[sJ]/        then 0.47
+        when /[acEL]/      then 0.53
+        else                    0.62
+        end
+      }
+      max = [max, n].max
+    }
+    ( (10.0 * max).round )/ 10.0
+  end
 end
