@@ -116,6 +116,7 @@ module SUMD_Symbols
   end
 
   # Loads @attrs, removes items from @sym_f_lwr
+  #
   def self.sumd_lwr_attr()
     @attrs = []
     a = @sym_f_lwr
@@ -180,7 +181,8 @@ module SUMD_Symbols
   # @param idx [Integer] index of sort item, -1 if param a is array of strings
   # @param r [String, Array<String>] empty item
   # @return [Array<Integer,Integer>] ret[0] is upper loop idx, ret[1]
-  # is start idx of 2nd column
+  #   is start idx of 2nd column
+  #
   def self.sumd_split_list(a, idx, r)
     # add blank 'lines' for alphabet grouping
     len = a.length - 2
@@ -244,6 +246,7 @@ module SUMD_Symbols
   end
 
   # Loads 'atrribute' table data into md text
+  #
   def self.sumd_md__attr()
     # add blank 'lines' for alphabet grouping, find split
     length = sumd_split_list(@attrs, 2, ['&#160;', '&#160;', '&#160;'])
@@ -267,7 +270,8 @@ module SUMD_Symbols
 
   # Loads lists / arrays into md @text_md
   # @param list      [Array<String>]
-  # @param sumd_name {String] name of 'erb' variable in @text_md
+  # @param sumd_name [String] name of 'erb' variable in @text_md
+  #
   def self.sumd_md__list(list, sumd_name)
     # add blank 'lines' for alphabet grouping, find split
     t = sumd_split_list(list, -1, '&#160;')
@@ -338,6 +342,7 @@ module SUMD_Symbols
 
   # Loads lists / arrays into text @text
   # @param list [Array<String>]
+  #
   def self.sumd_txt_list(list)
     count = 0
     list.each { |s|

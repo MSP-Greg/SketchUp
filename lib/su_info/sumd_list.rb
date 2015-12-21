@@ -165,12 +165,12 @@ module SUMD_List
     sumd_done()
   end
 
-  # Parses constants, determines grouping and 2 column / 1 column layout,
-  # writes data to md file
+  # Parses constants, determines grouping and one or two layout,
+  #   writes data to md file
   # @param constants [Array<String, val, val.class>] array of row info
   # @param ref   [RegEx, nil] Regex for search , eg /^CMD_/
   # @param cols [Fixnum,nil] if nil, uses 2 column layout for match, if 1,
-  # uses single column.  Only used for RUBY_ and LAYER_
+  #   uses single column.  Only used for RUBY_ and LAYER_
   #
   def self.sumd_root(constants, ref = nil, cols = 2)
     found = false
@@ -268,7 +268,9 @@ module SUMD_List
   end
 
   # Finds all constants in object namespace, reentrant.
-  # Adds the info to file text strings by calling
+  #
+  #  Adds the info to file text strings by calling
+  #
   # [.write_constants](#write_constants-class_method)
   # @param obj [Object]
   #

@@ -88,7 +88,9 @@ module SUMD_Collections
   end
 
   # Finds all collections in object namespace, reentrant.
+  #
   # Adds the info to file text string @text
+  #
   # @param obj [Object]
   #
 	def self.find_nested(obj)
@@ -111,7 +113,7 @@ module SUMD_Collections
 	end
 
   # Adds a row to the table / list
-  # @param obj [Object]
+  # @param obj   [Object]
   # @param isCls [Boolean] true if object is_a Class
   #
   def self.add_row(obj, isCls)

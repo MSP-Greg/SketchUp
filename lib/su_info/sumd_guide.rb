@@ -190,6 +190,7 @@ module SUMD_Guide
   # Called for constants that can be found with a RegEx match
   #
   # If re_md is nil, array will be returned
+  #
   # @param re_con    [String] used to create RegEx for constant match
   # @param re_md     [String] used to create RegEx for table insertion in md
   # @param cnst_name [String] optional column name for constant name column
@@ -343,7 +344,7 @@ module SUMD_Guide
   end
 
   # Writes data to md file after poke is finished,
-  # when this finishes, it runs _run2
+  #   when this finishes, it runs _run2
   #
   def self.rendering_options_done()
     @am_ro.remove_observer( @obs_ro )
@@ -658,12 +659,13 @@ module SUMD_Guide
   end
 
   # Creates a markdown table text from an array
+  #
+  # Not used since all tables are html
+  #
   # @param array     [Array<String>] array to load into table
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
   # @return [String] md tabel string
-  #
-  # Not used since all tables are html
   #
   def self.create_table_md(array, hdr_row, alignment)
     rows = array.length - 1
