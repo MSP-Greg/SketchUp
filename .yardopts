@@ -1,8 +1,12 @@
+--no-cache
 --protected
 --private
+--default-return ''
+--hide-void-return
 --markup markdown
 --markup-provider redcarpet
---title "SMIP - SketchUp Miscellaneous Info Project"
+--default-return ''
+--title "SUMAD - SketchUp Miscellaneous API Documentation"
 
 lib/su_info/*.rb
 -

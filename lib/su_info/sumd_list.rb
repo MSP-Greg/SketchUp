@@ -9,11 +9,11 @@
 #
 # Creates three files (?? is two digit SketchUp version):
 #
-# | Folder         | File name                       | Information / Notes                              |
-# |:---------------|---------------------------------|:-------------------------------------------------|
-# | ../docs        | SketchUp_??\_Constants\_List.md | Markdown 'List' file                             |
-# | ../su_info_txt | su??\_constants\_tab.txt        | Tab Delimited text                               |
-# | ../su_info_txt | su??\_constants\_tab_md.txt     | Tab Delimited text, used to make 'Guide' md file |
+# | File name                              | Information / Notes                              |
+# |----------------------------------------|:-------------------------------------------------|
+# | SketchUp_??\_Constants\_List.md        | Markdown 'List' file                             |
+# | su??\_constants\_tab.txt               | Tab Delimited text                               |
+# | su??\_constants\_tab_md.txt<br/>&#160; | Tab Delimited text, used<br/>to make 'Guide' md file |
 #
 # The three files list all classes, modules, and constants defined by SketchUp.
 #
@@ -269,9 +269,9 @@ module SUMD_List
 
   # Finds all constants in object namespace, reentrant.
   #
-  #  Adds the info to file text strings by calling
+  # Adds the info to file text strings by calling
+  #   [.write_constants](#write_constants-class_method)
   #
-  # [.write_constants](#write_constants-class_method)
   # @param obj [Object]
   #
 	def self.sumd_find_nested(obj)
@@ -343,7 +343,7 @@ module SUMD_List
   #
   # Writes an array of constants to the three output files
   #
-  # @param constants [Array< Array<name, val, class> >]
+  # @param constants  [Array< Array<String, String, String> >]
   # @param obj        [Object] namespace object
   #
   def self.sumd_write_1(constants, obj)
@@ -372,7 +372,7 @@ module SUMD_List
   #
   # Writes an array of constants to the three output files
   #
-  # @param constants [Array< Array<name, val, class> >]
+  # @param constants [Array< Array<String, String, String> >]
   # @param obj       [Object] namespace object
   #
   def self.sumd_write_2(constants, obj)

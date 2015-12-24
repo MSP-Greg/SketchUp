@@ -40,7 +40,7 @@
 </g></svg></a>
 </p>
 
-# README<br/><br/>SketchUp Miscellaneous Documentation
+# README<br/><br/>SUMAD - SketchUp Miscellaneous API Documentation
 
 ## Summary
 

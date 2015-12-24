@@ -14,13 +14,10 @@
 # | [native_ruby_syms.txt]                  | contains symbols native to Ruby          |
 # | [su??\_constants_tab_md.txt]<br/>&#160; | used to remove some constants<br/>from the symbols list. |
 #
-#
 module SUMD_Symbols
 #{ Class variables
 
   @version = 2.0.to_f
-
-  @empty = "<tr class='e'><td colspan='3'></td></tr>\n"
 
   @rb_dir = File.dirname(__FILE__)
 
@@ -28,14 +25,15 @@ module SUMD_Symbols
     load "#{@rb_dir}#{File::SEPARATOR}sumd_common.rb"
   end
 
+  @empty = "<tr class='e'><td colspan='3'></td></tr>\n"
+  
   @b_l_3 = "<tr class='t'><td></td><td></td><td></td></tr>\n" \
            "<tr class='b1'><td></td><td class='b'></td><td></td></tr>\n"
 
   @b_h_3 = "<tr class='t' ><td colspan='3'></td></tr>\n" \
            "<tr class='b2'><td colspan='3'></td></tr>\n"
 
-  # txt file text
-  @text   = ''
+  @text    = ''
 
   @text_md = ''
 

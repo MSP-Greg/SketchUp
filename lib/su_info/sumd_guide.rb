@@ -404,7 +404,7 @@ module SUMD_Guide
     _run2
   end
 
-  # Code to creates table that links send_action text with constants
+  # Code to create table that links send_action text with constants
   #
   def self.send_action()
     return unless (sa_text = SUMD.sumd_file_read('send_action.txt'))
@@ -546,7 +546,7 @@ module SUMD_Guide
   end
 
   # Creates an html table from an array
-  # @param array     [Array<String>]
+  # @param array     [Array< Array<String, String, String> >]
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
   # @return [string] table element html string
@@ -582,11 +582,11 @@ module SUMD_Guide
   end
 
   # Creates a 'two up' html table from an array
-  # @param a1        [Array<String>]
+  # @param a1        [Array< Array<String, String, String> >] left array
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
-  # @param a2        [Array<String>] 2nd col array
-  # @param wid       [Float]         '1st' col em width
+  # @param a2        [Array< Array<String, String, String> >] right array
+  # @param wid       [Float]         name column em width
   # @return [string] table element html string
   #
   def self.create_table2(a1, hdr_row, alignment, a2, wid = nil)
@@ -662,7 +662,7 @@ module SUMD_Guide
   #
   # Not used since all tables are html
   #
-  # @param array     [Array<String>] array to load into table
+  # @param array     [Array< Array<String, String, String> >]
   # @param hdr_row   [Array<String>] table row 1
   # @param alignment [Array<String>]
   # @return [String] md tabel string
