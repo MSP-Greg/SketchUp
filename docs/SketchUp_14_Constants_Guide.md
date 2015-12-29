@@ -45,22 +45,22 @@
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
 <style scoped>
 \#filecontents p code { font-size:16px; }
-\#filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
-\#filecontents table.sumd thead { background-color:transparent;}
-\#filecontents table.sumd tr    { background-color:transparent; border:none; }
-\#filecontents table.sumd th   { border:none; border-bottom:2px solid #aaa; padding: 0em; background-color:transparent; text-align:left;}
-\#filecontents table.sumd th.b { border:none; padding: 0em; background-color:transparent; }
-\#filecontents table.sumd tr.e  td   { padding-top:0.8em; }
-\#filecontents table.sumd tr.t  td   { padding-top:0.2em; }
-\#filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
-\#filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
-\#filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: none; }
-\#filecontents table.sumd td { border:none; padding: 0em; background-color:transparent;}
-\#filecontents table.sumd td.c, \#filecontents table.sumd th.c { text-align:center;}
-\#filecontents table.sumd td.r, \#filecontents table.sumd th.r { text-align:right;}
-\#filecontents table.sumd td.l1, \#filecontents table.sumd th.l1 { padding-right:1em; }
-\#filecontents table.sumd td.c1, \#filecontents table.sumd th.c1 { padding-right:1em; text-align:center; }
-\#filecontents table.sumd td.r1, \#filecontents table.sumd th.r1 { padding-right:1em; text-align:right; }
+  #filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
+  #filecontents table.sumd thead { background-color:transparent;}
+  #filecontents table.sumd tr    { background-color:transparent; border:none; }
+  #filecontents table.sumd th   { border:none; border-bottom:2px solid #aaa; padding: 0em; background-color:transparent; text-align:left;}
+  #filecontents table.sumd th.b { border:none; padding: 0em; background-color:transparent; }
+  #filecontents table.sumd tr.e  td   { padding-top:0.8em; }
+  #filecontents table.sumd tr.t  td   { padding-top:0.2em; }
+  #filecontents table.sumd tr.b2 td   { padding-top:0.2em; border-top: 2px solid #bbb; }
+  #filecontents table.sumd tr.b1 td   { padding-top:0.2em; border-top: 1px solid #bbb; }
+  #filecontents table.sumd tr.b1 td.b { padding-top:0.2em; border-top: none; }
+  #filecontents table.sumd td { border:none; padding: 0em; background-color:transparent;}
+  #filecontents table.sumd td.c, \#filecontents table.sumd th.c { text-align:center;}
+  #filecontents table.sumd td.r, \#filecontents table.sumd th.r { text-align:right;}
+  #filecontents table.sumd td.l1, \#filecontents table.sumd th.l1 { padding-right:1em; }
+  #filecontents table.sumd td.c1, \#filecontents table.sumd th.c1 { padding-right:1em; text-align:center; }
+  #filecontents table.sumd td.r1, \#filecontents table.sumd th.r1 { padding-right:1em; text-align:right; }
 </style>
 
 # SketchUp 2014 Constants Guide
