@@ -73,12 +73,13 @@ specific.  Seven documents are generated for each version (?? is two digit versi
 v8 is 08, v2014 is 14).
 
 
-| Markdown Files                             | Description                                                                 |
-|:-------------------------------------------|:----------------------------------------------------------------------------|
+| Markdown Files                              | Description                                                                 |
+|:--------------------------------------------|:----------------------------------------------------------------------------|
 | SketchUp\_??\_Collections.md<br/>&#160;     | Lists all collections defined by SketchUp<br/>classes. Created by [SUMD_Collections]. |
 | SketchUp\_??\_Constants_Guide.md<br/>&#160; | Lists all SketchUp constants, grouped by use,<br/>with sample code.  Created by [SUMD_Guide]. |
 | SketchUp\_??\_Constants_List.md<br/>&#160;  | Lists all SketchUp constants, grouped by type.<br/>Created by [SUMD_List].  |
 | SketchUp\_??\_Symbols.md<br/>&#160;         | Lists all SketchUp symbols, grouped by type.<br/>Created by [SUMD_Symbols]. |
+
 <br/>
 
 | Text File (tab delimited)             | Description                                                          |
