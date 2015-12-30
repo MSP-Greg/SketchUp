@@ -44,7 +44,7 @@
 [View#draw]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw
 [View#draw_text]:http://www.sketchup.com/intl/en/developer/docs/ourdoc/view#draw_text
 <style scoped>
-\#filecontents p code { font-size:16px; }
+  #filecontents p code { font-size:16px; }
   #filecontents table.sumd { border:none; border-collapse:collapse; margin-bottom:2em; line-height:1.6em;}
   #filecontents table.sumd thead { background-color:transparent;}
   #filecontents table.sumd tr    { background-color:transparent; border:none; }
